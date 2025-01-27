@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2xmh01vfhjs7"]
+
+[ext_resource type="Texture2D" uid="uid://c88mc3kfag4a7" path="res://icon.svg" id="1_1krmt"]
+[ext_resource type="PackedScene" uid="uid://1yu00uqnngve" path="res://scenes/test_ui.tscn" id="1_tr4aq"]
+
+[node name="Test" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" parent="CanvasLayer" instance=ExtResource("1_tr4aq")]
+
+[node name="Screen" type="ColorRect" parent="."]
+offset_right = 1397.0
+offset_bottom = 679.0
+color = Color(0.263689, 0.376222, 0, 1)
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(660, 376)
+scale = Vector2(4.74219, 1.90625)
+texture = ExtResource("1_1krmt")

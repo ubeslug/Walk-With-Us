@@ -1,0 +1,29 @@
+~ scene1
+DEBUG: This is the first scene
+DEBUG: Here are some choices
+- First Choice
+	DEBUG: You chose the first choice.
+- Second Choice
+	DEBUG: You chose the second choice.
+DEBUG: End of conversation
+=> END
+
+~ scene2a
+DEBUG: This is scene 2a
+DEBUG: Here are some choices
+- First Choice
+	DEBUG: You chose the first choice.
+- Second Choice
+	DEBUG: You chose the second choice.
+DEBUG: End of conversation
+=> END
+
+~ scene2b
+DEBUG: This is scene 2b
+DEBUG: Here are some choices
+- First Choice
+	DEBUG: You chose the first choice.
+- Second Choice
+	DEBUG: You chose the second choice.
+DEBUG: End of conversation
+=> END

@@ -1,0 +1,113 @@
+[gd_scene load_steps=2 format=3 uid="uid://1yu00uqnngve"]
+
+[ext_resource type="PackedScene" uid="uid://cid5ggvtu6i8a" path="res://scenes/inventory_item.tscn" id="1_ij48x"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Inventory" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 1397.0
+offset_right = 1920.0
+offset_bottom = 679.0
+color = Color(0.6616, 0.638328, 0.656179, 1)
+
+[node name="Label" type="Label" parent="Inventory"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 17.0
+offset_right = 65.0
+offset_bottom = 40.0
+theme_override_font_sizes/font_size = 30
+text = "Inventory"
+
+[node name="InventoryItem" parent="Inventory" instance=ExtResource("1_ij48x")]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 91.0
+offset_right = 164.0
+offset_bottom = 219.0
+
+[node name="InventoryItem2" parent="Inventory" instance=ExtResource("1_ij48x")]
+layout_mode = 0
+offset_left = 190.0
+offset_top = 94.0
+offset_right = 318.0
+offset_bottom = 222.0
+
+[node name="InventoryItem3" parent="Inventory" instance=ExtResource("1_ij48x")]
+layout_mode = 0
+offset_left = 347.0
+offset_top = 99.0
+offset_right = 475.0
+offset_bottom = 227.0
+
+[node name="Text" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 679.0
+offset_right = 1397.0
+offset_bottom = 1081.0
+color = Color(0.357373, 0.337422, 0.35278, 1)
+
+[node name="TextBox" type="Label" parent="Text"]
+visible = false
+layout_mode = 0
+offset_left = 73.0
+offset_top = 89.0
+offset_right = 1336.0
+offset_bottom = 363.0
+theme_override_font_sizes/font_size = 30
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+autowrap_mode = 1
+
+[node name="Name" type="Label" parent="Text"]
+visible = false
+layout_mode = 0
+offset_left = 74.0
+offset_top = 22.0
+offset_right = 349.0
+offset_bottom = 71.0
+theme_override_font_sizes/font_size = 35
+text = "(Monster Name)"
+
+[node name="choices" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 1397.0
+offset_top = 679.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.457361, 0.374049, 0.265387, 1)
+
+[node name="Button" type="Button" parent="choices"]
+visible = false
+layout_mode = 0
+offset_left = 171.0
+offset_top = 28.0
+offset_right = 341.0
+offset_bottom = 91.0
+theme_override_font_sizes/font_size = 40
+text = "Choice 1"
+
+[node name="Button2" type="Button" parent="choices"]
+visible = false
+layout_mode = 0
+offset_left = 171.0
+offset_top = 134.0
+offset_right = 341.0
+offset_bottom = 197.0
+theme_override_font_sizes/font_size = 40
+text = "Choice 2"
+
+[node name="Button3" type="Button" parent="choices"]
+visible = false
+layout_mode = 0
+offset_left = 171.0
+offset_top = 240.0
+offset_right = 341.0
+offset_bottom = 303.0
+theme_override_font_sizes/font_size = 40
+text = "Choice 3"
