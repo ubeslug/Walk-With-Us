@@ -13,7 +13,7 @@ layout_mode = 0
 offset_left = 1397.0
 offset_right = 1920.0
 offset_bottom = 679.0
-color = Color(0.6616, 0.638328, 0.656179, 1)
+color = Color(0.188294, 0.175849, 0.185435, 1)
 
 [node name="Label" type="Label" parent="Inventory"]
 layout_mode = 0
@@ -25,6 +25,7 @@ theme_override_font_sizes/font_size = 30
 text = "Inventory"
 
 [node name="InventoryItem" parent="Inventory" instance=ExtResource("1_ij48x")]
+visible = false
 layout_mode = 0
 offset_left = 36.0
 offset_top = 91.0
@@ -32,6 +33,7 @@ offset_right = 164.0
 offset_bottom = 219.0
 
 [node name="InventoryItem2" parent="Inventory" instance=ExtResource("1_ij48x")]
+visible = false
 layout_mode = 0
 offset_left = 190.0
 offset_top = 94.0
@@ -39,6 +41,7 @@ offset_right = 318.0
 offset_bottom = 222.0
 
 [node name="InventoryItem3" parent="Inventory" instance=ExtResource("1_ij48x")]
+visible = false
 layout_mode = 0
 offset_left = 347.0
 offset_top = 99.0
@@ -51,7 +54,7 @@ offset_left = -1.0
 offset_top = 679.0
 offset_right = 1397.0
 offset_bottom = 1081.0
-color = Color(0.357373, 0.337422, 0.35278, 1)
+color = Color(0, 0, 0, 1)
 
 [node name="TextBox" type="Label" parent="Text"]
 visible = false
@@ -80,7 +83,7 @@ offset_left = 1397.0
 offset_top = 679.0
 offset_right = 1920.0
 offset_bottom = 1080.0
-color = Color(0.457361, 0.374049, 0.265387, 1)
+color = Color(0, 0, 0, 1)
 
 [node name="Button" type="Button" parent="choices"]
 visible = false

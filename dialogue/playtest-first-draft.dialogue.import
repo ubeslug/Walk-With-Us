@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://ca3ksslp3p763"
+path="res://.godot/imported/playtest-first-draft.dialogue-a0e0d8b1d0314f1407e33c21d866feda.tres"
+
+[deps]
+
+source_file="res://dialogue/playtest-first-draft.dialogue"
+dest_files=["res://.godot/imported/playtest-first-draft.dialogue-a0e0d8b1d0314f1407e33c21d866feda.tres"]
+
+[params]
+
+defaults=true
