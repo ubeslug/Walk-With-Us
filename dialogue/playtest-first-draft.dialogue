@@ -12,4 +12,5 @@ You go to investigate the noise, finding a fox cub, shivering and wet. It must h
 	do fox_flee()
 	As it disappears down the road, you can swear you hear it cackling. You get up, dust yourself off, and continue on your journey. 
 	You lose 5 health
+do final_fade()
 => END
