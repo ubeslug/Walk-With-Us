@@ -1,3 +1,309 @@
-[gd_scene format=3 uid="uid://b2fv1rdqbkxdl"]
+[gd_scene load_steps=12 format=3 uid="uid://b2fv1rdqbkxdl"]
+
+[ext_resource type="Script" path="res://scripts/title.gd" id="1_4orjr"]
+[ext_resource type="Texture2D" uid="uid://irjtut17apbp" path="res://assets/backgrounds/temp_background.png" id="1_111pu"]
+[ext_resource type="Shader" path="res://shaders/vignette.gdshader" id="2_l631a"]
+
+[sub_resource type="Animation" id="Animation_jc2mf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/fade:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Background/Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-343, -380)]
+}
+
+[sub_resource type="Animation" id="Animation_xj53u"]
+resource_name = "background_shake"
+length = 30.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background/Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 30),
+"transitions": PackedFloat32Array(1, 0.366021),
+"update": 0,
+"values": [Vector2(-94, -481), Vector2(-424, -481)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j6ola"]
+_data = {
+"RESET": SubResource("Animation_jc2mf"),
+"background_shake": SubResource("Animation_xj53u")
+}
+
+[sub_resource type="Animation" id="Animation_t6ds7"]
+resource_name = "fade_in"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/fade:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/fade:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_hakxu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/fade:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/fade:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_gqei3"]
+resource_name = "fade-out"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/fade:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/fade:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xfctd"]
+_data = {
+"RESET": SubResource("Animation_hakxu"),
+"fade-out": SubResource("Animation_gqei3"),
+"fade_in": SubResource("Animation_t6ds7")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xfbv0"]
+shader = ExtResource("2_l631a")
+shader_parameter/alpha = 1.0
+shader_parameter/inner_radius = 0.0
+shader_parameter/outer_radius = 1.0
 
 [node name="Title" type="Node2D"]
+script = ExtResource("1_4orjr")
+
+[node name="AnimationPlayers" type="Node2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimationPlayers"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_j6ola")
+}
+autoplay = "background_shake"
+
+[node name="Fade handler" type="AnimationPlayer" parent="AnimationPlayers"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_xfctd")
+}
+autoplay = "fade_in"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -522.0
+offset_top = 100.0
+offset_right = 522.0
+offset_bottom = 332.0
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = -20
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 170
+text = "Walk with us"
+horizontal_alignment = 1
+
+[node name="Buttons" type="VBoxContainer" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -46.5
+offset_top = -68.0
+offset_right = 46.5
+offset_bottom = 68.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="new_game" type="Button" parent="CanvasLayer/Control/Buttons"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "New Game"
+
+[node name="continue" type="Button" parent="CanvasLayer/Control/Buttons"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Continue"
+
+[node name="Options" type="Button" parent="CanvasLayer/Control/Buttons"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Options"
+
+[node name="Quit" type="Button" parent="CanvasLayer/Control/Buttons"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Quit"
+
+[node name="quit_node" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="CanvasLayer/quit_node"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -305.5
+offset_top = -107.5
+offset_right = 305.5
+offset_bottom = 107.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/quit_node/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -118.0
+offset_top = -29.0
+offset_right = 118.0
+offset_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="label" type="Label" parent="CanvasLayer/quit_node/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Are you sure you want to 	quit?"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/quit_node/Panel/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="yes_quit" type="Button" parent="CanvasLayer/quit_node/Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 30
+text = "Yes"
+
+[node name="no_quit" type="Button" parent="CanvasLayer/quit_node/Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 30
+text = "No"
+
+[node name="fade" type="ColorRect" parent="CanvasLayer"]
+offset_right = 1928.0
+offset_bottom = 1091.0
+color = Color(0, 0, 0, 1)
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Background"]
+position = Vector2(-343, -380)
+texture = ExtResource("1_111pu")
+centered = false
+
+[node name="ColorRect" type="ColorRect" parent="Background"]
+material = SubResource("ShaderMaterial_xfbv0")
+offset_right = 1922.0
+offset_bottom = 1084.0
+
+[connection signal="pressed" from="CanvasLayer/Control/Buttons/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="CanvasLayer/quit_node/Panel/VBoxContainer/HBoxContainer/yes_quit" to="." method="_on_yes_quit_pressed"]
+[connection signal="pressed" from="CanvasLayer/quit_node/Panel/VBoxContainer/HBoxContainer/no_quit" to="." method="_on_no_quit_pressed"]
