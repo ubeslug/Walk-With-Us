@@ -15,8 +15,9 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	disable_quit_node(true)
-	#fade_handler.play("fade-in")
+	#fade_handler.play("fade_in")
 	#await fade_handler.animation_finished
+	#print("done with fade in")
 	#animation_player.play("background_shake")
 	
 

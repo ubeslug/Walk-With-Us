@@ -79,7 +79,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_gqei3"]
@@ -170,6 +170,24 @@ libraries = {
 }
 autoplay = "fade_in"
 
+[node name="Background" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Background"]
+position = Vector2(-343, -380)
+texture = ExtResource("1_111pu")
+centered = false
+
+[node name="FogLayer" parent="Background" instance=ExtResource("3_5dqjp")]
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 1926.0
+offset_bottom = 1088.0
+
+[node name="ColorRect" type="ColorRect" parent="Background"]
+material = SubResource("ShaderMaterial_xfbv0")
+offset_right = 1922.0
+offset_bottom = 1084.0
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Control" type="Control" parent="CanvasLayer"]
@@ -219,11 +237,13 @@ text = "New Game"
 [node name="continue" type="Button" parent="CanvasLayer/Control/Buttons"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
+disabled = true
 text = "Continue"
 
 [node name="Options" type="Button" parent="CanvasLayer/Control/Buttons"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
+disabled = true
 text = "Options"
 
 [node name="Quit" type="Button" parent="CanvasLayer/Control/Buttons"]
@@ -232,6 +252,7 @@ theme_override_font_sizes/font_size = 30
 text = "Quit"
 
 [node name="quit_node" type="Control" parent="CanvasLayer"]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -297,27 +318,10 @@ theme_override_font_sizes/font_size = 30
 text = "No"
 
 [node name="fade" type="ColorRect" parent="CanvasLayer"]
+visible = false
 offset_right = 1928.0
 offset_bottom = 1091.0
 color = Color(0, 0, 0, 1)
-
-[node name="Background" type="Node2D" parent="."]
-
-[node name="Sprite2D" type="Sprite2D" parent="Background"]
-position = Vector2(-343, -380)
-texture = ExtResource("1_111pu")
-centered = false
-
-[node name="FogLayer" parent="Background" instance=ExtResource("3_5dqjp")]
-offset_left = -2.0
-offset_top = -2.0
-offset_right = 1926.0
-offset_bottom = 1088.0
-
-[node name="ColorRect" type="ColorRect" parent="Background"]
-material = SubResource("ShaderMaterial_xfbv0")
-offset_right = 1922.0
-offset_bottom = 1084.0
 
 [connection signal="pressed" from="CanvasLayer/Control/Buttons/new_game" to="." method="_on_new_game_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/Buttons/Quit" to="." method="_on_quit_pressed"]

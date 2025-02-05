@@ -118,6 +118,7 @@ theme_override_font_sizes/font_size = 40
 text = "Choice 3"
 
 [node name="Example Images" type="Node2D" parent="."]
+visible = false
 
 [node name="PixelArtInventory" type="Sprite2D" parent="Example Images"]
 visible = false

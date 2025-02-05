@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://1yu00uqnngve" path="res://scenes/test_ui.tscn" id="1_8qjd0"]
 [ext_resource type="Resource" uid="uid://ca3ksslp3p763" path="res://dialogue/playtest-first-draft.dialogue" id="1_11lh5"]
-[ext_resource type="Texture2D" uid="uid://irjtut17apbp" path="res://assets/backgrounds/temp_background.png" id="2_57ash"]
+[ext_resource type="Texture2D" uid="uid://byqjbkmwu7bq5" path="res://assets/backgrounds/Walk_With_Us_-_Forest_Background-01.png" id="2_c5tjm"]
 [ext_resource type="Texture2D" uid="uid://c1umcmmic2cvk" path="res://assets/backgrounds/fox_1.PNG" id="3_8ri4c"]
 [ext_resource type="Texture2D" uid="uid://csyn6r5dfvqgy" path="res://assets/backgrounds/fox_2.PNG" id="4_5rssr"]
 [ext_resource type="Shader" path="res://shaders/fog.gdshader" id="5_rbgye"]
@@ -56,11 +56,11 @@ func final_fade() -> void:
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8i1ju"]
 shader = ExtResource("5_rbgye")
-shader_parameter/base_color = Color(0.797321, 0.840296, 0.817049, 0.403922)
+shader_parameter/base_color = Color(0.796078, 0.839216, 0.815686, 0.231373)
 shader_parameter/location_fade = 1.35
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_5r81a"]
-frequency = 0.0194
+frequency = 0.0134
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_0qvxn"]
 seamless = true
@@ -386,9 +386,9 @@ dialogue_resource = ExtResource("1_11lh5")
 [node name="Backgrounds" type="Node2D" parent="."]
 
 [node name="forest" type="Sprite2D" parent="Backgrounds"]
-position = Vector2(-1.07648, -253)
-scale = Vector2(0.574954, 0.574954)
-texture = ExtResource("2_57ash")
+position = Vector2(-1.00009, -107)
+scale = Vector2(0.291621, 0.291621)
+texture = ExtResource("2_c5tjm")
 centered = false
 
 [node name="fog_layer" type="TextureRect" parent="Backgrounds"]
