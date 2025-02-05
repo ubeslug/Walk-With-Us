@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://b2fv1rdqbkxdl"]
+[gd_scene load_steps=13 format=3 uid="uid://b2fv1rdqbkxdl"]
 
 [ext_resource type="Script" path="res://scripts/title.gd" id="1_4orjr"]
 [ext_resource type="Texture2D" uid="uid://irjtut17apbp" path="res://assets/backgrounds/temp_background.png" id="1_111pu"]
 [ext_resource type="Shader" path="res://shaders/vignette.gdshader" id="2_l631a"]
+[ext_resource type="PackedScene" uid="uid://cunqrw485lwt5" path="res://scenes/layer_effects/fog_layer.tscn" id="3_5dqjp"]
 
 [sub_resource type="Animation" id="Animation_jc2mf"]
 length = 0.001
@@ -52,34 +53,6 @@ tracks/0/keys = {
 _data = {
 "RESET": SubResource("Animation_jc2mf"),
 "background_shake": SubResource("Animation_xj53u")
-}
-
-[sub_resource type="Animation" id="Animation_t6ds7"]
-resource_name = "fade_in"
-length = 3.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasLayer/fade:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CanvasLayer/fade:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
 }
 
 [sub_resource type="Animation" id="Animation_hakxu"]
@@ -135,6 +108,34 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_t6ds7"]
+resource_name = "fade_in"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/fade:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/fade:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xfctd"]
@@ -193,7 +194,7 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_y = -20
 theme_override_constants/shadow_outline_size = 5
 theme_override_font_sizes/font_size = 170
-text = "Walk with us"
+text = "Walk With Us"
 horizontal_alignment = 1
 
 [node name="Buttons" type="VBoxContainer" parent="CanvasLayer/Control"]
@@ -237,6 +238,14 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/quit_node"]
+layout_mode = 0
+offset_left = 657.0
+offset_top = 435.0
+offset_right = 1264.0
+offset_bottom = 646.0
+color = Color(0.241156, 0.241156, 0.241156, 1)
 
 [node name="Panel" type="Panel" parent="CanvasLayer/quit_node"]
 layout_mode = 1
@@ -299,11 +308,18 @@ position = Vector2(-343, -380)
 texture = ExtResource("1_111pu")
 centered = false
 
+[node name="FogLayer" parent="Background" instance=ExtResource("3_5dqjp")]
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 1926.0
+offset_bottom = 1088.0
+
 [node name="ColorRect" type="ColorRect" parent="Background"]
 material = SubResource("ShaderMaterial_xfbv0")
 offset_right = 1922.0
 offset_bottom = 1084.0
 
+[connection signal="pressed" from="CanvasLayer/Control/Buttons/new_game" to="." method="_on_new_game_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/Buttons/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="CanvasLayer/quit_node/Panel/VBoxContainer/HBoxContainer/yes_quit" to="." method="_on_yes_quit_pressed"]
 [connection signal="pressed" from="CanvasLayer/quit_node/Panel/VBoxContainer/HBoxContainer/no_quit" to="." method="_on_no_quit_pressed"]

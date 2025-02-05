@@ -1,10 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://cdsuod8p6gc7t"]
+[gd_scene load_steps=19 format=3 uid="uid://cdsuod8p6gc7t"]
 
 [ext_resource type="PackedScene" uid="uid://1yu00uqnngve" path="res://scenes/test_ui.tscn" id="1_8qjd0"]
 [ext_resource type="Resource" uid="uid://ca3ksslp3p763" path="res://dialogue/playtest-first-draft.dialogue" id="1_11lh5"]
 [ext_resource type="Texture2D" uid="uid://irjtut17apbp" path="res://assets/backgrounds/temp_background.png" id="2_57ash"]
 [ext_resource type="Texture2D" uid="uid://c1umcmmic2cvk" path="res://assets/backgrounds/fox_1.PNG" id="3_8ri4c"]
 [ext_resource type="Texture2D" uid="uid://csyn6r5dfvqgy" path="res://assets/backgrounds/fox_2.PNG" id="4_5rssr"]
+[ext_resource type="Shader" path="res://shaders/fog.gdshader" id="5_rbgye"]
 
 [sub_resource type="GDScript" id="GDScript_jxcyp"]
 script/source = "extends Node2D
@@ -15,11 +16,13 @@ const Balloon = preload(\"res://scenes/dialogue balloons/balloon.tscn\")
 @export var dialogue_start: String = \"start\"
 
 @onready var animation_player = $AnimationPlayer
+@onready var fog_layer = $Backgrounds/fog_layer
 
 
 
 func _ready():
 	animation_player.play(\"startup\")
+	fog_layer.visible = true
 	var balloon: Node = Balloon.instantiate()
 	get_tree().current_scene.add_child(balloon)
 	balloon.start(dialogue_resource, dialogue_start)
@@ -48,7 +51,22 @@ func final_fade() -> void:
 	animation_player.play(\"fade_out\")
 	await animation_player.animation_finished
 	# move to next scene
+	get_tree().change_scene_to_file(\"res://scenes/menus/Title.tscn\")
 "
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8i1ju"]
+shader = ExtResource("5_rbgye")
+shader_parameter/base_color = Color(0.797321, 0.840296, 0.817049, 0.403922)
+shader_parameter/location_fade = 1.35
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_5r81a"]
+frequency = 0.0194
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_0qvxn"]
+seamless = true
+seamless_blend_skirt = 1.0
+normalize = false
+noise = SubResource("FastNoiseLite_5r81a")
 
 [sub_resource type="Animation" id="Animation_mnh07"]
 length = 0.001
@@ -373,6 +391,13 @@ scale = Vector2(0.574954, 0.574954)
 texture = ExtResource("2_57ash")
 centered = false
 
+[node name="fog_layer" type="TextureRect" parent="Backgrounds"]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_8i1ju")
+offset_right = 1404.0
+offset_bottom = 693.0
+texture = SubResource("NoiseTexture2D_0qvxn")
+
 [node name="fox_timid" type="Sprite2D" parent="Backgrounds"]
 visible = false
 modulate = Color(1, 1, 1, 0)
@@ -403,7 +428,6 @@ libraries = {
 }
 
 [node name="Fade" type="ColorRect" parent="."]
-visible = false
 offset_right = 1397.0
 offset_bottom = 679.0
 color = Color(0, 0, 0, 1)

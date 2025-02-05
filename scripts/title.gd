@@ -39,3 +39,9 @@ func _on_yes_quit_pressed() -> void:
 
 func _on_no_quit_pressed() -> void:
 	disable_quit_node(true)
+
+
+func _on_new_game_pressed():
+	fade_handler.play("fade-out")
+	await fade_handler.animation_finished
+	get_tree().change_scene_to_file("res://scenes/playtest scenes/intro.tscn")

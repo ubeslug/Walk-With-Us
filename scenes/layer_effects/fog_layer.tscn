@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://cunqrw485lwt5"]
+
+[ext_resource type="Shader" path="res://shaders/fog.gdshader" id="1_f3ytr"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m7i41"]
+shader = ExtResource("1_f3ytr")
+shader_parameter/base_color = Color(0.685249, 0.748702, 0.701276, 0.87451)
+shader_parameter/location_fade = 1.35
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_o84w3"]
+frequency = 0.0122
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_70kei"]
+seamless = true
+seamless_blend_skirt = 1.0
+normalize = false
+noise = SubResource("FastNoiseLite_o84w3")
+
+[node name="FogLayer" type="TextureRect"]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_m7i41")
+offset_right = 1401.0
+offset_bottom = 686.0
+texture = SubResource("NoiseTexture2D_70kei")
