@@ -14,7 +14,7 @@ offset_bottom = 40.0
 layout_mode = 0
 offset_left = 1397.0
 offset_right = 1920.0
-offset_bottom = 679.0
+offset_bottom = 1092.0
 color = Color(0.188294, 0.175849, 0.185435, 1)
 
 [node name="Label" type="Label" parent="Inventory"]
@@ -80,6 +80,7 @@ theme_override_font_sizes/font_size = 35
 text = "(Monster Name)"
 
 [node name="choices" type="ColorRect" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 1397.0
 offset_top = 679.0
