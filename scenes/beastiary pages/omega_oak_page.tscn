@@ -1,0 +1,71 @@
+[gd_scene load_steps=5 format=3 uid="uid://baykr64ps5nxn"]
+
+[ext_resource type="Script" path="res://scripts/page_base.gd" id="1_d01q4"]
+[ext_resource type="PackedScene" uid="uid://beneqpcnms27p" path="res://scenes/beastiary pages/_page_base.tscn" id="2_q5c6q"]
+[ext_resource type="Texture2D" uid="uid://d0av6ovmiaj4c" path="res://assets/sketches/Omega_oak.png" id="3_gkven"]
+[ext_resource type="Theme" uid="uid://bw2dm0g8j123d" path="res://themes/beastiary_writing.tres" id="4_ev8rg"]
+
+[node name="omega_oak_page" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_d01q4")
+
+[node name="page_base" parent="." instance=ExtResource("2_q5c6q")]
+layout_mode = 1
+
+[node name="Contents" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="sketch" type="Sprite2D" parent="Contents"]
+position = Vector2(617.689, 560)
+scale = Vector2(0.585301, 0.585301)
+texture = ExtResource("3_gkven")
+
+[node name="entry name" type="Label" parent="Contents"]
+layout_mode = 0
+offset_left = 314.0
+offset_top = 176.0
+offset_right = 564.0
+offset_bottom = 229.0
+theme = ExtResource("4_ev8rg")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "Omega Oak"
+
+[node name="entry passage" type="Label" parent="Contents"]
+layout_mode = 0
+offset_left = 1076.0
+offset_top = 178.0
+offset_right = 1612.0
+offset_bottom = 755.0
+theme = ExtResource("4_ev8rg")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "While The Oak mainly stays in their base form, on rare occasions they may evolve into what is known as a Omega Oak. They are much bigger and stronger than their usual counterparts, not just satisfied with turning other travellers into them but hungering for flesh. Omega Oaks will similarly remain docile, with their breathing harder to hear against their thicker trunks, until they are approached. However, rather than infecting a new host, it will reveal its true form, with wooden sharp teeth and branches for arms that will lunge forward and eat whatever comes near it. To bring animals and people closer to it, the Omega Oak will sometimes extrude a sap that creates a smell desirable by whatever it tries to draw in. It is advised to avoid large trees covered in sap or smells that do not fit the location you are currently in such as something sickly sweet or savory."
+autowrap_mode = 3
+
+[node name="book_worms" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="level_1" type="Sprite2D" parent="book_worms"]
+visible = false
+
+[node name="level_2" type="Sprite2D" parent="book_worms"]
+visible = false
+
+[node name="level_3" type="Sprite2D" parent="book_worms"]
+visible = false

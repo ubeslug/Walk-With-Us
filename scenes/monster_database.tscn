@@ -1,4 +1,11 @@
-[gd_scene format=3 uid="uid://bly2o8v0fqmvi"]
+[gd_scene load_steps=7 format=3 uid="uid://bly2o8v0fqmvi"]
+
+[ext_resource type="PackedScene" uid="uid://br731a0smpgml" path="res://scenes/beastiary pages/cloaked_jester_page.tscn" id="1_s1jh2"]
+[ext_resource type="PackedScene" uid="uid://58f2fodlqs8q" path="res://scenes/beastiary pages/jackalope_page.tscn" id="2_unoaq"]
+[ext_resource type="PackedScene" uid="uid://dkc24geafgq41" path="res://scenes/beastiary pages/mimetic_page.tscn" id="3_bbeo5"]
+[ext_resource type="PackedScene" uid="uid://cyq20djsa0jul" path="res://scenes/beastiary pages/oak_page.tscn" id="4_f05lb"]
+[ext_resource type="PackedScene" uid="uid://baykr64ps5nxn" path="res://scenes/beastiary pages/omega_oak_page.tscn" id="5_8uskg"]
+[ext_resource type="PackedScene" uid="uid://cfm03oskwcxbv" path="res://scenes/beastiary pages/red_fox_page.tscn" id="6_cb8es"]
 
 [node name="MonsterDatabase" type="Control"]
 layout_mode = 3
@@ -7,3 +14,29 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="pages" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="jester_page" parent="pages" instance=ExtResource("1_s1jh2")]
+layout_mode = 1
+
+[node name="jackalope_page" parent="pages" instance=ExtResource("2_unoaq")]
+layout_mode = 1
+
+[node name="MimeticPage" parent="pages" instance=ExtResource("3_bbeo5")]
+layout_mode = 1
+
+[node name="oak_page" parent="pages" instance=ExtResource("4_f05lb")]
+layout_mode = 1
+
+[node name="omega_oak_page" parent="pages" instance=ExtResource("5_8uskg")]
+layout_mode = 1
+
+[node name="red_fox_page" parent="pages" instance=ExtResource("6_cb8es")]
+layout_mode = 1

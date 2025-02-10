@@ -1,8 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://1yu00uqnngve"]
+[gd_scene load_steps=2 format=3 uid="uid://1yu00uqnngve"]
 
 [ext_resource type="PackedScene" uid="uid://cid5ggvtu6i8a" path="res://scenes/inventory_item.tscn" id="1_ij48x"]
-[ext_resource type="Texture2D" uid="uid://1k0217b7pg8i" path="res://assets/ui/Pixel Art Inventory.png" id="2_yk5i2"]
-[ext_resource type="Texture2D" uid="uid://s4j3yivaqr2r" path="res://assets/item sprites/Pixel Art Box.png" id="3_exbp6"]
 
 [node name="ui" type="Control"]
 layout_mode = 3
@@ -12,9 +10,9 @@ offset_bottom = 40.0
 
 [node name="Inventory" type="ColorRect" parent="."]
 layout_mode = 0
-offset_left = 1397.0
+offset_left = 1330.0
 offset_right = 1920.0
-offset_bottom = 1092.0
+offset_bottom = 1083.0
 color = Color(0.188294, 0.175849, 0.185435, 1)
 
 [node name="Label" type="Label" parent="Inventory"]
@@ -54,7 +52,7 @@ offset_bottom = 227.0
 layout_mode = 0
 offset_left = -1.0
 offset_top = 679.0
-offset_right = 1397.0
+offset_right = 1330.0
 offset_bottom = 1081.0
 color = Color(0, 0, 0, 1)
 
@@ -119,26 +117,8 @@ theme_override_font_sizes/font_size = 40
 text = "Choice 3"
 
 [node name="Example Images" type="Node2D" parent="."]
-visible = false
 
-[node name="PixelArtInventory" type="Sprite2D" parent="Example Images"]
+[node name="ColorRect" type="ColorRect" parent="Example Images"]
 visible = false
-position = Vector2(1489, 404)
-rotation = 1.5708
-scale = Vector2(6, 6)
-texture = ExtResource("2_yk5i2")
-
-[node name="PixelArtBox2" type="Sprite2D" parent="Example Images"]
-visible = false
-position = Vector2(1652, 160)
-texture = ExtResource("3_exbp6")
-
-[node name="PixelArtBox3" type="Sprite2D" parent="Example Images"]
-visible = false
-position = Vector2(1808, 165)
-texture = ExtResource("3_exbp6")
-
-[node name="PixelArtBox" type="Sprite2D" parent="Example Images"]
-visible = false
-position = Vector2(1497, 157)
-texture = ExtResource("3_exbp6")
+offset_right = 1330.0
+offset_bottom = 748.0
