@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://cwpo133i6q0yf"]
+
+[ext_resource type="Script" path="res://scripts/inventory_item.gd" id="1_3x0g2"]
+
+[node name="InventoryItem" type="MenuButton"]
+offset_right = 8.0
+offset_bottom = 8.0
+item_count = 4
+popup/item_0/text = "Check"
+popup/item_1/text = "Drop"
+popup/item_1/id = 1
+popup/item_2/text = "Trade"
+popup/item_2/id = 2
+popup/item_3/text = "Consume"
+popup/item_3/id = 3
+popup/item_3/disabled = true
+script = ExtResource("1_3x0g2")

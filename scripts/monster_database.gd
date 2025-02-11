@@ -1,16 +1,10 @@
-extends Control
+extends CanvasLayer
 
 var current_page: int = 0
 
 @onready var pages: Control = $pages
 
-@export var page_list: Array[Node] = [
-	#$pages/jackalope_page,
-	#$pages/red_fox_page,
-	#$pages/MimeticPage,
-	#$pages/oak_page,
-	#$pages/omega_oak_page,
-	#$pages/jester_page
+var page_list: Array[Node] = [
 ]
 
 
@@ -19,6 +13,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	load_page(current_page)
+	visible = Globals.bestiary_active
 
 func process_pages() -> void:
 	for i in pages.get_children():
@@ -29,6 +24,7 @@ func load_page(page: int) -> void:
 		i.visible = false
 	page_list[page].visible = true
 
+
 func _on_next_page_pressed() -> void:
 	if current_page < page_list.size() - 1:
 		current_page += 1
@@ -38,3 +34,7 @@ func _on_next_page_pressed() -> void:
 func _on_prev_page_pressed() -> void:
 	if current_page > 0:
 		current_page -= 1
+
+
+func _on_texture_button_pressed():
+	Globals.bestiary_active = false

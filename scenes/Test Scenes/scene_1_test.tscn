@@ -14,7 +14,13 @@ offset_right = 1920.0
 offset_bottom = 1082.0
 color = Color(0.443687, 0.61218, 0.306606, 1)
 
-[node name="Scene 2a" type="Button" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" parent="CanvasLayer" instance=ExtResource("2_e8xwq")]
+metadata/_edit_use_anchors_ = true
+
+[node name="Scene 2a" type="Button" parent="CanvasLayer"]
+visible = false
 offset_left = 181.0
 offset_top = 114.0
 offset_right = 280.0
@@ -22,7 +28,8 @@ offset_bottom = 187.0
 text = "To Scene 2a
 "
 
-[node name="Scene 2b" type="Button" parent="."]
+[node name="Scene 2b" type="Button" parent="CanvasLayer"]
+visible = false
 offset_left = 708.0
 offset_top = 262.0
 offset_right = 808.0
@@ -30,10 +37,5 @@ offset_bottom = 335.0
 text = "To Scene 2b
 "
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Control" parent="CanvasLayer" instance=ExtResource("2_e8xwq")]
-metadata/_edit_use_anchors_ = true
-
-[connection signal="pressed" from="Scene 2a" to="." method="_on_scene_2a_pressed"]
-[connection signal="pressed" from="Scene 2b" to="." method="_on_scene_2b_pressed"]
+[connection signal="pressed" from="CanvasLayer/Scene 2a" to="." method="_on_scene_2a_pressed"]
+[connection signal="pressed" from="CanvasLayer/Scene 2b" to="." method="_on_scene_2b_pressed"]

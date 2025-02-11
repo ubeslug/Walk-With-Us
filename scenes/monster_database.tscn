@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bly2o8v0fqmvi"]
+[gd_scene load_steps=15 format=3 uid="uid://bly2o8v0fqmvi"]
 
 [ext_resource type="PackedScene" uid="uid://br731a0smpgml" path="res://scenes/beastiary pages/cloaked_jester_page.tscn" id="1_s1jh2"]
 [ext_resource type="Script" path="res://scripts/monster_database.gd" id="1_wqoqc"]
@@ -11,14 +11,15 @@
 [ext_resource type="Texture2D" uid="uid://dajrtc6pexgv5" path="res://assets/ui/pencil_arrow_default.png" id="7_te87f"]
 [ext_resource type="Texture2D" uid="uid://ha2gfqasdlrv" path="res://assets/ui/pencil_arrow_down.png" id="8_sa0pw"]
 [ext_resource type="Texture2D" uid="uid://dknxkoxf7ybja" path="res://assets/ui/pencil_arrow_highlight.png" id="9_p7i65"]
+[ext_resource type="Texture2D" uid="uid://cxmuuj1w6v5q8" path="res://assets/ui/pencil_x_default.png" id="12_t14eg"]
+[ext_resource type="Texture2D" uid="uid://bj4vk8bahmgnn" path="res://assets/ui/pencil_x_down.png" id="13_fceu2"]
+[ext_resource type="Texture2D" uid="uid://bov38b7j5a08t" path="res://assets/ui/pencil_x_highlight.png" id="14_o56v1"]
 
-[node name="MonsterDatabase" type="Control"]
-layout_mode = 3
-anchors_preset = 0
+[node name="MonsterDatabase" type="CanvasLayer"]
+layer = 101
 script = ExtResource("1_wqoqc")
 
 [node name="page_base" parent="." instance=ExtResource("2_sstd4")]
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -26,7 +27,7 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 
 [node name="pages" type="Control" parent="."]
-layout_mode = 1
+layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -64,7 +65,7 @@ layout_mode = 1
 layout_mode = 1
 
 [node name="Arrows" type="Control" parent="."]
-layout_mode = 1
+layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -96,5 +97,16 @@ texture_normal = ExtResource("7_te87f")
 texture_pressed = ExtResource("8_sa0pw")
 texture_hover = ExtResource("9_p7i65")
 
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = 283.0
+offset_top = 144.0
+offset_right = 539.0
+offset_bottom = 400.0
+scale = Vector2(0.25, 0.25)
+texture_normal = ExtResource("12_t14eg")
+texture_pressed = ExtResource("13_fceu2")
+texture_hover = ExtResource("14_o56v1")
+
 [connection signal="pressed" from="Arrows/next_page" to="." method="_on_next_page_pressed"]
 [connection signal="pressed" from="Arrows/prev_page" to="." method="_on_prev_page_pressed"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

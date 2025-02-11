@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://1yu00uqnngve"]
+[gd_scene load_steps=5 format=3 uid="uid://1yu00uqnngve"]
 
 [ext_resource type="Script" path="res://scripts/ui.gd" id="1_0th41"]
-[ext_resource type="PackedScene" uid="uid://cid5ggvtu6i8a" path="res://scenes/inventory_item.tscn" id="1_ij48x"]
-[ext_resource type="Texture2D" uid="uid://ptuu44xqyqb5" path="res://assets/item sprites/Package.PNG" id="2_ej24e"]
-[ext_resource type="Texture2D" uid="uid://fin0t3ytf1ew" path="res://assets/item sprites/Book.PNG" id="3_csppl"]
+[ext_resource type="PackedScene" uid="uid://cxoatkheomly" path="res://scenes/items/package_item.tscn" id="2_hyasa"]
+[ext_resource type="PackedScene" uid="uid://csfiit70pipqw" path="res://scenes/items/bestiary_item.tscn" id="3_d5d06"]
 [ext_resource type="PackedScene" uid="uid://bly2o8v0fqmvi" path="res://scenes/monster_database.tscn" id="4_speqq"]
 
 [node name="ui" type="Control"]
@@ -14,71 +13,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0th41")
-
-[node name="Inventory" type="ColorRect" parent="."]
-layout_mode = 0
-offset_left = 1330.0
-offset_right = 1920.0
-offset_bottom = 1083.0
-color = Color(0.188294, 0.175849, 0.185435, 1)
-
-[node name="Label" type="Label" parent="Inventory"]
-layout_mode = 0
-offset_left = 25.0
-offset_top = 17.0
-offset_right = 65.0
-offset_bottom = 40.0
-theme_override_font_sizes/font_size = 30
-text = "Inventory"
-
-[node name="InventoryItem" parent="Inventory" instance=ExtResource("1_ij48x")]
-visible = false
-layout_mode = 0
-offset_left = 36.0
-offset_top = 91.0
-offset_right = 164.0
-offset_bottom = 219.0
-
-[node name="InventoryItem2" parent="Inventory" instance=ExtResource("1_ij48x")]
-visible = false
-layout_mode = 0
-offset_left = 190.0
-offset_top = 94.0
-offset_right = 318.0
-offset_bottom = 222.0
-
-[node name="InventoryItem3" parent="Inventory" instance=ExtResource("1_ij48x")]
-visible = false
-layout_mode = 0
-offset_left = 347.0
-offset_top = 99.0
-offset_right = 475.0
-offset_bottom = 227.0
-
-[node name="Inventory" type="VBoxContainer" parent="Inventory"]
-layout_mode = 0
-offset_left = 40.0
-offset_top = 92.0
-offset_right = 80.0
-offset_bottom = 132.0
-
-[node name="Row1" type="HBoxContainer" parent="Inventory/Inventory"]
-layout_mode = 2
-
-[node name="Slot1" type="MenuButton" parent="Inventory/Inventory/Row1"]
-layout_mode = 2
-icon = ExtResource("2_ej24e")
-item_count = 1
-popup/item_0/text = "Check"
-
-[node name="BookSlot" type="MenuButton" parent="Inventory/Inventory/Row1"]
-layout_mode = 2
-icon = ExtResource("3_csppl")
-item_count = 2
-popup/item_0/text = "Check"
-popup/item_0/id = 1
-popup/item_1/text = "Open"
-popup/item_1/id = 1
 
 [node name="Text" type="ColorRect" parent="."]
 layout_mode = 0
@@ -109,51 +43,38 @@ offset_bottom = 71.0
 theme_override_font_sizes/font_size = 35
 text = "(Monster Name)"
 
-[node name="choices" type="ColorRect" parent="."]
-visible = false
+[node name="Inventory" type="ColorRect" parent="."]
 layout_mode = 0
-offset_left = 1397.0
-offset_top = 679.0
+offset_left = 1330.0
 offset_right = 1920.0
-offset_bottom = 1080.0
-color = Color(0, 0, 0, 1)
+offset_bottom = 1083.0
+color = Color(0.188294, 0.175849, 0.185435, 1)
 
-[node name="Button" type="Button" parent="choices"]
-visible = false
+[node name="Label" type="Label" parent="Inventory"]
 layout_mode = 0
-offset_left = 171.0
-offset_top = 28.0
-offset_right = 341.0
-offset_bottom = 91.0
-theme_override_font_sizes/font_size = 40
-text = "Choice 1"
+offset_left = 25.0
+offset_top = 17.0
+offset_right = 65.0
+offset_bottom = 40.0
+theme_override_font_sizes/font_size = 30
+text = "Inventory"
 
-[node name="Button2" type="Button" parent="choices"]
-visible = false
+[node name="Inventory" type="VBoxContainer" parent="Inventory"]
 layout_mode = 0
-offset_left = 171.0
-offset_top = 134.0
-offset_right = 341.0
-offset_bottom = 197.0
-theme_override_font_sizes/font_size = 40
-text = "Choice 2"
+offset_left = 40.0
+offset_top = 92.0
+offset_right = 80.0
+offset_bottom = 132.0
 
-[node name="Button3" type="Button" parent="choices"]
-visible = false
-layout_mode = 0
-offset_left = 171.0
-offset_top = 240.0
-offset_right = 341.0
-offset_bottom = 303.0
-theme_override_font_sizes/font_size = 40
-text = "Choice 3"
+[node name="Row1" type="HBoxContainer" parent="Inventory/Inventory"]
+layout_mode = 2
+theme_override_constants/separation = 128
 
-[node name="Example Images" type="Node2D" parent="."]
+[node name="PackageItem" parent="Inventory/Inventory/Row1" instance=ExtResource("2_hyasa")]
+layout_mode = 2
 
-[node name="ColorRect" type="ColorRect" parent="Example Images"]
-visible = false
-offset_right = 1330.0
-offset_bottom = 748.0
+[node name="BestiaryItem" parent="Inventory/Inventory/Row1" instance=ExtResource("3_d5d06")]
+layout_mode = 2
 
 [node name="MonsterDatabase" parent="." instance=ExtResource("4_speqq")]
 visible = false
@@ -165,5 +86,3 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
-
-[connection signal="pressed" from="Inventory/Inventory/Row1/BookSlot" to="." method="_on_book_slot_pressed"]

@@ -1,13 +1,13 @@
 extends MenuButton
 
-@onready var item_sprite = $ItemSprite
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+@onready var item_sprite = icon
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+@export_category("Misc")
+@export var desc: String
+@export var heal_amt: int
+
+
 func _process(delta):
 	pass
 

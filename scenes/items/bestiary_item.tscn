@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://csfiit70pipqw"]
+
+[ext_resource type="PackedScene" uid="uid://cwpo133i6q0yf" path="res://scenes/items/inventory_item.tscn" id="1_f0b6t"]
+[ext_resource type="Texture2D" uid="uid://fin0t3ytf1ew" path="res://assets/item sprites/Book.PNG" id="2_mu403"]
+
+[sub_resource type="GDScript" id="GDScript_dqvkx"]
+script/source = "extends Control
+
+@onready var inventory_item = $InventoryItem
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	var popup = inventory_item.get_popup()
+	
+	popup.id_pressed.connect(file_menu)
+
+
+func file_menu(id):
+	print(id)
+	match(id):
+		0:
+			Globals.bestiary_active = true
+"
+
+[node name="BestiaryItem" type="Panel"]
+offset_right = 128.0
+offset_bottom = 128.0
+script = SubResource("GDScript_dqvkx")
+
+[node name="InventoryItem" parent="." instance=ExtResource("1_f0b6t")]
+layout_mode = 1
+offset_right = 136.0
+offset_bottom = 136.0
+icon = ExtResource("2_mu403")
+item_count = 1
+desc = ""
+heal_amt = 0
