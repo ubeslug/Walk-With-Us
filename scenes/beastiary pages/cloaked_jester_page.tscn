@@ -19,23 +19,25 @@ layout_mode = 1
 
 [node name="Contents" type="Control" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="sketch" type="Sprite2D" parent="Contents"]
-position = Vector2(606.75, 522.498)
+position = Vector2(-349, 60.9999)
 scale = Vector2(0.562295, 0.562295)
 texture = ExtResource("3_qgava")
 
 [node name="entry name" type="Label" parent="Contents"]
 layout_mode = 0
-offset_left = 314.0
-offset_top = 187.0
-offset_right = 484.0
-offset_bottom = 240.0
+offset_left = -622.0
+offset_top = -345.0
+offset_right = -312.0
+offset_bottom = -292.0
 theme = ExtResource("4_cu1cp")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
@@ -43,10 +45,10 @@ text = "Cloaked Jester"
 
 [node name="entry passage" type="Label" parent="Contents"]
 layout_mode = 0
-offset_left = 1076.0
-offset_top = 178.0
-offset_right = 1612.0
-offset_bottom = 755.0
+offset_left = 97.0
+offset_top = -342.0
+offset_right = 633.0
+offset_bottom = 293.0
 theme = ExtResource("4_cu1cp")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 24

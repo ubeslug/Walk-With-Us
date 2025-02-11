@@ -1,42 +1,100 @@
-[gd_scene load_steps=7 format=3 uid="uid://bly2o8v0fqmvi"]
+[gd_scene load_steps=12 format=3 uid="uid://bly2o8v0fqmvi"]
 
 [ext_resource type="PackedScene" uid="uid://br731a0smpgml" path="res://scenes/beastiary pages/cloaked_jester_page.tscn" id="1_s1jh2"]
+[ext_resource type="Script" path="res://scripts/monster_database.gd" id="1_wqoqc"]
+[ext_resource type="PackedScene" uid="uid://beneqpcnms27p" path="res://scenes/beastiary pages/_page_base.tscn" id="2_sstd4"]
 [ext_resource type="PackedScene" uid="uid://58f2fodlqs8q" path="res://scenes/beastiary pages/jackalope_page.tscn" id="2_unoaq"]
 [ext_resource type="PackedScene" uid="uid://dkc24geafgq41" path="res://scenes/beastiary pages/mimetic_page.tscn" id="3_bbeo5"]
 [ext_resource type="PackedScene" uid="uid://cyq20djsa0jul" path="res://scenes/beastiary pages/oak_page.tscn" id="4_f05lb"]
 [ext_resource type="PackedScene" uid="uid://baykr64ps5nxn" path="res://scenes/beastiary pages/omega_oak_page.tscn" id="5_8uskg"]
 [ext_resource type="PackedScene" uid="uid://cfm03oskwcxbv" path="res://scenes/beastiary pages/red_fox_page.tscn" id="6_cb8es"]
+[ext_resource type="Texture2D" uid="uid://dajrtc6pexgv5" path="res://assets/ui/pencil_arrow_default.png" id="7_te87f"]
+[ext_resource type="Texture2D" uid="uid://ha2gfqasdlrv" path="res://assets/ui/pencil_arrow_down.png" id="8_sa0pw"]
+[ext_resource type="Texture2D" uid="uid://dknxkoxf7ybja" path="res://assets/ui/pencil_arrow_highlight.png" id="9_p7i65"]
 
 [node name="MonsterDatabase" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
+script = ExtResource("1_wqoqc")
+
+[node name="page_base" parent="." instance=ExtResource("2_sstd4")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 
 [node name="pages" type="Control" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="jackalope_page" parent="pages" instance=ExtResource("2_unoaq")]
+visible = false
+layout_mode = 1
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="red_fox_page" parent="pages" instance=ExtResource("6_cb8es")]
+visible = false
+layout_mode = 1
+
+[node name="MimeticPage" parent="pages" instance=ExtResource("3_bbeo5")]
+visible = false
+layout_mode = 1
+
+[node name="oak_page" parent="pages" instance=ExtResource("4_f05lb")]
+visible = false
+layout_mode = 1
+
+[node name="omega_oak_page" parent="pages" instance=ExtResource("5_8uskg")]
+visible = false
+layout_mode = 1
 
 [node name="jester_page" parent="pages" instance=ExtResource("1_s1jh2")]
 layout_mode = 1
 
-[node name="jackalope_page" parent="pages" instance=ExtResource("2_unoaq")]
+[node name="Arrows" type="Control" parent="."]
 layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="MimeticPage" parent="pages" instance=ExtResource("3_bbeo5")]
-layout_mode = 1
+[node name="next_page" type="TextureButton" parent="Arrows"]
+layout_mode = 0
+offset_left = 497.0
+offset_top = 243.0
+offset_right = 753.0
+offset_bottom = 499.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("7_te87f")
+texture_pressed = ExtResource("8_sa0pw")
+texture_hover = ExtResource("9_p7i65")
 
-[node name="oak_page" parent="pages" instance=ExtResource("4_f05lb")]
-layout_mode = 1
+[node name="prev_page" type="TextureButton" parent="Arrows"]
+layout_mode = 0
+offset_left = -516.0
+offset_top = 369.0
+offset_right = -260.0
+offset_bottom = 625.0
+rotation = 3.14159
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("7_te87f")
+texture_pressed = ExtResource("8_sa0pw")
+texture_hover = ExtResource("9_p7i65")
 
-[node name="omega_oak_page" parent="pages" instance=ExtResource("5_8uskg")]
-layout_mode = 1
-
-[node name="red_fox_page" parent="pages" instance=ExtResource("6_cb8es")]
-layout_mode = 1
+[connection signal="pressed" from="Arrows/next_page" to="." method="_on_next_page_pressed"]
+[connection signal="pressed" from="Arrows/prev_page" to="." method="_on_prev_page_pressed"]

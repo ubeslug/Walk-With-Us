@@ -76,6 +76,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Inventory" type="ColorRect" parent="test"]
+layout_mode = 0
 offset_left = 1330.0
 offset_right = 1920.0
 offset_bottom = 1232.0
@@ -115,6 +116,7 @@ offset_right = 475.0
 offset_bottom = 227.0
 
 [node name="Text" type="ColorRect" parent="test"]
+layout_mode = 0
 offset_left = -1.0
 offset_top = 679.0
 offset_right = 1330.0

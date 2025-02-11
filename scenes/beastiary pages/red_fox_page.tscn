@@ -19,23 +19,25 @@ layout_mode = 1
 
 [node name="Contents" type="Control" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="sketch" type="Sprite2D" parent="Contents"]
-position = Vector2(617.689, 560)
+position = Vector2(-350, 57)
 scale = Vector2(0.585301, 0.585301)
 texture = ExtResource("3_cti0n")
 
 [node name="entry name" type="Label" parent="Contents"]
 layout_mode = 0
-offset_left = 314.0
-offset_top = 187.0
-offset_right = 484.0
-offset_bottom = 240.0
+offset_left = -636.0
+offset_top = -348.0
+offset_right = -466.0
+offset_bottom = -295.0
 theme = ExtResource("4_fjqgs")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
@@ -43,10 +45,10 @@ text = "Red Fox"
 
 [node name="entry passage" type="Label" parent="Contents"]
 layout_mode = 0
-offset_left = 1076.0
-offset_top = 178.0
-offset_right = 1612.0
-offset_bottom = 755.0
+offset_left = 100.0
+offset_top = -331.0
+offset_right = 636.0
+offset_bottom = 246.0
 theme = ExtResource("4_fjqgs")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 24
