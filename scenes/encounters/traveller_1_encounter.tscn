@@ -1,0 +1,246 @@
+[gd_scene load_steps=12 format=3 uid="uid://bhn3jnu1211rg"]
+
+[ext_resource type="PackedScene" uid="uid://1yu00uqnngve" path="res://scenes/test_ui.tscn" id="1_d7mce"]
+[ext_resource type="Resource" uid="uid://d2ivgvcoflwne" path="res://dialogue/traveler_1st_encounter.dialogue" id="1_pv7i3"]
+[ext_resource type="Texture2D" uid="uid://dpij765613eak" path="res://assets/encounters/traveller/Traveller Approval.PNG" id="2_oelpt"]
+[ext_resource type="Texture2D" uid="uid://3n1la4575emo" path="res://assets/encounters/traveller/Traveller Giving Potion.PNG" id="3_02ojc"]
+[ext_resource type="Texture2D" uid="uid://csjuxnq6r1bqj" path="res://assets/encounters/traveller/Traveller on Road.PNG" id="4_mudjq"]
+
+[sub_resource type="GDScript" id="GDScript_4lce2"]
+script/source = "extends Node2D
+
+const Balloon = preload(\"res://scenes/dialogue balloons/balloon.tscn\")
+
+@export var dialogue_resource: DialogueResource
+@export var dialogue_start: String = \"start\"
+
+@onready var animation_player = $AnimationPlayer
+
+
+
+func _ready():
+	var balloon: Node = Balloon.instantiate()
+	get_tree().current_scene.add_child(balloon)
+	balloon.start(dialogue_resource, dialogue_start)
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+func show_traveller() -> void:
+	animation_player.play(\"traveller_approve\")
+
+func show_potion() -> void:
+	animation_player.play(\"traveller_potion\")
+"
+
+[sub_resource type="Animation" id="Animation_e28yj"]
+resource_name = "startup"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("images/TravellerOnRoad:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("images/TravellerGivingPotion:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("images/TravellerApproval:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -37)]
+}
+
+[sub_resource type="Animation" id="Animation_uxrke"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("images/TravellerOnRoad:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("images/TravellerGivingPotion:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("images/TravellerApproval:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -37)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("images/TravellerApproval:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_jcou1"]
+resource_name = "traveller_approve"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("images/TravellerApproval:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("images/TravellerOnRoad:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("images/TravellerGivingPotion:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_ekck8"]
+resource_name = "traveller_potion"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("images/TravellerApproval:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("images/TravellerGivingPotion:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("images/TravellerOnRoad:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rwbvg"]
+_data = {
+"RESET": SubResource("Animation_uxrke"),
+"startup": SubResource("Animation_e28yj"),
+"traveller_approve": SubResource("Animation_jcou1"),
+"traveller_potion": SubResource("Animation_ekck8")
+}
+
+[node name="Traveller1Encounter" type="Node2D"]
+script = SubResource("GDScript_4lce2")
+dialogue_resource = ExtResource("1_pv7i3")
+
+[node name="images" type="Node2D" parent="."]
+
+[node name="TravellerApproval" type="Sprite2D" parent="images"]
+visible = false
+position = Vector2(0, -37)
+scale = Vector2(0.693519, 0.693519)
+texture = ExtResource("2_oelpt")
+centered = false
+
+[node name="TravellerGivingPotion" type="Sprite2D" parent="images"]
+visible = false
+position = Vector2(0, -12)
+scale = Vector2(0.693519, 0.693519)
+texture = ExtResource("3_02ojc")
+centered = false
+
+[node name="TravellerOnRoad" type="Sprite2D" parent="images"]
+scale = Vector2(0.693519, 0.693519)
+texture = ExtResource("4_mudjq")
+centered = false
+
+[node name="ui" parent="." instance=ExtResource("1_d7mce")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_rwbvg")
+}
+autoplay = "startup"

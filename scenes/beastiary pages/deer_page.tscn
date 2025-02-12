@@ -1,11 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://bf2okttow431s"]
+[gd_scene load_steps=5 format=3 uid="uid://58f2fodlqs8q"]
 
 [ext_resource type="Script" path="res://scripts/page_base.gd" id="1_b3ndn"]
 [ext_resource type="PackedScene" uid="uid://beneqpcnms27p" path="res://scenes/beastiary pages/_page_base.tscn" id="2_llbps"]
-[ext_resource type="Texture2D" uid="uid://boxxqygj1k5ef" path="res://assets/sketches/Jackalope.png" id="3_vqmbu"]
+[ext_resource type="Texture2D" uid="uid://d02umkx5ah2oo" path="res://assets/sketches/Deer.png" id="3_flfab"]
 [ext_resource type="Theme" uid="uid://bw2dm0g8j123d" path="res://themes/beastiary_writing.tres" id="4_h0h3j"]
 
-[node name="jackalope_page" type="Control"]
+[node name="deer" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -31,7 +31,7 @@ grow_vertical = 2
 [node name="sketch" type="Sprite2D" parent="Contents"]
 position = Vector2(-354, 40)
 scale = Vector2(0.585301, 0.585301)
-texture = ExtResource("3_vqmbu")
+texture = ExtResource("3_flfab")
 
 [node name="entry name" type="Label" parent="Contents"]
 layout_mode = 0
@@ -42,7 +42,7 @@ offset_bottom = -288.0
 theme = ExtResource("4_h0h3j")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
-text = "Jackalope"
+text = "Deer"
 
 [node name="entry passage" type="Label" parent="Contents"]
 layout_mode = 0
@@ -53,8 +53,7 @@ offset_bottom = 251.0
 theme = ExtResource("4_h0h3j")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 24
-text = "A genus offshoot from the common rabbit the Jackalope is a docile creature that r
-oams the flats of desserts and open fields. These creatures mostly are of no harm to other creatures and are in fact prey creatures. But even they have their own biological defense. The head of a Jackalope is crowned with the horns like that of deers which they will not hesitate to use when they are attacked or feel threatened. Travellers are advised to show no hostility to these creatures."
+text = "A common animal roaming the forests, deer are seen normally eating the foliage deep in the forest or on the sides of roads. They tend not to approach people, remaining highly alert for any potential dangers. Skittish in nature, Deer are rarely ever confrontational, usually choosing to run away from a perceived threat. Male deer tend to be the only ones who will actively choose fight over flight so it's best to stay far away from a male deer, ones with horns, especially if they are with female deer"
 autowrap_mode = 3
 
 [node name="book_worms" type="Control" parent="."]

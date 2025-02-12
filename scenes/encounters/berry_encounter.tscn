@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=3 uid="uid://c34nqy3ag17m0"]
+
+[ext_resource type="Resource" uid="uid://bifuftvqwdan0" path="res://dialogue/berry_bush_encounter.dialogue" id="1_r5jm1"]
+[ext_resource type="Texture2D" uid="uid://dr3v7otwugg1b" path="res://assets/encounters/berry/Berry Bush.png" id="2_mxavi"]
+[ext_resource type="PackedScene" uid="uid://1yu00uqnngve" path="res://scenes/test_ui.tscn" id="3_2hpp4"]
+
+[sub_resource type="GDScript" id="GDScript_op7a5"]
+script/source = "extends Node2D
+
+const Balloon = preload(\"res://scenes/dialogue balloons/balloon.tscn\")
+
+@export var dialogue_resource: DialogueResource
+@export var dialogue_start: String = \"start\"
+
+@onready var animation_player = $AnimationPlayer
+
+
+
+func _ready():
+#	animation_player.play(\"startup\")
+	var balloon: Node = Balloon.instantiate()
+	get_tree().current_scene.add_child(balloon)
+	balloon.start(dialogue_resource, dialogue_start)
+
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+
+func fade_out() -> void:
+	pass
+"
+
+[node name="berry_encounter" type="Node2D"]
+script = SubResource("GDScript_op7a5")
+dialogue_resource = ExtResource("1_r5jm1")
+
+[node name="Images" type="Node2D" parent="."]
+
+[node name="BerryBush" type="Sprite2D" parent="Images"]
+position = Vector2(0, -69)
+scale = Vector2(0.692593, 0.692593)
+texture = ExtResource("2_mxavi")
+centered = false
+
+[node name="ui" parent="." instance=ExtResource("3_2hpp4")]

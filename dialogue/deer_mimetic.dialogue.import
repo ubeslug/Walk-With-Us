@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://cc3557sj5wg7c"
+path="res://.godot/imported/deer_mimetic.dialogue-f7eafb452026055176e0cc54362ffbf6.tres"
+
+[deps]
+
+source_file="res://dialogue/deer_mimetic.dialogue"
+dest_files=["res://.godot/imported/deer_mimetic.dialogue-f7eafb452026055176e0cc54362ffbf6.tres"]
+
+[params]
+
+defaults=true

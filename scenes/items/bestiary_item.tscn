@@ -33,5 +33,3 @@ offset_right = 136.0
 offset_bottom = 136.0
 icon = ExtResource("2_mu403")
 item_count = 1
-desc = ""
-heal_amt = 0

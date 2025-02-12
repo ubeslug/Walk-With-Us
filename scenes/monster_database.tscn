@@ -1,16 +1,20 @@
-[gd_scene load_steps=15 format=3 uid="uid://bly2o8v0fqmvi"]
+[gd_scene load_steps=19 format=3 uid="uid://bly2o8v0fqmvi"]
 
 [ext_resource type="PackedScene" uid="uid://br731a0smpgml" path="res://scenes/beastiary pages/cloaked_jester_page.tscn" id="1_s1jh2"]
 [ext_resource type="Script" path="res://scripts/monster_database.gd" id="1_wqoqc"]
 [ext_resource type="PackedScene" uid="uid://beneqpcnms27p" path="res://scenes/beastiary pages/_page_base.tscn" id="2_sstd4"]
-[ext_resource type="PackedScene" uid="uid://58f2fodlqs8q" path="res://scenes/beastiary pages/jackalope_page.tscn" id="2_unoaq"]
+[ext_resource type="PackedScene" uid="uid://58f2fodlqs8q" path="res://scenes/beastiary pages/deer_page.tscn" id="2_unoaq"]
 [ext_resource type="PackedScene" uid="uid://dkc24geafgq41" path="res://scenes/beastiary pages/mimetic_page.tscn" id="3_bbeo5"]
+[ext_resource type="PackedScene" uid="uid://d0llc3vdmdet" path="res://scenes/beastiary pages/buckleberries.tscn" id="3_ngrt1"]
 [ext_resource type="PackedScene" uid="uid://cyq20djsa0jul" path="res://scenes/beastiary pages/oak_page.tscn" id="4_f05lb"]
 [ext_resource type="PackedScene" uid="uid://baykr64ps5nxn" path="res://scenes/beastiary pages/omega_oak_page.tscn" id="5_8uskg"]
 [ext_resource type="PackedScene" uid="uid://cfm03oskwcxbv" path="res://scenes/beastiary pages/red_fox_page.tscn" id="6_cb8es"]
+[ext_resource type="PackedScene" uid="uid://bf2okttow431s" path="res://scenes/beastiary pages/jackalope_page.tscn" id="6_uxovd"]
 [ext_resource type="Texture2D" uid="uid://dajrtc6pexgv5" path="res://assets/ui/pencil_arrow_default.png" id="7_te87f"]
 [ext_resource type="Texture2D" uid="uid://ha2gfqasdlrv" path="res://assets/ui/pencil_arrow_down.png" id="8_sa0pw"]
 [ext_resource type="Texture2D" uid="uid://dknxkoxf7ybja" path="res://assets/ui/pencil_arrow_highlight.png" id="9_p7i65"]
+[ext_resource type="PackedScene" uid="uid://b30a4e8tqp2w2" path="res://scenes/beastiary pages/skeleton_page.tscn" id="10_cjw1v"]
+[ext_resource type="PackedScene" uid="uid://d0qqfmoq10frq" path="res://scenes/beastiary pages/decrepit_trader_page.tscn" id="12_4a1rm"]
 [ext_resource type="Texture2D" uid="uid://cxmuuj1w6v5q8" path="res://assets/ui/pencil_x_default.png" id="12_t14eg"]
 [ext_resource type="Texture2D" uid="uid://bj4vk8bahmgnn" path="res://assets/ui/pencil_x_down.png" id="13_fceu2"]
 [ext_resource type="Texture2D" uid="uid://bov38b7j5a08t" path="res://assets/ui/pencil_x_highlight.png" id="14_o56v1"]
@@ -36,7 +40,15 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="jackalope_page" parent="pages" instance=ExtResource("2_unoaq")]
+[node name="buckleberry_page" parent="pages" instance=ExtResource("3_ngrt1")]
+visible = false
+layout_mode = 1
+
+[node name="red_fox_page" parent="pages" instance=ExtResource("6_cb8es")]
+visible = false
+layout_mode = 1
+
+[node name="deer_page" parent="pages" instance=ExtResource("2_unoaq")]
 visible = false
 layout_mode = 1
 anchors_preset = 0
@@ -45,7 +57,7 @@ anchor_bottom = 0.0
 grow_horizontal = 1
 grow_vertical = 1
 
-[node name="red_fox_page" parent="pages" instance=ExtResource("6_cb8es")]
+[node name="jackalope_page" parent="pages" instance=ExtResource("6_uxovd")]
 visible = false
 layout_mode = 1
 
@@ -61,7 +73,16 @@ layout_mode = 1
 visible = false
 layout_mode = 1
 
+[node name="skeleton_page" parent="pages" instance=ExtResource("10_cjw1v")]
+visible = false
+layout_mode = 1
+
 [node name="jester_page" parent="pages" instance=ExtResource("1_s1jh2")]
+visible = false
+layout_mode = 1
+
+[node name="decrepit_trader" parent="pages" instance=ExtResource("12_4a1rm")]
+visible = false
 layout_mode = 1
 
 [node name="Arrows" type="Control" parent="."]
