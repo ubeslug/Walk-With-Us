@@ -1,6 +1,6 @@
 ~ start
 You dust off your cloak as you walk, almost missing a figure on the side of the road before you catch it in your peripheral.
-# show deer
+do show_deer()
 It’s a deer, seemingly female, and it's facing away from you. Its head is lowered in the grass in front of it. You can hear it chewing on something but the noise dies just as quickly as you had picked up on it. The deer doesn’t move, keeping its head lowered and its face out of your sight. You’re sure it heard you as its ears twitch backward but it doesn’t budge.
 - Check the deer
 	Maybe it's hurt? Or just scared. You don’t see any harm in walking a little closer just to make sure. As you do, you begin to hear a new noise from the deer. Groaning. Strained groaning. It slowly turns its head toward you. 
@@ -12,5 +12,5 @@ It’s a deer, seemingly female, and it's facing away from you. Its head is lowe
 	It was a dead fish. One with large bite marks taken out of it, blood still dripping from the wound. It was fresh. You weren’t sure where it was from exactly but a fresh fish all the way out here wasn’t a bad find. You picked up the dead fish and winced as its glassy eyes stared back at you as you stuffed it into your pack. 
 	You got a Dead Fish!
 
-# fade out and switch to next scene
+do fade_out()
 => END

@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://dogoi2ft0d0m1"]
+[gd_scene load_steps=15 format=3 uid="uid://dogoi2ft0d0m1"]
 
 [ext_resource type="Texture2D" uid="uid://b7v3jerq8c4h6" path="res://assets/encounters/deer mimetic/Dead Fish.PNG" id="1_j04a7"]
 [ext_resource type="Resource" uid="uid://cc3557sj5wg7c" path="res://dialogue/deer_mimetic.dialogue" id="1_yyavi"]
 [ext_resource type="Texture2D" uid="uid://bqihml76l50js" path="res://assets/encounters/deer mimetic/Angry Deer Mimetic.PNG" id="2_41x7d"]
+[ext_resource type="Texture2D" uid="uid://dt76ck4nbaep" path="res://assets/backgrounds/straight.png" id="2_ey1kv"]
 [ext_resource type="Texture2D" uid="uid://n8xfc3bmledm" path="res://assets/encounters/deer mimetic/Deer Mimetic.PNG" id="3_yku0c"]
 [ext_resource type="PackedScene" uid="uid://1yu00uqnngve" path="res://scenes/test_ui.tscn" id="4_juphx"]
 
@@ -30,6 +31,8 @@ func _ready():
 func _process(delta):
 	pass
 
+func show_deer() -> void:
+	animation_player.play(\"show_deer\")
 
 func show_mimetic() -> void:
 	animation_player.play(\"show_mimetic\")
@@ -38,11 +41,13 @@ func show_fish() -> void:
 	animation_player.play(\"show_fish\")
 	
 func fade_out() -> void:
-	pass
+	animation_player.play(\"fade-out\")
+	await animation_player.animation_finished
+	get_tree().change_scene_to_file(\"res://scenes/encounters/traveller_1_encounter.tscn\")
 "
 
-[sub_resource type="Animation" id="Animation_6pi44"]
-resource_name = "startup"
+[sub_resource type="Animation" id="Animation_uvo8f"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -79,13 +84,37 @@ tracks/2/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/ColorRect:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasLayer/ColorRect:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
-[sub_resource type="Animation" id="Animation_uvo8f"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_326lf"]
+resource_name = "show_fish"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("images/DeerMimetic:visible")
+tracks/0/path = NodePath("images/DeadFish:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -109,7 +138,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("images/DeadFish:visible")
+tracks/2/path = NodePath("images/DeerMimetic:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -158,19 +187,19 @@ tracks/2/keys = {
 "values": [false]
 }
 
-[sub_resource type="Animation" id="Animation_326lf"]
-resource_name = "show_fish"
+[sub_resource type="Animation" id="Animation_6pi44"]
+resource_name = "startup"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("images/DeadFish:visible")
+tracks/0/path = NodePath("images/DeerMimetic:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -187,7 +216,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("images/DeerMimetic:visible")
+tracks/2/path = NodePath("images/DeadFish:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -196,10 +225,79 @@ tracks/2/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/ColorRect:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasLayer/ColorRect:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_bevi0"]
+resource_name = "show_deer"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("images/DeerMimetic:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_wf0wo"]
+resource_name = "fade-out"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_such0"]
 _data = {
 "RESET": SubResource("Animation_uvo8f"),
+"fade-out": SubResource("Animation_wf0wo"),
+"show_deer": SubResource("Animation_bevi0"),
 "show_fish": SubResource("Animation_326lf"),
 "show_mimetic": SubResource("Animation_8rsyh"),
 "startup": SubResource("Animation_6pi44")
@@ -210,6 +308,16 @@ script = SubResource("GDScript_seej5")
 dialogue_resource = ExtResource("1_yyavi")
 
 [node name="images" type="Node2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="images"]
+offset_right = 1607.0
+offset_bottom = 956.0
+
+[node name="Background" type="Sprite2D" parent="images"]
+position = Vector2(-5.317, -65)
+scale = Vector2(1.38069, 1.38069)
+texture = ExtResource("2_ey1kv")
+centered = false
 
 [node name="DeadFish" type="Sprite2D" parent="images"]
 visible = false
@@ -229,10 +337,18 @@ scale = Vector2(0.692593, 0.692593)
 texture = ExtResource("3_yku0c")
 centered = false
 
-[node name="ui" parent="." instance=ExtResource("4_juphx")]
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_such0")
 }
 autoplay = "startup"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ui" parent="CanvasLayer" instance=ExtResource("4_juphx")]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0)
+offset_right = 1966.0
+offset_bottom = 1118.0
+color = Color(0, 0, 0, 1)
