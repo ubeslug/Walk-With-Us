@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://d2ivgvcoflwne"
+path="res://.godot/imported/traveler_1st_encounter.dialogue-c1d53a0a95e18c45888fe2a24f0aa69a.tres"
+
+[deps]
+
+source_file="res://dialogue/traveler_1st_encounter.dialogue"
+dest_files=["res://.godot/imported/traveler_1st_encounter.dialogue-c1d53a0a95e18c45888fe2a24f0aa69a.tres"]
+
+[params]
+
+defaults=true

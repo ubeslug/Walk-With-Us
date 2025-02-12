@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://coqxwlr6whx1p"
+path="res://.godot/imported/regular_fox.dialogue-812e6039c47acc09dfe95584d39e169b.tres"
+
+[deps]
+
+source_file="res://dialogue/regular_fox.dialogue"
+dest_files=["res://.godot/imported/regular_fox.dialogue-812e6039c47acc09dfe95584d39e169b.tres"]
+
+[params]
+
+defaults=true

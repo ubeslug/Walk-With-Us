@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://bifuftvqwdan0"
+path="res://.godot/imported/berry_bush_encounter.dialogue-a6b7d4f67534155d5d6bbfa58291ec4a.tres"
+
+[deps]
+
+source_file="res://dialogue/berry_bush_encounter.dialogue"
+dest_files=["res://.godot/imported/berry_bush_encounter.dialogue-a6b7d4f67534155d5d6bbfa58291ec4a.tres"]
+
+[params]
+
+defaults=true
