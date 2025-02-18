@@ -4,6 +4,11 @@ var current_page: int = 0
 
 @onready var pages: Control = $pages
 
+# buttons
+@onready var next_page = $Arrows/next_page
+@onready var prev_page = $Arrows/prev_page
+
+
 var page_list: Array[Node] = [
 ]
 
@@ -14,6 +19,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	load_page(current_page)
 	visible = Globals.bestiary_active
+	check_page_ends()
+	page_buttons_check()
 
 func process_pages() -> void:
 	for i in pages.get_children():
@@ -24,6 +31,24 @@ func load_page(page: int) -> void:
 		i.visible = false
 	page_list[page].visible = true
 
+
+func check_page_ends() -> void:
+	if current_page == 0:
+		prev_page.disabled = true
+	else:
+		prev_page.disabled = false
+	
+	if current_page == page_list.size() - 1:
+		next_page.disabled = true
+	else:
+		next_page.disabled = false
+
+func page_buttons_check() -> void:
+	if Input.is_action_just_pressed("page_left") and current_page > 0:
+		current_page -= 1
+	
+	if Input.is_action_just_pressed("page_right") and current_page < page_list.size() - 1:
+		current_page += 1
 
 func _on_next_page_pressed() -> void:
 	if current_page < page_list.size() - 1:

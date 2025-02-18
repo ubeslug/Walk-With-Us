@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bly2o8v0fqmvi"]
+[gd_scene load_steps=20 format=3 uid="uid://bly2o8v0fqmvi"]
 
 [ext_resource type="PackedScene" uid="uid://br731a0smpgml" path="res://scenes/beastiary pages/cloaked_jester_page.tscn" id="1_s1jh2"]
 [ext_resource type="Script" path="res://scripts/monster_database.gd" id="1_wqoqc"]
@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://cxmuuj1w6v5q8" path="res://assets/ui/pencil_x_default.png" id="12_t14eg"]
 [ext_resource type="Texture2D" uid="uid://bj4vk8bahmgnn" path="res://assets/ui/pencil_x_down.png" id="13_fceu2"]
 [ext_resource type="Texture2D" uid="uid://bov38b7j5a08t" path="res://assets/ui/pencil_x_highlight.png" id="14_o56v1"]
+[ext_resource type="Texture2D" uid="uid://bdmwcw428uwvd" path="res://assets/ui/pencil_arrow_disabled.png" id="16_jkg05"]
 
 [node name="MonsterDatabase" type="CanvasLayer"]
 layer = 101
@@ -105,6 +106,7 @@ scale = Vector2(0.5, 0.5)
 texture_normal = ExtResource("7_te87f")
 texture_pressed = ExtResource("8_sa0pw")
 texture_hover = ExtResource("9_p7i65")
+texture_disabled = ExtResource("16_jkg05")
 
 [node name="prev_page" type="TextureButton" parent="Arrows"]
 layout_mode = 0
@@ -117,6 +119,7 @@ scale = Vector2(0.5, 0.5)
 texture_normal = ExtResource("7_te87f")
 texture_pressed = ExtResource("8_sa0pw")
 texture_hover = ExtResource("9_p7i65")
+texture_disabled = ExtResource("16_jkg05")
 
 [node name="TextureButton" type="TextureButton" parent="."]
 offset_left = 283.0
