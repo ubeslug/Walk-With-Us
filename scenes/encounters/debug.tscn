@@ -1,0 +1,52 @@
+[gd_scene load_steps=4 format=3 uid="uid://dbjnda5sswuau"]
+
+[ext_resource type="Resource" uid="uid://di00d1mi8xps5" path="res://dialogue/_inventory_debug.dialogue" id="1_f67u5"]
+[ext_resource type="PackedScene" uid="uid://1yu00uqnngve" path="res://scenes/test_ui.tscn" id="6_4oxkt"]
+
+[sub_resource type="GDScript" id="GDScript_4lce2"]
+script/source = "extends Node2D
+
+const Balloon = preload(\"res://scenes/dialogue balloons/balloon.tscn\")
+
+@export var dialogue_resource: DialogueResource
+@export var dialogue_start: String = \"start\"
+
+
+
+
+func _ready():
+	var balloon: Node = Balloon.instantiate()
+	get_tree().current_scene.add_child(balloon)
+	balloon.start(dialogue_resource, dialogue_start)
+
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+func call_inventory(action: int) -> void:
+	if action == 1:
+		pass
+	
+"
+
+[node name="Debug" type="Node2D"]
+script = SubResource("GDScript_4lce2")
+dialogue_resource = ExtResource("1_f67u5")
+
+[node name="images" type="Node2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="images"]
+offset_right = 1641.0
+offset_bottom = 897.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ui" parent="CanvasLayer" instance=ExtResource("6_4oxkt")]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+visible = false
+offset_right = 1978.0
+offset_bottom = 1126.0
+color = Color(0, 0, 0, 1)

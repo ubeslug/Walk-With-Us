@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://di00d1mi8xps5"
+path="res://.godot/imported/_inventory_debug.dialogue-0e7b24a11bbd48bd0606ec3e7cac109c.tres"
+
+[deps]
+
+source_file="res://dialogue/_inventory_debug.dialogue"
+dest_files=["res://.godot/imported/_inventory_debug.dialogue-0e7b24a11bbd48bd0606ec3e7cac109c.tres"]
+
+[params]
+
+defaults=true

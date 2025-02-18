@@ -52,7 +52,7 @@ page_right={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://dialogue/test.dialogue", "res://dialogue/playtest-first-draft.dialogue", "res://dialogue/berry_bush_encounter.dialogue", "res://dialogue/regular_fox.dialogue", "res://dialogue/traveler_1st_encounter.dialogue", "res://dialogue/deer_mimetic.dialogue", "res://dialogue/skeleton.dialogue", "res://dialogue/jackalope_encounter.dialogue")
+locale/translations_pot_files=PackedStringArray("res://dialogue/test.dialogue", "res://dialogue/playtest-first-draft.dialogue", "res://dialogue/berry_bush_encounter.dialogue", "res://dialogue/regular_fox.dialogue", "res://dialogue/traveler_1st_encounter.dialogue", "res://dialogue/deer_mimetic.dialogue", "res://dialogue/skeleton.dialogue", "res://dialogue/jackalope_encounter.dialogue", "res://dialogue/_inventory_debug.dialogue")
 
 [rendering]
 

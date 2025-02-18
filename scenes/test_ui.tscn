@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://1yu00uqnngve"]
 
-[ext_resource type="Script" path="res://scripts/ui.gd" id="1_0th41"]
+[ext_resource type="Script" path="res://scripts/inventory_loader.gd" id="1_0th41"]
 [ext_resource type="PackedScene" uid="uid://cxoatkheomly" path="res://scenes/items/package_item.tscn" id="2_hyasa"]
 [ext_resource type="PackedScene" uid="uid://csfiit70pipqw" path="res://scenes/items/bestiary_item.tscn" id="3_d5d06"]
 [ext_resource type="PackedScene" uid="uid://bly2o8v0fqmvi" path="res://scenes/monster_database.tscn" id="4_speqq"]
@@ -12,7 +12,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_0th41")
 
 [node name="Text" type="ColorRect" parent="."]
 layout_mode = 0
@@ -60,6 +59,7 @@ theme_override_font_sizes/font_size = 30
 text = "Inventory"
 
 [node name="Inventory" type="VBoxContainer" parent="Inventory"]
+visible = false
 layout_mode = 0
 offset_left = 40.0
 offset_top = 92.0
@@ -90,6 +90,25 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Row6" type="HBoxContainer" parent="Inventory/Inventory"]
+layout_mode = 2
+
+[node name="BoxContainer" type="GridContainer" parent="Inventory"]
+layout_direction = 2
+layout_mode = 0
+offset_top = 70.0
+offset_right = 384.0
+offset_bottom = 198.0
+theme_override_constants/h_separation = 128
+theme_override_constants/v_separation = 128
+columns = 4
+script = ExtResource("1_0th41")
+
+[node name="PackageItem" parent="Inventory/BoxContainer" instance=ExtResource("2_hyasa")]
+visible = false
+layout_mode = 2
+
+[node name="BestiaryItem" parent="Inventory/BoxContainer" instance=ExtResource("3_d5d06")]
+visible = false
 layout_mode = 2
 
 [node name="Health" type="Control" parent="."]
