@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://f6dabyp5xnu5"]
+
+[ext_resource type="PackedScene" uid="uid://cwpo133i6q0yf" path="res://scenes/items/_inventory_item.tscn" id="1_u4g6m"]
+[ext_resource type="Texture2D" uid="uid://b73bk627grfo2" path="res://assets/item sprites/Dead Fish.PNG" id="2_bd10l"]
+
+[node name="Deadfish" type="Panel"]
+
+[node name="InventoryItem" parent="." instance=ExtResource("1_u4g6m")]
+layout_mode = 0
+icon = ExtResource("2_bd10l")

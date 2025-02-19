@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cxoatkheomly"]
 
-[ext_resource type="PackedScene" uid="uid://cwpo133i6q0yf" path="res://scenes/items/inventory_item.tscn" id="1_n2lmp"]
+[ext_resource type="PackedScene" uid="uid://cwpo133i6q0yf" path="res://scenes/items/_inventory_item.tscn" id="1_n2lmp"]
 [ext_resource type="Texture2D" uid="uid://ptuu44xqyqb5" path="res://assets/item sprites/Package.PNG" id="2_k8uqq"]
 
 [node name="PackageItem" type="Panel"]

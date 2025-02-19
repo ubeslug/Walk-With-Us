@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://blboi8avcu1o5"]
+
+[ext_resource type="PackedScene" uid="uid://cwpo133i6q0yf" path="res://scenes/items/_inventory_item.tscn" id="1_twpa8"]
+[ext_resource type="Texture2D" uid="uid://0ca2k3h5et74" path="res://assets/item sprites/Multiple Blackberries.PNG" id="2_crnwn"]
+
+[node name="Berrybundle" type="Panel"]
+
+[node name="InventoryItem" parent="." instance=ExtResource("1_twpa8")]
+layout_mode = 0
+icon = ExtResource("2_crnwn")

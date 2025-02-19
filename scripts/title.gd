@@ -43,6 +43,9 @@ func _on_no_quit_pressed() -> void:
 
 
 func _on_new_game_pressed():
+	InventoryHandler.reset_inventory()
+	InventoryHandler.add_to_inventory(0) # temp
+	InventoryHandler.add_to_inventory(1) # temp
 	fade_handler.play("fade-out")
 	await fade_handler.animation_finished
 	get_tree().change_scene_to_file("res://scenes/encounters/berry_encounter.tscn")

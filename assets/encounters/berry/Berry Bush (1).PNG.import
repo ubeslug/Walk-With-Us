@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://csyn6r5dfvqgy"
-path="res://.godot/imported/fox_2.PNG-f9ffc98491a3354f9f822b8308719e5d.ctex"
+uid="uid://s6ry2kyt7qik"
+path="res://.godot/imported/Berry Bush (1).PNG-00a513525a44f3c081bf8b679073a1aa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/backgrounds/fox_2.PNG"
-dest_files=["res://.godot/imported/fox_2.PNG-f9ffc98491a3354f9f822b8308719e5d.ctex"]
+source_file="res://assets/encounters/berry/Berry Bush (1).PNG"
+dest_files=["res://.godot/imported/Berry Bush (1).PNG-00a513525a44f3c081bf8b679073a1aa.ctex"]
 
 [params]
 

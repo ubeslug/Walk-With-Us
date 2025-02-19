@@ -29,7 +29,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="sketch" type="Sprite2D" parent="Contents"]
-position = Vector2(-354, 40)
+position = Vector2(-351, -17)
 scale = Vector2(0.585301, 0.585301)
 texture = ExtResource("3_biy3u")
 

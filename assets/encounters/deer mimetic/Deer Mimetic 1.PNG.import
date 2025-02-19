@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1umcmmic2cvk"
-path="res://.godot/imported/fox_1.PNG-72692d09ea610d3aacdba274e96fffba.ctex"
+uid="uid://c10eui5mmt88w"
+path="res://.godot/imported/Deer Mimetic 1.PNG-6dc77258b8589776e76c456326616264.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/backgrounds/fox_1.PNG"
-dest_files=["res://.godot/imported/fox_1.PNG-72692d09ea610d3aacdba274e96fffba.ctex"]
+source_file="res://assets/encounters/deer mimetic/Deer Mimetic 1.PNG"
+dest_files=["res://.godot/imported/Deer Mimetic 1.PNG-6dc77258b8589776e76c456326616264.ctex"]
 
 [params]
 

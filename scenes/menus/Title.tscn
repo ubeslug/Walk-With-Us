@@ -232,15 +232,17 @@ grow_vertical = 2
 [node name="new_game" type="Button" parent="CanvasLayer/Control/Buttons"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
-text = "New Game"
+text = "Start"
 
 [node name="continue" type="Button" parent="CanvasLayer/Control/Buttons"]
+visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 disabled = true
 text = "Continue"
 
 [node name="Options" type="Button" parent="CanvasLayer/Control/Buttons"]
+visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 disabled = true

@@ -1,13 +1,13 @@
 ~ start
 The trees surround you on every side. You can see no end to them no matter where you look. Parts of the forest are lit up by the little light that shines through while the darkness takes the rest. The road still stretches far ahead so you decide to take a rest under a nearby tree. You set your items down before sitting at the tree's base. Your hand rustles the grass as you note the richness it has despite the forest's lack of light. 
-do show_bush()
+do show_berry_bush()
 After you take in your surroundings you notice a few bushes nearby hiding behind a couple of trees, they catch your interest. As you walk closer to bushes they seem to be standard shrubbery but with one distinct feature. The bushes seem to be growing colored berries on them that seem ripe for the picking. While the bushes seem normal enough you are aware of the other things that lurk in this forest. Are The berries worth it?
 - Eat the berries now
 	You remember someone telling you that fresh is best when it comes to fruit. So you decide to partake in some berries while you're here. Picking some of the berries off of the push you go back to where you were sitting. You hold a berry top your eye noticing the shape and color is similar to ones commonly sold. You pop it into your mouth and savor its sweet and slightly sour taste. You finish the rest with gusto and continue on your way. 
 	You recover 5 health.
 - Pick some berries for later
 	You decide to act cautiously as you pick some berries. You slowly take the berries one by one while keeping an eye on your surroundings. You are unsure if the danger could come from the bush or from some other place. After you have gathered at least a handful of berries you decide to not overstay your welcome. Tucking the berries away you take one cautious look around and then continue on your journey. 
-	#add berries to inventory
+	do InventoryHandler.add_to_inventory(4)
 	You harvested a handful of berries.
 	
 - Leave the berries alone

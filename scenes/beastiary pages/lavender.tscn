@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://b5on1m2t7q6ty" path="res://assets/sketches/Lavender.png" id="3_2t20e"]
 [ext_resource type="Theme" uid="uid://bw2dm0g8j123d" path="res://themes/beastiary_writing.tres" id="3_fmkef"]
 
-[node name="template" type="Control"]
+[node name="lavender" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

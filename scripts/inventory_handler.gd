@@ -7,8 +7,12 @@ var inventory_array : Array = [
 var inventory_updated: bool = false
 
 var all_items_array : Array[PackedScene] = [
-	preload("res://scenes/items/package_item.tscn"),
-	preload("res://scenes/items/bestiary_item.tscn")
+	preload("res://scenes/items/package_item.tscn"),			#0_package
+	preload("res://scenes/items/bestiary_item.tscn"),			#1_bestiary
+	preload("res://scenes/items/healthpotion.tscn"),			#2_health potion
+	preload("res://scenes/items/berry.tscn"),					#3_single berry
+	preload("res://scenes/items/berrybundle.tscn"),				#4_berry bundle
+	preload("res://scenes/items/deadfish.tscn")
 ]
 
 var item_potion

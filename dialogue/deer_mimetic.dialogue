@@ -10,6 +10,7 @@ It’s a deer, seemingly female, and it's facing away from you. Its head is lowe
 	This feels off. You decide to keep walking. As you leave a foot or so from the deer, you suddenly hear its hooves skid across the path behind you. Bracing yourself for an attack, you feel relief as you hear it gallop into the distance behind you. Glancing back, you planned on continuing onward after checking to make sure it was gone, but you notice something in the grass patch it had been sticking its face in earlier. You got closer because you couldn’t believe it.
 	do show_fish()
 	It was a dead fish. One with large bite marks taken out of it, blood still dripping from the wound. It was fresh. You weren’t sure where it was from exactly but a fresh fish all the way out here wasn’t a bad find. You picked up the dead fish and winced as its glassy eyes stared back at you as you stuffed it into your pack. 
+	do InventoryHandler.add_to_inventory(5)
 	You got a Dead Fish!
 
 do fade_out()

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://csfiit70pipqw"]
 
-[ext_resource type="PackedScene" uid="uid://cwpo133i6q0yf" path="res://scenes/items/inventory_item.tscn" id="1_f0b6t"]
+[ext_resource type="PackedScene" uid="uid://cwpo133i6q0yf" path="res://scenes/items/_inventory_item.tscn" id="1_f0b6t"]
 [ext_resource type="Texture2D" uid="uid://fin0t3ytf1ew" path="res://assets/item sprites/Book.PNG" id="2_mu403"]
 
 [sub_resource type="GDScript" id="GDScript_dqvkx"]

@@ -2,10 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://b7v3jerq8c4h6" path="res://assets/encounters/deer mimetic/Dead Fish.PNG" id="1_j04a7"]
 [ext_resource type="Resource" uid="uid://cc3557sj5wg7c" path="res://dialogue/deer_mimetic.dialogue" id="1_yyavi"]
-[ext_resource type="Texture2D" uid="uid://bqihml76l50js" path="res://assets/encounters/deer mimetic/Angry Deer Mimetic.PNG" id="2_41x7d"]
-[ext_resource type="Texture2D" uid="uid://dt76ck4nbaep" path="res://assets/backgrounds/straight.png" id="2_ey1kv"]
-[ext_resource type="Texture2D" uid="uid://n8xfc3bmledm" path="res://assets/encounters/deer mimetic/Deer Mimetic.PNG" id="3_yku0c"]
+[ext_resource type="Texture2D" uid="uid://b6gq7157561sf" path="res://assets/backgrounds/straight path.png" id="2_qoopp"]
+[ext_resource type="Texture2D" uid="uid://dyca4k0sdkcd4" path="res://assets/encounters/deer mimetic/IMG_6235.png" id="4_2bdc5"]
 [ext_resource type="PackedScene" uid="uid://1yu00uqnngve" path="res://scenes/test_ui.tscn" id="4_juphx"]
+[ext_resource type="Texture2D" uid="uid://c10eui5mmt88w" path="res://assets/encounters/deer mimetic/Deer Mimetic 1.PNG" id="5_pn5xi"]
 
 [sub_resource type="GDScript" id="GDScript_seej5"]
 script/source = "extends Node2D
@@ -316,7 +316,7 @@ offset_bottom = 956.0
 [node name="Background" type="Sprite2D" parent="images"]
 position = Vector2(-5.317, -65)
 scale = Vector2(1.38069, 1.38069)
-texture = ExtResource("2_ey1kv")
+texture = ExtResource("2_qoopp")
 centered = false
 
 [node name="DeadFish" type="Sprite2D" parent="images"]
@@ -329,12 +329,13 @@ centered = false
 visible = false
 position = Vector2(-2, -70)
 scale = Vector2(0.693519, 0.693519)
-texture = ExtResource("2_41x7d")
+texture = ExtResource("4_2bdc5")
 centered = false
 
 [node name="DeerMimetic" type="Sprite2D" parent="images"]
+position = Vector2(0, -55)
 scale = Vector2(0.692593, 0.692593)
-texture = ExtResource("3_yku0c")
+texture = ExtResource("5_pn5xi")
 centered = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

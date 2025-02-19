@@ -11,6 +11,7 @@ Just a few feet from you is a person covered in a large hooded robe which obscur
 	Finally standing, they help you up as they continue
 	Traveller: Say, why don’t you take one of these for your trouble? It can be rough out here, we all need as much help as we can get. 
 	They reach into their bag and pull out a red healing potion. You thank them as you take it from them, waving to them as they leave in the opposite direction. 
+	do InventoryHandler.add_to_inventory(2)
 	You gained a Healing Potion!
 - Leave them to it
 	You avert your gaze as you discreetly try and walk past them. As you near them, they don’t seem to notice you, but you can hear panic in their voice as they whisper frustrated extremities. It pulls at you a bit, but you continue onwards.

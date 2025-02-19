@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cwpo133i6q0yf"]
 
-[ext_resource type="Script" path="res://scripts/inventory_item.gd" id="1_3x0g2"]
+[ext_resource type="Script" path="res://scripts/inventory_item.gd" id="1_j7v5u"]
 
 [node name="InventoryItem" type="MenuButton"]
 offset_right = 8.0
@@ -14,4 +14,4 @@ popup/item_2/id = 2
 popup/item_3/text = "Consume"
 popup/item_3/id = 3
 popup/item_3/disabled = true
-script = ExtResource("1_3x0g2")
+script = ExtResource("1_j7v5u")
