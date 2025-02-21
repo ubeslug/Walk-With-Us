@@ -12,7 +12,7 @@ var all_items_array : Array[PackedScene] = [
 	preload("res://scenes/items/healthpotion.tscn"),			#2_health potion
 	preload("res://scenes/items/berry.tscn"),					#3_single berry
 	preload("res://scenes/items/berrybundle.tscn"),				#4_berry bundle
-	preload("res://scenes/items/deadfish.tscn")
+	preload("res://scenes/items/deadfish.tscn")					#5_dead fish
 ]
 
 var item_potion

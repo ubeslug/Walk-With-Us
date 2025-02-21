@@ -1,0 +1,47 @@
+[gd_scene load_steps=2 format=3 uid="uid://crw055f2x78m2"]
+
+[ext_resource type="Texture2D" uid="uid://dx0fi7dwcwor7" path="res://assets/ui/heart_full.png" id="1_k4sbn"]
+
+[node name="Healthbar" type="HBoxContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Heart" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Heart"]
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("1_k4sbn")
+
+[node name="Heart2" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Heart2"]
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("1_k4sbn")
+
+[node name="Heart3" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Heart3"]
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("1_k4sbn")
+
+[node name="Heart4" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Heart4"]
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("1_k4sbn")
+
+[node name="Heart5" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Heart5"]
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("1_k4sbn")

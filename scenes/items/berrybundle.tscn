@@ -1,10 +1,35 @@
-[gd_scene load_steps=3 format=3 uid="uid://blboi8avcu1o5"]
+[gd_scene load_steps=4 format=3 uid="uid://blboi8avcu1o5"]
 
 [ext_resource type="PackedScene" uid="uid://cwpo133i6q0yf" path="res://scenes/items/_inventory_item.tscn" id="1_twpa8"]
 [ext_resource type="Texture2D" uid="uid://0ca2k3h5et74" path="res://assets/item sprites/Multiple Blackberries.PNG" id="2_crnwn"]
 
+[sub_resource type="GDScript" id="GDScript_884qu"]
+script/source = "extends Panel
+
+#item ID is 
+
+@onready var inventory_item = $InventoryItem
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	var popup = inventory_item.get_popup()
+	
+	popup.id_pressed.connect(file_menu)
+
+
+func file_menu(id):
+	print(id)
+	match(id):
+		0:
+			Globals.change_health(1)
+			InventoryHandler.remove_from_inventory(4)
+"
+
 [node name="Berrybundle" type="Panel"]
+script = SubResource("GDScript_884qu")
 
 [node name="InventoryItem" parent="." instance=ExtResource("1_twpa8")]
 layout_mode = 0
 icon = ExtResource("2_crnwn")
+item_count = 1
+popup/item_0/text = "Consume"

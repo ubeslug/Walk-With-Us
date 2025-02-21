@@ -1,0 +1,161 @@
+[gd_scene load_steps=25 format=3 uid="uid://bly2o8v0fqmvi"]
+
+[ext_resource type="Script" path="res://scripts/monster_database.gd" id="1_fmdyi"]
+[ext_resource type="PackedScene" uid="uid://beneqpcnms27p" path="res://scenes/beastiary pages/_page_base.tscn" id="2_4jixn"]
+[ext_resource type="PackedScene" uid="uid://b8dpovoyhhwhp" path="res://scenes/beastiary pages/lavender.tscn" id="3_7y3vh"]
+[ext_resource type="PackedScene" uid="uid://ckqd8ajnom4wd" path="res://scenes/beastiary pages/nightshade_page.tscn" id="4_14wdw"]
+[ext_resource type="PackedScene" uid="uid://d0llc3vdmdet" path="res://scenes/beastiary pages/buckleberries.tscn" id="5_n8885"]
+[ext_resource type="PackedScene" uid="uid://d3h5xettr3lgy" path="res://scenes/beastiary pages/lovely_bushes.tscn" id="6_118e1"]
+[ext_resource type="PackedScene" uid="uid://bjup2dqx33ruo" path="res://scenes/beastiary pages/whistling_tree_page.tscn" id="7_pequu"]
+[ext_resource type="PackedScene" uid="uid://58f2fodlqs8q" path="res://scenes/beastiary pages/deer_page.tscn" id="8_d0015"]
+[ext_resource type="PackedScene" uid="uid://cfm03oskwcxbv" path="res://scenes/beastiary pages/red_fox_page.tscn" id="9_xb5at"]
+[ext_resource type="PackedScene" uid="uid://dpe1mtjvhebob" path="res://scenes/beastiary pages/Black Bear.tscn" id="10_6rpct"]
+[ext_resource type="PackedScene" uid="uid://bf2okttow431s" path="res://scenes/beastiary pages/jackalope_page.tscn" id="11_vy0dc"]
+[ext_resource type="PackedScene" uid="uid://cyq20djsa0jul" path="res://scenes/beastiary pages/oak_page.tscn" id="12_p66ep"]
+[ext_resource type="PackedScene" uid="uid://baykr64ps5nxn" path="res://scenes/beastiary pages/omega_oak_page.tscn" id="13_ib5d8"]
+[ext_resource type="PackedScene" uid="uid://dkc24geafgq41" path="res://scenes/beastiary pages/mimetic_page.tscn" id="14_lkvh2"]
+[ext_resource type="PackedScene" uid="uid://b30a4e8tqp2w2" path="res://scenes/beastiary pages/skeleton_page.tscn" id="15_jfgg8"]
+[ext_resource type="PackedScene" uid="uid://br731a0smpgml" path="res://scenes/beastiary pages/cloaked_jester_page.tscn" id="16_lcf2d"]
+[ext_resource type="PackedScene" uid="uid://d0qqfmoq10frq" path="res://scenes/beastiary pages/decrepit_trader_page.tscn" id="17_47d4w"]
+[ext_resource type="Texture2D" uid="uid://dajrtc6pexgv5" path="res://assets/ui/pencil_arrow_default.png" id="18_dsdv8"]
+[ext_resource type="Texture2D" uid="uid://ha2gfqasdlrv" path="res://assets/ui/pencil_arrow_down.png" id="19_ldpkt"]
+[ext_resource type="Texture2D" uid="uid://dknxkoxf7ybja" path="res://assets/ui/pencil_arrow_highlight.png" id="20_63fb4"]
+[ext_resource type="Texture2D" uid="uid://bdmwcw428uwvd" path="res://assets/ui/pencil_arrow_disabled.png" id="21_u1sbc"]
+[ext_resource type="Texture2D" uid="uid://cxmuuj1w6v5q8" path="res://assets/ui/pencil_x_default.png" id="22_dupp8"]
+[ext_resource type="Texture2D" uid="uid://bj4vk8bahmgnn" path="res://assets/ui/pencil_x_down.png" id="23_vv4ov"]
+[ext_resource type="Texture2D" uid="uid://bov38b7j5a08t" path="res://assets/ui/pencil_x_highlight.png" id="24_ma1vn"]
+
+[node name="MonsterDatabase" type="CanvasLayer"]
+layer = 101
+script = ExtResource("1_fmdyi")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1968.0
+offset_bottom = 1172.0
+color = Color(1, 1, 1, 0)
+
+[node name="page_base" parent="." instance=ExtResource("2_4jixn")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+
+[node name="pages" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="lavender" parent="pages" instance=ExtResource("3_7y3vh")]
+layout_mode = 1
+
+[node name="nightshade" parent="pages" instance=ExtResource("4_14wdw")]
+layout_mode = 1
+
+[node name="buckleberry_page" parent="pages" instance=ExtResource("5_n8885")]
+visible = false
+layout_mode = 1
+
+[node name="lovely Bushes" parent="pages" instance=ExtResource("6_118e1")]
+layout_mode = 1
+
+[node name="whistling tree" parent="pages" instance=ExtResource("7_pequu")]
+layout_mode = 1
+
+[node name="deer_page" parent="pages" instance=ExtResource("8_d0015")]
+visible = false
+layout_mode = 1
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="red_fox_page" parent="pages" instance=ExtResource("9_xb5at")]
+visible = false
+layout_mode = 1
+
+[node name="Black Bear" parent="pages" instance=ExtResource("10_6rpct")]
+layout_mode = 1
+
+[node name="jackalope_page" parent="pages" instance=ExtResource("11_vy0dc")]
+visible = false
+layout_mode = 1
+
+[node name="oak_page" parent="pages" instance=ExtResource("12_p66ep")]
+visible = false
+layout_mode = 1
+
+[node name="omega_oak_page" parent="pages" instance=ExtResource("13_ib5d8")]
+visible = false
+layout_mode = 1
+
+[node name="MimeticPage" parent="pages" instance=ExtResource("14_lkvh2")]
+visible = false
+layout_mode = 1
+
+[node name="skeleton_page" parent="pages" instance=ExtResource("15_jfgg8")]
+visible = false
+layout_mode = 1
+
+[node name="jester_page" parent="pages" instance=ExtResource("16_lcf2d")]
+visible = false
+layout_mode = 1
+
+[node name="decrepit_trader" parent="pages" instance=ExtResource("17_47d4w")]
+visible = false
+layout_mode = 1
+
+[node name="Arrows" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="next_page" type="TextureButton" parent="Arrows"]
+layout_mode = 0
+offset_left = 497.0
+offset_top = 243.0
+offset_right = 753.0
+offset_bottom = 499.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("18_dsdv8")
+texture_pressed = ExtResource("19_ldpkt")
+texture_hover = ExtResource("20_63fb4")
+texture_disabled = ExtResource("21_u1sbc")
+
+[node name="prev_page" type="TextureButton" parent="Arrows"]
+layout_mode = 0
+offset_left = -516.0
+offset_top = 369.0
+offset_right = -260.0
+offset_bottom = 625.0
+rotation = 3.14159
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("18_dsdv8")
+texture_pressed = ExtResource("19_ldpkt")
+texture_hover = ExtResource("20_63fb4")
+texture_disabled = ExtResource("21_u1sbc")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = 283.0
+offset_top = 144.0
+offset_right = 539.0
+offset_bottom = 400.0
+scale = Vector2(0.25, 0.25)
+texture_normal = ExtResource("22_dupp8")
+texture_pressed = ExtResource("23_vv4ov")
+texture_hover = ExtResource("24_ma1vn")
+
+[connection signal="pressed" from="Arrows/next_page" to="." method="_on_next_page_pressed"]
+[connection signal="pressed" from="Arrows/prev_page" to="." method="_on_prev_page_pressed"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
