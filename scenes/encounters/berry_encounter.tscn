@@ -35,7 +35,12 @@ func show_berry_bush() -> void:
 func fade_out() -> void:
 	animation_player.play(\"fade-out\")
 	await animation_player.animation_finished
-	get_tree().change_scene_to_file(\"res://scenes/encounters/mimetic_deer.tscn\") #temp
+	
+	var scene: int = randi_range(1,2)
+	if scene == 1:
+		get_tree().change_scene_to_file(\"res://scenes/encounters/regular_fox.tscn\")
+	else:
+		get_tree().change_scene_to_file(\"res://scenes/encounters/mimetic_deer.tscn\")
 "
 
 [sub_resource type="Animation" id="Animation_tjlii"]

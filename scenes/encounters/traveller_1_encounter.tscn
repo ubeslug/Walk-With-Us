@@ -42,7 +42,14 @@ func show_potion() -> void:
 func fade_out() -> void:
 	animation_player.play(\"fade-out\")
 	await animation_player.animation_finished
-	get_tree().change_scene_to_file(\"res://scenes/menus/Title.tscn\") # temp
+	
+	var scene: int = randi_range(1,2)
+	scene = 1 #temp
+	if scene == 1:
+		get_tree().change_scene_to_file(\"res://scenes/encounters/berry_encounter.tscn\")
+	else:
+		get_tree().change_scene_to_file(\"\")
+	
 "
 
 [sub_resource type="Animation" id="Animation_uxrke"]

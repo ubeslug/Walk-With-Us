@@ -49,6 +49,10 @@ func page_buttons_check() -> void:
 	
 	if Input.is_action_just_pressed("page_right") and current_page < page_list.size() - 1:
 		current_page += 1
+	
+	if Input.is_action_just_pressed("close_bestiary") and Globals.bestiary_active == true:
+		Globals.bestiary_active = false
+
 
 func _on_next_page_pressed() -> void:
 	if current_page < page_list.size() - 1:

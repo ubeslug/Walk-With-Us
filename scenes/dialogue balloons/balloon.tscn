@@ -67,37 +67,6 @@ Panel/styles/panel = SubResource("StyleBoxFlat_uy0d5")
 layer = 100
 script = ExtResource("1_36de5")
 
-[node name="test" type="Control" parent="."]
-visible = false
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Inventory" type="ColorRect" parent="test"]
-layout_mode = 0
-offset_left = 1330.0
-offset_right = 1920.0
-offset_bottom = 1232.0
-color = Color(0.188294, 0.175849, 0.185435, 1)
-
-[node name="Label" type="Label" parent="test/Inventory"]
-layout_mode = 0
-offset_left = 25.0
-offset_top = 17.0
-offset_right = 65.0
-offset_bottom = 40.0
-theme_override_font_sizes/font_size = 30
-text = "Inventory"
-
-[node name="Text" type="ColorRect" parent="test"]
-layout_mode = 0
-offset_left = -1.0
-offset_top = 679.0
-offset_right = 1330.0
-offset_bottom = 1081.0
-color = Color(0, 0, 0, 1)
-
 [node name="Balloon" type="Control" parent="."]
 unique_name_in_owner = true
 layout_mode = 3
@@ -151,6 +120,7 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/normal_font_size = 30
 text = "Dialogue..."
+pause_at_characters = ""
 
 [node name="Responses" type="MarginContainer" parent="Balloon"]
 layout_mode = 1

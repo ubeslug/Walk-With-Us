@@ -29,6 +29,11 @@
 layer = 101
 script = ExtResource("1_wqoqc")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1968.0
+offset_bottom = 1172.0
+color = Color(1, 1, 1, 0)
+
 [node name="page_base" parent="." instance=ExtResource("2_sstd4")]
 anchors_preset = 8
 anchor_left = 0.5
@@ -46,24 +51,20 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="buckleberry_page" parent="pages" instance=ExtResource("3_ngrt1")]
-visible = false
-layout_mode = 1
-
 [node name="lavender" parent="pages" instance=ExtResource("4_8asxc")]
 layout_mode = 1
 
 [node name="nightshade" parent="pages" instance=ExtResource("5_wbg63")]
 layout_mode = 1
 
+[node name="buckleberry_page" parent="pages" instance=ExtResource("3_ngrt1")]
+visible = false
+layout_mode = 1
+
 [node name="lovely Bushes" parent="pages" instance=ExtResource("5_objma")]
 layout_mode = 1
 
 [node name="whistling tree" parent="pages" instance=ExtResource("7_47tob")]
-layout_mode = 1
-
-[node name="jackalope_page" parent="pages" instance=ExtResource("6_uxovd")]
-visible = false
 layout_mode = 1
 
 [node name="deer_page" parent="pages" instance=ExtResource("2_unoaq")]
@@ -82,7 +83,7 @@ layout_mode = 1
 [node name="Black Bear" parent="pages" instance=ExtResource("8_r4vcw")]
 layout_mode = 1
 
-[node name="MimeticPage" parent="pages" instance=ExtResource("3_bbeo5")]
+[node name="jackalope_page" parent="pages" instance=ExtResource("6_uxovd")]
 visible = false
 layout_mode = 1
 
@@ -91,6 +92,10 @@ visible = false
 layout_mode = 1
 
 [node name="omega_oak_page" parent="pages" instance=ExtResource("5_8uskg")]
+visible = false
+layout_mode = 1
+
+[node name="MimeticPage" parent="pages" instance=ExtResource("3_bbeo5")]
 visible = false
 layout_mode = 1
 
