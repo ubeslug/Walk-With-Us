@@ -1,0 +1,78 @@
+[gd_scene load_steps=5 format=3 uid="uid://blj8kxw0wcscu"]
+
+[ext_resource type="Script" uid="uid://dlekensw7awcy" path="res://scripts/page_base.gd" id="1_k1p7d"]
+[ext_resource type="PackedScene" uid="uid://beneqpcnms27p" path="res://scenes/beastiary pages/_page_base.tscn" id="2_xov1y"]
+[ext_resource type="Theme" uid="uid://bw2dm0g8j123d" path="res://themes/beastiary_writing.tres" id="3_swbky"]
+[ext_resource type="Texture2D" uid="uid://f3vkx70bc1p3" path="res://assets/sketches/Grizzly.png" id="3_xov1y"]
+
+[node name="Grizzly_bear" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_k1p7d")
+metadata/_edit_use_anchors_ = true
+
+[node name="page_base" parent="." instance=ExtResource("2_xov1y")]
+layout_mode = 1
+
+[node name="Contents" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="sketch" type="Sprite2D" parent="Contents"]
+position = Vector2(-354, 40)
+scale = Vector2(0.585301, 0.585301)
+texture = ExtResource("3_xov1y")
+
+[node name="entry name" type="Label" parent="Contents"]
+layout_mode = 0
+offset_left = -634.0
+offset_top = -341.0
+offset_right = -427.0
+offset_bottom = -288.0
+theme = ExtResource("3_swbky")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "Grizzly Bear"
+
+[node name="entry passage" type="Label" parent="Contents"]
+layout_mode = 0
+offset_left = 112.0
+offset_top = -326.0
+offset_right = 648.0
+offset_bottom = 251.0
+theme = ExtResource("3_swbky")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "Grizzly Bears are one of the common predators in forest areas. They are some of the largest creatures in the woods and one of the strongest. Grizzlies are known for their powerful bite strength, claws that can break open any container with ease, and extremely territorial nature. 
+
+Luckily, Grizzlies don’t tend to attack travellers on the road and will only do so in certain circumstances. If they are with cubs or you are approaching their territory, they may see you as a threat so it's best to keep your eyes on them until they are out of sight or until you have backed away to a safe distance. If they are interested in any food you may have, leave the food somewhere where they cannot reach you. 
+
+Grizzlies don’t normally attack out of the blue and in most situations do not want conflict, so it is best to follow either of those solutions based on their behavior. In any situation, it is unwise to try and run from them as Grizzlies are much faster than their large size would lead you to believe. "
+autowrap_mode = 3
+
+[node name="book_worms" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="level_1" type="Sprite2D" parent="book_worms"]
+visible = false
+
+[node name="level_2" type="Sprite2D" parent="book_worms"]
+visible = false
+
+[node name="level_3" type="Sprite2D" parent="book_worms"]
+visible = false

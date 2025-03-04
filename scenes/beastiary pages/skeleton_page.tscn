@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://b30a4e8tqp2w2"]
 
-[ext_resource type="Script" path="res://scripts/page_base.gd" id="1_3im87"]
+[ext_resource type="Script" uid="uid://dlekensw7awcy" path="res://scripts/page_base.gd" id="1_3im87"]
 [ext_resource type="PackedScene" uid="uid://beneqpcnms27p" path="res://scenes/beastiary pages/_page_base.tscn" id="2_8s3qa"]
 [ext_resource type="Texture2D" uid="uid://d0e7mhf6fuah" path="res://assets/sketches/Skeletons.png" id="3_f0abe"]
 [ext_resource type="Theme" uid="uid://bw2dm0g8j123d" path="res://themes/beastiary_writing.tres" id="4_nxed2"]
@@ -52,7 +52,11 @@ offset_bottom = 263.0
 theme = ExtResource("4_nxed2")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 24
-text = "The most common form of undead entities travelers might encounter is the skeleton. Draped in the skin and cloth of the entity's former life skeletons roam endlessly in the areas where they met their untimely end. Skeletons exist only due to their past grudges as many have been documented to be acting out basic actions that mimic intelligence such as gathering and hunting but nothing beyond such. Skeletons can vary between docile and hostile based on their past lives. Travelers can ignore docile skeletons that carry out simple actions such as walking or gathering but should be wary of skeletons that show aggression or ones that carry items that could be considered a weapon. "
+text = "The most common form of undead entities travelers might encounter is the skeleton. Draped in the skin and cloth of the entity's former life skeletons roam endlessly in the areas where they met their untimely end. 
+
+Skeletons exist only due to their past grudges as many have been documented to be acting out basic actions that mimic intelligence such as gathering and hunting but nothing beyond such. Skeletons can vary between docile and hostile based on their past lives. 
+
+Travelers can ignore docile skeletons that carry out simple actions such as walking or gathering but should be wary of skeletons that show aggression or ones that carry items that could be considered a weapon. "
 autowrap_mode = 3
 
 [node name="book_worms" type="Control" parent="."]

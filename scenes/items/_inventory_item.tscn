@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cwpo133i6q0yf"]
 
-[ext_resource type="Script" path="res://scripts/inventory_item.gd" id="1_j7v5u"]
+[ext_resource type="Script" uid="uid://bjnrt4bj8c5jr" path="res://scripts/inventory_item.gd" id="1_j7v5u"]
 
 [node name="InventoryItem" type="MenuButton"]
 offset_right = 8.0

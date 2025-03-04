@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dpe1mtjvhebob"]
 
-[ext_resource type="Script" path="res://scripts/page_base.gd" id="1_v2xdc"]
+[ext_resource type="Script" uid="uid://dlekensw7awcy" path="res://scripts/page_base.gd" id="1_v2xdc"]
 [ext_resource type="PackedScene" uid="uid://beneqpcnms27p" path="res://scenes/beastiary pages/_page_base.tscn" id="2_6umhm"]
 [ext_resource type="Theme" uid="uid://bw2dm0g8j123d" path="res://themes/beastiary_writing.tres" id="3_3idue"]
 [ext_resource type="Texture2D" uid="uid://c3aseukub6dng" path="res://assets/sketches/BlackBear.png" id="3_biy3u"]
@@ -50,10 +50,17 @@ offset_left = 112.0
 offset_top = -326.0
 offset_right = 648.0
 offset_bottom = 251.0
+rotation = -0.00178865
 theme = ExtResource("3_3idue")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 24
-text = "	A large creature with striking black fur hence its name. Black bears are very territorial creatures marking their territory on trees by either rubbing their backs onto it or striking the bark with their claws leaving marks on it. Like others of its kind the Black Bear will enter hibernation during the winter months in order to conserve energy during months of scarce food and low temperatures so they usually consume large amounts of food before their hibernation begins. Despite their size black bears will rarely become the aggressors during interactions with other people and will mostly use intimidation tactics to scare others away. But if you get too close it will surely attack. Travellers are encouraged to back away slowly from these creatures during encounters and to create loud sounds in order to deter the Black Bear away from you."
+text = "A large creature with striking black fur hence its name. Black bears are very territorial creatures marking their territory on trees by either rubbing their backs onto it or striking the bark with their claws leaving marks on it. 
+
+Like others of its kind the Black Bear will enter hibernation during the winter months in order to conserve energy during months of scarce food and low temperatures so they usually consume large amounts of food before their hibernation begins. 
+
+Despite their size black bears will rarely become the aggressors during interactions with other people and will mostly use intimidation tactics to scare others away. But if you get too close it will surely attack. 
+
+Travellers are encouraged to back away slowly from these creatures during encounters and to create loud sounds in order to deter the Black Bear away from you."
 autowrap_mode = 3
 
 [node name="book_worms" type="Control" parent="."]

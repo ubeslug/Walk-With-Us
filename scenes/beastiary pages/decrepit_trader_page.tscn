@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://d0qqfmoq10frq"]
+[gd_scene load_steps=5 format=3 uid="uid://d0qqfmoq10frq"]
 
-[ext_resource type="Script" path="res://scripts/page_base.gd" id="1_0i1r3"]
+[ext_resource type="Script" uid="uid://dlekensw7awcy" path="res://scripts/page_base.gd" id="1_0i1r3"]
 [ext_resource type="PackedScene" uid="uid://beneqpcnms27p" path="res://scenes/beastiary pages/_page_base.tscn" id="2_2wboa"]
+[ext_resource type="Texture2D" uid="uid://drxgd8hih1rsn" path="res://assets/sketches/DecrepitTrader.png" id="3_lqx6r"]
 [ext_resource type="Theme" uid="uid://bw2dm0g8j123d" path="res://themes/beastiary_writing.tres" id="4_3c21b"]
 
 [node name="decrepit_trader" type="Control"]
@@ -29,6 +30,7 @@ grow_vertical = 2
 [node name="sketch" type="Sprite2D" parent="Contents"]
 position = Vector2(-309, 17.9999)
 scale = Vector2(0.562295, 0.562295)
+texture = ExtResource("3_lqx6r")
 
 [node name="entry name" type="Label" parent="Contents"]
 layout_mode = 0
@@ -50,7 +52,11 @@ offset_bottom = 255.0
 theme = ExtResource("4_3c21b")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 24
-text = "We didn’t know whether to create an entry for this person or not. Sometimes they appear normal, sometimes they are uncanny. They never give a name, only a trade. We have dubbed this person The Decrepit Trader. This trader seems to show up at any place they wish, as they have been seen in various places both in settlements and in the wilderness. Some of their body is shrouded in an unknown shade but the parts that are visible seem to be skeletal or rotting. While their trades always seemed simple and innocent, we know better now. And from our lack of precautions we have lost one of our own. We urge you to scrutinize every exchange from traders because they are all shrewd in their own way."
+text = "We didn’t know whether to create an entry for this person or not. Sometimes they appear normal, sometimes they are uncanny. They never give a name, only a trade. We have dubbed this person The Decrepit Trader. 
+
+This trader seems to show up at any place they wish, as they have been seen in various places both in settlements and in the wilderness. Some of their body is shrouded in an unknown shade but the parts that are visible seem to be skeletal or rotting. 
+
+While their trades always seemed simple and innocent, we know better now. And from our lack of precautions we have lost one of our own. We urge you to scrutinize every exchange from traders because they are all shrewd in their own way."
 autowrap_mode = 3
 
 [node name="book_worms" type="Control" parent="."]

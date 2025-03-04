@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://1yu00uqnngve"]
 
-[ext_resource type="Script" path="res://scripts/inventory_loader.gd" id="1_0th41"]
+[ext_resource type="Script" uid="uid://dx8l6gireglpt" path="res://scripts/inventory_loader.gd" id="1_0th41"]
 [ext_resource type="PackedScene" uid="uid://cxoatkheomly" path="res://scenes/items/package_item.tscn" id="2_hyasa"]
 [ext_resource type="PackedScene" uid="uid://csfiit70pipqw" path="res://scenes/items/bestiary_item.tscn" id="3_d5d06"]
 [ext_resource type="PackedScene" uid="uid://bly2o8v0fqmvi" path="res://scenes/ui/monster_database.tscn" id="4_speqq"]

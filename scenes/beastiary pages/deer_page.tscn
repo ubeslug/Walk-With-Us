@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://58f2fodlqs8q"]
 
-[ext_resource type="Script" path="res://scripts/page_base.gd" id="1_b3ndn"]
+[ext_resource type="Script" uid="uid://dlekensw7awcy" path="res://scripts/page_base.gd" id="1_b3ndn"]
 [ext_resource type="PackedScene" uid="uid://beneqpcnms27p" path="res://scenes/beastiary pages/_page_base.tscn" id="2_llbps"]
 [ext_resource type="Texture2D" uid="uid://d02umkx5ah2oo" path="res://assets/sketches/Deer.png" id="3_flfab"]
 [ext_resource type="Theme" uid="uid://bw2dm0g8j123d" path="res://themes/beastiary_writing.tres" id="4_h0h3j"]
@@ -53,7 +53,9 @@ offset_bottom = 251.0
 theme = ExtResource("4_h0h3j")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 24
-text = "A common animal roaming the forests, deer are seen normally eating the foliage deep in the forest or on the sides of roads. They tend not to approach people, remaining highly alert for any potential dangers. Skittish in nature, Deer are rarely ever confrontational, usually choosing to run away from a perceived threat. Male deer tend to be the only ones who will actively choose fight over flight so it's best to stay far away from a male deer, ones with horns, especially if they are with female deer"
+text = "A common animal roaming the forests, deer are seen normally eating the foliage deep in the forest or on the sides of roads. They tend not to approach people, remaining highly alert for any potential dangers. 
+
+Skittish in nature, Deer are rarely ever confrontational, usually choosing to run away from a perceived threat. Male deer tend to be the only ones who will actively choose fight over flight so it's best to stay far away from a male deer, ones with horns, especially if they are with female deer"
 autowrap_mode = 3
 
 [node name="book_worms" type="Control" parent="."]

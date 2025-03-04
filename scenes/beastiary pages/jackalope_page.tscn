@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bf2okttow431s"]
 
-[ext_resource type="Script" path="res://scripts/page_base.gd" id="1_b3ndn"]
+[ext_resource type="Script" uid="uid://dlekensw7awcy" path="res://scripts/page_base.gd" id="1_b3ndn"]
 [ext_resource type="PackedScene" uid="uid://beneqpcnms27p" path="res://scenes/beastiary pages/_page_base.tscn" id="2_llbps"]
 [ext_resource type="Texture2D" uid="uid://boxxqygj1k5ef" path="res://assets/sketches/Jackalope.png" id="3_vqmbu"]
 [ext_resource type="Theme" uid="uid://bw2dm0g8j123d" path="res://themes/beastiary_writing.tres" id="4_h0h3j"]
@@ -53,8 +53,9 @@ offset_bottom = 251.0
 theme = ExtResource("4_h0h3j")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 24
-text = "A genus offshoot from the common rabbit the Jackalope is a docile creature that r
-oams the flats of desserts and open fields. These creatures mostly are of no harm to other creatures and are in fact prey creatures. But even they have their own biological defense. The head of a Jackalope is crowned with the horns like that of deers which they will not hesitate to use when they are attacked or feel threatened. Travellers are advised to show no hostility to these creatures."
+text = "A genus offshoot from the common rabbit the Jackalope is a docile creature that roams the flats of desserts and open fields. These creatures mostly are of no harm to other creatures and are in fact prey creatures. 
+
+But even they have their own biological defense. The head of a Jackalope is crowned with the horns like that of deers which they will not hesitate to use when they are attacked or feel threatened. Travellers are advised to show no hostility to these creatures."
 autowrap_mode = 3
 
 [node name="book_worms" type="Control" parent="."]

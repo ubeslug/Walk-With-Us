@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://baykr64ps5nxn"]
 
-[ext_resource type="Script" path="res://scripts/page_base.gd" id="1_d01q4"]
+[ext_resource type="Script" uid="uid://dlekensw7awcy" path="res://scripts/page_base.gd" id="1_d01q4"]
 [ext_resource type="PackedScene" uid="uid://beneqpcnms27p" path="res://scenes/beastiary pages/_page_base.tscn" id="2_q5c6q"]
 [ext_resource type="Texture2D" uid="uid://d0av6ovmiaj4c" path="res://assets/sketches/Omega_oak.png" id="3_gkven"]
 [ext_resource type="Theme" uid="uid://bw2dm0g8j123d" path="res://themes/beastiary_writing.tres" id="4_ev8rg"]
@@ -52,7 +52,11 @@ offset_bottom = 263.0
 theme = ExtResource("4_ev8rg")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 24
-text = "While The Oak mainly stays in their base form, on rare occasions they may evolve into what is known as a Omega Oak. They are much bigger and stronger than their usual counterparts, not just satisfied with turning other travellers into them but hungering for flesh. Omega Oaks will similarly remain docile, with their breathing harder to hear against their thicker trunks, until they are approached. However, rather than infecting a new host, it will reveal its true form, with wooden sharp teeth and branches for arms that will lunge forward and eat whatever comes near it. To bring animals and people closer to it, the Omega Oak will sometimes extrude a sap that creates a smell desirable by whatever it tries to draw in. It is advised to avoid large trees covered in sap or smells that do not fit the location you are currently in such as something sickly sweet or savory."
+text = "While The Oak mainly stays in their base form, on rare occasions they may evolve into what is known as a Omega Oak. They are much bigger and stronger than their usual counterparts, not just satisfied with turning other travellers into them but hungering for flesh. Omega Oaks will similarly remain docile, with their breathing harder to hear against their thicker trunks, until they are approached. 
+
+However, rather than infecting a new host, it will reveal its true form, with wooden sharp teeth and branches for arms that will lunge forward and eat whatever comes near it. To bring animals and people closer to it, the Omega Oak will sometimes extrude a sap that creates a smell desirable by whatever it tries to draw in. 
+
+It is advised to avoid large trees covered in sap or smells that do not fit the location you are currently in such as something sickly sweet or savory."
 autowrap_mode = 3
 
 [node name="book_worms" type="Control" parent="."]

@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://byqjbkmwu7bq5" path="res://assets/backgrounds/Walk_With_Us_-_Forest_Background-01.png" id="2_c5tjm"]
 [ext_resource type="Texture2D" uid="uid://c1umcmmic2cvk" path="res://assets/encounters/fox_mimetic/fox_1.PNG" id="3_8ri4c"]
 [ext_resource type="Texture2D" uid="uid://csyn6r5dfvqgy" path="res://assets/encounters/fox_mimetic/fox_2.PNG" id="4_5rssr"]
-[ext_resource type="Shader" path="res://shaders/fog.gdshader" id="5_rbgye"]
+[ext_resource type="Shader" uid="uid://csc4vhiuwwxoh" path="res://shaders/fog.gdshader" id="5_rbgye"]
 
 [sub_resource type="GDScript" id="GDScript_jxcyp"]
 script/source = "extends Node2D
@@ -370,13 +370,13 @@ tracks/3/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hwdc6"]
 _data = {
-"RESET": SubResource("Animation_mnh07"),
-"evil fox": SubResource("Animation_yrkee"),
-"fade_out": SubResource("Animation_vgnrk"),
-"fox flees": SubResource("Animation_v1pli"),
-"leave fox": SubResource("Animation_vae5g"),
-"show fox": SubResource("Animation_gbnmx"),
-"startup": SubResource("Animation_murs7")
+&"RESET": SubResource("Animation_mnh07"),
+&"evil fox": SubResource("Animation_yrkee"),
+&"fade_out": SubResource("Animation_vgnrk"),
+&"fox flees": SubResource("Animation_v1pli"),
+&"leave fox": SubResource("Animation_vae5g"),
+&"show fox": SubResource("Animation_gbnmx"),
+&"startup": SubResource("Animation_murs7")
 }
 
 [node name="Intro" type="Node2D"]

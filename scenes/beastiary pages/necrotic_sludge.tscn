@@ -1,0 +1,88 @@
+[gd_scene load_steps=6 format=3 uid="uid://cwsoynweuh0fp"]
+
+[ext_resource type="Script" uid="uid://dlekensw7awcy" path="res://scripts/page_base.gd" id="1_bsfgk"]
+[ext_resource type="PackedScene" uid="uid://beneqpcnms27p" path="res://scenes/beastiary pages/_page_base.tscn" id="2_c72rd"]
+[ext_resource type="Theme" uid="uid://bw2dm0g8j123d" path="res://themes/beastiary_writing.tres" id="3_o8jav"]
+[ext_resource type="Texture2D" uid="uid://bnclwq7i06pu4" path="res://assets/sketches/Necrotic_Sludge.png" id="3_xbu8w"]
+[ext_resource type="FontFile" uid="uid://egpk62jv088x" path="res://fonts/BaksoDaging-Regular.ttf" id="5_yx3v2"]
+
+[node name="necrotic_sludge" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bsfgk")
+metadata/_edit_use_anchors_ = true
+
+[node name="page_base" parent="." instance=ExtResource("2_c72rd")]
+layout_mode = 1
+
+[node name="Contents" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="sketch" type="Sprite2D" parent="Contents"]
+position = Vector2(-354, 40)
+scale = Vector2(0.585301, 0.585301)
+texture = ExtResource("3_xbu8w")
+
+[node name="entry name" type="Label" parent="Contents"]
+layout_mode = 0
+offset_left = -634.0
+offset_top = -341.0
+offset_right = -427.0
+offset_bottom = -288.0
+theme = ExtResource("3_o8jav")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "Necrotic Sludge"
+
+[node name="entry passage" type="Label" parent="Contents"]
+layout_mode = 0
+offset_left = 112.0
+offset_top = -326.0
+offset_right = 648.0
+offset_bottom = 251.0
+theme = ExtResource("3_o8jav")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "An undead type of entity that is born from the accumulation of various carcasses. The Necrotic Sludge molds itself into a makeshift form by attaching various body parts from any nearby remains this entity can take on multiple forms based off of what remains lay nearby and they will keep adding onto to themselves with more and more parts. 
+
+While younger Necrotic Sludges tend to have little amount of parts to them, elder ones may have multiple parts creating themselves a larger form. These entities achieve this goal due to their unique sticky constitution but can be easily dealt with as the Necrotic Sludge’s form can easily be dissolved by water. "
+autowrap_mode = 3
+
+[node name="Label" type="Label" parent="Contents"]
+layout_mode = 0
+offset_left = 140.0
+offset_top = 174.0
+offset_right = 397.0
+offset_bottom = 199.0
+rotation = 0.00562232
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_yx3v2")
+text = "These things also smell really bad."
+
+[node name="book_worms" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="level_1" type="Sprite2D" parent="book_worms"]
+visible = false
+
+[node name="level_2" type="Sprite2D" parent="book_worms"]
+visible = false
+
+[node name="level_3" type="Sprite2D" parent="book_worms"]
+visible = false

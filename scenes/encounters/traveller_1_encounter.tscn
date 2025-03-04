@@ -405,12 +405,12 @@ tracks/3/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rwbvg"]
 _data = {
-"RESET": SubResource("Animation_uxrke"),
-"fade-out": SubResource("Animation_nqh2r"),
-"show_traveler": SubResource("Animation_l6gr3"),
-"startup": SubResource("Animation_e28yj"),
-"traveller_approve": SubResource("Animation_jcou1"),
-"traveller_potion": SubResource("Animation_ekck8")
+&"RESET": SubResource("Animation_uxrke"),
+&"fade-out": SubResource("Animation_nqh2r"),
+&"show_traveler": SubResource("Animation_l6gr3"),
+&"startup": SubResource("Animation_e28yj"),
+&"traveller_approve": SubResource("Animation_jcou1"),
+&"traveller_potion": SubResource("Animation_ekck8")
 }
 
 [node name="Traveller1Encounter" type="Node2D"]
@@ -453,7 +453,7 @@ centered = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_rwbvg")
+&"": SubResource("AnimationLibrary_rwbvg")
 }
 autoplay = "startup"
 

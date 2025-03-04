@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cyq20djsa0jul"]
 
-[ext_resource type="Script" path="res://scripts/page_base.gd" id="1_lrq5v"]
+[ext_resource type="Script" uid="uid://dlekensw7awcy" path="res://scripts/page_base.gd" id="1_lrq5v"]
 [ext_resource type="PackedScene" uid="uid://beneqpcnms27p" path="res://scenes/beastiary pages/_page_base.tscn" id="2_6vdps"]
 [ext_resource type="Texture2D" uid="uid://dpsaeoa58dq3c" path="res://assets/sketches/Oak.png" id="3_acpie"]
 [ext_resource type="Theme" uid="uid://bw2dm0g8j123d" path="res://themes/beastiary_writing.tres" id="4_625ow"]
@@ -52,7 +52,11 @@ offset_bottom = 305.0
 theme = ExtResource("4_625ow")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 24
-text = "A common entity found in forests. The Oak can take the form of most types of trees and is a type of curse flora. These entities mimic the stillness of trees luring creatures into a false sense of security around it before striking while their guards are down. When active The Oak attempts to infect any nearby living being with its curse turning the infected into an inanimate tree. The curse is spread through fungus that the entity carries inside its trunk. This entity when docile hides its monstrous features and can be identified by its slight breathing. If you end up encountering The Oak trying to avoid it if docile and if active avoid the fungus spores it spreads."
+text = "A common entity found in forests. The Oak can take the form of most types of trees and is a type of curse flora. These entities mimic the stillness of trees luring creatures into a false sense of security around it before striking while their guards are down. 
+
+When active The Oak attempts to infect any nearby living being with its curse turning the infected into an inanimate tree. The curse is spread through fungus that the entity carries inside its trunk. This entity when docile hides its monstrous features and can be identified by its slight breathing. 
+
+If you end up encountering The Oak trying to avoid it if docile and if active avoid the fungus spores it spreads."
 autowrap_mode = 3
 
 [node name="book_worms" type="Control" parent="."]

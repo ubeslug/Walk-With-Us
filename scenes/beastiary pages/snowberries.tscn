@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cidy8oe8rbw1u"]
 
-[ext_resource type="Script" path="res://scripts/page_base.gd" id="1_0gti5"]
+[ext_resource type="Script" uid="uid://dlekensw7awcy" path="res://scripts/page_base.gd" id="1_0gti5"]
 [ext_resource type="PackedScene" uid="uid://beneqpcnms27p" path="res://scenes/beastiary pages/_page_base.tscn" id="2_l0sfp"]
 [ext_resource type="Theme" uid="uid://bw2dm0g8j123d" path="res://themes/beastiary_writing.tres" id="3_3hxbv"]
 [ext_resource type="Texture2D" uid="uid://ds0gfbpikxiwr" path="res://assets/sketches/snowberries.png" id="3_6aeta"]
@@ -53,7 +53,9 @@ offset_bottom = 251.0
 theme = ExtResource("3_3hxbv")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 24
-text = "Snow Berries can be identified by their bright red appearance and dark coarse leaves. Usually found in very cold climates, Snow Berries are incredibly poisonous and should not be consumed if found. However, they do still have their uses as deterrents to other creatures within the forest. Should you find SnowBerries on your journey, it may not hurt to take a few with you. Just be careful to not eat a few on your way."
+text = "Snow Berries can be identified by their bright red appearance and dark coarse leaves. Usually found in very cold climates, Snow Berries are incredibly poisonous and should not be consumed if found. However, they do still have their uses as deterrents to other creatures within the forest. 
+
+Should you find SnowBerries on your journey, it may not hurt to take a few with you. Just be careful to not eat a few on your way."
 autowrap_mode = 3
 
 [node name="book_worms" type="Control" parent="."]

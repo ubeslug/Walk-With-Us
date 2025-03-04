@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://br731a0smpgml"]
 
-[ext_resource type="Script" path="res://scripts/page_base.gd" id="1_r6iia"]
+[ext_resource type="Script" uid="uid://dlekensw7awcy" path="res://scripts/page_base.gd" id="1_r6iia"]
 [ext_resource type="PackedScene" uid="uid://beneqpcnms27p" path="res://scenes/beastiary pages/_page_base.tscn" id="2_8xjam"]
 [ext_resource type="Texture2D" uid="uid://bd63kg53cc3dk" path="res://assets/sketches/Jester.png" id="3_qgava"]
 [ext_resource type="Theme" uid="uid://bw2dm0g8j123d" path="res://themes/beastiary_writing.tres" id="4_cu1cp"]
@@ -49,10 +49,15 @@ offset_left = 97.0
 offset_top = -342.0
 offset_right = 633.0
 offset_bottom = 293.0
+rotation = 0.00351413
 theme = ExtResource("4_cu1cp")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 24
-text = "Cloaked Jesters roam the paths of several biomes in this land, wearing a long dark robe and having the appearance of a white smiling mask on their face. They will approach travellers asking for “help” in order to begin a conversation with them. They will ask you questions about your life and journey. However, remain vigilant. A Cloaked Jester’s main form of attack is through manipulation of the mind and deception. They will try to dig deeper into you, your insecurities, and your fears with the goal of breaking you down until you are vulnerable enough for them to attack, whisking you away into their robes, into a black void of a body, where you will never be seen again. If it can be avoided, do not begin a conversation with a Cloaked Jester for they will lose interest and leave you alone. If you are unlucky enough to be caught in a conversation with one, keep a strong mind and under no circumstances are you to reveal sensitive information about yourself. Do not give them fuel to get into your head. Do this and the Jester will get bored and look for someone weaker.  
+text = "Cloaked Jesters roam the paths of several biomes in this land, wearing a long dark robe and having the appearance of a white smiling mask on their face. They will approach travellers asking for “help” in order to begin a conversation with them. They will ask you questions about your life and journey. 
+
+However, remain vigilant. A Cloaked Jester’s main form of attack is through manipulation of the mind and deception. They will try to dig deeper into you, your insecurities, and your fears with the goal of breaking you down until you are vulnerable enough for them to attack, whisking you away into their robes, into a black void of a body, where you will never be seen again. 
+
+If it can be avoided, do not begin a conversation with a Cloaked Jester for they will lose interest and leave you alone. If you are unlucky enough to be caught in a conversation with one, keep a strong mind and under no circumstances are you to reveal sensitive information about yourself. Do not give them fuel to get into your head. Do this and the Jester will get bored and look for someone weaker.  
 "
 autowrap_mode = 3
 
