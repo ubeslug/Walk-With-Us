@@ -38,7 +38,7 @@ func fox_leave() -> void:
 func fade_out() -> void:
 	animation_player.play(\"fade-out\")
 	await animation_player.animation_finished
-	get_tree().change_scene_to_file(\"res://scenes/encounters/traveller_1_encounter.tscn\")
+	get_tree().change_scene_to_file(\"res://scenes/encounters/mimetic_deer.tscn\")
 "
 
 [sub_resource type="Animation" id="Animation_uvo8f"]
@@ -216,11 +216,11 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_such0"]
 _data = {
-&"RESET": SubResource("Animation_uvo8f"),
-&"fade-out": SubResource("Animation_wf0wo"),
-&"fox_leave": SubResource("Animation_p4mrf"),
-&"show_fox": SubResource("Animation_j1kxx"),
-&"startup": SubResource("Animation_6pi44")
+"RESET": SubResource("Animation_uvo8f"),
+"fade-out": SubResource("Animation_wf0wo"),
+"fox_leave": SubResource("Animation_p4mrf"),
+"show_fox": SubResource("Animation_j1kxx"),
+"startup": SubResource("Animation_6pi44")
 }
 
 [node name="regularfox" type="Node2D"]
@@ -249,7 +249,7 @@ centered = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-&"": SubResource("AnimationLibrary_such0")
+"": SubResource("AnimationLibrary_such0")
 }
 autoplay = "startup"
 

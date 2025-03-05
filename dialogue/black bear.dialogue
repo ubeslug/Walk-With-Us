@@ -1,22 +1,53 @@
 ~ start
-if InventoryHandler.check_inventory(3) or InventoryHandler.check_inventory(4) or InventoryHandler.check_inventory(3):
+if InventoryHandler.check_inventory(3) or InventoryHandler.check_inventory(4) or InventoryHandler.check_inventory(5):
 	=> has_food
 else:
 	=> no_food
 => END
 
 ~ no_food
-A snap in the distance cuts through the quiet. You turn your head in the direction of the sound. Squinting your eyes, you can just make out a bear a few feet away from you. Its fur is a dark black, almost blending into the bushes it trudges through. While your heart initially jumps at the sight of it, you calm as you notice that it's walking away from you, deeper into the woods. You keep your eye on it until it is out of sight before walking again. 
+
+A snap in the distance cuts through the quiet. You turn your head in the direction of the sound. Squinting your eyes, you can just make out a bear a few feet away from you. Its fur is a dark black, almost blending into the bushes it trudges through. While your heart initially jumps at the sight of it, you calm down as you notice that it's walking away from you, deeper into the woods. You keep your eye on it until it is out of sight before walking again. 
+do fade_out()
 => END
 
 ~ has_food
-You walk along the path more, thoughts racing through your head about the journey ahead of you, until a gruff panting snaps you out of your thinking. You turn to find yourself in front of a bear. Its fur is dark black and it's relatively small for a bear. Its large brown muzzle sniffs the air in front of you as it lazily waddles toward you. It's only a couple feet away but it still gives you time to react. 
+
+You walk along the path more, thoughts racing through your head about the journey ahead of you, until a gruff panting snaps you out of your thinking. 
+do bear_approach()
+You turn to find yourself in front of a bear. Its fur is dark black and it's relatively small for a bear. Its large brown muzzle sniffs the air in front of you as it lazily waddles toward you. It's only a couple feet away but it still gives you time to react. 
 - Play dead
-	You suddenly pretend to seize up and fall onto the ground. The bear initially is taken aback and flinches at your dramatic performance but then continues towards you. It reaches you and begins to sniff your arm, your torso, and then your leg. You feel its claws shift on top of you, not enough to penetrate into your body but it's definitely looking for something. As it examines your leg you feel its hot breath along your pants as it begins to head towards your bag. You expect it to grab onto the bag with its teeth but you instead feel its teeth in your thigh. You scream in pain, startling the bear, causing it to run back into the woods. You sit up and try to tend to your wounded leg, but still end up limping away even after getting to bleeding under control.
-	# lose health??? 
+	You suddenly pretend to seize up and fall onto the ground. The bear initially is taken aback and flinches at your dramatic performance but then continues towards you. It reaches you and begins to sniff your arm, your torso, and then your leg. You feel its claws shift on top of you, not enough to penetrate into your body but it's definitely looking for something. As it examines your leg you feel its hot breath along your pants as it begins to head towards your bag. 
+	do bear_defense()
+	You expect it to grab onto the bag with its teeth but you instead feel its teeth in your thigh. You scream in pain, startling the bear, causing it to run back into the woods. 
+	do Globals.change_health(-1)
+	if Globals.health <= 0:
+		=> death
+	else:
+		do bear_leave()
+		You sit up and try to tend to your wounded leg, but still end up limping away even after getting to bleeding under control.
+		do fade_out()
+	
 - Try to scare it
-	Summoning all the fearsome energy you can, you begin to raise your hands up, yelling at the bear while clapping your hands. While you do look incredibly ridiculous, it works as the bear suddenly flinches and runs into the woods. You finally stop after you hear its footfalls finally dissipate into the trees. 
+	Summoning all the fearsome energy you can, you begin to raise your hands up, yelling at the bear while clapping your hands. While you do look incredibly ridiculous, it works as the bear suddenly flinches and runs into the woods. 
+	do bear_leave()
+	You finally stop after you hear its footfalls finally dissipate into the trees. 
+	do fade_out()
+	=> END
 - Try to fight it
-	You won’t go down without a fight! You lunge at the bear and swipe at its nose. However, before you can even collide with its snout, it grabs onto your hand and bites down hard. You scream in pain, causing the bear to let go and run back into the woods. You begin to tend to your wounded hand and stop the bleeding enough to keep going.
-	# lose health???
+	do bear_attack()
+	You won’t go down without a fight! You lunge at the bear and swipe at its nose. However, before you can even collide with its snout, it grabs onto your hand and bites down hard. You scream in pain, causing the bear to let go and run back into the woods. 
+	do Globals.change_health(-1)
+	if Globals.health <= 0:
+		=> death
+	else:
+		do bear_leave()
+		You begin to tend to your wounded hand and stop the bleeding enough to keep going.
+		do fade_out()
+	
+=> END
+
+~ death
+do bear_leave()
+do game_over()
 => END

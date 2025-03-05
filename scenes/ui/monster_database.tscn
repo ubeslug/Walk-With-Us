@@ -1,6 +1,6 @@
 [gd_scene load_steps=30 format=3 uid="uid://bly2o8v0fqmvi"]
 
-[ext_resource type="Script" uid="uid://cqa7wm5syv7w7" path="res://scripts/monster_database.gd" id="1_fmdyi"]
+[ext_resource type="Script" path="res://scripts/monster_database.gd" id="1_fmdyi"]
 [ext_resource type="PackedScene" uid="uid://beneqpcnms27p" path="res://scenes/beastiary pages/_page_base.tscn" id="2_4jixn"]
 [ext_resource type="PackedScene" uid="uid://b8dpovoyhhwhp" path="res://scenes/beastiary pages/lavender.tscn" id="3_7y3vh"]
 [ext_resource type="PackedScene" uid="uid://ckqd8ajnom4wd" path="res://scenes/beastiary pages/nightshade_page.tscn" id="4_14wdw"]

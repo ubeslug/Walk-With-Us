@@ -1,10 +1,50 @@
-[gd_scene load_steps=3 format=3 uid="uid://f6dabyp5xnu5"]
+[gd_scene load_steps=4 format=3 uid="uid://f6dabyp5xnu5"]
 
 [ext_resource type="PackedScene" uid="uid://cwpo133i6q0yf" path="res://scenes/items/_inventory_item.tscn" id="1_u4g6m"]
 [ext_resource type="Texture2D" uid="uid://b73bk627grfo2" path="res://assets/item sprites/Dead Fish.PNG" id="2_bd10l"]
 
+[sub_resource type="GDScript" id="GDScript_eji5q"]
+script/source = "extends Panel
+
+@onready var inventory_item = $InventoryItem
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	var popup = inventory_item.get_popup()
+	
+	popup.id_pressed.connect(file_menu)
+
+
+func file_menu(id):
+	print(id)
+	match(id):
+		0:
+			var health: int = randi_range(-1,1)
+			Globals.change_health(health)
+			InventoryHandler.remove_from_inventory(5)
+
+func _on_mouse_entered():
+	inventory_item.item_sprite.modulate = \"ff6464\"
+	inventory_item.text = (\"
+	Dead Fish
+	May or may not be good to eat.
+	\")
+
+
+
+func _on_mouse_exited():
+	pass # Replace with function body.
+	inventory_item.item_sprite.modulate = \"ffffff\"
+"
+
 [node name="Deadfish" type="Panel"]
+script = SubResource("GDScript_eji5q")
 
 [node name="InventoryItem" parent="." instance=ExtResource("1_u4g6m")]
 layout_mode = 0
 icon = ExtResource("2_bd10l")
+item_count = 1
+popup/item_0/text = "Consume"
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

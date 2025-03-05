@@ -1,8 +1,8 @@
 [gd_scene load_steps=13 format=3 uid="uid://b2fv1rdqbkxdl"]
 
-[ext_resource type="Script" uid="uid://ctdnkwqqdtvup" path="res://scripts/title.gd" id="1_4orjr"]
+[ext_resource type="Script" path="res://scripts/title.gd" id="1_4orjr"]
 [ext_resource type="Texture2D" uid="uid://irjtut17apbp" path="res://assets/backgrounds/temp_background.png" id="1_111pu"]
-[ext_resource type="Shader" uid="uid://fjyqejcwqh2y" path="res://shaders/vignette.gdshader" id="2_l631a"]
+[ext_resource type="Shader" path="res://shaders/vignette.gdshader" id="2_l631a"]
 [ext_resource type="PackedScene" uid="uid://cunqrw485lwt5" path="res://scenes/layer_effects/fog_layer.tscn" id="3_5dqjp"]
 
 [sub_resource type="Animation" id="Animation_jc2mf"]
@@ -51,8 +51,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_j6ola"]
 _data = {
-&"RESET": SubResource("Animation_jc2mf"),
-&"background_shake": SubResource("Animation_xj53u")
+"RESET": SubResource("Animation_jc2mf"),
+"background_shake": SubResource("Animation_xj53u")
 }
 
 [sub_resource type="Animation" id="Animation_hakxu"]
@@ -140,9 +140,9 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xfctd"]
 _data = {
-&"RESET": SubResource("Animation_hakxu"),
-&"fade-out": SubResource("Animation_gqei3"),
-&"fade_in": SubResource("Animation_t6ds7")
+"RESET": SubResource("Animation_hakxu"),
+"fade-out": SubResource("Animation_gqei3"),
+"fade_in": SubResource("Animation_t6ds7")
 }
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xfbv0"]
@@ -159,14 +159,14 @@ script = ExtResource("1_4orjr")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="AnimationPlayers"]
 root_node = NodePath("../..")
 libraries = {
-&"": SubResource("AnimationLibrary_j6ola")
+"": SubResource("AnimationLibrary_j6ola")
 }
 autoplay = "background_shake"
 
 [node name="Fade handler" type="AnimationPlayer" parent="AnimationPlayers"]
 root_node = NodePath("../..")
 libraries = {
-&"": SubResource("AnimationLibrary_xfctd")
+"": SubResource("AnimationLibrary_xfctd")
 }
 autoplay = "fade_in"
 

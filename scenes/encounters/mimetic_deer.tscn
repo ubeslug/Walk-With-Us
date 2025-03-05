@@ -296,7 +296,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [true]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -309,6 +309,18 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("images/DeerMimetic:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_8rsyh"]
@@ -428,13 +440,13 @@ tracks/4/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_such0"]
 _data = {
-&"RESET": SubResource("Animation_uvo8f"),
-&"fade-out": SubResource("Animation_wf0wo"),
-&"hide deer": SubResource("Animation_or5bd"),
-&"show_deer": SubResource("Animation_bevi0"),
-&"show_fish": SubResource("Animation_326lf"),
-&"show_mimetic": SubResource("Animation_8rsyh"),
-&"startup": SubResource("Animation_6pi44")
+"RESET": SubResource("Animation_uvo8f"),
+"fade-out": SubResource("Animation_wf0wo"),
+"hide deer": SubResource("Animation_or5bd"),
+"show_deer": SubResource("Animation_bevi0"),
+"show_fish": SubResource("Animation_326lf"),
+"show_mimetic": SubResource("Animation_8rsyh"),
+"startup": SubResource("Animation_6pi44")
 }
 
 [node name="MimeticDeer" type="Node2D"]
@@ -477,7 +489,7 @@ centered = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-&"": SubResource("AnimationLibrary_such0")
+"": SubResource("AnimationLibrary_such0")
 }
 autoplay = "startup"
 

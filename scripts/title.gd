@@ -48,4 +48,4 @@ func _on_new_game_pressed():
 	InventoryHandler.add_to_inventory(1) # temp
 	fade_handler.play("fade-out")
 	await fade_handler.animation_finished
-	get_tree().change_scene_to_file("res://scenes/encounters/berry_encounter.tscn")
+	get_tree().change_scene_to_file("res://scenes/encounters/regular_fox.tscn")

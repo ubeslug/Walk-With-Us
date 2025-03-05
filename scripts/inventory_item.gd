@@ -13,7 +13,6 @@ func _process(delta):
 
 
 func _on_mouse_entered():
-	pass # Replace with function body.
 	item_sprite.modulate = "ff6464"
 
 
@@ -21,3 +20,4 @@ func _on_mouse_entered():
 func _on_mouse_exited():
 	pass # Replace with function body.
 	item_sprite.modulate = "ffffff"
+	

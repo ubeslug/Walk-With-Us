@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://fnt4xt1sbhxt"]
 
-[ext_resource type="Script" uid="uid://dlekensw7awcy" path="res://scripts/page_base.gd" id="1_jarxy"]
+[ext_resource type="Script" path="res://scripts/page_base.gd" id="1_jarxy"]
 [ext_resource type="PackedScene" uid="uid://beneqpcnms27p" path="res://scenes/beastiary pages/_page_base.tscn" id="2_vs7n7"]
 [ext_resource type="Theme" uid="uid://bw2dm0g8j123d" path="res://themes/beastiary_writing.tres" id="3_cwc3t"]
 [ext_resource type="Texture2D" uid="uid://bb2ow0qeo1m8i" path="res://assets/sketches/Tabletop.png" id="3_vs7n7"]
