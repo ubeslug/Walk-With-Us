@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://csb3jtpgw2xnj"]
+[gd_scene load_steps=7 format=3 uid="uid://csb3jtpgw2xnj"]
 
 [ext_resource type="Script" path="res://scripts/page_base.gd" id="1_ixq3d"]
 [ext_resource type="PackedScene" uid="uid://beneqpcnms27p" path="res://scenes/beastiary pages/_page_base.tscn" id="2_ktwuc"]
+[ext_resource type="Texture2D" uid="uid://joxbo27lf8sp" path="res://assets/ui/wrinkled-paper-texture.jpg" id="3_24p5l"]
 [ext_resource type="Texture2D" uid="uid://bteeeaiko8qt8" path="res://assets/sketches/Gojarus.png" id="3_174pj"]
 [ext_resource type="Theme" uid="uid://bw2dm0g8j123d" path="res://themes/beastiary_writing.tres" id="4_r5p34"]
 [ext_resource type="FontFile" uid="uid://egpk62jv088x" path="res://fonts/BaksoDaging-Regular.ttf" id="5_qa8j8"]
@@ -28,6 +29,11 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="page" type="Sprite2D" parent="Contents"]
+position = Vector2(-5.00003, 7.62939e-06)
+scale = Vector2(1.04154, 0.606154)
+texture = ExtResource("3_24p5l")
 
 [node name="sketch" type="Sprite2D" parent="Contents"]
 position = Vector2(-354, 40)
@@ -60,19 +66,4 @@ theme_override_font_sizes/font_size = 24
 text = "      Anyone who knows anything knows that the ubber talented wizard  ***Gojarus***  is the most popular person in the world. Along with of course   being  the most handsome person around he also    is the strongest wizard of the century.   From humble beginnings  in a remote village working every day to achieve    their dream. After many hardships through their life they would  eventually rise   to become the person they  are today   due to the fruits   of their labor.  Naturally, one should always act in awe    when meeting the most popular person ever."
 autowrap_mode = 3
 
-[node name="book_worms" type="Control" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="level_1" type="Sprite2D" parent="book_worms"]
-visible = false
-
-[node name="level_2" type="Sprite2D" parent="book_worms"]
-visible = false
-
-[node name="level_3" type="Sprite2D" parent="book_worms"]
-visible = false
+[node name="Stickers" type="Node2D" parent="Contents"]
