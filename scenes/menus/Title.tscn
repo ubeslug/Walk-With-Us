@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://b2fv1rdqbkxdl"]
+[gd_scene load_steps=14 format=3 uid="uid://b2fv1rdqbkxdl"]
 
 [ext_resource type="Script" path="res://scripts/title.gd" id="1_4orjr"]
 [ext_resource type="Texture2D" uid="uid://irjtut17apbp" path="res://assets/backgrounds/temp_background.png" id="1_111pu"]
 [ext_resource type="Shader" path="res://shaders/vignette.gdshader" id="2_l631a"]
 [ext_resource type="PackedScene" uid="uid://cunqrw485lwt5" path="res://scenes/layer_effects/fog_layer.tscn" id="3_5dqjp"]
+[ext_resource type="FontFile" uid="uid://4mauql4oflhj" path="res://fonts/Kurland-Regular.ttf" id="5_mygyu"]
 
 [sub_resource type="Animation" id="Animation_jc2mf"]
 length = 0.001
@@ -211,6 +212,7 @@ grow_horizontal = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_y = -20
 theme_override_constants/shadow_outline_size = 5
+theme_override_fonts/font = ExtResource("5_mygyu")
 theme_override_font_sizes/font_size = 170
 text = "Walk With Us"
 horizontal_alignment = 1
