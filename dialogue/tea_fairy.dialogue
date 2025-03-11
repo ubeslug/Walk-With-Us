@@ -1,0 +1,16 @@
+~ start
+While you continue your journey, you are suddenly stopped as you hear a soft twinkling to your left. Puzzled, you decide to slowly approach the noise, pushing past bushes to finally behold a quaint little clearing. In it, you spy a small human-like creature with small wings to match, draped in a cloak made of leaves and various other plants. It is hauling a comically large tea pot, comically large compared to them, and it begins to pour a fresh cup of tea into a teacup resting on top of an oddly shaped table that seems to be made of various objects such as rocks, skulls, and pieces of wood.
+The creature looks toward you with wide eyes as a grin spreads across their tiny face. 
+Fairy: “Oh! Thank goodness! If you don’t mind, I do need your help with something. You see, I’m working on a new brew, but I can never truly tell if what I’m making tastes good enough for others. Would you please try this and let me know how it tastes? I made it just now from some flowers I found in the area. 
+They suddenly grab hold of the teacup which was about the size of their body, and begin to fly it over to you. You grab hold of it as you can see them struggling with its size, but before you oblige, you look into the liquid.
+It is a light purple color with some petals still swimming inside of it. The petals are a similar color to the liquid but just a bit darker. You lift the cup up to your nose and sniff it, taken aback by a very strong floral scent. 
+- Take a sip
+	As the small creature watches you expectantly, you bring the cup to your lips and drink. You immediately feel a comforting warmth flow over you. You feel re-energized and don’t even realize that you’ve drunk the whole cup until you no longer feel it hitting your tongue. The fairy claps their hands in delight. 
+	Fairy: I take it that means you enjoyed it! I am so glad to hear! Thank you so much for your help, and don’t feel afraid to come by if you pass by me again! I’ll have another cup for yo,u I promise!
+	You wave as you leave, feeling refreshed for the journey ahead.
+- Politely Decline
+	You sheepishly hand the cup back to the fairy, declining their offer. You see their wings lower a little as they take the cup. 
+	Fariy: Oh well, I’m sure I can find someone who can try it. But thank you for considering! Take Care! 
+	You wave as you make your way back to the path again, the chill seeping into your bones.
+do fade_out()
+=> END

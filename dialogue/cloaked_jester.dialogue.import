@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://dab2rf6m4hyf"
+path="res://.godot/imported/cloaked_jester.dialogue-4bcac692a68dab47712150c3b57f4857.tres"
+
+[deps]
+
+source_file="res://dialogue/cloaked_jester.dialogue"
+dest_files=["res://.godot/imported/cloaked_jester.dialogue-4bcac692a68dab47712150c3b57f4857.tres"]
+
+[params]
+
+defaults=true

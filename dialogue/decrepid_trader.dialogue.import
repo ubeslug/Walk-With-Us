@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://c5j1hs0oymd8t"
+path="res://.godot/imported/decrepid_trader.dialogue-f46f60fd956bfd4bc0c9f1c09fd5a958.tres"
+
+[deps]
+
+source_file="res://dialogue/decrepid_trader.dialogue"
+dest_files=["res://.godot/imported/decrepid_trader.dialogue-f46f60fd956bfd4bc0c9f1c09fd5a958.tres"]
+
+[params]
+
+defaults=true

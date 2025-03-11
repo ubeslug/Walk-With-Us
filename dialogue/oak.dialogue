@@ -1,0 +1,10 @@
+~ start
+As you continue along the road, a bright, colorful bush on the side of the road catches your eye. You approach and see a berry bush with bright pink berries and fluffy leaves. It rests beside an old tree, one that looks very dry and a little shriveled up. As you get closer, you begin to feel a strange breeze that wasn’t there before. It seems to be coming from the tree. 
+- Reach for the berries
+	You get closer and begin to reach for the berries. However, as you get close, you hear a creaking coming from the tree beside you. 
+	do show_oak()
+	You pull yourself away just in time before you become caught in a large puff of smoke from the tree, the holes that sunk into its trunk now looking deeper and more familiar. Still, a whiff of the smoke hits your nostrils, causing you to feel incredibly queasy. You run away from the tree to get toward fresher air, leaving the berry bush behind.
+- Carry on your way
+	You slowly back away from the bush. Something about this feels off. You turn away and walk ahead again, feeling the strange breeze suddenly stop once you are out of the tree’s range. 
+do fade_out()
+=> END

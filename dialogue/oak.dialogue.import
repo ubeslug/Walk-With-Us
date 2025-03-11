@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://dar1vleaik6wk"
+path="res://.godot/imported/oak.dialogue-d2389c51f2cd0c9e87b731840f37e782.tres"
+
+[deps]
+
+source_file="res://dialogue/oak.dialogue"
+dest_files=["res://.godot/imported/oak.dialogue-d2389c51f2cd0c9e87b731840f37e782.tres"]
+
+[params]
+
+defaults=true
