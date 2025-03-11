@@ -1,0 +1,23 @@
+~ baby
+As you walk down the path, your face scrunches up as a foul smell permeates in the surrounding area. You look around for its source. You craft a makeshift mask to block out the smell. 
+do show_sludge()
+You finally notice a small puddle of some kinda ooze mixed with bones off to the side of the road. While at first you think it must be some poor prey animal’s corpse, you notice the ooze is moving at a pretty slow pace. It doesn’t seem harmful, it looks kinda sad, actually. You have some time to kill, what will you do?
+- Mess with it
+	You decide to prey on this small thing and mess with it. You grab a nearby stick and start poking at the creature. The creature is lightly nudged as you continue poking it then you decide to swirl the sludge around. Mixing the sludge and bones around with the dirt, you hear a slight screech come from the creature. It pitifully jumps only to the edge of the stick. 
+	The stick dissolves to your surprise. That was your stick, how dare it do that to your stick. You reach for your flask of water planning on drowning the small thing. You pour water on the monster as it squeals in pain to your delightful surprise. The monster is weakened. You notice a sizable rock nearby, small enough for you to carry, big enough to outsize the pitiful thing below. You pick up the rock and wish this beast's last moments are painful ones. You let go of the rock as the ooze splatters in a satisfying way. 
+	You revel in triumph as you continue on.
+- Leave it alone
+	Honestly, looking at this thing makes you sad. It squirms around with no goal in this world. You decide to leave it to its pitiful existence. The thing is barely able to do anything. It probably deters predators with its terrible stink. You get up and walk away, but not before looking back on the creature once more. Yep, it’s sad to look at. You continue on not wasting any more of your time. 
+	I mean, what danger could it possibly be?
+
+do fade_out()
+=> END
+
+
+~ medium
+
+=> END
+
+~ large
+
+=> END

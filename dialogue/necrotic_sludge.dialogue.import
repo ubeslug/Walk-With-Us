@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://usudmc3jjdtr"
+path="res://.godot/imported/necrotic_sludge.dialogue-56e7d57c8b617fc19be798c108d1bfd2.tres"
+
+[deps]
+
+source_file="res://dialogue/necrotic_sludge.dialogue"
+dest_files=["res://.godot/imported/necrotic_sludge.dialogue-56e7d57c8b617fc19be798c108d1bfd2.tres"]
+
+[params]
+
+defaults=true

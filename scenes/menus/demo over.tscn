@@ -105,9 +105,9 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_l15ql"]
 _data = {
-&"RESET": SubResource("Animation_2ui6g"),
-&"fade-in": SubResource("Animation_hxgyy"),
-&"fade-out": SubResource("Animation_dhxpl")
+"RESET": SubResource("Animation_2ui6g"),
+"fade-in": SubResource("Animation_hxgyy"),
+"fade-out": SubResource("Animation_dhxpl")
 }
 
 [node name="DemoOver" type="Node2D"]
