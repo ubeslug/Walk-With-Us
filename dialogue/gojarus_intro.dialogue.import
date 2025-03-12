@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://b7osdxtc0f5mn"
+path="res://.godot/imported/gojarus_intro.dialogue-681e8c5fdd2bd8e679abd1b79e789cc7.tres"
+
+[deps]
+
+source_file="res://dialogue/gojarus_intro.dialogue"
+dest_files=["res://.godot/imported/gojarus_intro.dialogue-681e8c5fdd2bd8e679abd1b79e789cc7.tres"]
+
+[params]
+
+defaults=true

@@ -63,11 +63,7 @@ toggle_fullscreen={
 
 [internationalization]
 
-<<<<<<< HEAD
-locale/translations_pot_files=PackedStringArray("res://dialogue/test.dialogue", "res://dialogue/playtest-first-draft.dialogue", "res://dialogue/berry_bush_encounter.dialogue", "res://dialogue/regular_fox.dialogue", "res://dialogue/traveler_1st_encounter.dialogue", "res://dialogue/deer_mimetic.dialogue", "res://dialogue/skeleton.dialogue", "res://dialogue/jackalope_encounter.dialogue", "res://dialogue/_inventory_debug.dialogue", "res://dialogue/black bear.dialogue", "res://dialogue/oak.dialogue", "res://dialogue/tea_fairy.dialogue", "res://dialogue/decrepid_trader.dialogue", "res://dialogue/cloaked_jester.dialogue")
-=======
-locale/translations_pot_files=PackedStringArray("res://dialogue/test.dialogue", "res://dialogue/playtest-first-draft.dialogue", "res://dialogue/berry_bush_encounter.dialogue", "res://dialogue/regular_fox.dialogue", "res://dialogue/traveler_1st_encounter.dialogue", "res://dialogue/deer_mimetic.dialogue", "res://dialogue/skeleton.dialogue", "res://dialogue/jackalope_encounter.dialogue", "res://dialogue/_inventory_debug.dialogue", "res://dialogue/black bear.dialogue", "res://dialogue/necrotic_sludge.dialogue")
->>>>>>> 28e4822f6bee5da87c906d5c543333ed65a3e63c
+locale/translations_pot_files=PackedStringArray("res://dialogue/berry_bush_encounter.dialogue", "res://dialogue/black bear.dialogue", "res://dialogue/cloaked_jester.dialogue", "res://dialogue/decrepid_trader.dialogue", "res://dialogue/deer_mimetic.dialogue", "res://dialogue/jackalope_encounter.dialogue", "res://dialogue/necrotic_sludge.dialogue", "res://dialogue/oak.dialogue", "res://dialogue/playtest-first-draft.dialogue", "res://dialogue/regular_fox.dialogue", "res://dialogue/skeleton.dialogue", "res://dialogue/tea_fairy.dialogue", "res://dialogue/test.dialogue", "res://dialogue/traveler_1st_encounter.dialogue", "res://dialogue/_inventory_debug.dialogue", "res://dialogue/skelebros.dialogue", "res://dialogue/gojarus_intro.dialogue")
 
 [rendering]
 

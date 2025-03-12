@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://dlnke0o5fi8dv"
+path="res://.godot/imported/skelebros.dialogue-d568c6a871c99bb94a377ca81d171944.tres"
+
+[deps]
+
+source_file="res://dialogue/skelebros.dialogue"
+dest_files=["res://.godot/imported/skelebros.dialogue-d568c6a871c99bb94a377ca81d171944.tres"]
+
+[params]
+
+defaults=true

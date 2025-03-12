@@ -1,0 +1,22 @@
+~ start
+A rustling in the woods a few feet away causes you to stop in your tracks. You feel a twinge of annoyance as you look to your left, ready for whatever horrors may await. In the far distance, you can see what looks to be a skeleton. The features of its body and what it may have with it is unidentifiable from this distance but what you can discern is its size. Its skeletal structure is that of a human but much larger. Something about this feels different. 
+- Call to it
+	if bro == 1:
+		=> good_bro
+	else:
+		=> bad_bro
+- Leave it alone
+	Maybe some things are better left unexplored. You turn away from the direction of the skeleton as you continue to walk down the path. 
+do fade_out()
+=> END
+
+~ good_bro
+You see its head whip in your direction as soon as the call leaves your mouth. Its glowing eyes stare back at you as you wonder if this was a good idea. It begins to approach, carefully treading over the bushes and flowers that may be in its way. Once it is finally in view, you are met with a very kind looking skeleton. Its bones are tinged with green, moss, and mushrooms growing off of its body, and its skull is rounded into almost a smile. It waves at you as it gets closer, and you wave back. It holds up a finger, asking you to wait, as it begins to dig through its ribcage. From its pelvis, it pulls out a glowing blue gem. Your eyes widen as it begins to hand it to you. You gently take it before taking it and admiring it. The skeleton nods, waving, before disappearing into the woods again. You stuff the large gem into your bag, a wave of relief flooding over you.
+Obtained large Gem.
+do fade_out()
+=> END
+
+~ bad_bro
+You see its head whip in your direction as soon as the call leaves your mouth. Its glowing eyes stare back at you as you wonder if this was a good idea. In an instant, the skeleton begins to sprint through the trees straight at you. It almost trips over bushes and branches as it descends upon you. Now that you can fully see it, a chill runs up your spine. Its bones are sharpened and jutt out from its skeleton, and it has many breaks and cracks in the bones. In its hand is a long, tube-like weapon. You watch as the skeleton aims it towards you raising it up to its eyes. You try to duck out of the way but a large “BOOM” from what it is carrying accompanies a sharp pain in your shoulder. You yell in pain as the skeleton seems to laugh, throwing its head back, mouth open. As quick as it arrived, it ran backwards into the woods again. You sit yourself back up and try your best to patch up your wound but have to resign and keep moving. 
+do fade_out()
+=> END

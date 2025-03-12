@@ -1,7 +1,9 @@
-[gd_scene load_steps=30 format=3 uid="uid://bly2o8v0fqmvi"]
+[gd_scene load_steps=33 format=3 uid="uid://bly2o8v0fqmvi"]
 
 [ext_resource type="Script" path="res://scripts/monster_database.gd" id="1_fmdyi"]
 [ext_resource type="PackedScene" uid="uid://beneqpcnms27p" path="res://scenes/beastiary pages/_page_base.tscn" id="2_4jixn"]
+[ext_resource type="Texture2D" uid="uid://c88mc3kfag4a7" path="res://icon.svg" id="2_y2xxm"]
+[ext_resource type="Shader" path="res://shaders/blur.gdshader" id="2_yh8ol"]
 [ext_resource type="PackedScene" uid="uid://b8dpovoyhhwhp" path="res://scenes/beastiary pages/lavender.tscn" id="3_7y3vh"]
 [ext_resource type="PackedScene" uid="uid://ckqd8ajnom4wd" path="res://scenes/beastiary pages/nightshade_page.tscn" id="4_14wdw"]
 [ext_resource type="PackedScene" uid="uid://d0llc3vdmdet" path="res://scenes/beastiary pages/buckleberries.tscn" id="5_n8885"]
@@ -30,14 +32,24 @@
 [ext_resource type="Texture2D" uid="uid://bj4vk8bahmgnn" path="res://assets/ui/pencil_x_down.png" id="23_vv4ov"]
 [ext_resource type="Texture2D" uid="uid://bov38b7j5a08t" path="res://assets/ui/pencil_x_highlight.png" id="24_ma1vn"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y7s42"]
+shader = ExtResource("2_yh8ol")
+shader_parameter/lod = 3.83
+
 [node name="MonsterDatabase" type="CanvasLayer"]
 layer = 101
 script = ExtResource("1_fmdyi")
 
+[node name="ColorRect2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1038, 539)
+scale = Vector2(17.2188, 9.42188)
+texture = ExtResource("2_y2xxm")
+
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_right = 1968.0
-offset_bottom = 1172.0
-color = Color(1, 1, 1, 0)
+material = SubResource("ShaderMaterial_y7s42")
+offset_right = 1950.0
+offset_bottom = 1112.0
 
 [node name="page_base" parent="." instance=ExtResource("2_4jixn")]
 anchors_preset = 8
