@@ -44,9 +44,7 @@ func _on_no_quit_pressed() -> void:
 
 func _on_new_game_pressed():
 	InventoryHandler.reset_inventory()
-	InventoryHandler.add_to_inventory(0) # temp
-	InventoryHandler.add_to_inventory(1) # temp
 	Globals.reset_health()
 	fade_handler.play("fade-out")
 	await fade_handler.animation_finished
-	get_tree().change_scene_to_file("res://scenes/encounters/regular_fox.tscn")
+	get_tree().change_scene_to_file("res://scenes/encounters/Gojarus_intro.tscn")

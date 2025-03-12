@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://bly2o8v0fqmvi"]
+[gd_scene load_steps=34 format=3 uid="uid://bly2o8v0fqmvi"]
 
 [ext_resource type="Script" path="res://scripts/monster_database.gd" id="1_fmdyi"]
 [ext_resource type="PackedScene" uid="uid://beneqpcnms27p" path="res://scenes/beastiary pages/_page_base.tscn" id="2_4jixn"]
@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://b30a4e8tqp2w2" path="res://scenes/beastiary pages/skeleton_page.tscn" id="15_jfgg8"]
 [ext_resource type="PackedScene" uid="uid://br731a0smpgml" path="res://scenes/beastiary pages/cloaked_jester_page.tscn" id="16_lcf2d"]
 [ext_resource type="PackedScene" uid="uid://d0qqfmoq10frq" path="res://scenes/beastiary pages/decrepit_trader_page.tscn" id="17_47d4w"]
+[ext_resource type="PackedScene" uid="uid://csb3jtpgw2xnj" path="res://scenes/beastiary pages/gojarus.tscn" id="17_jc1g5"]
 [ext_resource type="Texture2D" uid="uid://dajrtc6pexgv5" path="res://assets/ui/pencil_arrow_default.png" id="18_dsdv8"]
 [ext_resource type="PackedScene" uid="uid://cwsoynweuh0fp" path="res://scenes/beastiary pages/necrotic_sludge.tscn" id="19_i503u"]
 [ext_resource type="Texture2D" uid="uid://ha2gfqasdlrv" path="res://assets/ui/pencil_arrow_down.png" id="19_ldpkt"]
@@ -113,6 +114,9 @@ layout_mode = 1
 visible = false
 layout_mode = 1
 
+[node name="gojarus" parent="pages" instance=ExtResource("17_jc1g5")]
+layout_mode = 1
+
 [node name="oak_page" parent="pages" instance=ExtResource("12_p66ep")]
 visible = false
 layout_mode = 1
@@ -130,9 +134,11 @@ visible = false
 layout_mode = 1
 
 [node name="necrotic_sludge" parent="pages" instance=ExtResource("19_i503u")]
+visible = false
 layout_mode = 1
 
 [node name="blossombones" parent="pages" instance=ExtResource("20_ka6gy")]
+visible = false
 layout_mode = 1
 
 [node name="jester_page" parent="pages" instance=ExtResource("16_lcf2d")]

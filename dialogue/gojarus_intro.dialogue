@@ -1,3 +1,64 @@
 ~ start
+You walk through brambles and ferns as you head off a dusty trail into the woods, your guard up. Not even an hour ago, you were instructed by your work to speak with a client who lives in a hut just outside of town. While your work as a courier did take you to many places, none were as daunting as this. As you passed by looming shadows and darted your eyes to every small movement in your peripheral, you prayed that whoever this was wouldn’t make you go too far. 
+# show outside of place
+Slowly, you sense warmth coming from just ahead. A decently sized hut stands before you. Seemingly out of place in this barren area that leads towards the woods. While the hut seems standard in shape and color, its placement still perplexes you. The owner could have placed it anywhere, but why here? But knowing who your client is, you understand that things like this will probably be common in the coming days. You step inside.
+do enter_hut()
+The room before you is large, very large, larger than the hutt should have space for. Decorated with various pieces of furniture and decorations you’ve never seen before. There are also hallways that seemingly connect to other rooms. You call out but receive no answer. The client said they would be here, it's just a matter of when they’ll show up.  You look around at the decorations that adorn the room. There are various paintings that depict lands and skies you’ve never seen before, some barren, some plentiful with life. You walk closer to a painting that depicts a dazzling ocean. 
+???: Ah, there you are
+do hut_change()
+You hear a voice coming from your left. You turn to face the speaker, but you immediately notice how the room has changed.
+The room, once adorned with various paintings, is now adorned with trophies of various animals. Some you recognize while others are beyond your wildest dreams. You then notice the furniture has also changed. Now, two couches are settled with a large coffee table between them and a hearth settled in the wall off to the side.
+???: Take a seat. 
+You walk over and plant yourself opposite of them. 
+???: You must be the courier, correct?
+You finally get a good look at the person before you. 
+do gojarus_wolf()
+They're a wolf with grey fur that seems to be whitening in some areas, a sign of their age. They also have striking blue eyes that seem to sparkle even when they're not moving. The person who you begin to think is a “he” is also wearing what seems to be mages robes. You nod your head
+???: Great, then I can start giving you the items that must be delivered. 
+You recognize the client as someone important but just can’t seem to put your finger on it. 
+???: Hm, you seem a bit confused. Is there anything you want to ask? 
+You hesitate, wondering if you should ask. Before you can say anything 
+???: Oh, I know. You must be in awe of my magnificence
+... What? 
+???: Yes, yes, this is the regular reaction of anyone meeting THE ONE! The ONLY! GOJARUS! 
+#rose petal effect with audience clap
+#do part_2()
+=> part_2
 
-=> END
+~ part_2
+...
+#As he says this, rose petals rain down from above.
+Gojarus: Yes, yes, the world’s most uber-talented wizard and most famous throughout the world. It’s a surprise you haven’t fallen over in shock yet. 
+You realize there is some truth to what he says. Gojarus is the most famous wizard throughout the world due to his numerous exploits in the world of magic. Someone who rose through the world from an unknown background. 
+Gojarus: Anyways, enough about me, here is the job I wish for you to carry out.
+Gojarus pulls out a parcel and a leather-bound book.
+Gojaris: I need you to deliver this safely to a kingdom a few miles from here. I believe that they are under some dark magic and this should contain everything needed to cure it. You will need to travel through various biomes in this land, starting with the forest by my home. Please promise you will deliver it safely.
+You feel a twinge of fear at the thought of travelling that far. Jobs never usually took you that far out due to the mentions of dangerous creatures and entities. 
+do InventoryHandler.add_to_inventory(0)
+You take the parcel but can’t hide the fear in your face. Gojarus chuckles. 
+Gojarus: I can see your trepidation. No worries, for I also have this. 
+do InventoryHandler.add_to_inventory(1)
+He hands you the book. 
+Gojarus: This book is something important. It is a bestiary of various creatures and entities that I studied way back when with others who were as ambitious as me. 
+You look over the book's cover, noting how carefully put together it is. 
+
+=> loop
+
+~ loop
+Gojarus: Why don’t you use it now? A page dedicated to myself should be within its pages. Why don’t you find it and read it to learn more about me?
+if Globals.found_my_page == true:
+	=> part_3
+if slender_jarus == 1:
+	Gojarus: FIND MY PAGES
+=> loop
+
+~ part_3
+After locating his page, you look back up to be met with a different furry face. Now that of a snow leopard, the newly shapeshifted Gojarus laughs again. 
+Gojarus: Marvelous, isn’t it? I’m glad you were able to pick it up so quickly! It will be incredibly useful on your journey! The lands you must traverse to get to your destination are rife with danger. The book can guide you through that danger, but only if you know what you are dealing with. The book is the culmination of our hard-earned work. Do not forsake it, and it will not fail you. I wish you well on your journey. 
+do Globals.found_my_page = false
+And with that, Gojarus claps his hands.
+do back_to_forest()
+You find yourself in front of the forest. The hut is no longer in sight. You look down to the parcel and book given to you and find that some other items have been attached to it. On inspection, you discover the first item to be a map that leads you to your destination while the other item is a note. 
+Gojarus: There is all sorts of useful information in the book, and I left a little bit of myself in there to check it when you have the time :P. 
+You wonder if that was really Gojarus. You decide not to think about it too long. A job is a job, and you have a long way to go. You begin your trek into the forest. 
+do fade_out()

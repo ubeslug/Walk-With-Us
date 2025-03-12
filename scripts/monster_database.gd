@@ -57,13 +57,17 @@ func page_buttons_check() -> void:
 func _on_next_page_pressed() -> void:
 	if current_page < page_list.size() - 1:
 		current_page += 1
-	
+	print(current_page)
 
 
 func _on_prev_page_pressed() -> void:
 	if current_page > 0:
 		current_page -= 1
+	print(current_page)
 
 
 func _on_texture_button_pressed():
+	if current_page == 12:
+		Globals.found_my_page = true
 	Globals.bestiary_active = false
+	

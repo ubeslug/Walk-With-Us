@@ -6,6 +6,6 @@ The clanging of metal and something else. Sounds like you're not alone in this a
 - Try and get closer to the entity
 	You decide to try and get closer to the entity. Maybe if you play your cards right you could get something out of this. As you get closer you notice that the entity appears to be wearing armor and clothes that a town guard would wear. The entity notices you getting closer and it is revealed that the item you could just barely see is actually a large sword. 
 	You immediately regret getting closer as the entity charges at you with sword in hand. You dodge the first blow but the second attack finds purchase straight into your side. You kick at the entity knocking it down as it seems to have trouble getting up due to the heavy armor it wears. This allows you to escape the entity. Once you are far enough away from the entity you dress your wound deeming it but a flesh wound but painful nonetheless. 
-	do Globals.change_health(2)
+	do Globals.change_health(-2)
 	You lose some health.
 => END

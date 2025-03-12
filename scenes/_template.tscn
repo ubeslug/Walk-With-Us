@@ -1,11 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://jm0s2yfkcass"]
+[gd_scene load_steps=8 format=3 uid="uid://b5udc8fl338a4"]
 
-[ext_resource type="Resource" uid="uid://yg447l3pc2wa" path="res://dialogue/skeleton.dialogue" id="1_0u5cx"]
-[ext_resource type="Texture2D" uid="uid://b6gq7157561sf" path="res://assets/backgrounds/straight path.png" id="1_by5ws"]
-[ext_resource type="PackedScene" uid="uid://1yu00uqnngve" path="res://scenes/ui/test_ui.tscn" id="2_2ntil"]
-[ext_resource type="Texture2D" uid="uid://dndn1fknxybqj" path="res://assets/encounters/skeletons/IMG_6416.png" id="4_iq4ew"]
-[ext_resource type="Texture2D" uid="uid://dpch8mn5qm533" path="res://assets/encounters/skeletons/IMG_6415.png" id="5_16glx"]
-[ext_resource type="Texture2D" uid="uid://cucrme81kxb20" path="res://assets/encounters/skeletons/IMG_6417.png" id="6_pcsif"]
+[ext_resource type="Texture2D" uid="uid://b6gq7157561sf" path="res://assets/backgrounds/straight path.png" id="1_xcva0"]
+[ext_resource type="PackedScene" uid="uid://1yu00uqnngve" path="res://scenes/ui/test_ui.tscn" id="2_mglh0"]
 
 [sub_resource type="GDScript" id="GDScript_iwjp3"]
 script/source = "extends Node2D
@@ -123,9 +119,8 @@ _data = {
 "startup": SubResource("Animation_e28yj")
 }
 
-[node name="skeleton" type="Node2D"]
+[node name="Template" type="Node2D"]
 script = SubResource("GDScript_iwjp3")
-dialogue_resource = ExtResource("1_0u5cx")
 
 [node name="images" type="Node2D" parent="."]
 
@@ -136,7 +131,7 @@ offset_bottom = 897.0
 [node name="Background" type="Sprite2D" parent="images"]
 position = Vector2(-5.317, -65)
 scale = Vector2(1.38069, 1.38069)
-texture = ExtResource("1_by5ws")
+texture = ExtResource("1_xcva0")
 centered = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -147,25 +142,10 @@ autoplay = "startup"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="ui" parent="CanvasLayer" instance=ExtResource("2_2ntil")]
+[node name="ui" parent="CanvasLayer" instance=ExtResource("2_mglh0")]
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 visible = false
 offset_right = 1978.0
 offset_bottom = 1126.0
 color = Color(0, 0, 0, 1)
-
-[node name="Img6416" type="Sprite2D" parent="."]
-position = Vector2(659.778, 302.25)
-scale = Vector2(0.696759, 0.696759)
-texture = ExtResource("4_iq4ew")
-
-[node name="Img6415" type="Sprite2D" parent="."]
-position = Vector2(659.778, 302.25)
-scale = Vector2(0.696759, 0.696759)
-texture = ExtResource("5_16glx")
-
-[node name="Img6417" type="Sprite2D" parent="."]
-position = Vector2(659.778, 302.25)
-scale = Vector2(0.696759, 0.696759)
-texture = ExtResource("6_pcsif")

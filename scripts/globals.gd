@@ -4,6 +4,8 @@ var bestiary_active: bool = false
 var max_health: int = 5
 var health: int = 5
 
+var found_my_page: bool = false
+
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("toggle_fullscreen"):
 		toggle_fullscreen()
