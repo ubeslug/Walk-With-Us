@@ -1,11 +1,12 @@
-[gd_scene load_steps=16 format=3 uid="uid://c62ne4im35jg2"]
+[gd_scene load_steps=19 format=3 uid="uid://be13kgochhs1u"]
 
-[ext_resource type="Resource" uid="uid://dlnke0o5fi8dv" path="res://dialogue/skelebros.dialogue" id="1_rsml4"]
-[ext_resource type="Texture2D" uid="uid://cpst2fjefxbaj" path="res://assets/backgrounds/IMG_6349.webp" id="2_hyb4x"]
-[ext_resource type="PackedScene" uid="uid://1yu00uqnngve" path="res://scenes/ui/test_ui.tscn" id="2_xolbd"]
-[ext_resource type="Texture2D" uid="uid://dd7tg40oj8xro" path="res://assets/encounters/skelebros/hide.png" id="3_ggn0l"]
-[ext_resource type="Texture2D" uid="uid://f3s2seuseq15" path="res://assets/encounters/skelebros/good boy.png" id="4_84r2j"]
-[ext_resource type="Texture2D" uid="uid://cexlnbyv0nacd" path="res://assets/encounters/skelebros/DIE.png" id="5_36yvk"]
+[ext_resource type="Texture2D" uid="uid://dxlh2lxqrexfn" path="res://assets/backgrounds/Uphill.webp" id="1_5t2s6"]
+[ext_resource type="Resource" uid="uid://dab2rf6m4hyf" path="res://dialogue/cloaked_jester.dialogue" id="1_o4rst"]
+[ext_resource type="PackedScene" uid="uid://1yu00uqnngve" path="res://scenes/ui/test_ui.tscn" id="2_q2x07"]
+[ext_resource type="Texture2D" uid="uid://h168358rvsdo" path="res://assets/encounters/jester/IMG_6401.png" id="2_w3cgl"]
+[ext_resource type="Texture2D" uid="uid://clwgkf2u87bm1" path="res://assets/encounters/jester/IMG_6400.png" id="3_jefkt"]
+[ext_resource type="Texture2D" uid="uid://try7mvubifup" path="res://assets/encounters/jester/IMG_6399.png" id="4_0qwt2"]
+[ext_resource type="Texture2D" uid="uid://cmbt62tev8wkl" path="res://assets/encounters/jester/IMG_6398.png" id="5_aclfu"]
 
 [sub_resource type="GDScript" id="GDScript_iwjp3"]
 script/source = "extends Node2D
@@ -14,44 +15,43 @@ const Balloon = preload(\"res://scenes/dialogue balloons/balloon.tscn\")
 @export var dialogue_resource: DialogueResource
 @export var dialogue_start: String = \"start\"
 
+@export var debug: bool = false
+
 @onready var animation_player = $AnimationPlayer
 
-var bro: int
+
 
 func _ready():
+	if debug:
+		Globals.health = 1
 	var balloon: Node = Balloon.instantiate()
 	get_tree().current_scene.add_child(balloon)
 	balloon.start(dialogue_resource, dialogue_start)
-	
-	bro = randi_range(1,2)
-	
 	pass # Replace with function body.
 
-func skeleton_hide():
-	animation_player.play(\"skeleton_hide\")
+func jester_floor():
+	animation_player.play(\"jester_floor\")
 
-func good_skeleton():
-	animation_player.play(\"good_skeleton\")
+func jester_reveal():
+	animation_player.play(\"jester_reveal\")
 
-func bad_skeleton():
-	animation_player.play(\"bad_skeleton\")
+func jester_stand():
+	animation_player.play(\"jester_stand\")
 
-func skeleton_leave():
-	animation_player.play(\"skeleton_leave\")
+func jester_2():
+	animation_player.play(\"jester_2\")
 
+func jester_neutral():
+	animation_player.play(\"back_to_neutral\")
 
+func jester_leave():
+	animation_player.play(\"jester_leave\")
 
 func fade_out() -> void:
 	animation_player.play(\"fade-out\")
 	await animation_player.animation_finished
 	
-	var scene: int = randi_range(1,2)
-	scene = 1 # remove when tea fairy is done
-	if scene == 1:
-		get_tree().change_scene_to_file(\"res://scenes/encounters/oak.tscn\") #Oak
-	else:
-		get_tree().change_scene_to_file(\"res://scenes/encounters/tea_fairy.tscn\") #Tea Fairy
-		
+	get_tree().change_scene_to_file(\"res://scenes/menus/demo over.tscn\")
 
 func death() -> void:
 	animation_player.play(\"fade-out\")
@@ -89,31 +89,31 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("images/good:visible")
+tracks/2/path = NodePath("images/jester_floor:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("images/DIE:visible")
+tracks/3/path = NodePath("images/jester_reveal:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("images/MysteriousBoy:visible")
+tracks/4/path = NodePath("images/jester_1:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -125,7 +125,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("images/MysteriousBoy:modulate")
+tracks/5/path = NodePath("images/jester_1:modulate")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -137,19 +137,19 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("images/good:modulate")
+tracks/6/path = NodePath("images/jester_2:visible")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
+"update": 1,
+"values": [true]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("images/DIE:modulate")
+tracks/7/path = NodePath("images/jester_2:modulate")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -157,6 +157,30 @@ tracks/7/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("images/jester_reveal:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("images/jester_floor:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_nqh2r"]
@@ -215,12 +239,175 @@ tracks/1/keys = {
 "values": [true, false]
 }
 
-[sub_resource type="Animation" id="Animation_wrryj"]
-resource_name = "skeleton_hide"
+[sub_resource type="Animation" id="Animation_mm3pk"]
+resource_name = "jester_floor"
+length = 1.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("images/good:visible")
+tracks/0/path = NodePath("images/jester_floor:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("images/jester_floor:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_vaish"]
+resource_name = "jester_reveal"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("images/jester_floor:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("images/jester_reveal:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("images/jester_reveal:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_h8peg"]
+resource_name = "jester_stand"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("images/jester_reveal:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("images/jester_1:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("images/jester_1:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_rnvdi"]
+resource_name = "jester_2"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("images/jester_1:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("images/jester_2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("images/jester_2:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_eqd87"]
+resource_name = "back_to_neutral"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("images/jester_2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_64c6c"]
+resource_name = "jester_leave"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("images/jester_2:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -232,171 +419,56 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("images/DIE:visible")
+tracks/1/path = NodePath("images/jester_1:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("images/MysteriousBoy:visible")
+tracks/2/path = NodePath("images/jester_reveal:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("images/MysteriousBoy:modulate")
+tracks/3/path = NodePath("images/jester_floor:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_t7ovs"]
-resource_name = "good_skeleton"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("images/good:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("images/good:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("images/DIE:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
-}
-
-[sub_resource type="Animation" id="Animation_jjnth"]
-resource_name = "bad_skeleton"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("images/good:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("images/DIE:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("images/DIE:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.166667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_jmpd5"]
-resource_name = "skeleton_leave"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("images/MysteriousBoy:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("images/DIE:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.333333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("images/good:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rwbvg"]
 _data = {
 "RESET": SubResource("Animation_uxrke"),
-"bad_skeleton": SubResource("Animation_jjnth"),
+"back_to_neutral": SubResource("Animation_eqd87"),
 "fade-out": SubResource("Animation_nqh2r"),
-"good_skeleton": SubResource("Animation_t7ovs"),
-"skeleton_hide": SubResource("Animation_wrryj"),
-"skeleton_leave": SubResource("Animation_jmpd5"),
+"jester_2": SubResource("Animation_rnvdi"),
+"jester_floor": SubResource("Animation_mm3pk"),
+"jester_leave": SubResource("Animation_64c6c"),
+"jester_reveal": SubResource("Animation_vaish"),
+"jester_stand": SubResource("Animation_h8peg"),
 "startup": SubResource("Animation_e28yj")
 }
 
-[node name="skele-bros" type="Node2D"]
+[node name="jester" type="Node2D"]
 script = SubResource("GDScript_iwjp3")
-dialogue_resource = ExtResource("1_rsml4")
+dialogue_resource = ExtResource("1_o4rst")
 
 [node name="images" type="Node2D" parent="."]
 
@@ -405,30 +477,38 @@ offset_right = 1641.0
 offset_bottom = 897.0
 
 [node name="Background" type="Sprite2D" parent="images"]
-position = Vector2(-5.317, -65)
-scale = Vector2(1.38069, 1.38069)
-texture = ExtResource("2_hyb4x")
+position = Vector2(1335, -37)
+scale = Vector2(-1.619, 1.619)
+texture = ExtResource("1_5t2s6")
 centered = false
 
-[node name="MysteriousBoy" type="Sprite2D" parent="images"]
-modulate = Color(1, 1, 1, 0)
-position = Vector2(666.444, 367.5)
-scale = Vector2(0.697222, 0.697222)
-texture = ExtResource("3_ggn0l")
-
-[node name="good" type="Sprite2D" parent="images"]
+[node name="jester_floor" type="Sprite2D" parent="images"]
 visible = false
 modulate = Color(1, 1, 1, 0)
-position = Vector2(666.444, 367.5)
-scale = Vector2(0.697222, 0.697222)
-texture = ExtResource("4_84r2j")
+position = Vector2(-5.317, -65)
+scale = Vector2(0.702778, 0.702778)
+texture = ExtResource("2_w3cgl")
+centered = false
 
-[node name="DIE" type="Sprite2D" parent="images"]
+[node name="jester_reveal" type="Sprite2D" parent="images"]
 visible = false
 modulate = Color(1, 1, 1, 0)
-position = Vector2(666.444, 367.5)
-scale = Vector2(0.697222, 0.697222)
-texture = ExtResource("5_36yvk")
+position = Vector2(-5.317, -65)
+scale = Vector2(0.702778, 0.702778)
+texture = ExtResource("3_jefkt")
+centered = false
+
+[node name="jester_1" type="Sprite2D" parent="images"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(673.889, 340.5)
+scale = Vector2(0.715741, 0.715741)
+texture = ExtResource("4_0qwt2")
+
+[node name="jester_2" type="Sprite2D" parent="images"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(673.889, 340.5)
+scale = Vector2(0.715741, 0.715741)
+texture = ExtResource("5_aclfu")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -438,7 +518,7 @@ autoplay = "startup"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="ui" parent="CanvasLayer" instance=ExtResource("2_xolbd")]
+[node name="ui" parent="CanvasLayer" instance=ExtResource("2_q2x07")]
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 visible = false

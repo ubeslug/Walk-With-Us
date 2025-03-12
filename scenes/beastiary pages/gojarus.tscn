@@ -63,11 +63,9 @@ theme = ExtResource("4_r5p34")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_qa8j8")
 theme_override_font_sizes/font_size = 24
-text = "      Anyone who knows anything knows that the ubber talented wizard  ***Gojarus***  is the most popular person in the world. Along with of course   being  the most handsome person around he also    is the strongest wizard of the century.   
+text = "Anyone who knows anything knows that the ubber talented wizard Gojarus is the most popular person in the world. Along with of course being the most handsome person around he also is the strongest wizard of the century, known particularly for his seamless ability to shapeshift. 
 
-From humble beginnings  in a remote village working every day to achieve    their dream. After many hardships through their life they would  eventually rise   to become the person they  are today   due to the fruits   of their labor.  
-
-Naturally, one should always act in awe    when meeting the most popular person ever."
+From humble beginnings in a remote village working every day to achieve their dream. After many hardships through their life they would eventually rise to become the person they are today due to the fruits of their labor. Naturally, one should always act in awe when meeting the most popular person ever."
 autowrap_mode = 3
 
 [node name="Stickers" type="Node2D" parent="Contents"]

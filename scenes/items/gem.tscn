@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1dxp646jyu65"]
+
+[ext_resource type="PackedScene" uid="uid://cwpo133i6q0yf" path="res://scenes/items/_inventory_item.tscn" id="1_ftmok"]
+[ext_resource type="Texture2D" uid="uid://b01i6po3kr125" path="res://assets/item sprites/gem.png" id="2_xgeqx"]
+
+[node name="gem" type="Panel"]
+offset_right = 128.0
+offset_bottom = 128.0
+
+[node name="InventoryItem" parent="." instance=ExtResource("1_ftmok")]
+layout_mode = 1
+offset_right = 136.0
+offset_bottom = 136.0
+icon = ExtResource("2_xgeqx")
+item_count = 1
+popup/item_0/text = "???"
+popup/item_0/disabled = true

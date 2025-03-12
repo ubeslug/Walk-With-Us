@@ -1,5 +1,8 @@
 ~ start
-A foul smell hits your nose as you continue forward, the source of which is just ahead. A humanoid figure in a patchy, tattered cloak stands just ahead of you, its head obscured by the hood, but you can see whoever it is slowly looking up towards you. You notice a myriad of items along its body. Bags, potions, and more seem to adorn its frame. A raspy voice emanates from the darkness of the hood as it begins to speak.
+A foul smell hits your nose as you continue forward, the source of which is just ahead. 
+do show_trader()
+A humanoid figure in a patchy, tattered cloak stands just ahead of you, its head obscured by the hood, but you can see whoever it is slowly looking up towards you. You notice a myriad of items along its body. Bags, potions, and more seem to adorn its frame. A raspy voice emanates from the darkness of the hood as it begins to speak.
+do trader_neutral()
 Trader: Good day, traveller! I know that the appearance and smell may deter you, but I promise you that I can help you on your journey. For a price, of course.
 - See what they have
 	Maybe they could have something useful. You approach, trying your best to stomach the stench as the figure’s face comes into better view. It seems to have rotted so much that the skeleton is what’s visible, minus some bits of flesh. 
@@ -7,8 +10,10 @@ Trader: Good day, traveller! I know that the appearance and smell may deter you,
 	Trader: However, do not try to swindle me. I expect something of equal or similar. If you offer me something bad in exchange for one of my items, it will NOT be pretty. To make that fair, I won’t accept anything greater in value neither. Now, would you like to peruse?
 	=> trading
 - Turn them down
-	You tell the figure that you aren’t looking for anything and that you’ll have to pass. You only receive an annoyed grunt in response. They continue to stare at you, even as you begin sprinting down the path ahead of you. You do not want to think about how long that thing’s eyes were trained on you.
-	#do fade_out()
+	You tell the figure that you aren’t looking for anything and that you’ll have to pass. You only receive an annoyed grunt in response. 
+	do trader_leave()
+	They continue to stare at you, even as you begin sprinting down the path ahead of you. You do not want to think about how long that thing’s eyes were trained on you.
+	do fade_out()
 	=> END
 
 
@@ -17,51 +22,81 @@ Trader: Good day, traveller! I know that the appearance and smell may deter you,
 The trader opens his arms, allowing you to see everything on his body.
 - The pink potion
 	Trader: Ah, yes, a healing potion of my own design. Gives the consumer more energy and fixes wounds more efficiently. Interested?”
-	- Offer Dead Fish (Bad Trade)
-		=> bad_trade
-	- Offer berries (Good Trade)
-		=> good_trade
-	- Offer healing potion (Good Trade)
-		=> good_trade
-	- Offer the Mysterious Gem (Too Big, Gem)
-		=> too_big_gem
+	if InventoryHandler.check_inventory(5):
+		- Offer Dead Fish
+			=> bad_trade
+	if InventoryHandler.check_inventory(4):
+		- Offer berries
+			do InventoryHandler.remove_from_inventory(4)
+			=> good_trade
+	if InventoryHandler.check_inventory(2):
+		- Offer healing potion
+			do InventoryHandler.remove_from_inventory(4)
+			=> good_trade
+	if InventoryHandler.check_inventory(6):
+		- Offer the Mysterious Gem
+			=> too_big_gem
 	- Decline
 		=> decline
 
 - The bundle of flowers
 	Trader: Picked these up not too far from here and made some adjustments to them. From what I have tested, they can heal those who consume it, quite a bit too. But they’re a bit fickle. Healing never seems to be reliable enough.
-	- Offer Dead Fish
-		=> good_trade
-	- Offer berries
-		=> good_trade
-	- Offer healing potion
-		=> too_big
-	- Offer the Mysterious Gem
-		=> too_big_gem
+	if InventoryHandler.check_inventory(5):
+		- Offer Dead Fish
+			do InventoryHandler.remove_from_inventory(5)
+			=> good_trade
+	if InventoryHandler.check_inventory(4):
+		- Offer berries
+			do InventoryHandler.remove_from_inventory(4)
+			=> good_trade
+	if InventoryHandler.check_inventory(2):
+		- Offer healing potion
+			=> too_big
+	if InventoryHandler.check_inventory(6):
+		- Offer the Mysterious Gem
+			=> too_big_gem
 	- Decline
 		=> decline
 	
 - The crystal
 	Trader: Hmmmm. I’ve heard this crystal is best at seeing into the soul of whoever you shine it up to. However, I am not certain how many times it can be used since I have used it quite a few times now. I’m not quite willing to part with it just yet unless for a fair price.
-	- Offer Dead Fish
-		=> bad_trade
-	- Offer berries
-		=> bad_trade
-	- Offer healing potion
-		=> bad_trade
-	- Offer the Mysterious Gem
-		=> too_big_gem
+	if InventoryHandler.check_inventory(5):
+		- Offer Dead Fish
+			=> bad_trade
+	if InventoryHandler.check_inventory(4):
+		- Offer berries
+			=> bad_trade
+	if InventoryHandler.check_inventory(2):
+		- Offer healing potion
+			=> bad_trade
+	if InventoryHandler.check_inventory(6):
+		- Offer the Mysterious Gem
+			=> gem_trade
 	- Decline
 		=> decline
+
+if traded_once == true:
+	- Finish trading
+		=> done_trading
+else:
+	- Decline Trade
+		=> no_trade
+
+
+
 ~ bad_trade
+do trader_mad()
 Trader: You think you can cheat me like that?
 The trader’s voice grows darker. You begin to see its head move as a jaw suddenly peeks out from the darkness of its hood. You leap back, but not fast enough as the jaws scrape your arm.
 Trader: NEVER  TRY AND SWINDLE ME AGAIN!” 
+do trader_leave()
 The trader screams at you before leaving into the trees. You feel too afraid to call out as your arm continues to bleed. 
+do Globals.change_health(-1)
 You lose 1 health
 => END
 
 ~ good_trade
+do traded_once = true
 Trader: Pleasure Doing Business with you. Will that be all?
 - Keep Trading
 	=> trading
@@ -84,8 +119,9 @@ Trader: I can’t reasonably accept that friend, but I may have something better
 => trading
 
 ~ gem_trade
-# add crystal, 
-#remove big gem
+do traded_once = true
+do InventoryHandler.add_to_inventory(7)
+do InventoryHandler.remove_from_inventory(4)
 The trader takes the gem in its bony hand and eyes it in awe.
 Trader: Been trying to find a gem like this for a long time! I feel it’s only fair to let you have my crystal for this. Be warned, it has limited use. If used correctly though, you’ll know the intentions for things on the road. Is there anything else you would like to look at?
 - Keep Trading
@@ -101,6 +137,15 @@ Trader: Suit yourself. Is there anything else that caught your eye?
 ~ done_trading
 The trader closes its arms and bows.
 Trader: Thank you for your interest in my wares. May your road ahead be clear and safe.
+do trader_leave()
 They turn and walk away into the trees, carrying the smell with them. You breathe clearly, finally, and begin your journey once more. 
 do fade_out()
-#=> END
+=> END
+
+~ no_trade
+The trader closes its arms and bows.
+Trader: Don't waste my time.
+do trader_leave()
+They turn and walk away into the trees, carrying the smell with them. You breathe clearly, finally, and begin your journey once more. 
+do fade_out()
+=> END

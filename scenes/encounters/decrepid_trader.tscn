@@ -1,11 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://c62ne4im35jg2"]
+[gd_scene load_steps=16 format=3 uid="uid://covjvwii111sl"]
 
-[ext_resource type="Resource" uid="uid://dlnke0o5fi8dv" path="res://dialogue/skelebros.dialogue" id="1_rsml4"]
-[ext_resource type="Texture2D" uid="uid://cpst2fjefxbaj" path="res://assets/backgrounds/IMG_6349.webp" id="2_hyb4x"]
-[ext_resource type="PackedScene" uid="uid://1yu00uqnngve" path="res://scenes/ui/test_ui.tscn" id="2_xolbd"]
-[ext_resource type="Texture2D" uid="uid://dd7tg40oj8xro" path="res://assets/encounters/skelebros/hide.png" id="3_ggn0l"]
-[ext_resource type="Texture2D" uid="uid://f3s2seuseq15" path="res://assets/encounters/skelebros/good boy.png" id="4_84r2j"]
-[ext_resource type="Texture2D" uid="uid://cexlnbyv0nacd" path="res://assets/encounters/skelebros/DIE.png" id="5_36yvk"]
+[ext_resource type="Resource" uid="uid://c5j1hs0oymd8t" path="res://dialogue/decrepid_trader.dialogue" id="1_st2ql"]
+[ext_resource type="Texture2D" uid="uid://cpst2fjefxbaj" path="res://assets/backgrounds/IMG_6349.webp" id="2_c634i"]
+[ext_resource type="PackedScene" uid="uid://1yu00uqnngve" path="res://scenes/ui/test_ui.tscn" id="2_rlph7"]
+[ext_resource type="Texture2D" uid="uid://ti4312opdrn5" path="res://assets/encounters/trader/IMG_6388.jpg" id="3_jaj8g"]
+[ext_resource type="Texture2D" uid="uid://dhxkulweepynq" path="res://assets/encounters/trader/IMG_6389.png" id="4_c3enm"]
+[ext_resource type="Texture2D" uid="uid://d06fpmylrex51" path="res://assets/encounters/trader/IMG_6390.png" id="5_wo7e5"]
 
 [sub_resource type="GDScript" id="GDScript_iwjp3"]
 script/source = "extends Node2D
@@ -14,50 +14,41 @@ const Balloon = preload(\"res://scenes/dialogue balloons/balloon.tscn\")
 @export var dialogue_resource: DialogueResource
 @export var dialogue_start: String = \"start\"
 
+@export var debug: bool = false
+
 @onready var animation_player = $AnimationPlayer
 
-var bro: int
+var traded_once: bool = false
 
 func _ready():
+	if debug:
+		InventoryHandler.add_to_inventory(2)
+		InventoryHandler.add_to_inventory(4)
+		InventoryHandler.add_to_inventory(5)
+		InventoryHandler.add_to_inventory(6)
+	
 	var balloon: Node = Balloon.instantiate()
 	get_tree().current_scene.add_child(balloon)
 	balloon.start(dialogue_resource, dialogue_start)
-	
-	bro = randi_range(1,2)
-	
 	pass # Replace with function body.
 
-func skeleton_hide():
-	animation_player.play(\"skeleton_hide\")
+func show_trader():
+	animation_player.play(\"show_trader\")
 
-func good_skeleton():
-	animation_player.play(\"good_skeleton\")
+func trader_neutral():
+	animation_player.play(\"trader_neutral\")
 
-func bad_skeleton():
-	animation_player.play(\"bad_skeleton\")
+func trader_mad():
+	animation_player.play(\"trader_mad\")
 
-func skeleton_leave():
-	animation_player.play(\"skeleton_leave\")
-
-
+func trader_leave():
+	animation_player.play(\"trader_leave\")
 
 func fade_out() -> void:
 	animation_player.play(\"fade-out\")
 	await animation_player.animation_finished
 	
-	var scene: int = randi_range(1,2)
-	scene = 1 # remove when tea fairy is done
-	if scene == 1:
-		get_tree().change_scene_to_file(\"res://scenes/encounters/oak.tscn\") #Oak
-	else:
-		get_tree().change_scene_to_file(\"res://scenes/encounters/tea_fairy.tscn\") #Tea Fairy
-		
-
-func death() -> void:
-	animation_player.play(\"fade-out\")
-	await  animation_player.animation_finished
-	
-	get_tree().change_scene_to_file(\"res://scenes/menus/gameover.tscn\")
+	get_tree().change_scene_to_file(\"\")
 "
 
 [sub_resource type="Animation" id="Animation_uxrke"]
@@ -89,43 +80,43 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("images/good:visible")
+tracks/2/path = NodePath("images/trader_hide:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [true]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("images/DIE:visible")
+tracks/3/path = NodePath("images/trader_hide:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("images/MysteriousBoy:visible")
+tracks/4/path = NodePath("images/trader_neutral:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("images/MysteriousBoy:modulate")
+tracks/5/path = NodePath("images/trader_neutral:modulate")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -137,19 +128,19 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("images/good:modulate")
+tracks/6/path = NodePath("images/trader_mad:visible")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
+"update": 1,
+"values": [true]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("images/DIE:modulate")
+tracks/7/path = NodePath("images/trader_mad:modulate")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -215,63 +206,12 @@ tracks/1/keys = {
 "values": [true, false]
 }
 
-[sub_resource type="Animation" id="Animation_wrryj"]
-resource_name = "skeleton_hide"
+[sub_resource type="Animation" id="Animation_4iiom"]
+resource_name = "show_trader"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("images/good:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("images/DIE:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("images/MysteriousBoy:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("images/MysteriousBoy:modulate")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_t7ovs"]
-resource_name = "good_skeleton"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("images/good:visible")
+tracks/0/path = NodePath("images/trader_hide:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -283,11 +223,11 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("images/good:modulate")
+tracks/1/path = NodePath("images/trader_hide:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -295,7 +235,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("images/DIE:visible")
+tracks/2/path = NodePath("images/trader_neutral:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -305,67 +245,106 @@ tracks/2/keys = {
 "values": [false]
 }
 
-[sub_resource type="Animation" id="Animation_jjnth"]
-resource_name = "bad_skeleton"
+[sub_resource type="Animation" id="Animation_f4g4j"]
+resource_name = "trader_neutral"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("images/good:visible")
+tracks/0/path = NodePath("images/trader_neutral:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [true]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("images/DIE:visible")
+tracks/1/path = NodePath("images/trader_neutral:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_5iw0c"]
+resource_name = "trader_mad"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("images/trader_mad:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
 }
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("images/DIE:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("images/trader_mad:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.166667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("images/trader_neutral:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("images/trader_neutral:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
-[sub_resource type="Animation" id="Animation_jmpd5"]
-resource_name = "skeleton_leave"
+[sub_resource type="Animation" id="Animation_dqcn8"]
+resource_name = "trader_leave"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("images/MysteriousBoy:visible")
+tracks/0/path = NodePath("images/trader_mad:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("images/DIE:modulate")
+tracks/1/path = NodePath("images/trader_neutral:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.333333),
+"times": PackedFloat32Array(0, 0.7),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -373,30 +352,31 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("images/good:modulate")
+tracks/2/path = NodePath("images/trader_hide:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rwbvg"]
 _data = {
 "RESET": SubResource("Animation_uxrke"),
-"bad_skeleton": SubResource("Animation_jjnth"),
 "fade-out": SubResource("Animation_nqh2r"),
-"good_skeleton": SubResource("Animation_t7ovs"),
-"skeleton_hide": SubResource("Animation_wrryj"),
-"skeleton_leave": SubResource("Animation_jmpd5"),
-"startup": SubResource("Animation_e28yj")
+"show_trader": SubResource("Animation_4iiom"),
+"startup": SubResource("Animation_e28yj"),
+"trader_leave": SubResource("Animation_dqcn8"),
+"trader_mad": SubResource("Animation_5iw0c"),
+"trader_neutral": SubResource("Animation_f4g4j")
 }
 
-[node name="skele-bros" type="Node2D"]
+[node name="trader" type="Node2D"]
 script = SubResource("GDScript_iwjp3")
-dialogue_resource = ExtResource("1_rsml4")
+dialogue_resource = ExtResource("1_st2ql")
+debug = true
 
 [node name="images" type="Node2D" parent="."]
 
@@ -407,28 +387,27 @@ offset_bottom = 897.0
 [node name="Background" type="Sprite2D" parent="images"]
 position = Vector2(-5.317, -65)
 scale = Vector2(1.38069, 1.38069)
-texture = ExtResource("2_hyb4x")
+texture = ExtResource("2_c634i")
 centered = false
 
-[node name="MysteriousBoy" type="Sprite2D" parent="images"]
+[node name="trader_hide" type="Sprite2D" parent="images"]
 modulate = Color(1, 1, 1, 0)
-position = Vector2(666.444, 367.5)
-scale = Vector2(0.697222, 0.697222)
-texture = ExtResource("3_ggn0l")
+position = Vector2(667, 312)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("3_jaj8g")
 
-[node name="good" type="Sprite2D" parent="images"]
+[node name="trader_neutral" type="Sprite2D" parent="images"]
 visible = false
 modulate = Color(1, 1, 1, 0)
-position = Vector2(666.444, 367.5)
-scale = Vector2(0.697222, 0.697222)
-texture = ExtResource("4_84r2j")
+position = Vector2(667, 312)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("4_c3enm")
 
-[node name="DIE" type="Sprite2D" parent="images"]
-visible = false
+[node name="trader_mad" type="Sprite2D" parent="images"]
 modulate = Color(1, 1, 1, 0)
-position = Vector2(666.444, 367.5)
-scale = Vector2(0.697222, 0.697222)
-texture = ExtResource("5_36yvk")
+position = Vector2(667, 312)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("5_wo7e5")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -438,7 +417,7 @@ autoplay = "startup"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="ui" parent="CanvasLayer" instance=ExtResource("2_xolbd")]
+[node name="ui" parent="CanvasLayer" instance=ExtResource("2_rlph7")]
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 visible = false

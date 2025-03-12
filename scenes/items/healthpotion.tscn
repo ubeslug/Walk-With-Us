@@ -21,7 +21,7 @@ func file_menu(id):
 	print(id)
 	match(id):
 		0:
-			Globals.change_health(5)
+			Globals.change_health(3)
 			InventoryHandler.remove_from_inventory(2)
 "
 

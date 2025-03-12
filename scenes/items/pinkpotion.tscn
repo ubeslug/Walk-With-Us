@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4527t1dgqddp"]
+
+[ext_resource type="PackedScene" uid="uid://cwpo133i6q0yf" path="res://scenes/items/_inventory_item.tscn" id="1_2h5ua"]
+[ext_resource type="Texture2D" uid="uid://crpmqkgvskej2" path="res://assets/item sprites/pink potion.png" id="2_d8bml"]
+
+[sub_resource type="GDScript" id="GDScript_h7gyr"]
+script/source = "extends Panel
+
+#item ID: 2
+
+
+@onready var inventory_item = $InventoryItem
+
+func _ready():
+	var popup = inventory_item.get_popup()
+	
+	popup.id_pressed.connect(file_menu)
+
+
+func file_menu(id):
+	print(id)
+	match(id):
+		0:
+			Globals.change_health(5)
+			InventoryHandler.remove_from_inventory(8)
+"
+
+[node name="pink_potion" type="Panel"]
+script = SubResource("GDScript_h7gyr")
+
+[node name="InventoryItem" parent="." instance=ExtResource("1_2h5ua")]
+layout_mode = 0
+icon = ExtResource("2_d8bml")
+item_count = 1
+popup/item_0/text = "Consume"

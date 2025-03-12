@@ -1,18 +1,20 @@
 ~ start
-As you walk around a bend in the road, you notice something laying in the road just ahead. Someone covered in a dark black robe is huddled in the fetal position not too far from you. You can’t make out any features as their body is turned away from you, but you can see them holding onto their stomach and can hear pained groans. As you walk forward, your foot snaps a branch and you see the person begin to perk up at the sound.
+As you walk around a bend in the road, you notice something laying in the road just ahead. 
+do jester_floor()
+Someone covered in a dark black robe is huddled in the fetal position not too far from you. You can’t make out any features as their body is turned away from you, but you can see them holding onto their stomach and can hear pained groans. As you walk forward, your foot snaps a branch and you see the person begin to perk up at the sound.
 ???: Is someone there?” they call, their voice strained, 
 ???: Please! I need help! Something is horribly wrong! I need something to heal me, please! The pain is getting worse!” 
 You feel a chill run up your spine. They sound desperate.
 
 - Go over to help
 	You rush over and lean at their side. You ask them what they’re feeling and what you can do to help. As the words leave your mouth, the pained groans slowly stop, the person remaining silent. As your mind races at the thought of this person dying right beside you, they turn their body toward you. You gaze into a pale white mask with a long grin as they speak, much calmer and slower now.
-	#(Show Jester looking at player image)
+	do jester_reveal()
 	???: Actually, I think I’m feeling much better. Especially now that I have you to keep me company.
 	=> stage_1
 
 - Tell them you have no items
 	You call out to them, apologizing but saying that you do not have anything that can help them. As you begin to walk past them, you notice that their groans have stopped. As your mind races at the thought of this person dying right beside you, they turn their body toward you. You gaze into a pale white mask with a long grin as they speak, much calmer and slower now.
-	(Show Jester looking at player image) 
+	do jester_reveal()
 	???: Trust me stranger, you have helped me plenty.
 	=> stage_1
 
@@ -20,21 +22,25 @@ You feel a chill run up your spine. They sound desperate.
 	You swallow your fear and shut your eyes as you run past.
 	???: What!? Please! I promise I will give you whatever you want! Just please stop! Don’t leave me here!
 	You ignore their pleas and keep running. Expecting their wailing to continue long after you leave, you’re shocked when their cries cut abruptly. You feel compelled to turn and check what’s wrong but something in the back of your head screams to keep running. You do as it says. 
-# do fade_out()
+do fade_out()
 => END
 
 ~ stage_1
+do jester_stand()
 The stranger lifts themself up and stands in front of you. You feel a grip tighten around your throat as its blank eyes stare at you, coupled with that large grin.
 ???: You must pardon my forwardness, but I haven’t been able to talk to anyone around these parts for ages. Tell me, what brings you so far out here by yourself?
 - Tell them about your job
 	You tell the stranger that you are a courier tasked with delivering a package to a faraway kingdom. 
-	“Ah, I should have guessed. The package seems heavy, my friend. Both in your bag and in your heart. I wonder what is inside…” (Go to Stage 2 Dialogue Tree)
+	“Ah, I should have guessed. The package seems heavy, my friend. Both in your bag and in your heart. I wonder what is inside…”
 - Tell them about Gojarus’ plan
 	You tell the stranger about what you were sent out to do. How this package could potentially save a whole kingdom.
 	???: Oho! How intriguing. You seem to have people’s whole world on your shoulders, friend. Though, I do trust that you will keep it in balance, yes?
 - Say nothing
-	You clench your teeth and refuse to speak. You hear a low chuckle from the figure as you feel a piece of yourself slip away. 
-	#Loose 1 health
+	You clench your teeth and refuse to speak. You hear a low chuckle from the figure as you feel a piece of yourself slip away.
+	Your health deteriorates
+	do Globals.change_health(-1)
+	if Globals.health <= 0:
+		=> death
 => stage_2
 
 ~ stage_2
@@ -42,14 +48,20 @@ You notice how the stranger seems to fidget while keeping its gaze on you.
 ???: All the way out here by yourself? It must be terrifying to be out here all alone and defenseless. Wouldn’t you agree?
 - Tell them about what you have seen
 	You describe to the stranger what you have encountered so far. Even the things you have survived, you can’t deny the fear of walking through this forest alone. You can’t stop speaking and only stop once you see the stranger’s eyes grow wider. You suddenly feel cold and feel a piece of yourself wither away. 
-	You loose 1 health
+	Your health deteriorates
+	do Globals.change_health(-1)
+	if Globals.health <= 0:
+		=> death
 - Tell them about the bestiary
 	You pull out your bestiary and begin to explain its purpose and how much it has helped you on your journey so far. The stranger nods intently but its gaze seems far away. Disinterested. 
 - Tell them it's not so bad
 	You wave your hand dismissively telling them that it isn’t so bad. You see the stranger’s eyes widen.
 	???: Yet I can see you trembling now. I do not appreciate liars. 
 	You feel cold and a piece of yourself withers away. 
-	You lose 1 health
+	Your health deteriorates
+	do Globals.change_health(-1)
+	if Globals.health <= 0:
+		=> death
 => stage_3
 
 ~ stage_3
@@ -58,18 +70,25 @@ The stranger begins to shift more as its eyes dart from side to side.
 - Tell them that you do not miss it
 	You tell them that being away from home is not your concern, that you don’t really miss it while gone. You hear the stranger chuckle.
 	???: Why is that? What is there back home that you would wish to avoid? Lack of purpose to the people around you” The questions sits heavy in your mind as you feel a chill run over your body and seep into your bones. 
-	You lose 1 health
+	Your health deteriorates
+	do Globals.change_health(-1)
+	if Globals.health <= 0:
+		=> death
 - Tell them that you sometimes do
 	You nervously admit that you do sometimes wish you could be home instead of out here. 
 	???: As anyone should be. Alone and vulnerable in these woods would make anyone wish to be home. Safe. Warm. I am sure you want nothing more than to leave this behind. Too bad that you don’t seem to be nearly done with your journey. 
 	You feel a tug at your heart as they speak. Your feet shift as you grow increasingly nervous at the journey ahead and back. A cold chill runs through your body as your mind spirals. 
-	You lose 1 health
+	Your health deteriorates
+	do Globals.change_health(-1)
+	if Globals.health <= 0:
+		=> death
 - Tell them you focus on work 
 	You tell them that while you miss home, your work is more important. Focus on the work first and worry about home later. You see the stranger shift in annoyance.
 	???: I see...
 => stage_final
 
 ~ stage_final
+do jester_2()
 The stranger gets closer to you now, its eyes radiating a small hint of malice as it speaks once again.
 ???: You carry something incredibly powerful with you. Something with the real risk of harming others as much as helping them. Tell me then, do you think you are the right one to be doing all of this?
 - Tell them you do
@@ -78,7 +97,10 @@ The stranger gets closer to you now, its eyes radiating a small hint of malice a
 - Tell them you don’t
 	You feel your limbs waver as you admit that you don’t feel like it should have been you. There are people much stronger and capable than you that could have taken your place. The stranger chuckles.
 	???: I can assure you, I can’t see yourself getting much farther. You’ll probably succumb to one of the many horrors out here eventually, no matter if you have your little book.” The final few words pierce you like an icy dagger. You feel incredibly cold. 
-	You lose 1 health
+	Your health deteriorates
+	do Globals.change_health(-1)
+	if Globals.health <= 0:
+		=> death
 - Tell them you are not sure
 	You admit that you can’t be sure about whether or not you are the right person for this job. However, you say as well that you have a job to do regardless and you will see that it gets done. The stranger groans in annoyance.
 	???: You are quite stubborn”
@@ -86,9 +108,15 @@ The stranger gets closer to you now, its eyes radiating a small hint of malice a
 
 ~ ending
 ???: I believe that my time here is done. Be careful on your journey, "friend." You never know what may be lurking out here. 
-# show path
+do jester_leave()
 Before you can say anything else the figure fades away in front of you. You blink to make sure what you saw was real before shaking your head and running, legs wobbly and head pounding.
-# do fade_out
+do fade_out()
 => END
 
+
+~ death
+You collapse to your knees. Everything is fading to black
+
+do death()
+=> END
 

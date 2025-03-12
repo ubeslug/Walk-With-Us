@@ -52,17 +52,17 @@ func bear_defense() -> void:
 func bear_leave() -> void:
 	animation_player.play(\"bear_leave\")
 
-func game_over() -> void:
-	animation_player.play(\"fade-out\")
-	await animation_player.animation_finished
-	
-	get_tree().change_scene_to_file(\"res://scenes/menus/gameover.tscn\")
-
 func fade_out() -> void:
 	animation_player.play(\"fade-out\")
 	await animation_player.animation_finished
 	
 	get_tree().change_scene_to_file(\"res://scenes/encounters/necrotic_sludge_baby.tscn\")
+
+func death() -> void:
+	animation_player.play(\"fade-out\")
+	await  animation_player.animation_finished
+	
+	get_tree().change_scene_to_file(\"res://scenes/menus/gameover.tscn\")
 "
 
 [sub_resource type="Animation" id="Animation_uxrke"]

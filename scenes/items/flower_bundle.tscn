@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://whdf622837ds"]
+
+[ext_resource type="PackedScene" uid="uid://cwpo133i6q0yf" path="res://scenes/items/_inventory_item.tscn" id="1_gsj55"]
+[ext_resource type="Texture2D" uid="uid://5dk8p7xks8pt" path="res://assets/item sprites/flower_bundle.png" id="2_arsji"]
+
+[node name="flowers" type="Panel"]
+offset_right = 128.0
+offset_bottom = 128.0
+
+[node name="InventoryItem" parent="." instance=ExtResource("1_gsj55")]
+layout_mode = 1
+offset_right = 136.0
+offset_bottom = 136.0
+icon = ExtResource("2_arsji")
+item_count = 1
+popup/item_0/text = "???"
+popup/item_0/disabled = true

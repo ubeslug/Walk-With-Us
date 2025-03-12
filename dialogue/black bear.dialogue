@@ -49,5 +49,5 @@ You turn to find yourself in front of a bear. Its fur is dark black and it's rel
 
 ~ death
 do bear_leave()
-do game_over()
+do death()
 => END
