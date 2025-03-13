@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://bly2o8v0fqmvi"]
+[gd_scene load_steps=35 format=3 uid="uid://bly2o8v0fqmvi"]
 
 [ext_resource type="Script" path="res://scripts/monster_database.gd" id="1_fmdyi"]
 [ext_resource type="PackedScene" uid="uid://beneqpcnms27p" path="res://scenes/beastiary pages/_page_base.tscn" id="2_4jixn"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://cyq20djsa0jul" path="res://scenes/beastiary pages/oak_page.tscn" id="12_p66ep"]
 [ext_resource type="PackedScene" uid="uid://baykr64ps5nxn" path="res://scenes/beastiary pages/omega_oak_page.tscn" id="13_ib5d8"]
 [ext_resource type="PackedScene" uid="uid://fnt4xt1sbhxt" path="res://scenes/beastiary pages/tabletop.tscn" id="13_rgid8"]
+[ext_resource type="PackedScene" uid="uid://blj8kxw0wcscu" path="res://scenes/beastiary pages/grizzly_bear.tscn" id="14_bwoa8"]
 [ext_resource type="PackedScene" uid="uid://dkc24geafgq41" path="res://scenes/beastiary pages/mimetic_page.tscn" id="14_lkvh2"]
 [ext_resource type="PackedScene" uid="uid://b30a4e8tqp2w2" path="res://scenes/beastiary pages/skeleton_page.tscn" id="15_jfgg8"]
 [ext_resource type="PackedScene" uid="uid://br731a0smpgml" path="res://scenes/beastiary pages/cloaked_jester_page.tscn" id="16_lcf2d"]
@@ -102,6 +103,9 @@ visible = false
 layout_mode = 1
 
 [node name="Black Bear" parent="pages" instance=ExtResource("10_6rpct")]
+layout_mode = 1
+
+[node name="Grizzly_bear" parent="pages" instance=ExtResource("14_bwoa8")]
 layout_mode = 1
 
 [node name="teafairy" parent="pages" instance=ExtResource("12_8fhjj")]

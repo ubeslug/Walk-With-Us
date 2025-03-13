@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://bxh0mfbfhgpcf"]
+[gd_scene load_steps=13 format=3 uid="uid://bxh0mfbfhgpcf"]
 
 [ext_resource type="Resource" uid="uid://usudmc3jjdtr" path="res://dialogue/necrotic_sludge.dialogue" id="1_i6kni"]
 [ext_resource type="Texture2D" uid="uid://b6gq7157561sf" path="res://assets/backgrounds/straight path.png" id="1_wp5wx"]
 [ext_resource type="Texture2D" uid="uid://c0u6c1s30ybbe" path="res://assets/encounters/nectrotic sludge/IMG_6359.png" id="2_5boqv"]
 [ext_resource type="PackedScene" uid="uid://1yu00uqnngve" path="res://scenes/ui/test_ui.tscn" id="2_d1007"]
+[ext_resource type="Texture2D" uid="uid://osrpkunryeu" path="res://assets/encounters/nectrotic sludge/IMG_6358.png" id="3_i3vh3"]
 
 [sub_resource type="GDScript" id="GDScript_iwjp3"]
 script/source = "extends Node2D
@@ -24,6 +25,9 @@ func _ready():
 
 func show_sludge() -> void:
 	animation_player.play(\"show_sludge\")
+
+func sludge_pile():
+	animation_player.play(\"sludge_pile\")
 
 func fade_out() -> void:
 	animation_player.play(\"fade-out\")
@@ -82,6 +86,30 @@ tracks/3/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("images/sludge pile dead:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("images/sludge pile dead:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_nqh2r"]
 resource_name = "fade-out"
@@ -138,6 +166,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("images/sludge pile dead:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_e28yj"]
 resource_name = "startup"
@@ -179,11 +219,63 @@ tracks/2/keys = {
 "values": [false]
 }
 
+[sub_resource type="Animation" id="Animation_0qs2f"]
+resource_name = "sludge_pile"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("images/sludge pile:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("images/sludge pile:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("images/sludge pile dead:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("images/sludge pile dead:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rwbvg"]
 _data = {
 "RESET": SubResource("Animation_uxrke"),
 "fade-out": SubResource("Animation_nqh2r"),
 "show_sludge": SubResource("Animation_0mhqh"),
+"sludge_pile": SubResource("Animation_0qs2f"),
 "startup": SubResource("Animation_e28yj")
 }
 
@@ -206,6 +298,13 @@ centered = false
 
 [node name="sludge pile" type="Sprite2D" parent="images"]
 visible = false
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-5.317, -47)
+scale = Vector2(0.69537, 0.69537)
+texture = ExtResource("3_i3vh3")
+centered = false
+
+[node name="sludge pile dead" type="Sprite2D" parent="images"]
 modulate = Color(1, 1, 1, 0)
 position = Vector2(-5.317, -47)
 scale = Vector2(0.69537, 0.69537)

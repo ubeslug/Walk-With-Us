@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cwsoynweuh0fp"]
 
-[ext_resource type="Script" uid="uid://dlekensw7awcy" path="res://scripts/page_base.gd" id="1_bsfgk"]
+[ext_resource type="Script" path="res://scripts/page_base.gd" id="1_bsfgk"]
 [ext_resource type="PackedScene" uid="uid://beneqpcnms27p" path="res://scenes/beastiary pages/_page_base.tscn" id="2_c72rd"]
 [ext_resource type="Theme" uid="uid://bw2dm0g8j123d" path="res://themes/beastiary_writing.tres" id="3_o8jav"]
 [ext_resource type="Texture2D" uid="uid://bnclwq7i06pu4" path="res://assets/sketches/Necrotic_Sludge.png" id="3_xbu8w"]

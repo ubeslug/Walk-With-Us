@@ -9,6 +9,10 @@ In the far distance, you can see what looks to be a skeleton. The features of it
 		=> bad_bro
 - Leave it alone
 	Maybe some things are better left unexplored. You turn away from the direction of the skeleton as you continue to walk down the path. 
+	if bro == 1:
+		The figure walks away in sadness.
+	else:
+		The figure disapointingly walks away.
 do fade_out()
 => END
 
