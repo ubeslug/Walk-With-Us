@@ -2,12 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1lse5n5038i2"
-valid=false
+uid="uid://cpngqdhe0m4ny"
+path="res://.godot/imported/fairy_sad.png-ecfcafd05cdb24ae2adc91d5b29e7974.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://assets/backgrounds/Straight path long.png"
+source_file="res://assets/encounters/tea fairy/fairy_sad.png"
+dest_files=["res://.godot/imported/fairy_sad.png-ecfcafd05cdb24ae2adc91d5b29e7974.ctex"]
 
 [params]
 

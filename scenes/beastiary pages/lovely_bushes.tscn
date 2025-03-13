@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://d3h5xettr3lgy"]
 
-[ext_resource type="Script" uid="uid://dlekensw7awcy" path="res://scripts/page_base.gd" id="1_asvk3"]
+[ext_resource type="Script" path="res://scripts/page_base.gd" id="1_asvk3"]
 [ext_resource type="PackedScene" uid="uid://beneqpcnms27p" path="res://scenes/beastiary pages/_page_base.tscn" id="2_kxqd1"]
 [ext_resource type="Texture2D" uid="uid://bqo1u213g5kci" path="res://assets/sketches/LovelyBush.png" id="3_7b3ss"]
 [ext_resource type="Theme" uid="uid://bw2dm0g8j123d" path="res://themes/beastiary_writing.tres" id="3_d4enc"]

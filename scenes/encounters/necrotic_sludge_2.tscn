@@ -1,12 +1,10 @@
-[gd_scene load_steps=17 format=3 uid="uid://beou0p3b13fsw"]
+[gd_scene load_steps=13 format=3 uid="uid://cb5bsfc3vpbh7"]
 
-[ext_resource type="Resource" uid="uid://cjfg6dkgvyqd7" path="res://dialogue/tea_fairy.dialogue" id="1_867ou"]
-[ext_resource type="PackedScene" uid="uid://1yu00uqnngve" path="res://scenes/ui/test_ui.tscn" id="2_45wys"]
-[ext_resource type="Texture2D" uid="uid://dxlh2lxqrexfn" path="res://assets/backgrounds/Uphill.webp" id="2_x32o8"]
-[ext_resource type="Texture2D" uid="uid://b00v2ntad2a1t" path="res://assets/encounters/tea fairy/1.png" id="3_13rxf"]
-[ext_resource type="Texture2D" uid="uid://dlgrkyuldhy8f" path="res://assets/encounters/tea fairy/fairy_happy.png" id="4_5rxme"]
-[ext_resource type="Texture2D" uid="uid://cpngqdhe0m4ny" path="res://assets/encounters/tea fairy/fairy_sad.png" id="5_bpxda"]
-[ext_resource type="Texture2D" uid="uid://bt04mcjc03muc" path="res://assets/encounters/tea fairy/tea.png" id="6_rj511"]
+[ext_resource type="Texture2D" uid="uid://cpst2fjefxbaj" path="res://assets/backgrounds/IMG_6349.webp" id="1_mwhpn"]
+[ext_resource type="Resource" uid="uid://usudmc3jjdtr" path="res://dialogue/necrotic_sludge.dialogue" id="1_xppg2"]
+[ext_resource type="PackedScene" uid="uid://1yu00uqnngve" path="res://scenes/ui/test_ui.tscn" id="2_i885x"]
+[ext_resource type="Texture2D" uid="uid://c8kkwyxu1a0m7" path="res://assets/encounters/nectrotic sludge/IMG_6360.png" id="3_e2rsq"]
+[ext_resource type="Texture2D" uid="uid://c0u6c1s30ybbe" path="res://assets/encounters/nectrotic sludge/IMG_6359.png" id="4_sjlu1"]
 
 [sub_resource type="GDScript" id="GDScript_iwjp3"]
 script/source = "extends Node2D
@@ -25,27 +23,26 @@ func _ready():
 	balloon.start(dialogue_resource, dialogue_start)
 	pass # Replace with function body.
 
-func show_table():
-	animation_player.play(\"show_table\")
+func show_sludge():
+	animation_player.play(\"show_sludge\")
 
-func fairy_happy():
-	animation_player.play(\"fairy_happy\")
+func sludge_away():
+	animation_player.play_backwards(\"show_sludge\")
 
-func show_tea():
-	animation_player.play(\"show_tea\")
-
-func hide_tea():
-	animation_player.play_backwards(\"show_tea\")
-
-func fairy_sad():
-	animation_player.play(\"fairy_sad\")
-
+func sludge_pile():
+	animation_player.play(\"sludge_pile\")
 
 func fade_out() -> void:
 	animation_player.play(\"fade-out\")
 	await animation_player.animation_finished
 	
-	get_tree().change_scene_to_file(\"res://scenes/encounters/decrepid_trader.tscn\")
+	get_tree().change_scene_to_file(\"res://scenes/encounters/cloaked_jester.tscn\")
+
+func death():
+	animation_player.play(\"fade-out\")
+	await animation_player.animation_finished
+	
+	get_tree().change_scene_to_file(\"res://scenes/menus/gameover.tscn\")
 "
 
 [sub_resource type="Animation" id="Animation_uxrke"]
@@ -77,7 +74,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("images/table:visible")
+tracks/2/path = NodePath("images/Img6360:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -89,7 +86,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("images/table:modulate")
+tracks/3/path = NodePath("images/Img6360:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -101,7 +98,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("images/FairyHappy:visible")
+tracks/4/path = NodePath("images/Img6361:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -113,58 +110,10 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("images/FairyHappy:modulate")
+tracks/5/path = NodePath("images/Img6361:modulate")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("images/tea:visible")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("images/tea:modulate")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("images/Fairysad:visible")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("images/Fairysad:modulate")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -227,12 +176,12 @@ tracks/1/keys = {
 "values": [true, false]
 }
 
-[sub_resource type="Animation" id="Animation_4bt2i"]
-resource_name = "show_table"
+[sub_resource type="Animation" id="Animation_3iauj"]
+resource_name = "show_sludge"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("images/table:visible")
+tracks/0/path = NodePath("images/Img6360:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -244,7 +193,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("images/table:modulate")
+tracks/1/path = NodePath("images/Img6360:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -254,12 +203,12 @@ tracks/1/keys = {
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_lbvi5"]
-resource_name = "fairy_happy"
+[sub_resource type="Animation" id="Animation_qehvd"]
+resource_name = "sludge_pile"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("images/FairyHappy:visible")
+tracks/0/path = NodePath("images/Img6361:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -271,65 +220,11 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("images/FairyHappy:modulate")
+tracks/1/path = NodePath("images/Img6361:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_xwkxx"]
-resource_name = "show_tea"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("images/tea:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("images/tea:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.166667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_3baiu"]
-resource_name = "fairy_sad"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("images/Fairysad:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("images/Fairysad:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.3),
+"times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -339,16 +234,15 @@ tracks/1/keys = {
 _data = {
 "RESET": SubResource("Animation_uxrke"),
 "fade-out": SubResource("Animation_nqh2r"),
-"fairy_happy": SubResource("Animation_lbvi5"),
-"fairy_sad": SubResource("Animation_3baiu"),
-"show_table": SubResource("Animation_4bt2i"),
-"show_tea": SubResource("Animation_xwkxx"),
+"show_sludge": SubResource("Animation_3iauj"),
+"sludge_pile": SubResource("Animation_qehvd"),
 "startup": SubResource("Animation_e28yj")
 }
 
-[node name="tea_fairy" type="Node2D"]
+[node name="sludge_2" type="Node2D"]
 script = SubResource("GDScript_iwjp3")
-dialogue_resource = ExtResource("1_867ou")
+dialogue_resource = ExtResource("1_xppg2")
+dialogue_start = "medium"
 
 [node name="images" type="Node2D" parent="."]
 
@@ -358,33 +252,21 @@ offset_bottom = 897.0
 
 [node name="Background" type="Sprite2D" parent="images"]
 position = Vector2(-5.317, -65)
-scale = Vector2(1.625, 1.625)
-texture = ExtResource("2_x32o8")
+scale = Vector2(1.38069, 1.38069)
+texture = ExtResource("1_mwhpn")
 centered = false
 
-[node name="table" type="Sprite2D" parent="images"]
+[node name="Img6360" type="Sprite2D" parent="images"]
 modulate = Color(1, 1, 1, 0)
-position = Vector2(665.468, 314.75)
-scale = Vector2(1.23235, 1.23235)
-texture = ExtResource("3_13rxf")
+position = Vector2(664.778, 371.5)
+scale = Vector2(0.693519, 0.693519)
+texture = ExtResource("3_e2rsq")
 
-[node name="FairyHappy" type="Sprite2D" parent="images"]
+[node name="Img6361" type="Sprite2D" parent="images"]
 modulate = Color(1, 1, 1, 0)
-position = Vector2(664.872, 305.75)
-scale = Vector2(1.23727, 1.23727)
-texture = ExtResource("4_5rxme")
-
-[node name="tea" type="Sprite2D" parent="images"]
-modulate = Color(1, 1, 1, 0)
-position = Vector2(664.872, 305.75)
-scale = Vector2(1.23727, 1.23727)
-texture = ExtResource("6_rj511")
-
-[node name="Fairysad" type="Sprite2D" parent="images"]
-modulate = Color(1, 1, 1, 0)
-position = Vector2(664.872, 305.75)
-scale = Vector2(1.23727, 1.23727)
-texture = ExtResource("5_bpxda")
+position = Vector2(664.778, 371.5)
+scale = Vector2(0.693519, 0.693519)
+texture = ExtResource("4_sjlu1")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -394,7 +276,7 @@ autoplay = "startup"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="ui" parent="CanvasLayer" instance=ExtResource("2_45wys")]
+[node name="ui" parent="CanvasLayer" instance=ExtResource("2_i885x")]
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 visible = false

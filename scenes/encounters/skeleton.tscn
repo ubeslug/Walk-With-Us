@@ -1,8 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://jm0s2yfkcass"]
+[gd_scene load_steps=15 format=3 uid="uid://jm0s2yfkcass"]
 
 [ext_resource type="Resource" uid="uid://yg447l3pc2wa" path="res://dialogue/skeleton.dialogue" id="1_0u5cx"]
-[ext_resource type="Texture2D" uid="uid://b6gq7157561sf" path="res://assets/backgrounds/straight path.png" id="1_by5ws"]
 [ext_resource type="PackedScene" uid="uid://1yu00uqnngve" path="res://scenes/ui/test_ui.tscn" id="2_2ntil"]
+[ext_resource type="Texture2D" uid="uid://4eop5am70nkt" path="res://assets/backgrounds/Downhill.webp" id="2_wjtso"]
 [ext_resource type="Texture2D" uid="uid://dndn1fknxybqj" path="res://assets/encounters/skeletons/IMG_6416.png" id="4_iq4ew"]
 [ext_resource type="Texture2D" uid="uid://dpch8mn5qm533" path="res://assets/encounters/skeletons/IMG_6415.png" id="5_16glx"]
 [ext_resource type="Texture2D" uid="uid://cucrme81kxb20" path="res://assets/encounters/skeletons/IMG_6417.png" id="6_pcsif"]
@@ -24,13 +24,20 @@ func _ready():
 	balloon.start(dialogue_resource, dialogue_start)
 	pass # Replace with function body.
 
+func behind_tree():
+	animation_player.play(\"behind_tree\")
 
+func show_skeleton():
+	animation_player.play(\"show_skeleton\")
+
+func mad_skeleton():
+	animation_player.play(\"mad_skeleton\")
 
 func fade_out() -> void:
 	animation_player.play(\"fade-out\")
 	await animation_player.animation_finished
 	
-	get_tree().change_scene_to_file(\"\")
+	get_tree().change_scene_to_file(\"res://scenes/encounters/black_bear.tscn\")
 
 func death() -> void:
 	animation_player.play(\"fade-out\")
@@ -64,6 +71,78 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("images/Img6417:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("images/Img6417:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("images/Img6415:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("images/Img6415:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("images/Img6416:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("images/Img6416:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_nqh2r"]
@@ -122,10 +201,106 @@ tracks/1/keys = {
 "values": [true, false]
 }
 
+[sub_resource type="Animation" id="Animation_fk6hu"]
+resource_name = "behind_tree"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("images/Img6417:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("images/Img6417:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_3jx4c"]
+resource_name = "show_skeleton"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("images/Img6417:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("images/Img6415:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("images/Img6415:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_n8c22"]
+resource_name = "mad_skeleton"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("images/Img6416:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("images/Img6416:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rwbvg"]
 _data = {
 "RESET": SubResource("Animation_uxrke"),
+"behind_tree": SubResource("Animation_fk6hu"),
 "fade-out": SubResource("Animation_nqh2r"),
+"mad_skeleton": SubResource("Animation_n8c22"),
+"show_skeleton": SubResource("Animation_3jx4c"),
 "startup": SubResource("Animation_e28yj")
 }
 
@@ -141,9 +316,27 @@ offset_bottom = 897.0
 
 [node name="Background" type="Sprite2D" parent="images"]
 position = Vector2(-5.317, -65)
-scale = Vector2(1.38069, 1.38069)
-texture = ExtResource("1_by5ws")
+scale = Vector2(1.625, 1.625)
+texture = ExtResource("2_wjtso")
 centered = false
+
+[node name="Img6417" type="Sprite2D" parent="images"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(659.778, 302.25)
+scale = Vector2(0.696759, 0.696759)
+texture = ExtResource("6_pcsif")
+
+[node name="Img6415" type="Sprite2D" parent="images"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(659.778, 302.25)
+scale = Vector2(0.696759, 0.696759)
+texture = ExtResource("5_16glx")
+
+[node name="Img6416" type="Sprite2D" parent="images"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(659.778, 302.25)
+scale = Vector2(0.696759, 0.696759)
+texture = ExtResource("4_iq4ew")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -160,18 +353,3 @@ visible = false
 offset_right = 1978.0
 offset_bottom = 1126.0
 color = Color(0, 0, 0, 1)
-
-[node name="Img6416" type="Sprite2D" parent="."]
-position = Vector2(659.778, 302.25)
-scale = Vector2(0.696759, 0.696759)
-texture = ExtResource("4_iq4ew")
-
-[node name="Img6415" type="Sprite2D" parent="."]
-position = Vector2(659.778, 302.25)
-scale = Vector2(0.696759, 0.696759)
-texture = ExtResource("5_16glx")
-
-[node name="Img6417" type="Sprite2D" parent="."]
-position = Vector2(659.778, 302.25)
-scale = Vector2(0.696759, 0.696759)
-texture = ExtResource("6_pcsif")

@@ -48,7 +48,7 @@ func fade_out() -> void:
 	if scene == 1:
 		get_tree().change_scene_to_file(\"res://scenes/encounters/berry_encounter.tscn\")
 	else:
-		get_tree().change_scene_to_file(\"res://scenes/encounters/berry_encounter.tscn\") # replace with skeleton
+		get_tree().change_scene_to_file(\"res://scenes/encounters/skeleton.tscn\")
 	
 	
 "
