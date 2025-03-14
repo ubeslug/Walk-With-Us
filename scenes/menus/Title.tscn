@@ -267,10 +267,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -587.0
-offset_top = -482.5
-offset_right = 587.0
-offset_bottom = 482.5
+offset_left = -844.0
+offset_top = -482.0
+offset_right = 846.0
+offset_bottom = 483.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.129412, 0.129412, 0.129412, 1)
@@ -282,14 +282,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -589.0
+offset_left = -850.5
 offset_top = -484.5
-offset_right = 589.0
+offset_right = 850.5
 offset_bottom = 484.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Credits/Panel"]
+[node name="Team members" type="VBoxContainer" parent="CanvasLayer/Credits/Panel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -303,7 +303,7 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="team Members" type="Label" parent="CanvasLayer/Credits/Panel/VBoxContainer"]
+[node name="team Members" type="Label" parent="CanvasLayer/Credits/Panel/Team members"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "Team Members
@@ -316,20 +316,49 @@ Jocelyn Chiang  -  External Collaborator / Artist
 Bryant Aberin  -  Programer / Sound Designer"
 horizontal_alignment = 1
 
-[node name="Sound Credits" type="Label" parent="CanvasLayer/Credits/Panel/VBoxContainer"]
+[node name="Sounds" type="VBoxContainer" parent="CanvasLayer/Credits/Panel"]
 visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -101.0
+offset_top = -201.0
+offset_right = 101.0
+offset_bottom = 201.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sound Credits2" type="Label" parent="CanvasLayer/Credits/Panel/Sounds"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 30
 text = "Sound Credits
-1
-2
-3
-4
-5
-6
-7
-8"
+wind draft loop 1 by nsstudios -- https://freesound.org/s/651541/ -- License: Attribution 4.0
+wind draft loop 2 by nsstudios -- https://freesound.org/s/651540/ -- License: Attribution 4.0
+wind draft loop 3 by nsstudios -- https://freesound.org/s/651545/ -- License: Attribution 4.0
+PageTurn.wav by yatoimtop -- https://freesound.org/s/346835/ -- License: Creative Commons 0
+Science Fiction Horror Ambient FX by TouringAmmosKane
+https://www.looperman.com/loops/detail/347860/science-fiction-horror-ambient-fx-free-120bpm-ambient-fx-loop "
 horizontal_alignment = 1
+
+[node name="Sound Credits" type="Button" parent="CanvasLayer/Credits/Panel"]
+layout_mode = 0
+offset_left = 1473.5
+offset_top = 911.5
+offset_right = 1683.5
+offset_bottom = 961.5
+theme_override_font_sizes/font_size = 30
+text = "Sound Credits"
+
+[node name="Team credits" type="Button" parent="CanvasLayer/Credits/Panel"]
+offset_left = 20.5
+offset_top = 911.5
+offset_right = 230.5
+offset_bottom = 961.5
+theme_override_font_sizes/font_size = 30
+text = "Team Credits"
 
 [node name="Exit" type="Button" parent="CanvasLayer/Credits"]
 layout_mode = 1
@@ -497,6 +526,8 @@ text = "Close"
 [connection signal="pressed" from="CanvasLayer/Control/Buttons/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/Buttons/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/Buttons/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="CanvasLayer/Credits/Panel/Sound Credits" to="." method="_on_sound_credits_pressed"]
+[connection signal="pressed" from="CanvasLayer/Credits/Panel/Team credits" to="." method="_on_team_credits_pressed"]
 [connection signal="pressed" from="CanvasLayer/Credits/Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="CanvasLayer/quit_node/Panel/VBoxContainer/HBoxContainer/yes_quit" to="." method="_on_yes_quit_pressed"]
 [connection signal="pressed" from="CanvasLayer/quit_node/Panel/VBoxContainer/HBoxContainer/no_quit" to="." method="_on_no_quit_pressed"]

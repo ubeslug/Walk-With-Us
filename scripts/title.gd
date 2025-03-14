@@ -77,3 +77,13 @@ func _on_full_screen_toggled(toggled_on: bool) -> void:
 	else:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 		DisplayServer.window_set_size(Vector2(1920, 1080))
+
+
+func _on_team_credits_pressed() -> void:
+	$"CanvasLayer/Credits/Panel/Team members".visible = true
+	$CanvasLayer/Credits/Panel/Sounds.visible = false
+
+
+func _on_sound_credits_pressed() -> void:
+	$"CanvasLayer/Credits/Panel/Team members".visible = false
+	$CanvasLayer/Credits/Panel/Sounds.visible = true
