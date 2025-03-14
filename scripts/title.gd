@@ -48,3 +48,13 @@ func _on_new_game_pressed():
 	fade_handler.play("fade-out")
 	await fade_handler.animation_finished
 	get_tree().change_scene_to_file("res://scenes/encounters/Gojarus_intro.tscn")
+
+
+func _on_credits_pressed() -> void:
+	$CanvasLayer/Credits.visible = true
+
+
+
+
+func _on_exit_pressed() -> void:
+	$CanvasLayer/Credits.visible = false

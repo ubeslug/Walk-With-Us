@@ -236,12 +236,10 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Start"
 
-[node name="continue" type="Button" parent="CanvasLayer/Control/Buttons"]
-visible = false
+[node name="Credits" type="Button" parent="CanvasLayer/Control/Buttons"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
-disabled = true
-text = "Continue"
+text = "Credits"
 
 [node name="Options" type="Button" parent="CanvasLayer/Control/Buttons"]
 visible = false
@@ -254,6 +252,93 @@ text = "Options"
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Quit"
+
+[node name="Credits" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Credits"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -587.0
+offset_top = -482.5
+offset_right = 587.0
+offset_bottom = 482.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.129412, 0.129412, 0.129412, 1)
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Credits"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -589.0
+offset_top = -484.5
+offset_right = 589.0
+offset_bottom = 484.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Credits/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="team Members" type="Label" parent="CanvasLayer/Credits/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Team Members
+Hannah Cathcart  -  Producer / Artist / Writer
+Gabriel Jauregui  -  Writer
+Aisha Gilbert  -  Artist
+Chloe Lorian  -  Artist
+Jianne Soto  -  Artist
+Jocelyn Chiang  -  External Collaborator / Artist
+Bryant Aberin  -  Programer / Sound Designer"
+horizontal_alignment = 1
+
+[node name="Sound Credits" type="Label" parent="CanvasLayer/Credits/Panel/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Sound Credits
+1
+2
+3
+4
+5
+6
+7
+8"
+horizontal_alignment = 1
+
+[node name="Exit" type="Button" parent="CanvasLayer/Credits"]
+layout_mode = 1
+offset_right = 50.0
+offset_bottom = 31.0
+theme_override_font_sizes/font_size = 40
+text = "Close"
 
 [node name="quit_node" type="Control" parent="CanvasLayer"]
 visible = false
@@ -328,6 +413,8 @@ offset_bottom = 1091.0
 color = Color(0, 0, 0, 1)
 
 [connection signal="pressed" from="CanvasLayer/Control/Buttons/new_game" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Buttons/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/Buttons/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="CanvasLayer/Credits/Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="CanvasLayer/quit_node/Panel/VBoxContainer/HBoxContainer/yes_quit" to="." method="_on_yes_quit_pressed"]
 [connection signal="pressed" from="CanvasLayer/quit_node/Panel/VBoxContainer/HBoxContainer/no_quit" to="." method="_on_no_quit_pressed"]
