@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://bly2o8v0fqmvi"]
+[gd_scene load_steps=37 format=3 uid="uid://bly2o8v0fqmvi"]
 
 [ext_resource type="Script" path="res://scripts/monster_database.gd" id="1_fmdyi"]
 [ext_resource type="PackedScene" uid="uid://beneqpcnms27p" path="res://scenes/beastiary pages/_page_base.tscn" id="2_4jixn"]
@@ -33,6 +33,8 @@
 [ext_resource type="Texture2D" uid="uid://cxmuuj1w6v5q8" path="res://assets/ui/pencil_x_default.png" id="22_dupp8"]
 [ext_resource type="Texture2D" uid="uid://bj4vk8bahmgnn" path="res://assets/ui/pencil_x_down.png" id="23_vv4ov"]
 [ext_resource type="Texture2D" uid="uid://bov38b7j5a08t" path="res://assets/ui/pencil_x_highlight.png" id="24_ma1vn"]
+[ext_resource type="AudioStream" uid="uid://b7tdv66qdclwb" path="res://Fmod Project/CMPM 150 Final/Assets/Bestiary/346835__yatoimtop__pageturn.wav" id="34_odq11"]
+[ext_resource type="AudioStream" uid="uid://8kmqp3wr36ud" path="res://Fmod Project/CMPM 150 Final/Assets/Bestiary/book close.wav" id="35_e8qfc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_y7s42"]
 shader = ExtResource("2_yh8ol")
@@ -197,6 +199,14 @@ scale = Vector2(0.25, 0.25)
 texture_normal = ExtResource("22_dupp8")
 texture_pressed = ExtResource("23_vv4ov")
 texture_hover = ExtResource("24_ma1vn")
+
+[node name="Node" type="Node" parent="."]
+
+[node name="PageFlip" type="AudioStreamPlayer" parent="Node"]
+stream = ExtResource("34_odq11")
+
+[node name="book close" type="AudioStreamPlayer" parent="Node"]
+stream = ExtResource("35_e8qfc")
 
 [connection signal="pressed" from="Arrows/next_page" to="." method="_on_next_page_pressed"]
 [connection signal="pressed" from="Arrows/prev_page" to="." method="_on_prev_page_pressed"]

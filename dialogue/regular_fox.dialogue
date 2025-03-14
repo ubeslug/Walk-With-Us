@@ -1,4 +1,5 @@
 ~ start
+do AudioHandler.update_wind_level(1)
 A chill clings to your body as you begin your journey. The trees shield the sun, casting everything in darkness despite it being mid day. Clinging your travel bag close to your body, you try your best to warm yourself by walking. However, before you can get very far, you hear a soft whimpering just ahead.
 do show_fox()
 It's not long before you find a fox cub crossing the road, cold and shivering. Its fur appears matted and wet leading you to believe it fell in a river. Its large brown eyes meet yours as it continues to whimper. The water is still dripping from its fur and the chill in the air would only make the chill from the water worse. If left alone it will surely die. 

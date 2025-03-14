@@ -15,6 +15,7 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	disable_quit_node(true)
+	AudioHandler.update_wind_level(1)
 	#fade_handler.play("fade_in")
 	#await fade_handler.animation_finished
 	#print("done with fade in")
@@ -54,7 +55,25 @@ func _on_credits_pressed() -> void:
 	$CanvasLayer/Credits.visible = true
 
 
-
-
 func _on_exit_pressed() -> void:
 	$CanvasLayer/Credits.visible = false
+
+
+func _on_close_pressed() -> void:
+	$CanvasLayer/Settings.visible = false
+
+
+func _on_settings_pressed() -> void:
+	$CanvasLayer/Settings.visible = true
+
+
+func _on_text_sound_toggled(toggled_on: bool) -> void:
+	Globals.text_sounds = toggled_on
+
+
+func _on_full_screen_toggled(toggled_on: bool) -> void:
+	if toggled_on == true:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN)
+	else:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+		DisplayServer.window_set_size(Vector2(1920, 1080))

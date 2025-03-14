@@ -1,8 +1,9 @@
 ~ start
 You walk through brambles and ferns as you head off a dusty trail by the forest. Not even an hour ago, you were instructed by your work to speak with a client who lives just outside of town. While your work as a courier did take you to many places, none were as annoying as this. As you passed by looming shadows and darted your eyes to every small movement in your peripheral, you prayed that whoever this was paid well. 
 Slowly, you sense warmth coming from just ahead. A decently sized hut stands before you. Seemingly out of place in this barren area that leads towards the woods. You step inside.
+do AudioHandler.update_wind_level(0)
 do enter_hut()
-The room before you is very large, larger than the hut should have space for. The room is adorned with trophies of various animals. Some you recognize while others are beyond your wildest dreams. You call out but receive no answer. The client said they would be here, it's just a matter of when they’ll show up. You take some time to observe the artifacts
+The room before you is very large, larger than the hut should have space for. The room is adorned with trophies of various animals. Some you recognize while others are beyond your wildest dreams. You call out but receive no answer. The client said they would be here, it's just a matter of when they’ll show up. You take some time to observe the artifacts.
 ???: Ah, there you are
 You hear a voice coming from your left. You turn to face the speaker.
 do gojarus_wolf()
@@ -33,6 +34,7 @@ if Globals.found_my_page == true:
 => loop
 
 ~ part_2
+do Globals.found_my_page = false
 After locating his page, you look back up to be met with a different furry face. Now that of a snow leopard, the newly shapeshifted Gojarus laughs again. 
 Gojarus: Marvelous, isn’t it? I’m glad you were able to pick it up so quickly! It will be incredibly useful on your journey! The lands you must traverse to get to your destination are rife with danger. However, with this book, it should give you the tools needed to travel safely. The book is the culmination of our hard-earned work. Do not forsake it, and it will not fail you. I wish you well on your journey. 
 do back_to_forest()

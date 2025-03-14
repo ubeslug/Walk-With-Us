@@ -88,6 +88,7 @@ The stranger begins to shift more as its eyes dart from side to side.
 => stage_final
 
 ~ stage_final
+do AudioHandler.eerie_level(2)
 do jester_2()
 The stranger gets closer to you now, its eyes radiating a small hint of malice as it speaks once again.
 ???: You carry something incredibly powerful with you. Something with the real risk of harming others as much as helping them. Tell me then, do you think you are the right one to be doing all of this?
@@ -103,10 +104,12 @@ The stranger gets closer to you now, its eyes radiating a small hint of malice a
 		=> death
 - Tell them you are not sure
 	You admit that you can’t be sure about whether or not you are the right person for this job. However, you say as well that you have a job to do regardless and you will see that it gets done. The stranger groans in annoyance.
-	???: You are quite stubborn”
+	???: You are quite stubborn.
 => ending
 
 ~ ending
+do AudioHandler.stop_ambience()
+do jester_calm()
 ???: I believe that my time here is done. Be careful on your journey, "friend." You never know what may be lurking out here. 
 do jester_leave()
 Before you can say anything else the figure fades away in front of you. You blink to make sure what you saw was real before shaking your head and running, legs wobbly and head pounding.

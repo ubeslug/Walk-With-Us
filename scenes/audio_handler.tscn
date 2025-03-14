@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://dk64xbycll8yv"]
+
+[ext_resource type="AudioStream" uid="uid://ceufpre8sdef3" path="res://Fmod Project/CMPM 150 Final/Assets/Ambience/wind_level2.wav" id="1_arxi8"]
+[ext_resource type="Script" path="res://scripts/audio_handler.gd" id="1_xckh4"]
+[ext_resource type="AudioStream" uid="uid://duox4iwmwp4j0" path="res://Fmod Project/CMPM 150 Final/Assets/Ambience/wind_level1.wav" id="2_vdrqd"]
+[ext_resource type="AudioStream" uid="uid://bhglexuvk1wc6" path="res://Fmod Project/CMPM 150 Final/Assets/Ambience/looperman-l-2512714-0347860-science-fiction-horror-ambient-fx.wav" id="3_upw2m"]
+[ext_resource type="AudioStream" uid="uid://usxyyqgipmuc" path="res://Fmod Project/CMPM 150 Final/Assets/Ambience/wind_level3.wav" id="4_k466o"]
+
+[node name="AudioHandler" type="Node2D"]
+script = ExtResource("1_xckh4")
+
+[node name="Ambience" type="Node" parent="."]
+
+[node name="Wind_1" type="AudioStreamPlayer" parent="Ambience"]
+stream = ExtResource("2_vdrqd")
+
+[node name="Wind_2" type="AudioStreamPlayer" parent="Ambience"]
+stream = ExtResource("1_arxi8")
+
+[node name="Wind_3" type="AudioStreamPlayer" parent="Ambience"]
+stream = ExtResource("4_k466o")
+
+[node name="eerie" type="AudioStreamPlayer" parent="Ambience"]
+stream = ExtResource("3_upw2m")
+
+[node name="SFX" type="Node" parent="."]

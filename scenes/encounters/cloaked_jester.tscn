@@ -33,13 +33,19 @@ func jester_floor():
 	animation_player.play(\"jester_floor\")
 
 func jester_reveal():
+	AudioHandler.stop_ambience()
 	animation_player.play(\"jester_reveal\")
+	
 
 func jester_stand():
+	AudioHandler.eerie_level(1)
 	animation_player.play(\"jester_stand\")
 
 func jester_2():
 	animation_player.play(\"jester_2\")
+
+func jester_calm():
+	animation_player.play_backwards(\"jester_2\")
 
 func jester_neutral():
 	animation_player.play(\"back_to_neutral\")

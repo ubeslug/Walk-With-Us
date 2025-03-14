@@ -400,7 +400,6 @@ _data = {
 [node name="trader" type="Node2D"]
 script = SubResource("GDScript_iwjp3")
 dialogue_resource = ExtResource("1_st2ql")
-debug = true
 
 [node name="images" type="Node2D" parent="."]
 

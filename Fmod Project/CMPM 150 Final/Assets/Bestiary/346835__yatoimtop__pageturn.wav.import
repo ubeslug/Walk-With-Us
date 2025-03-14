@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b7tdv66qdclwb"
+path="res://.godot/imported/346835__yatoimtop__pageturn.wav-fec0efb60b778b4bc254bcf7ded14907.sample"
+
+[deps]
+
+source_file="res://Fmod Project/CMPM 150 Final/Assets/Bestiary/346835__yatoimtop__pageturn.wav"
+dest_files=["res://.godot/imported/346835__yatoimtop__pageturn.wav-fec0efb60b778b4bc254bcf7ded14907.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

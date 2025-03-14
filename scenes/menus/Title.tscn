@@ -241,12 +241,10 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Credits"
 
-[node name="Options" type="Button" parent="CanvasLayer/Control/Buttons"]
-visible = false
+[node name="Settings" type="Button" parent="CanvasLayer/Control/Buttons"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
-disabled = true
-text = "Options"
+text = "Settings"
 
 [node name="Quit" type="Button" parent="CanvasLayer/Control/Buttons"]
 layout_mode = 2
@@ -412,9 +410,96 @@ offset_right = 1928.0
 offset_bottom = 1091.0
 color = Color(0, 0, 0, 1)
 
+[node name="Settings" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Settings"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -678.0
+offset_top = -444.0
+offset_right = 679.0
+offset_bottom = 444.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.239216, 0.239216, 0.239216, 1)
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Settings"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -680.5
+offset_top = -445.5
+offset_right = 680.5
+offset_bottom = 445.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Settings/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Settings/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 75
+text = "Settings"
+horizontal_alignment = 1
+
+[node name="spacer" type="Label" parent="CanvasLayer/Settings/Panel/VBoxContainer"]
+layout_mode = 2
+text = "
+
+
+"
+horizontal_alignment = 1
+
+[node name="Text sound" type="CheckButton" parent="CanvasLayer/Settings/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Text Sound"
+
+[node name="Full Screen" type="CheckButton" parent="CanvasLayer/Settings/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Full Screen"
+
+[node name="Close" type="Button" parent="CanvasLayer/Settings"]
+layout_mode = 1
+offset_right = 8.0
+offset_bottom = 8.0
+theme_override_font_sizes/font_size = 40
+text = "Close"
+
 [connection signal="pressed" from="CanvasLayer/Control/Buttons/new_game" to="." method="_on_new_game_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/Buttons/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Buttons/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/Buttons/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="CanvasLayer/Credits/Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="CanvasLayer/quit_node/Panel/VBoxContainer/HBoxContainer/yes_quit" to="." method="_on_yes_quit_pressed"]
 [connection signal="pressed" from="CanvasLayer/quit_node/Panel/VBoxContainer/HBoxContainer/no_quit" to="." method="_on_no_quit_pressed"]
+[connection signal="toggled" from="CanvasLayer/Settings/Panel/VBoxContainer/Text sound" to="." method="_on_text_sound_toggled"]
+[connection signal="toggled" from="CanvasLayer/Settings/Panel/VBoxContainer/Full Screen" to="." method="_on_full_screen_toggled"]
+[connection signal="pressed" from="CanvasLayer/Settings/Close" to="." method="_on_close_pressed"]

@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://bfc852ak50mfo"]
+[gd_scene load_steps=10 format=3 uid="uid://bfc852ak50mfo"]
 
 [ext_resource type="Script" path="res://scenes/dialogue balloons/balloon.gd" id="1_36de5"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
 [ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_reponses_menu.gd" id="3_72ixx"]
+[ext_resource type="AudioStream" uid="uid://bpqj8ty16q2kl" path="res://Fmod Project/CMPM 150 Final/Assets/SFX/talksound2.wav" id="4_mrq2w"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
 bg_color = Color(0, 0, 0, 1)
@@ -149,5 +150,10 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Response example"
 
+[node name="TextSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_mrq2w")
+volume_db = -9.59
+
 [connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]
+[connection signal="spoke" from="Balloon/Panel/Dialogue/VBoxContainer/DialogueLabel" to="." method="_on_dialogue_label_spoke"]
 [connection signal="response_selected" from="Balloon/Responses/ResponsesMenu" to="." method="_on_responses_menu_response_selected"]

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{dc911880-6adf-475c-86c8-c7c161bfaed7}">
+		<property name="assetPath">
+			<value>Ambience/looperman-l-2512714-0347860-science-fiction-horror-ambient-fx.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>16.05453514739229</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{58f09ede-189a-4409-a399-6224a9cf27f8}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -12,9 +12,9 @@ do fade_out()
 => END
 
 ~ has_food
-
 You walk along the path more, thoughts racing through your head about the journey ahead of you, until a gruff panting snaps you out of your thinking. 
 do bear_approach()
+do AudioHandler.update_wind_level(0)
 You turn to find yourself in front of a bear. Its fur is dark black and it's relatively small for a bear. Its large brown muzzle sniffs the air in front of you as it lazily waddles toward you. It's only a couple feet away but it still gives you time to react. 
 - Play dead
 	You suddenly pretend to seize up and fall onto the ground. The bear initially is taken aback and flinches at your dramatic performance but then continues towards you. It reaches you and begins to sniff your arm, your torso, and then your leg. You feel its claws shift on top of you, not enough to penetrate into your body but it's definitely looking for something. As it examines your leg you feel its hot breath along your pants as it begins to head towards your bag. 

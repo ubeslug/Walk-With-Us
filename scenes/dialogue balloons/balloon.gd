@@ -1,6 +1,10 @@
 extends CanvasLayer
 ## A basic dialogue balloon for use with Dialogue Manager.
 
+
+@onready var text_sound: AudioStreamPlayer = $TextSound
+
+
 ## The action to use for advancing the dialogue
 @export var next_action: StringName = &"ui_accept"
 
@@ -170,3 +174,10 @@ func _on_responses_menu_response_selected(response: DialogueResponse) -> void:
 
 
 #endregion
+
+
+func _on_dialogue_label_spoke(letter: String, letter_index: int, speed: float) -> void:
+	if not letter in [".", " ", "!", "?", ","]:
+		if Globals.text_sounds:
+			text_sound.pitch_scale = randf_range(0.9, 1.1)
+			text_sound.play()
