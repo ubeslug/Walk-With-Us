@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://bly2o8v0fqmvi"]
+[gd_scene load_steps=42 format=3 uid="uid://bly2o8v0fqmvi"]
 
 [ext_resource type="Script" path="res://scripts/monster_database.gd" id="1_fmdyi"]
 [ext_resource type="PackedScene" uid="uid://beneqpcnms27p" path="res://scenes/beastiary pages/_page_base.tscn" id="2_4jixn"]
@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://bjup2dqx33ruo" path="res://scenes/beastiary pages/whistling_tree_page.tscn" id="7_pequu"]
 [ext_resource type="PackedScene" uid="uid://58f2fodlqs8q" path="res://scenes/beastiary pages/deer_page.tscn" id="8_d0015"]
 [ext_resource type="PackedScene" uid="uid://seymdxg6el1x" path="res://scenes/beastiary pages/bookworms.tscn" id="8_msjyi"]
+[ext_resource type="PackedScene" uid="uid://cidy8oe8rbw1u" path="res://scenes/beastiary pages/snowberries.tscn" id="8_vfi3i"]
+[ext_resource type="PackedScene" uid="uid://d6fn1y52n4qt" path="res://scenes/beastiary pages/cottonberries_page.tscn" id="8_x42n1"]
 [ext_resource type="PackedScene" uid="uid://cfm03oskwcxbv" path="res://scenes/beastiary pages/red_fox_page.tscn" id="9_xb5at"]
 [ext_resource type="PackedScene" uid="uid://dpe1mtjvhebob" path="res://scenes/beastiary pages/Black Bear.tscn" id="10_6rpct"]
 [ext_resource type="PackedScene" uid="uid://bf2okttow431s" path="res://scenes/beastiary pages/jackalope_page.tscn" id="11_vy0dc"]
@@ -29,9 +31,12 @@
 [ext_resource type="Texture2D" uid="uid://ha2gfqasdlrv" path="res://assets/ui/pencil_arrow_down.png" id="19_ldpkt"]
 [ext_resource type="Texture2D" uid="uid://dknxkoxf7ybja" path="res://assets/ui/pencil_arrow_highlight.png" id="20_63fb4"]
 [ext_resource type="PackedScene" uid="uid://dvgvv24wku8yw" path="res://scenes/beastiary pages/blossom_bones.tscn" id="20_ka6gy"]
+[ext_resource type="PackedScene" uid="uid://hhnhtum1pkt7" path="res://scenes/beastiary pages/blooming_fox.tscn" id="20_km3ik"]
 [ext_resource type="Texture2D" uid="uid://bdmwcw428uwvd" path="res://assets/ui/pencil_arrow_disabled.png" id="21_u1sbc"]
 [ext_resource type="Texture2D" uid="uid://cxmuuj1w6v5q8" path="res://assets/ui/pencil_x_default.png" id="22_dupp8"]
+[ext_resource type="PackedScene" uid="uid://daj4b2oy8epub" path="res://scenes/beastiary pages/treant_page.tscn" id="23_neyoy"]
 [ext_resource type="Texture2D" uid="uid://bj4vk8bahmgnn" path="res://assets/ui/pencil_x_down.png" id="23_vv4ov"]
+[ext_resource type="PackedScene" uid="uid://bis5g6hw7wum0" path="res://scenes/beastiary pages/skelebros_page.tscn" id="24_350uf"]
 [ext_resource type="Texture2D" uid="uid://bov38b7j5a08t" path="res://assets/ui/pencil_x_highlight.png" id="24_ma1vn"]
 [ext_resource type="AudioStream" uid="uid://b7tdv66qdclwb" path="res://Fmod Project/CMPM 150 Final/Assets/Bestiary/346835__yatoimtop__pageturn.wav" id="34_odq11"]
 [ext_resource type="AudioStream" uid="uid://8kmqp3wr36ud" path="res://Fmod Project/CMPM 150 Final/Assets/Bestiary/book close.wav" id="35_e8qfc"]
@@ -76,19 +81,31 @@ grow_vertical = 2
 layout_mode = 1
 
 [node name="nightshade" parent="pages" instance=ExtResource("4_14wdw")]
+visible = false
 layout_mode = 1
 
 [node name="buckleberry_page" parent="pages" instance=ExtResource("5_n8885")]
 visible = false
 layout_mode = 1
 
+[node name="cottonberries" parent="pages" instance=ExtResource("8_x42n1")]
+visible = false
+layout_mode = 1
+
+[node name="snowberries" parent="pages" instance=ExtResource("8_vfi3i")]
+visible = false
+layout_mode = 1
+
 [node name="lovely Bushes" parent="pages" instance=ExtResource("6_118e1")]
+visible = false
 layout_mode = 1
 
 [node name="whistling tree" parent="pages" instance=ExtResource("7_pequu")]
+visible = false
 layout_mode = 1
 
 [node name="bookworms" parent="pages" instance=ExtResource("8_msjyi")]
+visible = false
 layout_mode = 1
 
 [node name="deer_page" parent="pages" instance=ExtResource("8_d0015")]
@@ -105,22 +122,27 @@ visible = false
 layout_mode = 1
 
 [node name="Black Bear" parent="pages" instance=ExtResource("10_6rpct")]
+visible = false
 layout_mode = 1
 
 [node name="Grizzly_bear" parent="pages" instance=ExtResource("14_bwoa8")]
+visible = false
 layout_mode = 1
 
 [node name="teafairy" parent="pages" instance=ExtResource("12_8fhjj")]
+visible = false
 layout_mode = 1
 
 [node name="tabletop" parent="pages" instance=ExtResource("13_rgid8")]
+visible = false
 layout_mode = 1
 
 [node name="jackalope_page" parent="pages" instance=ExtResource("11_vy0dc")]
 visible = false
 layout_mode = 1
 
-[node name="gojarus" parent="pages" instance=ExtResource("17_jc1g5")]
+[node name="blooming_fox" parent="pages" instance=ExtResource("20_km3ik")]
+visible = false
 layout_mode = 1
 
 [node name="oak_page" parent="pages" instance=ExtResource("12_p66ep")]
@@ -131,11 +153,22 @@ layout_mode = 1
 visible = false
 layout_mode = 1
 
+[node name="treant" parent="pages" instance=ExtResource("23_neyoy")]
+visible = false
+layout_mode = 1
+
+[node name="gojarus" parent="pages" instance=ExtResource("17_jc1g5")]
+layout_mode = 1
+
 [node name="MimeticPage" parent="pages" instance=ExtResource("14_lkvh2")]
 visible = false
 layout_mode = 1
 
 [node name="skeleton_page" parent="pages" instance=ExtResource("15_jfgg8")]
+visible = false
+layout_mode = 1
+
+[node name="skelebros" parent="pages" instance=ExtResource("24_350uf")]
 visible = false
 layout_mode = 1
 
@@ -147,11 +180,11 @@ layout_mode = 1
 visible = false
 layout_mode = 1
 
-[node name="jester_page" parent="pages" instance=ExtResource("16_lcf2d")]
+[node name="decrepit_trader" parent="pages" instance=ExtResource("17_47d4w")]
 visible = false
 layout_mode = 1
 
-[node name="decrepit_trader" parent="pages" instance=ExtResource("17_47d4w")]
+[node name="jester_page" parent="pages" instance=ExtResource("16_lcf2d")]
 visible = false
 layout_mode = 1
 

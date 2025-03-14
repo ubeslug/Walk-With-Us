@@ -1,7 +1,7 @@
 extends Node
 
 #settings
-var text_sounds: bool = true
+var text_sounds: bool = false
 
 
 var bestiary_active: bool = false

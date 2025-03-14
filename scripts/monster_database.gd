@@ -22,7 +22,7 @@ func _process(delta: float) -> void:
 	check_page_ends()
 	page_buttons_check()
 	
-	if current_page == 13:
+	if current_page == 19:
 		Globals.found_my_page = true
 
 func process_pages() -> void:
@@ -71,7 +71,9 @@ func _on_prev_page_pressed() -> void:
 
 
 
+
 func _on_texture_button_pressed():
 	Globals.bestiary_active = false
 	$"Node/book close".play()
+
 	

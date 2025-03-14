@@ -353,6 +353,7 @@ theme_override_font_sizes/font_size = 30
 text = "Sound Credits"
 
 [node name="Team credits" type="Button" parent="CanvasLayer/Credits/Panel"]
+layout_mode = 0
 offset_left = 20.5
 offset_top = 911.5
 offset_right = 230.5

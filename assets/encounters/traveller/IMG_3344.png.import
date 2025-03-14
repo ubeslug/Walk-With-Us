@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4obmxaibo6wn"
-path="res://.godot/imported/dream big.png-88b855f1b2c403e8a5b70af80e083ff2.ctex"
+uid="uid://b76sqq4svhlti"
+path="res://.godot/imported/IMG_3344.png-29f9443a8ff5bf81ac61e3cb3b933a14.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/dream big.png"
-dest_files=["res://.godot/imported/dream big.png-88b855f1b2c403e8a5b70af80e083ff2.ctex"]
+source_file="res://assets/encounters/traveller/IMG_3344.png"
+dest_files=["res://.godot/imported/IMG_3344.png-29f9443a8ff5bf81ac61e3cb3b933a14.ctex"]
 
 [params]
 
