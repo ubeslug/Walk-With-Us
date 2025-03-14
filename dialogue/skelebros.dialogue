@@ -21,8 +21,8 @@ You see its head whip in your direction as soon as the call leaves your mouth. I
 do good_skeleton()
 Once it is finally in view, you are met with a very kind looking skeleton. Its bones are tinged with green, moss, and mushrooms growing off of its body, and its skull is rounded into almost a smile. It waves at you as it gets closer, and you wave back. It holds up a finger, asking you to wait, as it begins to dig through its ribcage. From its pelvis, it pulls out a glowing blue gem. Your eyes widen as it begins to hand it to you. You gently take it before taking it and admiring it. 
 do skeleton_leave()
+do InventoryHandler.add_to_inventory(7)
 The skeleton nods, waving, before disappearing into the woods again. You stuff the large gem into your bag, a wave of relief flooding over you.
-do InventoryHandler.add_to_inventory(6)
 Obtained large Gem.
 do fade_out()
 => END

@@ -20,67 +20,58 @@ Trader: Good day, traveller! I know that the appearance and smell may deter you,
 
 ~ trading
 The trader opens his arms, allowing you to see everything on his body.
-- The pink potion
+- The pink potion [if InventoryHandler.check_inventory(9) == false]
 	Trader: Ah, yes, a healing potion of my own design. Gives the consumer more energy and fixes wounds more efficiently. Interested?”
-	if InventoryHandler.check_inventory(5):
-		- Offer Dead Fish
-			=> bad_trade
-	if InventoryHandler.check_inventory(4):
-		- Offer berries
-			do InventoryHandler.remove_from_inventory(4)
-			=> good_trade
-	if InventoryHandler.check_inventory(2):
-		- Offer healing potion
-			do InventoryHandler.remove_from_inventory(4)
-			=> good_trade
-	if InventoryHandler.check_inventory(6):
-		- Offer the Mysterious Gem
-			=> too_big_gem
+	- Offer Dead Fish [if InventoryHandler.check_inventory(5)]
+		=> bad_trade
+	- Offer berries [if InventoryHandler.check_inventory(4):]
+		do InventoryHandler.remove_from_inventory(4)
+		do InventoryHandler.add_to_inventory(9)
+		=> good_trade
+	- Offer healing potion [if InventoryHandler.check_inventory(2)]
+		do InventoryHandler.remove_from_inventory(2)
+		do InventoryHandler.add_to_inventory(9)
+		=> good_trade
+	- Offer the Mysterious Gem [if InventoryHandler.check_inventory(7)]
+		=> too_big_gem
 	- Decline
 		=> decline
 
-- The bundle of flowers
+- The bundle of flowers [if InventoryHandler.check_inventory(8) == false]
 	Trader: Picked these up not too far from here and made some adjustments to them. From what I have tested, they can heal those who consume it, quite a bit too. But they’re a bit fickle. Healing never seems to be reliable enough.
-	if InventoryHandler.check_inventory(5):
-		- Offer Dead Fish
-			do InventoryHandler.remove_from_inventory(5)
-			=> good_trade
-	if InventoryHandler.check_inventory(4):
-		- Offer berries
-			do InventoryHandler.remove_from_inventory(4)
-			=> good_trade
-	if InventoryHandler.check_inventory(2):
-		- Offer healing potion
-			=> too_big
-	if InventoryHandler.check_inventory(6):
-		- Offer the Mysterious Gem
-			=> too_big_gem
+	- Offer Dead Fish [if InventoryHandler.check_inventory(5)]
+		do InventoryHandler.remove_from_inventory(5)
+		do InventoryHandler.add_to_inventory(8)
+		=> good_trade
+	- Offer berries [if InventoryHandler.check_inventory(4)]
+		do InventoryHandler.remove_from_inventory(4)
+		do InventoryHandler.add_to_inventory(8)
+		=> good_trade
+	- Offer healing potion [if InventoryHandler.check_inventory(2)]
+		=> too_big
+	- Offer the Mysterious Gem [if InventoryHandler.check_inventory(7)]
+		=> too_big_gem
 	- Decline
 		=> decline
 	
-- The crystal
+- The crystal [if InventoryHandler.check_inventory(6) == false]
 	Trader: Hmmmm. I’ve heard this crystal is best at seeing into the soul of whoever you shine it up to. However, I am not certain how many times it can be used since I have used it quite a few times now. I’m not quite willing to part with it just yet unless for a fair price.
-	if InventoryHandler.check_inventory(5):
-		- Offer Dead Fish
-			=> bad_trade
-	if InventoryHandler.check_inventory(4):
-		- Offer berries
-			=> bad_trade
-	if InventoryHandler.check_inventory(2):
-		- Offer healing potion
-			=> bad_trade
-	if InventoryHandler.check_inventory(6):
-		- Offer the Mysterious Gem
-			=> gem_trade
+	- Offer Dead Fish [if InventoryHandler.check_inventory(5)]
+		=> bad_trade
+	- Offer berries [if InventoryHandler.check_inventory(4):]
+		=> bad_trade
+	- Offer healing potion [if InventoryHandler.check_inventory(2)]
+		=> bad_trade
+	- Offer the Mysterious Gem [if InventoryHandler.check_inventory(7)]
+		=> gem_trade
+
 	- Decline
 		=> decline
 
-if traded_once == true:
-	- Finish trading
-		=> done_trading
-else:
-	- Decline Trade
-		=> no_trade
+- Finish trading [if traded_once == true]
+	=> done_trading
+- Decline Trade [if traded_once == false]
+	=> no_trade
 
 
 
@@ -88,11 +79,11 @@ else:
 do trader_mad()
 Trader: You think you can cheat me like that?
 The trader’s voice grows darker. You begin to see its head move as a jaw suddenly peeks out from the darkness of its hood. You leap back, but not fast enough as the jaws scrape your arm.
+do Globals.change_health(-1)
 Trader: NEVER  TRY AND SWINDLE ME AGAIN!” 
 do trader_leave()
 The trader screams at you before leaving into the trees. You feel too afraid to call out as your arm continues to bleed. 
-do Globals.change_health(-1)
-You lose 1 health
+do fade_out()
 => END
 
 ~ good_trade
@@ -120,10 +111,12 @@ Trader: I can’t reasonably accept that friend, but I may have something better
 
 ~ gem_trade
 do traded_once = true
-do InventoryHandler.add_to_inventory(7)
-do InventoryHandler.remove_from_inventory(4)
+
+do InventoryHandler.remove_from_inventory(7)
 The trader takes the gem in its bony hand and eyes it in awe.
-Trader: Been trying to find a gem like this for a long time! I feel it’s only fair to let you have my crystal for this. Be warned, it has limited use. If used correctly though, you’ll know the intentions for things on the road. Is there anything else you would like to look at?
+Trader: Been trying to find a gem like this for a long time! I feel it’s only fair to let you have my crystal for this. 
+do InventoryHandler.add_to_inventory(6)
+Trader: Be warned, it has limited use. If used correctly though, you’ll know the intentions for things on the road. Is there anything else you would like to look at?
 - Keep Trading
 	=> trading
 - Done Trading

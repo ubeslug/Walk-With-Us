@@ -1,8 +1,30 @@
 ~ start
-While walking down the road you hear some rustling from some tall grass off the side of the road in front of you. You stop to ready yourself for whatever it could be. 
-Then a brown furred creature hops out from the grass onto the road. It stops in the middle barring your path. The creature is about the size of a small dog but it strangel;y has a crown of sharp looking horns on its head that branch out into many directions. The horns remind you of another animal you can’t seem to remember right now. This creature seems to be making eye contact with you putting you into a stalemate with the creature. Who will act first? What will you do?
+While walking down the road, you hear some rustling from some tall grass off the side of the road in front of you. You stop to ready yourself for whatever it could be. 
+do show_jack()
+Then, a brown furred creature hops out from the grass onto the road. It stops in the middle, barring your path. The creature is about the size of a small dog, but it strangely has a crown of sharp-looking horns on its head that branch out in many directions. The horns remind you of another animal you can’t seem to remember right now. This creature seems to be acting a bit strange for some reason that may be beyond you. You can’t seem to continue on until you've dealt with this creature somehow. What will you do?
 - Stay away
-	The furred creature stares at you for an uncomfortable amount of time. Should you have acted first? What will it try to do? While these thoughts swirl in your head a distant snap draws the attention of the creature as it swiftly turns it head towards that direction. You also pay attention to that direction. After a few more seconds of the silence the creature scurries away back into the tall grass. Allowing you to continue down the road.
+	The furred creature stares at you for an uncomfortable amount of time. Should you have acted first? What will it try to do? While these thoughts swirl in your head, a distant snap draws the attention of the creature as it swiftly turns its head in that direction. You also pay attention to that direction. 
+	do jack_leave()
+	After a few more seconds of silence, the creature scurries away back into the tall grass. Allowing you to continue down the road. You note a small amount of blood that lies where the creature once was.
 - Scare it off
-	Grabbing a nearby fallen stick you attempt to scare off the creature. You way the stick threateningly towards the creature while screaming at it. It gets a little surprised moving a little bit backwards. The creature stamps its hind legs clearly readying itself. While you keep trying to scare it off the creature charges you with its horns. You defend yourself with your arms but they get punctured in the process. You shake off your attacker as it runs off back into the tall grass. Maybe it wasn’t worth threatening it. You continue on. You lose 5 health
+	Grabbing a nearby fallen stick, you attempt to scare off the creature. You wave the stick threateningly towards the creature while screaming at it. It gets a little surprised, moving a little bit backwards. The creature stamps its hind legs clearly readying itself. While you keep trying to scare it off, the creature charges at you with its horns. 
+	do jack_leave()
+	do Globals.change_health(-1)
+	if Globals.health <= 0:
+		=> death
+	You defend yourself with your arms, but they get punctured in the process. You shake off your attacker as it runs off back into the tall grass. You notice a small amount of blood that lies where the creature once was. Maybe it wasn’t worth threatening it. You continue on. 
+- Slowly get closer [if InventoryHandler.check_inventory(4) == true]
+	You take a second to observe the jackalope, noting its strangeness. This surely isn’t the best place to rest, is it? In the middle of the road, the creature stays. You decide to slowly get closer to the animal. As you slowly inch closer to the creature, you see that one of its hind legs seems to be injured. The creature acknowledges your presence and lowers its horns in a defensive posture. You remember you have some berries you picked up earlier.
+	do show_berries() 
+	You offer the berries to the creature, which seems to pacify it. This allows you to take a closer look at its wound. Seeing its leg, the wound seems to be an attack from some other source. You dress the wound with some cloth you kept in your pack. The creature seems to be allowing you to help it. As you finish dressing the wound the creature briefly looks at you before scurrying away into the tall grass.
+	do show_fox()
+	Before you continue on you notice a different creature staring at you from the tall grass the horned one went off into. This creature is fox-like in form but its tail seems to be littered with petals. You take note of a sweet scent that has filled the area. You and the fox-like creature stare at each other for a while longer. The creature bows its head down before walking into the depths of the forest. You decide to continue on your way but you feel as though the forest has become just a bit friendlier now. 
+	You gained favor
+
+do fade_out()
+=> END
+
+~ death
+In a stroke of deeply unfortunate luck, the creature's horns puncture your chest, leaving holes in your lungs. You are unable to treat yourself in time. You lie on the ground bleeding out.
+do death()
 => END

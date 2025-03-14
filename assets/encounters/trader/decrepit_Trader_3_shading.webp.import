@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bsxboxj1u7gvv"
-path="res://.godot/imported/jackalope-01.png-5a0d7f9eed99423e02387f0a7d77f5cd.ctex"
+uid="uid://n1ewl52oe8xy"
+path="res://.godot/imported/decrepit_Trader_3_shading.webp-ee0a9943af0a3de19832dfa7ce7f1fb4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/encounters/jackalope/jackalope-01.png"
-dest_files=["res://.godot/imported/jackalope-01.png-5a0d7f9eed99423e02387f0a7d77f5cd.ctex"]
+source_file="res://assets/encounters/trader/decrepit_Trader_3_shading.webp"
+dest_files=["res://.godot/imported/decrepit_Trader_3_shading.webp-ee0a9943af0a3de19832dfa7ce7f1fb4.ctex"]
 
 [params]
 
