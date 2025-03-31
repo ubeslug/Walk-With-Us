@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=2 format=3 uid="uid://bw2dm0g8j123d"]
 
-[ext_resource type="FontFile" uid="uid://4mauql4oflhj" path="res://fonts/Kurland-Regular.ttf" id="1_pcu5e"]
+[ext_resource type="FontFile" uid="uid://4mauql4oflhj" path="res://assets/fonts/Kurland-Regular.ttf" id="1_pcu5e"]
 
 [resource]
 default_font = ExtResource("1_pcu5e")

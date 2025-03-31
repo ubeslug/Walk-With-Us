@@ -1,10 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://bxh0mfbfhgpcf"]
+[gd_scene load_steps=13 format=3 uid="uid://dh10iwvpi6d3y"]
 
-[ext_resource type="Resource" uid="uid://usudmc3jjdtr" path="res://dialogue/necrotic_sludge.dialogue" id="1_i6kni"]
-[ext_resource type="Texture2D" uid="uid://b6gq7157561sf" path="res://assets/backgrounds/straight path.png" id="1_wp5wx"]
-[ext_resource type="Texture2D" uid="uid://c0u6c1s30ybbe" path="res://assets/encounters/nectrotic sludge/IMG_6359.png" id="2_5boqv"]
-[ext_resource type="PackedScene" uid="uid://1yu00uqnngve" path="res://scenes/ui/test_ui.tscn" id="2_d1007"]
-[ext_resource type="Texture2D" uid="uid://osrpkunryeu" path="res://assets/encounters/nectrotic sludge/IMG_6358.png" id="3_i3vh3"]
+[ext_resource type="Texture2D" uid="uid://4eop5am70nkt" path="res://assets/backgrounds/Downhill.webp" id="1_w3wo0"]
+[ext_resource type="Resource" uid="uid://cae2bpwiysph2" path="res://dialogue/example test.dialogue" id="1_y8ks7"]
+[ext_resource type="PackedScene" uid="uid://1yu00uqnngve" path="res://scenes/ui/test_ui.tscn" id="2_0l8pu"]
+[ext_resource type="Texture2D" uid="uid://c1umcmmic2cvk" path="res://assets/encounters/fox_mimetic/fox_1.PNG" id="2_8hss2"]
+[ext_resource type="Texture2D" uid="uid://csyn6r5dfvqgy" path="res://assets/encounters/fox_mimetic/fox_2.PNG" id="3_el1l2"]
 
 [sub_resource type="GDScript" id="GDScript_iwjp3"]
 script/source = "extends Node2D
@@ -13,32 +13,31 @@ const Balloon = preload(\"res://scenes/dialogue balloons/balloon.tscn\")
 @export var dialogue_resource: DialogueResource
 @export var dialogue_start: String = \"start\"
 
-@onready var animation_player = $AnimationPlayer
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 
 
 func _ready():
-	AudioHandler.update_wind_level(2)
-	
 	var balloon: Node = Balloon.instantiate()
 	get_tree().current_scene.add_child(balloon)
 	balloon.start(dialogue_resource, dialogue_start)
 	pass # Replace with function body.
 
-func show_sludge() -> void:
-	animation_player.play(\"show_sludge\")
 
-func sludge_pile():
-	animation_player.play(\"sludge_pile\")
+func fox_1():
+	animation_player.play(\"fox_1\")
+
+func fox_2():
+	animation_player.play(\"fox_2\")
+
 
 func fade_out() -> void:
 	animation_player.play(\"fade-out\")
 	await animation_player.animation_finished
 	
-	get_tree().change_scene_to_file(\"res://scenes/encounters/skele_bros.tscn\")
+	get_tree().change_scene_to_file(\"\")
 
-
-func death() -> void:
+func death():
 	animation_player.play(\"fade-out\")
 	await animation_player.animation_finished
 	
@@ -74,31 +73,31 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("images/sludge pile:visible")
+tracks/2/path = NodePath("images/fox1:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [true]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("images/sludge pile:modulate")
+tracks/3/path = NodePath("images/fox2:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
+"update": 1,
+"values": [false]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("images/sludge pile dead:modulate")
+tracks/4/path = NodePath("images/fox1:modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -110,14 +109,14 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("images/sludge pile dead:visible")
+tracks/5/path = NodePath("images/fox2:modulate")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_nqh2r"]
@@ -142,97 +141,6 @@ tracks/1/path = NodePath("CanvasLayer/ColorRect:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-
-[sub_resource type="Animation" id="Animation_0mhqh"]
-resource_name = "show_sludge"
-length = 0.3
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("images/sludge pile:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("images/sludge pile:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("images/sludge pile dead:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
-[sub_resource type="Animation" id="Animation_0qs2f"]
-resource_name = "sludge_pile"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("images/sludge pile:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("images/sludge pile:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("images/sludge pile dead:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("images/sludge pile dead:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -269,7 +177,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("images/sludge pile:visible")
+tracks/2/path = NodePath("images/fox1:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -278,20 +186,122 @@ tracks/2/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("images/fox2:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_g4udo"]
+resource_name = "fox_1"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/ColorRect:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("images/fox1:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("images/fox1:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_065qu"]
+resource_name = "fox_2"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("images/fox1:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("images/fox1:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("images/fox2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("images/fox2:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rwbvg"]
 _data = {
 "RESET": SubResource("Animation_uxrke"),
 "fade-out": SubResource("Animation_nqh2r"),
-"show_sludge": SubResource("Animation_0mhqh"),
-"sludge_pile": SubResource("Animation_0qs2f"),
+"fox_1": SubResource("Animation_g4udo"),
+"fox_2": SubResource("Animation_065qu"),
 "startup": SubResource("Animation_e28yj")
 }
 
-[node name="nectrotic_sludge_1" type="Node2D"]
+[node name="Template" type="Node2D"]
 script = SubResource("GDScript_iwjp3")
-dialogue_resource = ExtResource("1_i6kni")
-dialogue_start = "baby"
+dialogue_resource = ExtResource("1_y8ks7")
 
 [node name="images" type="Node2D" parent="."]
 
@@ -300,25 +310,23 @@ offset_right = 1641.0
 offset_bottom = 897.0
 
 [node name="Background" type="Sprite2D" parent="images"]
-position = Vector2(-5.317, -65)
-scale = Vector2(1.38069, 1.38069)
-texture = ExtResource("1_wp5wx")
+position = Vector2(-5.317, -22)
+scale = Vector2(1.62931, 1.62931)
+texture = ExtResource("1_w3wo0")
 centered = false
 
-[node name="sludge pile" type="Sprite2D" parent="images"]
+[node name="fox1" type="Sprite2D" parent="images"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(646.875, 332.5)
+scale = Vector2(0.343519, 0.343519)
+texture = ExtResource("2_8hss2")
+
+[node name="fox2" type="Sprite2D" parent="images"]
 visible = false
 modulate = Color(1, 1, 1, 0)
-position = Vector2(-5.317, -47)
-scale = Vector2(0.69537, 0.69537)
-texture = ExtResource("3_i3vh3")
-centered = false
-
-[node name="sludge pile dead" type="Sprite2D" parent="images"]
-modulate = Color(1, 1, 1, 0)
-position = Vector2(-5.317, -47)
-scale = Vector2(0.69537, 0.69537)
-texture = ExtResource("2_5boqv")
-centered = false
+position = Vector2(646.875, 332.5)
+scale = Vector2(0.343519, 0.343519)
+texture = ExtResource("3_el1l2")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -328,7 +336,7 @@ autoplay = "startup"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="ui" parent="CanvasLayer" instance=ExtResource("2_d1007")]
+[node name="ui" parent="CanvasLayer" instance=ExtResource("2_0l8pu")]
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 visible = false

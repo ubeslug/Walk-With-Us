@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://irjtut17apbp" path="res://assets/backgrounds/temp_background.png" id="1_111pu"]
 [ext_resource type="Shader" path="res://shaders/vignette.gdshader" id="2_l631a"]
 [ext_resource type="PackedScene" uid="uid://cunqrw485lwt5" path="res://scenes/layer_effects/fog_layer.tscn" id="3_5dqjp"]
-[ext_resource type="FontFile" uid="uid://4mauql4oflhj" path="res://fonts/Kurland-Regular.ttf" id="5_mygyu"]
+[ext_resource type="FontFile" uid="uid://4mauql4oflhj" path="res://assets/fonts/Kurland-Regular.ttf" id="5_mygyu"]
 
 [sub_resource type="Animation" id="Animation_jc2mf"]
 length = 0.001

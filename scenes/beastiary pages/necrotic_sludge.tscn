@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://beneqpcnms27p" path="res://scenes/beastiary pages/_page_base.tscn" id="2_c72rd"]
 [ext_resource type="Theme" uid="uid://bw2dm0g8j123d" path="res://themes/beastiary_writing.tres" id="3_o8jav"]
 [ext_resource type="Texture2D" uid="uid://bnclwq7i06pu4" path="res://assets/sketches/Necrotic_Sludge.png" id="3_xbu8w"]
-[ext_resource type="FontFile" uid="uid://egpk62jv088x" path="res://fonts/BaksoDaging-Regular.ttf" id="5_yx3v2"]
+[ext_resource type="FontFile" uid="uid://egpk62jv088x" path="res://assets/fonts/BaksoDaging-Regular.ttf" id="5_yx3v2"]
 
 [node name="necrotic_sludge" type="Control"]
 layout_mode = 3

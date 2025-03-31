@@ -37,9 +37,22 @@ do fade_out()
 
 ~ large
 
+- bad choice
+	do Globals.change_health(-1)
+	if Globals.health <= 0:
+		=> death_2
+
 => END
+
+
+
 
 ~ death
 The substance seeps deeper into your flesh. It starts eating away at your organs. You can no longer scream in pain as your lungs have melted away. Soon, the rest of you will follow.  
+do death()
+=> END
+
+~ death_2
+"really gross dialogue"
 do death()
 => END

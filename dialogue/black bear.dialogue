@@ -44,7 +44,8 @@ You turn to find yourself in front of a bear. Its fur is dark black and it's rel
 		do bear_leave()
 		You begin to tend to your wounded hand and stop the bleeding enough to keep going.
 		do fade_out()
-	
+
+
 => END
 
 ~ death

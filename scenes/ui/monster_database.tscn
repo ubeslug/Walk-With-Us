@@ -158,6 +158,7 @@ visible = false
 layout_mode = 1
 
 [node name="gojarus" parent="pages" instance=ExtResource("17_jc1g5")]
+visible = false
 layout_mode = 1
 
 [node name="MimeticPage" parent="pages" instance=ExtResource("14_lkvh2")]

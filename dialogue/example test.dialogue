@@ -1,0 +1,12 @@
+~ start
+dialogue 1
+dialouge 2
+do fox_1()
+- Choice 1
+	do fox_2()
+	fsjdfouihndsofjosnjdf
+- Choice 2
+	jsdfoiuhosefujewoiehfoi
+
+do fade_out()
+=> END

@@ -26,21 +26,13 @@ var item_berry
 
 
 
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
 
 
 func reset_inventory() -> void:
 	inventory_array = []
 
 
-func check_inventory(item) -> bool:
+func check_inventory(item: int) -> bool:
 	for i in inventory_array:
 		if i == item:
 			return true

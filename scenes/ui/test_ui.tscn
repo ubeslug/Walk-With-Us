@@ -86,40 +86,6 @@ offset_bottom = 40.0
 theme_override_font_sizes/font_size = 30
 text = "Inventory"
 
-[node name="Inventory" type="VBoxContainer" parent="Inventory"]
-visible = false
-layout_mode = 0
-offset_left = 40.0
-offset_top = 92.0
-offset_right = 80.0
-offset_bottom = 132.0
-
-[node name="Row1" type="HBoxContainer" parent="Inventory/Inventory"]
-layout_mode = 2
-theme_override_constants/separation = 128
-
-[node name="PackageItem" parent="Inventory/Inventory/Row1" instance=ExtResource("2_hyasa")]
-layout_mode = 2
-
-[node name="BestiaryItem" parent="Inventory/Inventory/Row1" instance=ExtResource("3_d5d06")]
-layout_mode = 2
-
-[node name="Row2" type="HBoxContainer" parent="Inventory/Inventory"]
-layout_mode = 2
-theme_override_constants/separation = 128
-
-[node name="Row3" type="HBoxContainer" parent="Inventory/Inventory"]
-layout_mode = 2
-
-[node name="Row4" type="HBoxContainer" parent="Inventory/Inventory"]
-layout_mode = 2
-
-[node name="Row5" type="HBoxContainer" parent="Inventory/Inventory"]
-layout_mode = 2
-
-[node name="Row6" type="HBoxContainer" parent="Inventory/Inventory"]
-layout_mode = 2
-
 [node name="BoxContainer" type="GridContainer" parent="Inventory"]
 layout_direction = 2
 layout_mode = 0
