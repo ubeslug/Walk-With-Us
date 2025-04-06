@@ -55,6 +55,7 @@ text = "Passage"
 autowrap_mode = 3
 
 [node name="book_worms" type="Control" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

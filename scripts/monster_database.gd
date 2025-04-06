@@ -4,6 +4,8 @@ var current_page: int = 0
 
 @onready var pages: Control = $pages
 
+@onready var gojarus: Control = $pages/gojarus
+
 # buttons
 @onready var next_page = $Arrows/next_page
 @onready var prev_page = $Arrows/prev_page
@@ -15,6 +17,7 @@ var page_list: Array[Node] = [
 
 func _ready() -> void:
 	process_pages()
+	gojarus.visible = false
 
 func _process(delta: float) -> void:
 	load_page(current_page)
@@ -22,7 +25,7 @@ func _process(delta: float) -> void:
 	check_page_ends()
 	page_buttons_check()
 	
-	if current_page == 19:
+	if gojarus.visible == true:
 		Globals.found_my_page = true
 
 func process_pages() -> void:
