@@ -1,21 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://d6fn1y52n4qt"]
+[gd_scene load_steps=5 format=3 uid="uid://cej0a6x8absgy"]
 
-[ext_resource type="Script" path="res://scripts/page_base.gd" id="1_cubqs"]
-[ext_resource type="PackedScene" uid="uid://beneqpcnms27p" path="res://scenes/beastiary pages/_page_base.tscn" id="2_k3s63"]
-[ext_resource type="Texture2D" uid="uid://cnyf2syvhnbio" path="res://assets/sketches/CottonBerries.png" id="3_c8sun"]
-[ext_resource type="Theme" uid="uid://bw2dm0g8j123d" path="res://themes/beastiary_writing.tres" id="3_dok17"]
+[ext_resource type="Script" path="res://scripts/page_base.gd" id="1_xmadc"]
+[ext_resource type="PackedScene" uid="uid://beneqpcnms27p" path="res://scenes/beastiary pages/_page_base.tscn" id="2_xe58d"]
+[ext_resource type="Theme" uid="uid://bw2dm0g8j123d" path="res://themes/beastiary_writing.tres" id="3_icyc0"]
+[ext_resource type="Texture2D" uid="uid://ctdfdy61y1rui" path="res://assets/sketches/pt2/ArachnightBestiary.png" id="3_wyn1g"]
 
-[node name="cottonberries" type="Control"]
+[node name="template" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_cubqs")
+script = ExtResource("1_xmadc")
 metadata/_edit_use_anchors_ = true
 
-[node name="page_base" parent="." instance=ExtResource("2_k3s63")]
+[node name="page_base" parent="." instance=ExtResource("2_xe58d")]
 layout_mode = 1
 
 [node name="Contents" type="Control" parent="."]
@@ -29,9 +29,9 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="sketch" type="Sprite2D" parent="Contents"]
-position = Vector2(-354, 40)
+position = Vector2(-390.345, 46.43)
 scale = Vector2(0.585301, 0.585301)
-texture = ExtResource("3_c8sun")
+texture = ExtResource("3_wyn1g")
 
 [node name="entry name" type="Label" parent="Contents"]
 layout_mode = 0
@@ -39,10 +39,10 @@ offset_left = -634.0
 offset_top = -341.0
 offset_right = -427.0
 offset_bottom = -288.0
-theme = ExtResource("3_dok17")
+theme = ExtResource("3_icyc0")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
-text = "Cottonberries"
+text = "Arachnight"
 
 [node name="entry passage" type="Label" parent="Contents"]
 layout_mode = 0
@@ -50,15 +50,14 @@ offset_left = 112.0
 offset_top = -326.0
 offset_right = 648.0
 offset_bottom = 251.0
-theme = ExtResource("3_dok17")
+theme = ExtResource("3_icyc0")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 24
-text = "One of the rarest and best finds in the forests, Cotton Berries are identified by their light pink color with speckled white dots. The bush they can be found in also possess remarkably soft leaves that are brighter than most found in the forests. 
-
-These berries, while not high in nutrition, are a great treat if they happen to be found. Cotton Berries are a rarity in the forest so its best to take them if it is safe to do so."
+text = "Passage"
 autowrap_mode = 3
 
 [node name="book_worms" type="Control" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

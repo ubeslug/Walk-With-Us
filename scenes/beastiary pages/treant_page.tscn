@@ -30,7 +30,7 @@ grow_vertical = 2
 
 [node name="sketch" type="Sprite2D" parent="Contents"]
 position = Vector2(-354, 40)
-scale = Vector2(0.585301, 0.585301)
+scale = Vector2(0.665, 0.665)
 texture = ExtResource("3_msjpl")
 
 [node name="entry name" type="Label" parent="Contents"]
