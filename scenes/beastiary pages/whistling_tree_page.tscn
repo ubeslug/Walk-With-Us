@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bjup2dqx33ruo"]
 
-[ext_resource type="Script" uid="uid://dlekensw7awcy" path="res://scripts/page_base.gd" id="1_mpjvc"]
+[ext_resource type="Script" path="res://scripts/page_base.gd" id="1_mpjvc"]
 [ext_resource type="PackedScene" uid="uid://beneqpcnms27p" path="res://scenes/beastiary pages/_page_base.tscn" id="2_sfcr8"]
 [ext_resource type="Theme" uid="uid://bw2dm0g8j123d" path="res://themes/beastiary_writing.tres" id="3_612uo"]
 [ext_resource type="Texture2D" uid="uid://cod146dfi5xm6" path="res://assets/sketches/Whistling_Tree.png" id="3_ukge2"]
