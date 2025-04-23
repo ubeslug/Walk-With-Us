@@ -60,6 +60,16 @@ These undead have seen to form relationships with many types of floral species, 
 When encountering the Blossom Bones, travelers should first identify the flora species that the undead has formed a relationship with. While the skeleton itself is harmless, the plant species could be harmful if proper precautions aren’t first taken."
 autowrap_mode = 3
 
+[node name="Label" type="Label" parent="Contents"]
+offset_left = 637.0
+offset_top = -384.0
+offset_right = 662.0
+offset_bottom = -357.0
+theme = ExtResource("3_as65i")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "19"
+
 [node name="book_worms" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 15

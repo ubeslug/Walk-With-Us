@@ -56,6 +56,16 @@ theme_override_font_sizes/font_size = 24
 text = "Whistling Trees grow in areas that commonly experience heavy gusts of wind. Due to living in these harsh conditions these trees have grown in ways that various openings have been observed in their trunk, branches, and leaves that seem to let the strong gusts to easily pass through the tree. This unique evolution also seems to produce a high pitched whistling noise that grows louder as you get closer to the tree. A fellow colleague of mine wanted to get a closer inspection of the tree's trunk and attempted to get closer to the tree ignoring my protest about this unknown specimen. They trudged forward to the tree until they could hear my pleas no more. After reaching some distance from the tree they slowly turned to me and all I could make out was a plea for help before they keeled over, blood spewing from their ears. It is advised to avoid getting too close to such trees and avoid areas where they grow."
 autowrap_mode = 3
 
+[node name="Label" type="Label" parent="Contents"]
+offset_left = 637.0
+offset_top = -384.0
+offset_right = 662.0
+offset_bottom = -357.0
+theme = ExtResource("3_612uo")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "7"
+
 [node name="book_worms" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 15

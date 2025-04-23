@@ -48,8 +48,14 @@ func _on_new_game_pressed():
 	Globals.reset_health()
 	fade_handler.play("fade-out")
 	await fade_handler.animation_finished
-	get_tree().change_scene_to_file("res://scenes/encounters/Gojarus_intro.tscn")
+	get_tree().change_scene_to_file("res://scenes/encounters/_pt2/intro.tscn")
 
+func _on_pt_1_pressed():
+	InventoryHandler.reset_inventory()
+	Globals.reset_health()
+	fade_handler.play("fade-out")
+	await fade_handler.animation_finished
+	get_tree().change_scene_to_file("res://scenes/encounters/Gojarus_intro.tscn")
 
 func _on_credits_pressed() -> void:
 	$CanvasLayer/Credits.visible = true

@@ -48,7 +48,10 @@ func fade_out() -> void:
 	animation_player.play(\"fade-out\")
 	await animation_player.animation_finished
 	
-	get_tree().change_scene_to_file(\"res://scenes/encounters/necrotic_sludge_2.tscn\")
+	if Globals.sludge_dead == false:
+		get_tree().change_scene_to_file(\"res://scenes/encounters/necrotic_sludge_2.tscn\")
+	else:
+		get_tree().change_scene_to_file(\"res://scenes/encounters/cloaked_jester.tscn\")
 "
 
 [sub_resource type="Animation" id="Animation_uxrke"]

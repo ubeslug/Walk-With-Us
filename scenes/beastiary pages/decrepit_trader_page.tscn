@@ -59,6 +59,17 @@ This trader seems to show up at any place they wish, as they have been seen in v
 While their trades always seemed simple and innocent, we know better now. And from our lack of precautions we have lost one of our own. We urge you to scrutinize every exchange from traders because they are all shrewd in their own way."
 autowrap_mode = 3
 
+[node name="Label" type="Label" parent="Contents"]
+layout_mode = 0
+offset_left = 637.0
+offset_top = -384.0
+offset_right = 662.0
+offset_bottom = -357.0
+theme = ExtResource("4_3c21b")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "21"
+
 [node name="book_worms" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 15

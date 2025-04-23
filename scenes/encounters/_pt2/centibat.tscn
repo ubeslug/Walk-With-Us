@@ -1,0 +1,284 @@
+[gd_scene load_steps=13 format=3 uid="uid://dfn50thg3yuus"]
+
+[ext_resource type="Texture2D" uid="uid://cdu75pf2w7mgi" path="res://assets/encounters/_pt2/centibat/Centibat Scene 1.PNG" id="1_4seyf"]
+[ext_resource type="Resource" uid="uid://db0k67g5haspg" path="res://dialogue/pt2/centibat.dialogue" id="1_5eqis"]
+[ext_resource type="PackedScene" uid="uid://1yu00uqnngve" path="res://scenes/ui/test_ui.tscn" id="2_8uor3"]
+[ext_resource type="Texture2D" uid="uid://e1svgkfefgj0" path="res://assets/encounters/_pt2/centibat/Centibat Scene 3.PNG" id="2_p4kjl"]
+[ext_resource type="Texture2D" uid="uid://fnfaulhtqscn" path="res://assets/encounters/_pt2/centibat/Centibat Scene 2.PNG" id="3_glgab"]
+
+[sub_resource type="GDScript" id="GDScript_iwjp3"]
+script/source = "extends Node2D
+const Balloon = preload(\"res://scenes/dialogue balloons/balloon.tscn\")
+
+@export var dialogue_resource: DialogueResource
+@export var dialogue_start: String = \"start\"
+
+@onready var animation_player = $AnimationPlayer
+
+
+
+func _ready():
+	var balloon: Node = Balloon.instantiate()
+	get_tree().current_scene.add_child(balloon)
+	balloon.start(dialogue_resource, dialogue_start)
+	pass # Replace with function body.
+
+func attack() -> void:
+	animation_player.play(\"attack\")
+	
+func show_fly() -> void:
+	animation_player.play(\"fly\")
+
+func fade_out() -> void:
+	animation_player.play(\"fade-out\")
+	await animation_player.animation_finished
+	
+	get_tree().change_scene_to_file(\"res://scenes/menus/demo over.tscn\")
+
+func death():
+	animation_player.play(\"fade-out\")
+	await animation_player.animation_finished
+	
+	get_tree().change_scene_to_file(\"res://scenes/menus/gameover.tscn\")
+"
+
+[sub_resource type="Animation" id="Animation_uxrke"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("images/attack:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("images/fly:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("images/attack:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("images/fly:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_rfvk7"]
+resource_name = "attack"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("images/attack:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("images/attack:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_nqh2r"]
+resource_name = "fade-out"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_7uw2e"]
+resource_name = "fly"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("images/fly:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("images/fly:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_e28yj"]
+resource_name = "startup"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rwbvg"]
+_data = {
+"RESET": SubResource("Animation_uxrke"),
+"attack": SubResource("Animation_rfvk7"),
+"fade-out": SubResource("Animation_nqh2r"),
+"fly": SubResource("Animation_7uw2e"),
+"startup": SubResource("Animation_e28yj")
+}
+
+[node name="cenibat" type="Node2D"]
+script = SubResource("GDScript_iwjp3")
+dialogue_resource = ExtResource("1_5eqis")
+
+[node name="images" type="Node2D" parent="."]
+position = Vector2(-8.085, 0)
+
+[node name="ColorRect" type="ColorRect" parent="images"]
+offset_right = 1641.0
+offset_bottom = 897.0
+
+[node name="Background" type="Sprite2D" parent="images"]
+position = Vector2(-5.317, -1)
+scale = Vector2(1.2756, 1.2756)
+texture = ExtResource("1_4seyf")
+centered = false
+
+[node name="attack" type="Sprite2D" parent="images"]
+visible = false
+position = Vector2(-5.317, -1)
+scale = Vector2(1.2756, 1.2756)
+texture = ExtResource("3_glgab")
+centered = false
+
+[node name="fly" type="Sprite2D" parent="images"]
+visible = false
+position = Vector2(-5.317, -1)
+scale = Vector2(1.2756, 1.2756)
+texture = ExtResource("2_p4kjl")
+centered = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_rwbvg")
+}
+autoplay = "startup"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ui" parent="CanvasLayer" instance=ExtResource("2_8uor3")]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+visible = false
+offset_right = 1978.0
+offset_bottom = 1126.0
+color = Color(0, 0, 0, 1)

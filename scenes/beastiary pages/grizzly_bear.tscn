@@ -60,6 +60,17 @@ Luckily, Grizzlies don’t tend to attack travellers on the road and will only d
 Grizzlies don’t normally attack out of the blue and in most situations do not want conflict, so it is best to follow either of those solutions based on their behavior. In any situation, it is unwise to try and run from them as Grizzlies are much faster than their large size would lead you to believe. "
 autowrap_mode = 3
 
+[node name="Label" type="Label" parent="Contents"]
+layout_mode = 0
+offset_left = 637.0
+offset_top = -384.0
+offset_right = 662.0
+offset_bottom = -357.0
+theme = ExtResource("3_swbky")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "24"
+
 [node name="book_worms" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 15

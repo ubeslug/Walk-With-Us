@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://db0k67g5haspg"
+path="res://.godot/imported/centibat.dialogue-e97fbc4842b3b87e5333722f87eed3b9.tres"
+
+[deps]
+
+source_file="res://dialogue/pt2/centibat.dialogue"
+dest_files=["res://.godot/imported/centibat.dialogue-e97fbc4842b3b87e5333722f87eed3b9.tres"]
+
+[params]
+
+defaults=true

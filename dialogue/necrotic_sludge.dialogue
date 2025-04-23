@@ -3,6 +3,7 @@ As you walk down the path, your face scrunches up as a foul smell permeates in t
 do show_sludge()
 You finally notice a small puddle of some kinda ooze mixed with bones off to the side of the road. While at first you think it must be some poor prey animal’s corpse, you notice the ooze is moving at a pretty slow pace. It doesn’t seem harmful, it looks kinda sad, actually. You have some time to kill, what will you do?
 - Mess with it
+	do Globals.sludge_dead = true
 	You decide to prey on this small thing and mess with it. You grab a nearby stick and start poking at the creature. The creature is lightly nudged as you continue poking it then you decide to swirl the sludge around. Mixing the sludge and bones around with the dirt, you hear a slight screech come from the creature. It pitifully jumps only to the edge of the stick. 
 	The stick dissolves to your surprise. That was your stick, how dare it do that to your stick. You reach for your flask of water planning on drowning the small thing. You pour water on the monster as it squeals in pain to your delightful surprise. 
 	do sludge_pile()

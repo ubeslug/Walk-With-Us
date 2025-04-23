@@ -58,6 +58,16 @@ text = "If you ever encounter a stray table in the middle of nowhere then it cou
 While these fae are docile and will not actually interact with most entities and creatures the colony does coexist in a symbiotic relationship with a different species of fae that enjoy the mimicked table that this entity provides."
 autowrap_mode = 3
 
+[node name="Label" type="Label" parent="Contents"]
+offset_left = 637.0
+offset_top = -384.0
+offset_right = 662.0
+offset_bottom = -357.0
+theme = ExtResource("3_cwc3t")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "16"
+
 [node name="book_worms" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 15

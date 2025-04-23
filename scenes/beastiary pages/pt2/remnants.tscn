@@ -60,6 +60,16 @@ You can identify a Remnant by their bluish hue and skeletal faces, wearing the c
 Reports from travellers have shown that helping these spirits has been rewarding and beneficial for the areas they reside in. However, while they may not be hostile, some Remnants may have tasks that are considerably more dangerous if you are to take them on, so be prepared for anything.Passage"
 autowrap_mode = 3
 
+[node name="Label" type="Label" parent="Contents"]
+offset_left = 637.0
+offset_top = -384.0
+offset_right = 662.0
+offset_bottom = -357.0
+theme = ExtResource("3_78acn")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "18"
+
 [node name="book_worms" type="Control" parent="."]
 visible = false
 layout_mode = 1

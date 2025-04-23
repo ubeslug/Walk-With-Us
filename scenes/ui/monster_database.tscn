@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://bly2o8v0fqmvi"]
+[gd_scene load_steps=47 format=3 uid="uid://bly2o8v0fqmvi"]
 
 [ext_resource type="Script" path="res://scripts/monster_database.gd" id="1_fmdyi"]
 [ext_resource type="PackedScene" uid="uid://beneqpcnms27p" path="res://scenes/beastiary pages/_page_base.tscn" id="2_4jixn"]
@@ -6,6 +6,7 @@
 [ext_resource type="Shader" path="res://shaders/blur.gdshader" id="2_yh8ol"]
 [ext_resource type="PackedScene" uid="uid://b8dpovoyhhwhp" path="res://scenes/beastiary pages/lavender.tscn" id="3_7y3vh"]
 [ext_resource type="PackedScene" uid="uid://ckqd8ajnom4wd" path="res://scenes/beastiary pages/nightshade_page.tscn" id="4_14wdw"]
+[ext_resource type="PackedScene" uid="uid://b74yen3xdm85o" path="res://scenes/beastiary pages/_table_of_contents.tscn" id="5_01lke"]
 [ext_resource type="PackedScene" uid="uid://d0llc3vdmdet" path="res://scenes/beastiary pages/buckleberries.tscn" id="5_n8885"]
 [ext_resource type="PackedScene" uid="uid://d3h5xettr3lgy" path="res://scenes/beastiary pages/lovely_bushes.tscn" id="6_118e1"]
 [ext_resource type="PackedScene" uid="uid://bjup2dqx33ruo" path="res://scenes/beastiary pages/whistling_tree_page.tscn" id="7_pequu"]
@@ -23,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://blj8kxw0wcscu" path="res://scenes/beastiary pages/grizzly_bear.tscn" id="14_bwoa8"]
 [ext_resource type="PackedScene" uid="uid://dkc24geafgq41" path="res://scenes/beastiary pages/mimetic_page.tscn" id="14_lkvh2"]
 [ext_resource type="PackedScene" uid="uid://b30a4e8tqp2w2" path="res://scenes/beastiary pages/skeleton_page.tscn" id="15_jfgg8"]
+[ext_resource type="PackedScene" uid="uid://doogy3tt2bwq" path="res://scenes/beastiary pages/pt2/rats.tscn" id="16_6s4dg"]
 [ext_resource type="PackedScene" uid="uid://br731a0smpgml" path="res://scenes/beastiary pages/cloaked_jester_page.tscn" id="16_lcf2d"]
 [ext_resource type="PackedScene" uid="uid://d0qqfmoq10frq" path="res://scenes/beastiary pages/decrepit_trader_page.tscn" id="17_47d4w"]
 [ext_resource type="PackedScene" uid="uid://csb3jtpgw2xnj" path="res://scenes/beastiary pages/gojarus.tscn" id="17_jc1g5"]
@@ -34,10 +36,13 @@
 [ext_resource type="PackedScene" uid="uid://hhnhtum1pkt7" path="res://scenes/beastiary pages/blooming_fox.tscn" id="20_km3ik"]
 [ext_resource type="Texture2D" uid="uid://bdmwcw428uwvd" path="res://assets/ui/pencil_arrow_disabled.png" id="21_u1sbc"]
 [ext_resource type="Texture2D" uid="uid://cxmuuj1w6v5q8" path="res://assets/ui/pencil_x_default.png" id="22_dupp8"]
+[ext_resource type="PackedScene" uid="uid://chkhb62suvi4k" path="res://scenes/beastiary pages/pt2/remnants.tscn" id="23_4j4c4"]
 [ext_resource type="PackedScene" uid="uid://daj4b2oy8epub" path="res://scenes/beastiary pages/treant_page.tscn" id="23_neyoy"]
 [ext_resource type="Texture2D" uid="uid://bj4vk8bahmgnn" path="res://assets/ui/pencil_x_down.png" id="23_vv4ov"]
 [ext_resource type="PackedScene" uid="uid://bis5g6hw7wum0" path="res://scenes/beastiary pages/skelebros_page.tscn" id="24_350uf"]
 [ext_resource type="Texture2D" uid="uid://bov38b7j5a08t" path="res://assets/ui/pencil_x_highlight.png" id="24_ma1vn"]
+[ext_resource type="PackedScene" uid="uid://5yvg542y0b7m" path="res://scenes/beastiary pages/pt2/centibat.tscn" id="26_jgama"]
+[ext_resource type="PackedScene" uid="uid://cej0a6x8absgy" path="res://scenes/beastiary pages/pt2/arachnight.tscn" id="30_2whdu"]
 [ext_resource type="AudioStream" uid="uid://b7tdv66qdclwb" path="res://Fmod Project/CMPM 150 Final/Assets/Bestiary/346835__yatoimtop__pageturn.wav" id="34_odq11"]
 [ext_resource type="AudioStream" uid="uid://8kmqp3wr36ud" path="res://Fmod Project/CMPM 150 Final/Assets/Bestiary/book close.wav" id="35_e8qfc"]
 
@@ -77,7 +82,11 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="table_of_contents2" parent="pages" instance=ExtResource("5_01lke")]
+layout_mode = 1
+
 [node name="lavender" parent="pages" instance=ExtResource("3_7y3vh")]
+visible = false
 layout_mode = 1
 
 [node name="nightshade" parent="pages" instance=ExtResource("4_14wdw")]
@@ -104,7 +113,23 @@ layout_mode = 1
 visible = false
 layout_mode = 1
 
+[node name="gojarus" parent="pages" instance=ExtResource("17_jc1g5")]
+visible = false
+layout_mode = 1
+
+[node name="oak_page" parent="pages" instance=ExtResource("12_p66ep")]
+visible = false
+layout_mode = 1
+
+[node name="omega_oak_page" parent="pages" instance=ExtResource("13_ib5d8")]
+visible = false
+layout_mode = 1
+
 [node name="bookworms" parent="pages" instance=ExtResource("8_msjyi")]
+visible = false
+layout_mode = 1
+
+[node name="rats" parent="pages" instance=ExtResource("16_6s4dg")]
 visible = false
 layout_mode = 1
 
@@ -121,11 +146,7 @@ grow_vertical = 1
 visible = false
 layout_mode = 1
 
-[node name="Black Bear" parent="pages" instance=ExtResource("10_6rpct")]
-visible = false
-layout_mode = 1
-
-[node name="Grizzly_bear" parent="pages" instance=ExtResource("14_bwoa8")]
+[node name="blooming_fox" parent="pages" instance=ExtResource("20_km3ik")]
 visible = false
 layout_mode = 1
 
@@ -141,23 +162,30 @@ layout_mode = 1
 visible = false
 layout_mode = 1
 
-[node name="blooming_fox" parent="pages" instance=ExtResource("20_km3ik")]
+[node name="remnants" parent="pages" instance=ExtResource("23_4j4c4")]
 visible = false
 layout_mode = 1
 
-[node name="oak_page" parent="pages" instance=ExtResource("12_p66ep")]
+[node name="blossombones" parent="pages" instance=ExtResource("20_ka6gy")]
 visible = false
 layout_mode = 1
 
-[node name="omega_oak_page" parent="pages" instance=ExtResource("13_ib5d8")]
+[node name="centibat" parent="pages" instance=ExtResource("26_jgama")]
+layout_mode = 1
+
+[node name="decrepit_trader" parent="pages" instance=ExtResource("17_47d4w")]
 visible = false
 layout_mode = 1
 
-[node name="treant" parent="pages" instance=ExtResource("23_neyoy")]
+[node name="Black Bear" parent="pages" instance=ExtResource("10_6rpct")]
 visible = false
 layout_mode = 1
 
-[node name="gojarus" parent="pages" instance=ExtResource("17_jc1g5")]
+[node name="Grizzly_bear" parent="pages" instance=ExtResource("14_bwoa8")]
+visible = false
+layout_mode = 1
+
+[node name="skeleton_page" parent="pages" instance=ExtResource("15_jfgg8")]
 visible = false
 layout_mode = 1
 
@@ -165,7 +193,11 @@ layout_mode = 1
 visible = false
 layout_mode = 1
 
-[node name="skeleton_page" parent="pages" instance=ExtResource("15_jfgg8")]
+[node name="Arachnight" parent="pages" instance=ExtResource("30_2whdu")]
+visible = false
+layout_mode = 1
+
+[node name="treant" parent="pages" instance=ExtResource("23_neyoy")]
 visible = false
 layout_mode = 1
 
@@ -174,14 +206,6 @@ visible = false
 layout_mode = 1
 
 [node name="necrotic_sludge" parent="pages" instance=ExtResource("19_i503u")]
-visible = false
-layout_mode = 1
-
-[node name="blossombones" parent="pages" instance=ExtResource("20_ka6gy")]
-visible = false
-layout_mode = 1
-
-[node name="decrepit_trader" parent="pages" instance=ExtResource("17_47d4w")]
 visible = false
 layout_mode = 1
 
@@ -201,11 +225,11 @@ grow_vertical = 2
 
 [node name="next_page" type="TextureButton" parent="Arrows"]
 layout_mode = 0
-offset_left = 497.0
-offset_top = 243.0
-offset_right = 753.0
-offset_bottom = 499.0
-scale = Vector2(0.5, 0.5)
+offset_left = 580.0
+offset_top = 305.0
+offset_right = 836.0
+offset_bottom = 561.0
+scale = Vector2(0.4, 0.4)
 texture_normal = ExtResource("18_dsdv8")
 texture_pressed = ExtResource("19_ldpkt")
 texture_hover = ExtResource("20_63fb4")
@@ -213,12 +237,12 @@ texture_disabled = ExtResource("21_u1sbc")
 
 [node name="prev_page" type="TextureButton" parent="Arrows"]
 layout_mode = 0
-offset_left = -516.0
-offset_top = 369.0
-offset_right = -260.0
-offset_bottom = 625.0
+offset_left = -574.0
+offset_top = 403.0
+offset_right = -318.0
+offset_bottom = 659.0
 rotation = 3.14159
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.4, 0.4)
 texture_normal = ExtResource("18_dsdv8")
 texture_pressed = ExtResource("19_ldpkt")
 texture_hover = ExtResource("20_63fb4")

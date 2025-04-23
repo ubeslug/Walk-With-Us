@@ -58,6 +58,17 @@ text = "Treants are highly territorial and hostile creatures. Living among the t
 Typically reaching the midsections of oak trees, their sizze and strength make them very formidable if angered, usually by getting too close. The best solution is to leave them alone. If you have angered a Treant, you may have sealed your fate. However, an Arborsbane Potion thrown into a Treants's eye's will incapacitate the creature withorut you needing to risk your life."
 autowrap_mode = 3
 
+[node name="Label" type="Label" parent="Contents"]
+layout_mode = 0
+offset_left = 637.0
+offset_top = -384.0
+offset_right = 662.0
+offset_bottom = -357.0
+theme = ExtResource("3_25oy4")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "28"
+
 [node name="book_worms" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 15

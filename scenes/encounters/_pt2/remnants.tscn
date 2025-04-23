@@ -1,0 +1,468 @@
+[gd_scene load_steps=19 format=3 uid="uid://i0d7djau0reg"]
+
+[ext_resource type="Texture2D" uid="uid://dj1ctho0v5ky5" path="res://assets/encounters/_pt2/remnant/Remnant_Playtest_1.png" id="1_exyoe"]
+[ext_resource type="Resource" uid="uid://dt1c34wea4lgf" path="res://dialogue/pt2/remnants.dialogue" id="1_nhsq1"]
+[ext_resource type="PackedScene" uid="uid://1yu00uqnngve" path="res://scenes/ui/test_ui.tscn" id="2_5ylh8"]
+[ext_resource type="Texture2D" uid="uid://b6h2jxnxosove" path="res://assets/encounters/_pt2/remnant/Remnant_Playtest_2.png" id="2_hl4te"]
+[ext_resource type="Texture2D" uid="uid://dmk5rtc5e4umj" path="res://assets/encounters/_pt2/remnant/Remnant_Playtest_4.png" id="3_efnb7"]
+[ext_resource type="Texture2D" uid="uid://newb17kctwsx" path="res://assets/encounters/_pt2/remnant/Remnant_Playtest_3.png" id="4_5vxe7"]
+[ext_resource type="Texture2D" uid="uid://bck8h60r30rej" path="res://assets/encounters/_pt2/remnant/Remnant_Playtest_5.png" id="4_avodr"]
+[ext_resource type="Texture2D" uid="uid://cadrh6vd2upw4" path="res://assets/encounters/_pt2/remnant/Remnant_Playtest_6.png" id="5_u1xr7"]
+
+[sub_resource type="GDScript" id="GDScript_iwjp3"]
+script/source = "extends Node2D
+
+const Balloon = preload(\"res://scenes/dialogue balloons/balloon.tscn\")
+
+@export var dialogue_resource: DialogueResource
+@export var dialogue_start: String = \"start\"
+
+@onready var animation_player = $AnimationPlayer
+
+
+
+func _ready():
+	animation_player.play(\"startup\")
+	var balloon: Node = Balloon.instantiate()
+	get_tree().current_scene.add_child(balloon)
+	balloon.start(dialogue_resource, dialogue_start)
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+func show_remnant() -> void:
+	animation_player.play(\"show_remnant\")
+	
+func hide_remnant() -> void:
+	animation_player.play(\"hide_remnant\")
+	
+func show_room() -> void:
+	animation_player.play(\"show_room\")
+	
+func show_bell() -> void:
+	animation_player.play(\"show_bell\")
+	
+func show_room2() -> void:
+	animation_player.play(\"show_room2\")
+	
+func fade_out() -> void:
+	animation_player.play(\"fade-out\")
+	await animation_player.animation_finished
+	
+	get_tree().change_scene_to_file(\"res://scenes/encounters/_pt2/centibat.tscn\")
+"
+
+[sub_resource type="Animation" id="Animation_uxrke"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath("CanvasLayer/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("images/RemnantPlaytest2:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = false
+tracks/3/path = NodePath("images/RemnantPlaytest2:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = false
+tracks/4/path = NodePath("images/RemnantPlaytest3:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("images/RemnantPlaytest3:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("images/RemnantPlaytest4:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("images/RemnantPlaytest4:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = false
+tracks/8/path = NodePath("images/RemnantPlaytest5:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("images/RemnantPlaytest5:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = false
+tracks/10/path = NodePath("images/RemnantPlaytest6:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("images/RemnantPlaytest6:modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_nqh2r"]
+resource_name = "fade-out"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_jec3d"]
+resource_name = "hide_remnant"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("images/RemnantPlaytest3:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("images/RemnantPlaytest3:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_4tx43"]
+resource_name = "show_bell"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("images/RemnantPlaytest5:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("images/RemnantPlaytest5:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_quphg"]
+resource_name = "show_remnant"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("images/RemnantPlaytest2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("images/RemnantPlaytest2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_6r2mi"]
+resource_name = "show_room"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("images/RemnantPlaytest4:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("images/RemnantPlaytest4:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_kypeo"]
+resource_name = "show_room2"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("images/RemnantPlaytest6:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("images/RemnantPlaytest6:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_e28yj"]
+resource_name = "startup"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rwbvg"]
+_data = {
+"RESET": SubResource("Animation_uxrke"),
+"fade-out": SubResource("Animation_nqh2r"),
+"hide_remnant": SubResource("Animation_jec3d"),
+"show_bell": SubResource("Animation_4tx43"),
+"show_remnant": SubResource("Animation_quphg"),
+"show_room": SubResource("Animation_6r2mi"),
+"show_room2": SubResource("Animation_kypeo"),
+"startup": SubResource("Animation_e28yj")
+}
+
+[node name="Remnant" type="Node2D"]
+script = SubResource("GDScript_iwjp3")
+dialogue_resource = ExtResource("1_nhsq1")
+
+[node name="images" type="Node2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="images"]
+offset_right = 1641.0
+offset_bottom = 897.0
+
+[node name="Background" type="Sprite2D" parent="images"]
+position = Vector2(-4.99998, -14)
+scale = Vector2(0.331605, 0.261)
+texture = ExtResource("1_exyoe")
+centered = false
+
+[node name="RemnantPlaytest2" type="Sprite2D" parent="images"]
+visible = false
+position = Vector2(663, 387)
+scale = Vector2(0.52, 0.517)
+texture = ExtResource("2_hl4te")
+
+[node name="RemnantPlaytest3" type="Sprite2D" parent="images"]
+visible = false
+position = Vector2(662.746, 351.318)
+scale = Vector2(0.329256, 0.327356)
+texture = ExtResource("4_5vxe7")
+
+[node name="RemnantPlaytest4" type="Sprite2D" parent="images"]
+visible = false
+position = Vector2(663.884, 294.911)
+scale = Vector2(0.523049, 0.520031)
+texture = ExtResource("3_efnb7")
+
+[node name="RemnantPlaytest5" type="Sprite2D" parent="images"]
+visible = false
+position = Vector2(663.884, 449)
+scale = Vector2(0.523049, 0.520031)
+texture = ExtResource("4_avodr")
+
+[node name="RemnantPlaytest6" type="Sprite2D" parent="images"]
+visible = false
+position = Vector2(664, 294)
+scale = Vector2(0.328459, 0.326564)
+texture = ExtResource("5_u1xr7")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_rwbvg")
+}
+autoplay = "startup"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ui" parent="CanvasLayer" instance=ExtResource("2_5ylh8")]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+visible = false
+offset_right = 1978.0
+offset_bottom = 1126.0
+color = Color(0, 0, 0, 1)

@@ -58,6 +58,17 @@ text = "Mimetics are shape-shifting creatures that inhabit wooded areas, althoug
 From my own experience, I had stumbled across a lost dog along the road. It seemed normal, but it refused to look at me. After getting down to its level, I soon saw piercing human eyes and a row of grinning human teeth staring back at me. It is believed that looking directly at a Mimetic’s eyes creates an issue in their form, so it is best to avoid interacting with a Mimetic should you come across one. They don’t hurt too bad but their ability to let your guard down is truly dangerous."
 autowrap_mode = 3
 
+[node name="Label" type="Label" parent="Contents"]
+layout_mode = 0
+offset_left = 637.0
+offset_top = -384.0
+offset_right = 662.0
+offset_bottom = -357.0
+theme = ExtResource("4_lylhe")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "26"
+
 [node name="book_worms" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 15

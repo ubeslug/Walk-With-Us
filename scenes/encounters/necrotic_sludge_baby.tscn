@@ -20,6 +20,7 @@ const Balloon = preload(\"res://scenes/dialogue balloons/balloon.tscn\")
 func _ready():
 	AudioHandler.update_wind_level(2)
 	
+	Globals.sludge_dead = false
 	var balloon: Node = Balloon.instantiate()
 	get_tree().current_scene.add_child(balloon)
 	balloon.start(dialogue_resource, dialogue_start)

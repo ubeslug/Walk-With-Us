@@ -10,7 +10,7 @@ var health: int = 5
 
 #other
 var found_my_page: bool = false
-
+var sludge_dead: bool = false
 
 
 func _process(delta: float) -> void:

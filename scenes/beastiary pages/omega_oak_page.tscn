@@ -59,6 +59,16 @@ However, rather than infecting a new host, it will reveal its true form, with wo
 It is advised to avoid large trees covered in sap or smells that do not fit the location you are currently in such as something sickly sweet or savory."
 autowrap_mode = 3
 
+[node name="Label" type="Label" parent="Contents"]
+offset_left = 637.0
+offset_top = -384.0
+offset_right = 662.0
+offset_bottom = -357.0
+theme = ExtResource("4_ev8rg")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "9"
+
 [node name="book_worms" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 15

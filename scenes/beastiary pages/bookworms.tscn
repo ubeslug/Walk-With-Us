@@ -65,6 +65,16 @@ text = "Book Worms are a parasitic species that can be commonly found in the cre
 Book Worms feast on the pages inside books ruining many prized books of the people, including some of our own. The only known way to deal with these pests is to deal with any affected books before they spread to any others nearby. If only there was a more concrete way to deal with these vile things"
 autowrap_mode = 3
 
+[node name="Label" type="Label" parent="Contents"]
+offset_left = 637.0
+offset_top = -384.0
+offset_right = 662.0
+offset_bottom = -357.0
+theme = ExtResource("3_73k2c")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "10"
+
 [node name="book_worms" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 15

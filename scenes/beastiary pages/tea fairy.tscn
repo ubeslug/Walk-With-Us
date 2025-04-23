@@ -60,6 +60,16 @@ These fae creatures prefer to stay near areas with plenty of spots to act as tab
 When encountering this species of fae, be wary of what ingredient their tea is made of, and don’t be shy to decline their offer they won’t be mad… most of the time anyways."
 autowrap_mode = 3
 
+[node name="Label" type="Label" parent="Contents"]
+offset_left = 637.0
+offset_top = -384.0
+offset_right = 662.0
+offset_bottom = -357.0
+theme = ExtResource("3_nihhd")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "15"
+
 [node name="book_worms" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 15

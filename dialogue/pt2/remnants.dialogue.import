@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://dt1c34wea4lgf"
+path="res://.godot/imported/remnants.dialogue-5118e7e35820c4364e34cb28d257a895.tres"
+
+[deps]
+
+source_file="res://dialogue/pt2/remnants.dialogue"
+dest_files=["res://.godot/imported/remnants.dialogue-5118e7e35820c4364e34cb28d257a895.tres"]
+
+[params]
+
+defaults=true

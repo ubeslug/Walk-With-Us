@@ -236,6 +236,11 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Start"
 
+[node name="old" type="Button" parent="CanvasLayer/Control/Buttons"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Part 1"
+
 [node name="Credits" type="Button" parent="CanvasLayer/Control/Buttons"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
@@ -524,6 +529,7 @@ theme_override_font_sizes/font_size = 40
 text = "Close"
 
 [connection signal="pressed" from="CanvasLayer/Control/Buttons/new_game" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Buttons/old" to="." method="_on_pt_1_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/Buttons/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/Buttons/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/Buttons/Quit" to="." method="_on_quit_pressed"]

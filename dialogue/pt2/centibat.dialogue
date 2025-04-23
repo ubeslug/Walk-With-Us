@@ -1,0 +1,21 @@
+~ start
+A long furry body wraps around a lamppost, it sways from side to side seemingly scanning the nearby surroundings. The creature's eyes eventually meet yours; it seems to be some kind of mutated creature, something insectoid but also not. Its eyes are focused on you, making you back up a bit in anticipation for what it will do next.
+do attack()
+As soon as you take a single step the creature drops from the lamppost it reveals and a pair of wings that it uses to soar towards you. You react to the incoming entity by protecting your upper body with your arms. It wraps around your arms and upper body and continues to try to constrain more of your body.
+What will you do?
+- Attack the creature
+	You grab and pull at whatever you can as its grip tightens. A stray leg. A flapping wing. Your ears ring as it screeches in pain. Its grip loosens and you take the opportunity to pry it from your arm, flinging it to the ground. The thing writhes along the ground, its many legs skittering against stone as it attempts to steady itself.
+	do show_fly()
+	After a couple seconds, it begins to rise into the air, its long body slamming into a stray sign before gliding off into the sky.
+- Intimidate
+	Frantically shaking your arm you let out a chatter and try to fling the beast off of you to no avail. In a desperate attempt you make yourself large and scream at it. It screeches then claws your face. You drop it to the ground as it scurries off. You dab a bit of blood off your face.
+	do Globals.change_health(-1)
+	You lose 1 heart.
+- Panic
+	Unprepared for this situation your mind blanks on what to do next. Panic sets in as you try to pry the creature of yourself. But your hands find no purchase in its squirming body. It begins to contain your body more and more and your arms become trapped to your body. You cringe at the creature's many legs prodding your entire body seemingly looking for something. You feel it pull something away from you.
+	do show_fly()
+	As quickly as it attached itself from you the creature releases you and before you know it it has already flown away.
+	You take a quick inventory of everything you own. It seems the creature was less interested in you and more interested in your [shake rate=20 level=10]favorite pair of socks[/shake].
+	Dejected by your loss you continue down the ruined streets.
+do fade_out()
+=> END

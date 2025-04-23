@@ -58,6 +58,16 @@ text = "One of the rarest and best finds in the forests, Cotton Berries are iden
 These berries, while not high in nutrition, are a great treat if they happen to be found. Cotton Berries are a rarity in the forest so its best to take them if it is safe to do so."
 autowrap_mode = 3
 
+[node name="Label" type="Label" parent="Contents"]
+offset_left = 637.0
+offset_top = -384.0
+offset_right = 662.0
+offset_bottom = -357.0
+theme = ExtResource("3_dok17")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "4"
+
 [node name="book_worms" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 15

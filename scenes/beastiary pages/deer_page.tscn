@@ -58,6 +58,16 @@ text = "A common animal roaming the forests, deer are seen normally eating the f
 Skittish in nature, Deer are rarely ever confrontational, usually choosing to run away from a perceived threat. Male deer tend to be the only ones who will actively choose fight over flight so it's best to stay far away from a male deer, ones with horns, especially if they are with female deer"
 autowrap_mode = 3
 
+[node name="Label" type="Label" parent="Contents"]
+offset_left = 637.0
+offset_top = -384.0
+offset_right = 662.0
+offset_bottom = -357.0
+theme = ExtResource("4_h0h3j")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "12"
+
 [node name="book_worms" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 15

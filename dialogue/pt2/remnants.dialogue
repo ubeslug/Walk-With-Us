@@ -1,0 +1,25 @@
+~ start
+Your feet step over stones and around cracks as you follow the stone path. As you walk past the derelict homes and abandoned storefronts, you feel like there are hundreds of judgemental eyes upon you. Your pace quickens until you are stopped by a voice to your left.
+???: “Please…I need…help…”
+do show_remnant()
+You follow the sound and are met with an ethereal figure. She shines bright blue against the darkened corners of an alley nestled between two homes. You notice her flowing hair, how it dances as if underwater, and how it mimics the flow of her dress, which is white and flowing. Her hair moves enough to see her face and you are shocked to be met with deep eye sockets and gaunt cheekbones, like a skeleton.
+???: “Please help me…stranger…”
+She stays at the entrance to the alleyway, waiting for your response.
+- Follow her
+	do hide_remnant()
+	You approach her and as you do she backs away slowly, beckoning you to follow. You do as instructed and follow her down the alley. It smells foul and you cover your nose while also trying to navigate through the dark. The girl turns a corner and finally into some light.
+	do show_room()
+	She approaches something on the ground before fading away. You get closer only to now understand the source of the smell. It was a corpse. It looked as if it had been there for decades, its face permanently stuck in a scream of terror. You feel a twinge in your stomach as you realize that it's wearing the same clothes of the apparition you saw before.
+	do show_bell()
+	Suddenly, your eyes catch something clutched within her hands. A golden bell. Despite the rot of the corpse, the bell looks untouched. A voice rings through your head.
+	???: “Please take it…keep it safe…take it away from this awful place…”
+	Hearing the voice of the ghost break, you feel your heart tug as you lean down and pry the bell from her fingers. It dings slightly as you hold it up and observe it.
+	do show_room2()
+	???: “Thank you…”
+	The voice fades for the last time. You tuck the bell into your pocket and exit the alleyway back onto the main road.
+- Turn her down
+	You awkwardly shift as you explain you have places to be. A twinge of guilt pierces through you as you see the spirit’s face lower.
+	do hide_remnant()
+	Before either of you can make another move, she fades away, as if she hadn’t been there at all. Pushing away any doubts, you continue onward.
+do fade_out()
+=> END
