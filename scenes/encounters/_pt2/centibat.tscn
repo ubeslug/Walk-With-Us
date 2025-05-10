@@ -1,10 +1,10 @@
 [gd_scene load_steps=13 format=3 uid="uid://dfn50thg3yuus"]
 
-[ext_resource type="Texture2D" uid="uid://cdu75pf2w7mgi" path="res://assets/encounters/_pt2/centibat/Centibat Scene 1.PNG" id="1_4seyf"]
 [ext_resource type="Resource" uid="uid://db0k67g5haspg" path="res://dialogue/pt2/centibat.dialogue" id="1_5eqis"]
 [ext_resource type="PackedScene" uid="uid://1yu00uqnngve" path="res://scenes/ui/test_ui.tscn" id="2_8uor3"]
-[ext_resource type="Texture2D" uid="uid://e1svgkfefgj0" path="res://assets/encounters/_pt2/centibat/Centibat Scene 3.PNG" id="2_p4kjl"]
-[ext_resource type="Texture2D" uid="uid://fnfaulhtqscn" path="res://assets/encounters/_pt2/centibat/Centibat Scene 2.PNG" id="3_glgab"]
+[ext_resource type="Texture2D" uid="uid://bmn11jgx7pv5q" path="res://assets/encounters/_pt2/centibat/IMG_6582.png" id="2_l737l"]
+[ext_resource type="Texture2D" uid="uid://8118114mbpq2" path="res://assets/encounters/_pt2/centibat/IMG_6583.png" id="3_01rwa"]
+[ext_resource type="Texture2D" uid="uid://qqqfrhe18l6t" path="res://assets/encounters/_pt2/centibat/e79bfdcc-04de-42d5-8cec-28f4dbd4d843.png" id="4_ddi7e"]
 
 [sub_resource type="GDScript" id="GDScript_iwjp3"]
 script/source = "extends Node2D
@@ -83,26 +83,26 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("images/fly:modulate")
+tracks/3/path = NodePath("images/attack:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 1)]
+"values": [false]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("images/attack:visible")
+tracks/4/path = NodePath("images/fly:modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -122,26 +122,26 @@ resource_name = "attack"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("images/attack:visible")
+tracks/0/path = NodePath("images/attack:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("images/attack:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("images/attack:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_nqh2r"]
@@ -248,23 +248,23 @@ offset_right = 1641.0
 offset_bottom = 897.0
 
 [node name="Background" type="Sprite2D" parent="images"]
-position = Vector2(-5.317, -1)
-scale = Vector2(1.2756, 1.2756)
-texture = ExtResource("1_4seyf")
+position = Vector2(4.085, -1)
+scale = Vector2(0.696296, 0.696296)
+texture = ExtResource("2_l737l")
 centered = false
 
 [node name="attack" type="Sprite2D" parent="images"]
 visible = false
-position = Vector2(-5.317, -1)
-scale = Vector2(1.2756, 1.2756)
-texture = ExtResource("3_glgab")
+position = Vector2(3.085, -8)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("3_01rwa")
 centered = false
 
 [node name="fly" type="Sprite2D" parent="images"]
 visible = false
-position = Vector2(-5.317, -1)
-scale = Vector2(1.2756, 1.2756)
-texture = ExtResource("2_p4kjl")
+position = Vector2(2.085, 1.19209e-07)
+scale = Vector2(0.700926, 0.700926)
+texture = ExtResource("4_ddi7e")
 centered = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -276,6 +276,8 @@ autoplay = "startup"
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ui" parent="CanvasLayer" instance=ExtResource("2_8uor3")]
+offset_left = 2.0
+offset_right = 2.0
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 visible = false

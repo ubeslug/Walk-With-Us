@@ -16,7 +16,8 @@ var all_items_array : Array[PackedScene] = [
 	preload("res://scenes/items/large_crystal.tscn"),			#6_large_crystal
 	preload("res://scenes/items/gem.tscn"),						#7_gem
 	preload("res://scenes/items/flower_bundle.tscn"),			#8_flowers
-	preload("res://scenes/items/pinkpotion.tscn")				#9_pink_potion
+	preload("res://scenes/items/pinkpotion.tscn"),				#9_pink_potion
+	preload("res://scenes/items/bell.tscn")						#10_bell
 	
 ]
 

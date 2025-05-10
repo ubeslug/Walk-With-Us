@@ -14,6 +14,7 @@ She stays at the entrance to the alleyway, waiting for your response.
 	Suddenly, your eyes catch something clutched within her hands. A golden bell. Despite the rot of the corpse, the bell looks untouched. A voice rings through your head.
 	???: “Please take it…keep it safe…take it away from this awful place…”
 	Hearing the voice of the ghost break, you feel your heart tug as you lean down and pry the bell from her fingers. It dings slightly as you hold it up and observe it.
+	do InventoryHandler.add_to_inventory(10)
 	do show_room2()
 	???: “Thank you…”
 	The voice fades for the last time. You tuck the bell into your pocket and exit the alleyway back onto the main road.

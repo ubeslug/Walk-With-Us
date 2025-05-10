@@ -57,7 +57,7 @@ text = "Centibats are pests that reside in trees and high spots in residential a
 
 While they are not a direct threat to travellers, mainly just being seen as a nuisance by many, they do tend to bother those with valuables on them. This can include food, trinkets, and even uncommon items such as potions. 
 
-They have been known to pounce on travellers with items they have taken an interest in to try and disorient people in order to steal it. If you find yourself in a situation like this, it's best to fight back as much as possible as it will irritate the creature enough to back down. It is not recommended to make loud noises to deter a Centibat as that has been known to cause aggression."
+They have been known to pounce on travellers with items they have taken an interest in to try and disorient people in order to steal it. While physically weak to the average person travelers should note their skittish behavior and aversion to loud noises."
 autowrap_mode = 3
 
 [node name="Label" type="Label" parent="Contents"]
@@ -69,7 +69,7 @@ offset_bottom = -357.0
 theme = ExtResource("3_y53f3")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
-text = "20"
+text = "25"
 
 [node name="book_worms" type="Control" parent="."]
 visible = false

@@ -1,0 +1,88 @@
+[gd_scene load_steps=5 format=3 uid="uid://bx5rjid2wlmw6"]
+
+[ext_resource type="Script" path="res://scripts/page_base.gd" id="1_70lhg"]
+[ext_resource type="PackedScene" uid="uid://beneqpcnms27p" path="res://scenes/beastiary pages/_page_base.tscn" id="2_oatej"]
+[ext_resource type="Theme" uid="uid://bw2dm0g8j123d" path="res://themes/beastiary_writing.tres" id="3_puwno"]
+[ext_resource type="Texture2D" uid="uid://bnmhc5tewatdm" path="res://assets/sketches/pt2/Golem.png" id="3_rkhb8"]
+
+[node name="template" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_70lhg")
+metadata/_edit_use_anchors_ = true
+
+[node name="page_base" parent="." instance=ExtResource("2_oatej")]
+layout_mode = 1
+
+[node name="Contents" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="sketch" type="Sprite2D" parent="Contents"]
+position = Vector2(-375.195, 40)
+scale = Vector2(0.585301, 0.585301)
+texture = ExtResource("3_rkhb8")
+
+[node name="entry name" type="Label" parent="Contents"]
+layout_mode = 0
+offset_left = -634.0
+offset_top = -341.0
+offset_right = -427.0
+offset_bottom = -288.0
+theme = ExtResource("3_puwno")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "Golems"
+
+[node name="entry passage" type="Label" parent="Contents"]
+layout_mode = 0
+offset_left = 112.0
+offset_top = -326.0
+offset_right = 648.0
+offset_bottom = 251.0
+theme = ExtResource("3_puwno")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "The Heart of a Golem is a man made creation whose secrets of creation have been lost in time. From what has been observed Golems are actually only a small crystal. Infused with magic the crystals attract nearby resources to build itself a body. 
+
+Golems have been observed to only wander areas near to where they were created and mostly ignore other entities unless threatened. It has been theorized that Golems have been used in various ways in the past but it is unknown how they were controlled and commanded. As long as travellers do not harm the Golems body they will not be targeted by the entity."
+autowrap_mode = 3
+
+[node name="Label" type="Label" parent="Contents"]
+layout_mode = 0
+offset_left = 637.0
+offset_top = -384.0
+offset_right = 662.0
+offset_bottom = -357.0
+theme = ExtResource("3_puwno")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "22"
+
+[node name="book_worms" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="level_1" type="Sprite2D" parent="book_worms"]
+visible = false
+
+[node name="level_2" type="Sprite2D" parent="book_worms"]
+visible = false
+
+[node name="level_3" type="Sprite2D" parent="book_worms"]
+visible = false

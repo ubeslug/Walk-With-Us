@@ -1,0 +1,88 @@
+[gd_scene load_steps=5 format=3 uid="uid://ciw0e2fmgvh73"]
+
+[ext_resource type="Script" path="res://scripts/page_base.gd" id="1_hex45"]
+[ext_resource type="PackedScene" uid="uid://beneqpcnms27p" path="res://scenes/beastiary pages/_page_base.tscn" id="2_m4gbk"]
+[ext_resource type="Texture2D" uid="uid://ep1lvcjpilb1" path="res://assets/sketches/pt2/Everburning.png" id="3_lpm0a"]
+[ext_resource type="Theme" uid="uid://bw2dm0g8j123d" path="res://themes/beastiary_writing.tres" id="3_tvsq7"]
+
+[node name="everburning" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hex45")
+metadata/_edit_use_anchors_ = true
+
+[node name="page_base" parent="." instance=ExtResource("2_m4gbk")]
+layout_mode = 1
+
+[node name="Contents" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="sketch" type="Sprite2D" parent="Contents"]
+position = Vector2(-378.495, 40)
+scale = Vector2(0.585301, 0.585301)
+texture = ExtResource("3_lpm0a")
+
+[node name="entry name" type="Label" parent="Contents"]
+layout_mode = 0
+offset_left = -634.0
+offset_top = -341.0
+offset_right = -427.0
+offset_bottom = -288.0
+theme = ExtResource("3_tvsq7")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "The Everburning"
+
+[node name="entry passage" type="Label" parent="Contents"]
+layout_mode = 0
+offset_left = 112.0
+offset_top = -326.0
+offset_right = 648.0
+offset_bottom = 251.0
+theme = ExtResource("3_tvsq7")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "Some curses last beyond death and grow everso more. The Everburning is a curse placed on a certain town in the name of vengeance and has spread to almost every corner of our known world. This curse is a flame that spreads from living thing to living thing burning everything but vegetation and bone. 
+
+Victims of this curse are not given the mercy of death as even when their bodies are burned to the burn semblances of their consciousness remains as if they still can feel the pain they are subjected to. Most victims fall to madness due to the pain and become mindless husks that seek the help of other living entities. Though upon contact they spread the curse to those who help they seek. Travellers must avoid contact with the cursed no matter what."
+autowrap_mode = 3
+
+[node name="Label" type="Label" parent="Contents"]
+layout_mode = 0
+offset_left = 637.0
+offset_top = -384.0
+offset_right = 662.0
+offset_bottom = -357.0
+theme = ExtResource("3_tvsq7")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "1"
+
+[node name="book_worms" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="level_1" type="Sprite2D" parent="book_worms"]
+visible = false
+
+[node name="level_2" type="Sprite2D" parent="book_worms"]
+visible = false
+
+[node name="level_3" type="Sprite2D" parent="book_worms"]
+visible = false

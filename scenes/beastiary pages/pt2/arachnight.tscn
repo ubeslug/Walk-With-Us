@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://cej0a6x8absgy"]
+[gd_scene load_steps=7 format=3 uid="uid://cej0a6x8absgy"]
 
 [ext_resource type="Script" path="res://scripts/page_base.gd" id="1_xmadc"]
 [ext_resource type="PackedScene" uid="uid://beneqpcnms27p" path="res://scenes/beastiary pages/_page_base.tscn" id="2_xe58d"]
 [ext_resource type="Theme" uid="uid://bw2dm0g8j123d" path="res://themes/beastiary_writing.tres" id="3_icyc0"]
 [ext_resource type="Texture2D" uid="uid://ctdfdy61y1rui" path="res://assets/sketches/pt2/ArachnightBestiary.png" id="3_wyn1g"]
+[ext_resource type="FontFile" uid="uid://egpk62jv088x" path="res://assets/fonts/BaksoDaging-Regular.ttf" id="5_xwn4c"]
+[ext_resource type="Texture2D" uid="uid://bq0ukkrttowti" path="res://assets/ui/paper_tear_solid_light.png" id="6_gtbul"]
 
 [node name="template" type="Control"]
 layout_mode = 3
@@ -53,8 +55,22 @@ offset_bottom = 251.0
 theme = ExtResource("3_icyc0")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 24
-text = "wip"
+text = "When coming across a corpse most people will either avoid it or pay their respects to the poor soul. But there are some people who prey, like vultures, on these corpses. Seen as some source of gain they will strip all they need from them. And the Arachknight is one such similar creature. 
+
+Arachknights are a species of large spiders that have a unique way of making home. These creatures often search for a begotten suit of armor to act as their home. They will fully encapsulate themselves in the armor and puppet the limbs with their webbing. These creatures will tend to be attracted to full sets of armor rather than scrounging for separate pieces. This often means their main body is fully protected with the caveat of having less mobility.
+"
 autowrap_mode = 3
+
+[node name="Label" type="Label" parent="Contents/entry passage"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 522.0
+offset_right = 259.0
+offset_bottom = 547.0
+rotation = 0.00562232
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_xwn4c")
+text = "P.S keep these and all other arachnids away from [REDACTED]"
 
 [node name="Label" type="Label" parent="Contents"]
 layout_mode = 0
@@ -65,7 +81,13 @@ offset_bottom = -357.0
 theme = ExtResource("3_icyc0")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
-text = "27"
+text = "31"
+
+[node name="PageTear" type="Sprite2D" parent="."]
+clip_children = 2
+position = Vector2(1505, 746)
+scale = Vector2(0.0381366, 0.0390625)
+texture = ExtResource("6_gtbul")
 
 [node name="book_worms" type="Control" parent="."]
 visible = false

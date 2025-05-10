@@ -53,7 +53,9 @@ offset_bottom = 251.0
 theme = ExtResource("3_ebgf1")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 24
-text = "wip"
+text = "Vile little creatures they are. Rats are a common type of pest creature that can be found in many places in the world, though most commonly found in populated areas where scraps are often left. 
+
+Being omnivore’s rats will eat anything that can get their hands on. This also leads to the species being carriers of various diseases. Though weak individually through their fast reproduction rate, rats can grow in numbers faster than people realize becoming an even greater nuisance."
 autowrap_mode = 3
 
 [node name="Label" type="Label" parent="Contents"]
@@ -65,7 +67,7 @@ offset_bottom = -357.0
 theme = ExtResource("3_ebgf1")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
-text = "11"
+text = "12"
 
 [node name="book_worms" type="Control" parent="."]
 visible = false

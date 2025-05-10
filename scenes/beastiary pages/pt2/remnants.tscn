@@ -57,10 +57,11 @@ text = "Remnants are spirits that wander areas of their death, typically those t
 
 You can identify a Remnant by their bluish hue and skeletal faces, wearing the clothes that they would have died in. Remnants are not typically hostile as they only care about passing on. They will ask travellers for assistance in a task which will involve helping them with unresolved issues in the living world so that they may pass on. 
 
-Reports from travellers have shown that helping these spirits has been rewarding and beneficial for the areas they reside in. However, while they may not be hostile, some Remnants may have tasks that are considerably more dangerous if you are to take them on, so be prepared for anything.Passage"
+Reports from travellers have shown that helping these spirits has been rewarding and beneficial for the areas they reside in. However, while they may not be hostile, some Remnants may have tasks that are considerably more dangerous if you are to take them on, so be prepared for anything."
 autowrap_mode = 3
 
 [node name="Label" type="Label" parent="Contents"]
+layout_mode = 0
 offset_left = 637.0
 offset_top = -384.0
 offset_right = 662.0
@@ -68,7 +69,7 @@ offset_bottom = -357.0
 theme = ExtResource("3_78acn")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
-text = "18"
+text = "19"
 
 [node name="book_worms" type="Control" parent="."]
 visible = false

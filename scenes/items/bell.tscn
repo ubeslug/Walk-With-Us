@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://v1vvjqymsnty"]
+
+[ext_resource type="Texture2D" uid="uid://ccsyxarlomdtj" path="res://assets/item sprites/pt2/bell.png" id="1_5ahxr"]
+[ext_resource type="PackedScene" uid="uid://cwpo133i6q0yf" path="res://scenes/items/_inventory_item.tscn" id="1_gpmh2"]
+
+[node name="bell" type="Panel"]
+offset_right = 128.0
+offset_bottom = 128.0
+
+[node name="InventoryItem" parent="." instance=ExtResource("1_gpmh2")]
+texture_filter = 1
+layout_mode = 1
+offset_right = 122.0
+offset_bottom = 130.0
+icon = ExtResource("1_5ahxr")
+expand_icon = true
+item_count = 1
+popup/item_0/text = "???"
+popup/item_0/disabled = true

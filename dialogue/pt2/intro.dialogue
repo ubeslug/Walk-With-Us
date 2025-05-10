@@ -3,6 +3,6 @@ do InventoryHandler.add_to_inventory(0)
 do InventoryHandler.add_to_inventory(1)
 The story up to this point.
 You are a courrier tasked with delivering a package to a kingdom in order to help them with an ordeal involving dark magic. The road to the kingdom is long and dangerous, but you have a bestiary to help you figure out how to deal with the monsters and obstacles you come across.
-To open the bestiary click the book icon located in the inventory.
+To open the bestiary click the book icon located in the inventory. You can quickly move through the pages using the arrow keys and clicking the bookmark or Tab brings you back to the table of contents. Click on any of the names in the table of contents to instantly go to it's page.
 do fade_out()
 => END

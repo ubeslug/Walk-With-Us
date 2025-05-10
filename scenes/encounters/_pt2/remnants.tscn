@@ -1,9 +1,9 @@
 [gd_scene load_steps=19 format=3 uid="uid://i0d7djau0reg"]
 
-[ext_resource type="Texture2D" uid="uid://dj1ctho0v5ky5" path="res://assets/encounters/_pt2/remnant/Remnant_Playtest_1.png" id="1_exyoe"]
 [ext_resource type="Resource" uid="uid://dt1c34wea4lgf" path="res://dialogue/pt2/remnants.dialogue" id="1_nhsq1"]
 [ext_resource type="PackedScene" uid="uid://1yu00uqnngve" path="res://scenes/ui/test_ui.tscn" id="2_5ylh8"]
 [ext_resource type="Texture2D" uid="uid://b6h2jxnxosove" path="res://assets/encounters/_pt2/remnant/Remnant_Playtest_2.png" id="2_hl4te"]
+[ext_resource type="Texture2D" uid="uid://clqt6mfg4stx8" path="res://assets/backgrounds/pt2/road.webp" id="2_qxcx6"]
 [ext_resource type="Texture2D" uid="uid://dmk5rtc5e4umj" path="res://assets/encounters/_pt2/remnant/Remnant_Playtest_4.png" id="3_efnb7"]
 [ext_resource type="Texture2D" uid="uid://newb17kctwsx" path="res://assets/encounters/_pt2/remnant/Remnant_Playtest_3.png" id="4_5vxe7"]
 [ext_resource type="Texture2D" uid="uid://bck8h60r30rej" path="res://assets/encounters/_pt2/remnant/Remnant_Playtest_5.png" id="4_avodr"]
@@ -416,9 +416,8 @@ offset_right = 1641.0
 offset_bottom = 897.0
 
 [node name="Background" type="Sprite2D" parent="images"]
-position = Vector2(-4.99998, -14)
-scale = Vector2(0.331605, 0.261)
-texture = ExtResource("1_exyoe")
+scale = Vector2(0.695, 0.695)
+texture = ExtResource("2_qxcx6")
 centered = false
 
 [node name="RemnantPlaytest2" type="Sprite2D" parent="images"]
