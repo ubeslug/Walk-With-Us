@@ -1,0 +1,39 @@
+~ start
+Your eyes scan the town as you enter it proper. Despite the desolate look of the buildings and structures, charm radiates from the shell of what this place was before. You could almost close your eyes and imagine it full of vibrancy and people going about their lives. All you are met with now are darkened buildings and eyes peeking at you from every corner.
+Up on the road ahead, you begin to hear some chatter. Curious, you continue on the road before being met with its source.
+do s1()
+In front of a small, mostly intact home, are two people, a man and a woman. The woman is small and unassuming. The one who catches your attention more is the man. He is incredibly tall, towering over the woman with a large grin. He wears clothes you are unfamiliar with and as you get closer you notice his entirely gray appearance. He is unlike anything you’ve ever seen.
+He speaks to the woman in a calm and friendly tone.
+Man: “I truly am sorry for the mishaps along the way, but I can assure you, miss, that if you get me the money by the end of the week, you will have nothing to worry about.”
+Woman: “End of this week? I can hardly make ends meet as it is. I don’t know if I can get that to you in time!”
+Man: “And like I said, I am very sorry for that, but it's just policy. I wouldn't want to have to-”
+do s2()
+His voice cuts off as he notices you and his toothy grin grows wider.
+Man: “Ah! Haven’t seen your face around here before! Miss, why don’t we discuss this later? Can’t leave a new guest hanging.”
+She protests a little as he ushers her into the home beside them.
+do s3()
+Agent: “Welcome to our little community, friend. Most folks around here call me The Agent but truthfully I think it’s far too formal. I’m just a man here to do business, nothing more. Anything I can do for you?”
+~ Questions
+- What do you do here
+	Agent: “Ah, well, I’m responsible for the homes here. Making sure they’re paid for, taken care of, and lived in. This place has been my pride and joy long before the folks you’ve seen around here moved in. I’m just a simple man trying to make sure this place runs smoothly.”
+	=> Questions
+- What just happened
+	do s4()
+	Agent: “Oh don’t worry about her. Just a bump in the road. I’m awfully sorry you had to see that. I don’t enjoy having to enforce my policies, but it needs to be done. I try my best to keep the residents here happy, but I guess you can’t please everyone.”
+	do hide4()
+	=> Questions
+- Ask about the town
+	Agent: “Well, from my observations, it's been here for many years, close to a century. Used to have generations of people living here but it unfortunately fell apart. As you can see, it hasn’t been treated very well by its previous tenants. It’s a slow start right now but trust me, soon this place will be bustling with new life. I’ve already had some lucky people interested in real estate here. If you ever wanna check some out for yourself, you only need to let me know.”
+	=> Questions
+- What happened to the town
+	Agent: “Greed and ambition, my friend. Greed and ambition. I was here to watch the fall myself, not my proudest moment. Trust me, I did everything that I could for them. But they ran this place into the ground. Gives me a chance to start over and fix what they couldn’t.”
+	=> Questions
+- No questions
+	The Agent chuckles.
+	do s5()
+	Agent: “Glad to see you’re up to speed. Now, I don’t wanna talk your ear off for too long. I’ve got my own business to deal with.”
+	He walks over to the door of the woman, gripping the door handle. Before he enters, he turns back to you.
+	Agent: “Do remain safe, my friend. Wouldn’t want one of my guests to find themselves in trouble on my account. You do your best to head out of here safely.”
+	With that, he turns back, happily greeting the woman inside before closing the door, drowning out her pleas.
+	do fade_out()
+	=> END

@@ -1,0 +1,48 @@
+~ start
+Stepping out into the derelict town, the scent of dirt and decay clings to your nostrils. Through the thick fog, you can see the terrible shape the town is in. Most of the buildings are falling apart or are close enough. The windows are dark but you can occasionally catch some movement of whatever has decided to take residence there.
+do s1()
+Before you can take your next steps, you notice something on the road in front of you. A ghostly figure sits on a lone bench just off the path. Its head is hung in sorrow yet you can still make out the gaunt features of its face. It doesn’t seem to have noticed you.
+- Approach
+	do s2()
+	Cautiously, you walk to the figure, squinting your eyes at its radiant glow. Once you get close, they lift up their head in surprise.
+- Sneak by
+	do s2()
+	There isn’t much room to get past but you try your best, carefully maneuvering over the stones in the path. However, a miscalculation of your foot causes you to slip, kicking the rocks as you correct your balance, enough to get the figure to look up towards you.
+???: “You…you’re new.”
+The thing’s voice trails as it looks up at you. Its face bears that of a wolf but is more skeletal. It stands up to greet you.
+do ex1()
+???: “Listen, I know you just got here but you shouldn’t be here. Bad things are happening, terrible things. All because of that Agent. You’ve heard of him, right? Guy who came here to ‘help our town’? Well, he’s a phony. A crook. He doesn’t care about the people here at all. He just sees them as things to exploit. I should know, I used to live here, back when this town…meant something to me.”
+The spectre suddenly becomes overwhelmed and sobs. It attempts to control itself.
+???: "I-I’m sorry. I’m just scared for this town. People may not exactly say it but they’re just as scared as I am. The Agent has taken all the power from them. They don’t think they can stand up for themselves or they’re too depressed to…"
+???: “Oh please stranger, you have to get rid of him. I’ve seen with my own eyes what he can do, what he wants to do to the people here. I can’t watch it all happen again. I can’t let people meet the same fate as me. I don’t care how, just get him out of here.”
+- Ask for more info
+	???: "This town used to run through its mining operation, at least when I was still alive. I even worked there myself. When the Agent first made himself known, we were admittedly in a rough spot, so when he told us he could help us fund this town better, we listened."
+	???: "But that was a mistake. First came higher price goods, then less pay, then higher price homes. He cut corners at our workplaces which made our jobs more dangerous. But he didn’t seem to care about our issues. ‘It’s just business’, ‘I’m only doing my job’ was all we’d get."
+	???: "When people started questioning where the money went, the Agent seized further power. He’d throw people out or simply kill them if they got too far. Eventually, people became complacent, didn’t want to stand up to him. I never got the courage either. I died during a cave in due to our lack of precautions due to his downsizing."
+	???: "I’m starting to see the same happen now. People are growing more complacent. More scared. They don’t want to speak against him because he’s all they’ve had for support. And they’re worried about what he’ll do if they stand up. I know it seems daunting but these people need help. Badly."
+	- Accept
+		do ex2()
+		The ghost breathes a sigh of relief and the hint of a smile creeps across their face.
+		???: “Thank you. I don’t know if you will succeed but it means the world to me that you will try. The people here need to see that there is hope again. Even the smallest critter could use a helping hand. Talk to people. Help when you can, and you may be able to find the Agent’s weakness. Good luck, stranger…”
+		do fade()
+		Their voice fades as their form slowly dissipates. The air around you feels warmer as you continue forward down the path.
+	- Decline
+		do ex3()
+		You begin to walk down the path as you shake your head. The ghost begins to speak but stops themselves, their brow furrowing.
+		???: “I can’t stop you, I suppose. Just know what you’re dealing with as you're passing through, stranger. At the very least, could you offer a helping hand to the people and creatures that reside here? They don’t have much hope. Maybe helping them see that hope still exists can inspire them? Either way, I wish you safe travels, stranger…”
+		do fade()
+		And without another word, they fade away, leaving you alone on the path as the cold bites your skin.
+- Accept
+	do ex2()
+	The ghost breathes a sigh of relief and the hint of a smile creeps across their face.
+	???: “Thank you. I don’t know if you will succeed but it means the world to me that you will try. The people here need to see that there is hope again. Even the smallest critter could use a helping hand. Talk to people. Help when you can, and you may be able to find the Agent’s weakness. Good luck, stranger…”
+	do fade()
+	Their voice fades as their form slowly dissipates. The air around you feels warmer as you continue forward down the path.
+- Decline
+	do ex3()
+	You begin to walk down the path as you shake your head. The ghost begins to speak but stops themselves, their brow furrowing.
+	???: “I can’t stop you, I suppose. Just know what you’re dealing with as you're passing through, stranger. At the very least, could you offer a helping hand to the people and creatures that reside here? They don’t have much hope. Maybe helping them see that hope still exists can inspire them? Either way, I wish you safe travels, stranger…”
+	do fade()
+	And without another word, they fade away, leaving you alone on the path as the cold bites your skin.
+do fade_out()
+=> END

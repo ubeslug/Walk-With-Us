@@ -1,0 +1,38 @@
+~ start
+do Globals.bookworms = true
+You feel your bestiary rustle a little.
+A pained screech pulls your attention towards a bush just off the side of the road. You approach to find a long furry creature inside. It's tangled amongst the branches inside the bush. The brambles stick through its many limbs and brown fur. It trashes in a panic as you get close, its cries getting louder as its movement further exacerbates the problem.
+As it continues to cry in pain, you notice something stuck within one of its many legs. It's a small pouch. It seems filled with coins as you can hear the jingling even from here.
+- Help the creature
+	do Globals.ending += 1
+	You reach down slowly, shushing the critter as it continues to cry. Gently, you grab one of its wings and detangle it from the bush. You continue with another, then a leg, the creature slowly settling as it feels its body being freed.
+	Before long, you watch as the monster plops onto the ground, freed from the bush. It stretches before scurrying away, taking one more look back at you before disappearing behind a building.
+	After it leaves, you notice on the ground the pouch you saw before. Picking it up, you are surprised at how heavy it feels. You stick it in your bag before walking away.
+	do InventoryHandler.add_to_inventory(11)
+	You gained a Mysterious Pouch!
+- Try and take the pouch
+	Push through the many legs and appendages and try to grab the pouch. As you begin to maneuver through the creature’s many limbs, you hear its cries grow more shrill, your movement further harming it. It trashes more, managing to cut up your arms with the bramble thorns and insect legs.
+	do Globals.change_health(-1)
+	You lose 1 heart.
+	if Globals.health <= 0:
+		=> death
+	You wince at the pain but keep going until your hand latches onto the pouch as you begin to pull.
+	The creature’s movements become more sporadic, trying to bend itself to reach for your arm. It eventually manages, bending its head enough to bite right into your knuckle.
+	do Globals.change_health(-1)
+	You lose 1 heart.
+	if Globals.health <= 0:
+		=> death
+	You begin to tug with all your might on the pouch, pulling its head with it.
+	do s1()
+	However, soon the movements of the creature slow, its grip loosens before letting go entirely. You manage to pull the pouch away from it. As you do, you notice the branch now wrapped against its neck. It must have done so trying to reach for your hand. It hangs lifelessly now in the bush as you collect the pouch and continue onwards.
+	do InventoryHandler.add_to_inventory(11)
+	You gained the Mysterious Pouch.
+- Leave
+	Backing away, you try to tune out the cries of the creature as you continue on the road. You feel a drop in your stomach as the cries of the creature eventually die out. You tell yourself that it's because you got farther away. 
+do Globals.bookworms = false
+do fade_out()
+=> END
+
+~ death
+You go light headed as that scratch draws more blood than you could have afforded and your vision begins to go dark...
+do death()

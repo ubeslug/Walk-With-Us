@@ -1,0 +1,47 @@
+~ start
+This begotten town calls out from all directions. Every single inch of this place puts your hairs on end. You continue down the road but some sense that you can’t put your finger on gnaws at the back of your mind. You decide to rest in a nearby building for a moment to collect yourself. While there many nearby most seem too dilapidated or are locked up.
+do s1()
+Just as you were about to give up one building catches your attention. This building seems more put together than most others nearby though not by much. The foundation of the building seems stable enough to not crash in on you.
+While it’s better than nothing upon entering the building you notice just how aged everything is. The inside of the building is how you imagined it aged with a thick layer of dust everywhere. You look for a spot to rest. A corner looks a bit appealing as it gives you a good view of the room for any potential incoming danger.
+do s2()
+As you walk over to a suitable corner a glimmer catches your eye from a nearby table. It’s some sort of cluster of crystals that seem to be attached to one another by some force unknown to you. The crystals give off a brilliant hue that could mean it can fetch a pretty price.
+What will you do?
+- Take the crystal
+	Lured by the thoughts of monetary gain you reach for the crystal.
+- Leave the crystal
+	Knowing the peculiarity of this item you decide to leave it and step away.
+Before you can do anything more a heavy splintering of wood responds from before you and the floor gives, sending you and anything nearby to unknown depths below.
+do s3()
+You crash down before you know it. The floor was hard but the landing didn’t hurt that much. You look up towards the ceiling and see the hole from which you came from. It’s not the high above but just higher enough to where you can’t reach it.
+A strange whirring sound comes from all around you as strange emplacements on the walls begin to emit some sort of light forcing some nearby rats to scurry away in fear. The light allows you to observe the room you're in. by the looks of it some sort of storage room filled with… you don’t know exactly what it is.
+do s4()
+you spot a door. Great. But before you can move to it a flash emanates from the crystal from before. It also found its way down here. As the crystal continues shining there's a rumbling coming from the walls of this room. The walls burst with rats coming from all directions. They seem to be moving involuntarily towards the crystal as if being pulled by some unknown force. The small creatures rush past your legs almost knocking you to the ground. The rats seem to begin to take some unknown form.
+What will you do?
+- Rush for the door
+	You decide to rush for the door. Running past the mound of formulating rats and heading to the door. You grip the handle on the door and swing it open only for another hoard of rats to descend down the stairs knocking you back into the room.
+	do s5()
+	You get up trying to regain your bearings and notice the rats have stopped flowing from the walls. You look towards the mounds of rats and see a figure emerge from the rats. No not from the rats the figure is the rats. Coalesced into a humanoid form the rats seem to intertwine together. The figure’s “head” looks towards you.
+	It starts to stumble its way towards you. Its legs molded from numerous rats aren’t as stable as it would hope. But you are frozen in place by sheer fear which gives it all the time it would need. As you finally snap out of your fear the entity is already upon you. You make another dash for the door as the monster makes a wide swing from the left which lands squarely into your side. While the impact surprisingly doesn't hurt that much but the rats the arm is made out of bites and claws out your side. You manage to break away from the rats and reach the door.
+	do Globals.change_health(-2)
+	You lose 2 health.
+	if Globals.health <= 0:
+		=> death
+	As you reach the door you look back at the horrifying amalgamation stumbling its way towards you. The rats making up its body squirm and entangle themselves more and more into each other. You shut the door with a heavy slam before the monster can reach it. You collect yourself at the top of the stairs and lead you to the first floor entrance. You treat your wounds to stop them from getting any worse and continue your journey. Maybe the rest wasn't worth it.
+- Destroy the crystal
+	Before whatever it is can take shape you decide to deal with the problem at its root source. The crystal, that light must have meant something most likely the cause of this situation. You made your way through the veritable sea of rats to get to the center of the amalgamation. You try to spot where the crystal is. But there are just too many rats.
+	You decide to plunge your arms into the mound. Trying to sift through the rats is harder than you thought. The small pests keep squirming all around your body and feeling you wish to never relive again. But your hand manages to find purchase of something hard and jagged. Pulling your arm out you find you have retrieved the crystal.
+	But now the rats are pulled to you in the process. They swam all over your body knocking you to the ground. The wave of rats swarm over you. Something needs to be done before you suffocate under them. Using all your strength you repeatedly slam the crystal into the hard ground. Unbeknownst to you the crystal fractures bit by bit hit after hit.
+	do s6()
+	Finally the crystal shatters. The rats freed from the crystals power the rats scatter away from the light, back to wherever they came from. You finally are given a chance to breathe. Looking towards the crystal it seems to have fractured into various pieces seemingly no longer containing the power it once had. You decide to keep the pieces as you make your way to the door and back up the stair behind it. You try not to think back on the situation you were just in and continue on your way through this ruined city.
+	do InventoryHandler.add_to_inventory(14)
+	You obtained crystal fragments
+	do s7()
+	In another place.
+	A group of rats gather to discuss the most recent event. The strange magic that stuck their kin together has been broken. They have avoided the creation of the Rat King where many surely would have perished. If not for the intervention of the strange traveller they never would have overcome such a calamity. Now many can return to their families and live their lives in peace. But being the honorable beings they are, they surely will find a way to repay their debt in the future to the kind one who helped them through this storm. They swear this in their honor..
+	do Globals.ending += 1
+do fade_out()
+=> END
+
+~ death
+It took all of your strength to break away from the rats and you barely even touch the door before the rats are on you again. Your vision begins to go dark.
+do death()

@@ -48,14 +48,15 @@ func _on_new_game_pressed():
 	Globals.reset_health()
 	fade_handler.play("fade-out")
 	await fade_handler.animation_finished
-	get_tree().change_scene_to_file("res://scenes/encounters/_pt2/intro.tscn")
+	get_tree().change_scene_to_file("res://scenes/encounters/Gojarus_intro.tscn")
 
-func _on_pt_1_pressed():
+func ch2_pressed():
+	$CanvasLayer/chapters.visible = false
 	InventoryHandler.reset_inventory()
 	Globals.reset_health()
 	fade_handler.play("fade-out")
 	await fade_handler.animation_finished
-	get_tree().change_scene_to_file("res://scenes/encounters/Gojarus_intro.tscn")
+	get_tree().change_scene_to_file("res://scenes/encounters/_pt2/intro.tscn")
 
 func _on_credits_pressed() -> void:
 	$CanvasLayer/Credits.visible = true
@@ -68,6 +69,8 @@ func _on_exit_pressed() -> void:
 func _on_close_pressed() -> void:
 	$CanvasLayer/Settings.visible = false
 
+func _on_close2_pressed() -> void:
+	$CanvasLayer/chapters.visible = false
 
 func _on_settings_pressed() -> void:
 	$CanvasLayer/Settings.visible = true
@@ -93,3 +96,16 @@ func _on_team_credits_pressed() -> void:
 func _on_sound_credits_pressed() -> void:
 	$"CanvasLayer/Credits/Panel/Team members".visible = false
 	$CanvasLayer/Credits/Panel/Sounds.visible = true
+
+
+func _on_chapters_pressed() -> void:
+	$CanvasLayer/chapters.visible = true
+
+
+func _on_ch_1_pressed() -> void:
+	$CanvasLayer/chapters.visible = false
+	InventoryHandler.reset_inventory()
+	Globals.reset_health()
+	fade_handler.play("fade-out")
+	await fade_handler.animation_finished
+	get_tree().change_scene_to_file("res://scenes/encounters/Gojarus_intro.tscn")

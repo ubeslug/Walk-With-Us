@@ -1,0 +1,14 @@
+~ start
+There is a cart full of coal along the side of the road. Scanning your eyes over it, you catch a glint of something shiny.
+do s1()
+Dusting off the shiny object, you find a chunk of beautifully vibrant crystal. You try to pick it up, but quickly pull your hand back. The chunk is very warm and almost hot to the touch. Upon close inspection, the chunk is shifting around slightly, though not in a way that you would find particularly hostile.
+- Take the crystal
+	do Globals.ending += 1
+	You take the crystal with you. It looks potentially valuable and doesn’t seem to have any dark presence about it.
+	As you put the crystal in your bag, you feel it jostle a little as you hear a small chirp coming from within it.
+	do InventoryHandler.add_to_inventory(12)
+- Leave it
+	Though the crystal may be valuable you leave it behind. You know not where it came from or what created it.
+	You continue down the road and hear a shift in coal chunks followed by crunching sounds behind you. You look back but there’s no signs of anything hostile so you move onward.
+do fade_out()
+=> END

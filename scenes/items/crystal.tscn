@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://chth5pons5r0c"]
+
+[ext_resource type="PackedScene" uid="uid://cwpo133i6q0yf" path="res://scenes/items/_inventory_item.tscn" id="1_vam0c"]
+[ext_resource type="Texture2D" uid="uid://vf4qqe8r7jxs" path="res://assets/item sprites/pt2/crystal.png" id="2_p5gah"]
+
+[node name="crystal" type="Panel"]
+offset_right = 128.0
+offset_bottom = 128.0
+
+[node name="InventoryItem" parent="." instance=ExtResource("1_vam0c")]
+texture_filter = 1
+layout_mode = 1
+offset_right = 122.0
+offset_bottom = 130.0
+icon = ExtResource("2_p5gah")
+expand_icon = true
+item_count = 1
+popup/item_0/text = "???"
+popup/item_0/disabled = true

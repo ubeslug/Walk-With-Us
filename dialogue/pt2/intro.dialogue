@@ -1,4 +1,10 @@
 ~ start
+do Globals.ending = 0
+do Globals.bell = false
+do Globals.mark = false
+do Globals.bestiary_updated = false
+do Globals.agent = false
+do Globals.matriarch = false
 do InventoryHandler.add_to_inventory(0)
 do InventoryHandler.add_to_inventory(1)
 The story up to this point.

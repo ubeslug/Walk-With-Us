@@ -21,3 +21,9 @@ func _on_mouse_exited():
 	pass # Replace with function body.
 	item_sprite.modulate = "ffffff"
 	
+func file_menu(id):
+	print(id)
+	match(id):
+		0:
+			Globals.change_health(3)
+			InventoryHandler.remove_from_inventory(13)

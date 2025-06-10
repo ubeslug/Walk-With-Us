@@ -1,0 +1,88 @@
+[gd_scene load_steps=5 format=3 uid="uid://l5l5g7j4lwk0"]
+
+[ext_resource type="Script" path="res://scripts/page_base.gd" id="1_r4rfu"]
+[ext_resource type="PackedScene" uid="uid://beneqpcnms27p" path="res://scenes/beastiary pages/_page_base.tscn" id="2_6lpjc"]
+[ext_resource type="Texture2D" uid="uid://d0e7mhf6fuah" path="res://assets/sketches/Skeletons.png" id="3_oq3lx"]
+[ext_resource type="Theme" uid="uid://bw2dm0g8j123d" path="res://themes/beastiary_writing.tres" id="4_7wkbg"]
+
+[node name="skeleton_page" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r4rfu")
+
+[node name="page_base" parent="." instance=ExtResource("2_6lpjc")]
+layout_mode = 1
+
+[node name="Contents" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="sketch" type="Sprite2D" parent="Contents"]
+position = Vector2(-361.01, 45.935)
+scale = Vector2(0.585301, 0.585301)
+texture = ExtResource("3_oq3lx")
+
+[node name="entry name" type="Label" parent="Contents"]
+layout_mode = 0
+offset_left = -642.0
+offset_top = -353.0
+offset_right = -392.0
+offset_bottom = -300.0
+theme = ExtResource("4_7wkbg")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "Skeleton"
+
+[node name="entry passage" type="Label" parent="Contents"]
+layout_mode = 0
+offset_left = 106.0
+offset_top = -314.0
+offset_right = 642.0
+offset_bottom = 263.0
+theme = ExtResource("4_7wkbg")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "The most common form of undead entities travelers might encounter is the skeleton. Draped in the skin and cloth of the entity's former life skeletons roam endlessly in the areas where they met their untimely end. 
+
+Skeletons exist only due to their past grudges as many have been documented to be acting out basic actions that mimic intelligence such as gathering and hunting but nothing beyond such. Skeletons can vary between docile and hostile based on their past lives. 
+
+Travelers can ignore docile skeletons that carry out simple actions such as walking or gathering but should be wary of skeletons that show aggression or ones that carry items that could be considered a weapon. "
+autowrap_mode = 3
+
+[node name="Label" type="Label" parent="Contents"]
+layout_mode = 0
+offset_left = 637.0
+offset_top = -384.0
+offset_right = 662.0
+offset_bottom = -357.0
+theme = ExtResource("4_7wkbg")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "21"
+
+[node name="book_worms" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="level_1" type="Sprite2D" parent="book_worms"]
+visible = false
+
+[node name="level_2" type="Sprite2D" parent="book_worms"]
+visible = false
+
+[node name="level_3" type="Sprite2D" parent="book_worms"]
+visible = false

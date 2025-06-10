@@ -11,6 +11,8 @@ What will you do?
 	Frantically shaking your arm you let out a chatter and try to fling the beast off of you to no avail. In a desperate attempt you make yourself large and scream at it. It screeches then claws your face. You drop it to the ground as it scurries off. You dab a bit of blood off your face.
 	do Globals.change_health(-1)
 	You lose 1 heart.
+	if Globals.health <= 0:
+		=> death
 - Panic
 	Unprepared for this situation your mind blanks on what to do next. Panic sets in as you try to pry the creature of yourself. But your hands find no purchase in its squirming body. It begins to contain your body more and more and your arms become trapped to your body. You cringe at the creature's many legs prodding your entire body seemingly looking for something. You feel it pull something away from you.
 	do show_fly()
@@ -19,3 +21,7 @@ What will you do?
 	Dejected by your loss you continue down the ruined streets.
 do fade_out()
 => END
+
+~ death
+You go light headed as that scratch draws more blood than you could have afforded and your vision begins to go dark...
+do death()

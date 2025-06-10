@@ -1,0 +1,89 @@
+[gd_scene load_steps=5 format=3 uid="uid://cx04whf0oe6qw"]
+
+[ext_resource type="Script" path="res://scripts/page_base.gd" id="1_5t0bf"]
+[ext_resource type="PackedScene" uid="uid://beneqpcnms27p" path="res://scenes/beastiary pages/_page_base.tscn" id="2_i16qi"]
+[ext_resource type="Texture2D" uid="uid://cxxl6q3ate507" path="res://assets/sketches/TeaFairy.png" id="3_alrkh"]
+[ext_resource type="Theme" uid="uid://bw2dm0g8j123d" path="res://themes/beastiary_writing.tres" id="4_tts7h"]
+
+[node name="teafairy" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5t0bf")
+metadata/_edit_use_anchors_ = true
+
+[node name="page_base" parent="." instance=ExtResource("2_i16qi")]
+layout_mode = 1
+
+[node name="Contents" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="sketch" type="Sprite2D" parent="Contents"]
+position = Vector2(-354, 40)
+scale = Vector2(0.585301, 0.585301)
+texture = ExtResource("3_alrkh")
+
+[node name="entry name" type="Label" parent="Contents"]
+layout_mode = 0
+offset_left = -634.0
+offset_top = -341.0
+offset_right = -427.0
+offset_bottom = -288.0
+theme = ExtResource("4_tts7h")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "Tea Fairy"
+
+[node name="entry passage" type="Label" parent="Contents"]
+layout_mode = 0
+offset_left = 112.0
+offset_top = -326.0
+offset_right = 648.0
+offset_bottom = 251.0
+theme = ExtResource("4_tts7h")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "Tea fairies are a highly sociable species of fae that love to interact with many different species of sentient life. This species of fae is also quite unique as they are one of the few that choose to live in cities amongst people. Tea Fairies derive their name from exactly that, tea. This species has been observed to have become somewhat enraptured in the making, drinking, and sharing of tea. 
+
+These fae creatures prefer to stay near areas with plenty of spots to act as tables so as to partake in their own tea times. In the wilds, tea fairies have been observed to make tea from any flora that they can get their hands on as they attempt to share said to with any creatures nearby. While tea can be a nice gift, these creatures sometimes brew tea derived from more dangerous floral specimens that can cause a number of harmful effects. 
+
+When encountering this species of fae, be wary of what ingredient their tea is made of, and don’t be shy to decline their offer they won’t be mad… most of the time anyways."
+autowrap_mode = 3
+
+[node name="Label" type="Label" parent="Contents"]
+layout_mode = 0
+offset_left = 637.0
+offset_top = -384.0
+offset_right = 662.0
+offset_bottom = -357.0
+theme = ExtResource("4_tts7h")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "14"
+
+[node name="book_worms" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="level_1" type="Sprite2D" parent="book_worms"]
+visible = false
+
+[node name="level_2" type="Sprite2D" parent="book_worms"]
+visible = false
+
+[node name="level_3" type="Sprite2D" parent="book_worms"]
+visible = false

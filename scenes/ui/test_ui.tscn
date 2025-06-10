@@ -1,10 +1,17 @@
-[gd_scene load_steps=7 format=3 uid="uid://1yu00uqnngve"]
+[gd_scene load_steps=15 format=3 uid="uid://1yu00uqnngve"]
 
 [ext_resource type="Script" path="res://scripts/inventory_loader.gd" id="1_0th41"]
 [ext_resource type="PackedScene" uid="uid://cxoatkheomly" path="res://scenes/items/package_item.tscn" id="2_hyasa"]
 [ext_resource type="PackedScene" uid="uid://csfiit70pipqw" path="res://scenes/items/bestiary_item.tscn" id="3_d5d06"]
+[ext_resource type="Texture2D" uid="uid://b85ya550nhwih" path="res://assets/ui/Bestiary_Icon.png" id="4_6xnu6"]
 [ext_resource type="PackedScene" uid="uid://bly2o8v0fqmvi" path="res://scenes/ui/monster_database.tscn" id="4_speqq"]
+[ext_resource type="Texture2D" uid="uid://4qnpbhe6yq4b" path="res://assets/ui/Bestiary_Icon_Glow.png" id="5_eiavj"]
 [ext_resource type="PackedScene" uid="uid://crw055f2x78m2" path="res://scenes/ui/healthbar.tscn" id="5_iqxdx"]
+[ext_resource type="Theme" uid="uid://bw2dm0g8j123d" path="res://themes/beastiary_writing.tres" id="6_8eq15"]
+[ext_resource type="Texture2D" uid="uid://dtueoa10fwv2l" path="res://assets/ui/bookworms1.png" id="6_x70xc"]
+[ext_resource type="Texture2D" uid="uid://cbm1o7s7klgjl" path="res://assets/ui/bookworms2.png" id="7_uh3nd"]
+[ext_resource type="PackedScene" uid="uid://b3a64s6c2iyxt" path="res://scenes/ui/monster_database_pt1.tscn" id="8_0cx0t"]
+[ext_resource type="Texture2D" uid="uid://u5h4b0j2ptvk" path="res://assets/ui/mark.png" id="12_n407c"]
 
 [sub_resource type="GDScript" id="GDScript_dgu8f"]
 script/source = "extends Control
@@ -16,6 +23,7 @@ var hearts_list : Array[TextureRect]
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var hearts_parent = $Healthbar
+	var worms = $Inventory/TextureButton/AnimatedSprite2D
 	for child in hearts_parent.get_children():
 		hearts_list.append(child)
 		
@@ -24,13 +32,46 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	var besti = InventoryHandler.check_inventory(1)
+	if Globals.bookworms == true:
+		$Inventory/TextureButton/AnimatedSprite2D.visible = true
+	else:
+		$Inventory/TextureButton/AnimatedSprite2D.visible = false
+	if Globals.mark == true:
+		$mark.visible = true
+	else:
+		$mark.visible = false
+	if besti == true:
+		$Inventory/TextureButton.visible = true
 	update_heart_display()
 
 
 func update_heart_display() -> void:
 	for i in range(hearts_list.size()):
 		hearts_list[i].visible = i < Globals.health
+
+
+func _on_texture_button_pressed() -> void:
+	if Globals.bestiary_updated == false:
+		Globals.bestiary1_active = true
+	else:
+		Globals.bestiary_active = true
 "
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tjb4j"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_x70xc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_uh3nd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
 
 [node name="ui" type="Control"]
 layout_mode = 3
@@ -105,6 +146,46 @@ layout_mode = 2
 visible = false
 layout_mode = 2
 
+[node name="TextureButton" type="TextureButton" parent="Inventory"]
+visible = false
+layout_mode = 0
+offset_left = 43.0
+offset_top = 666.0
+offset_right = 554.0
+offset_bottom = 952.0
+texture_normal = ExtResource("4_6xnu6")
+texture_hover = ExtResource("5_eiavj")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Inventory/TextureButton"]
+visible = false
+position = Vector2(255.992, 151)
+scale = Vector2(0.244403, 0.244403)
+sprite_frames = SubResource("SpriteFrames_tjb4j")
+autoplay = "default"
+frame_progress = 0.821777
+
+[node name="Label" type="Label" parent="Inventory/TextureButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -184.5
+offset_top = -55.0
+offset_right = 186.5
+offset_bottom = 61.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("6_8eq15")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.493545, 0.493546, 0.493545, 1)
+theme_override_constants/shadow_outline_size = 3
+theme_override_font_sizes/font_size = 110
+text = "Bestiary"
+
 [node name="Health" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 3
@@ -128,9 +209,23 @@ position = Vector2(1, 0)
 [node name="MonsterDatabase" parent="." instance=ExtResource("4_speqq")]
 visible = false
 
+[node name="MonsterDatabasePt1" parent="." instance=ExtResource("8_0cx0t")]
+visible = false
+
 [node name="Healthbar" parent="." instance=ExtResource("5_iqxdx")]
+layout_direction = 1
 layout_mode = 0
-offset_left = 1579.0
-offset_top = 1046.0
-offset_right = 1945.0
-offset_bottom = 1086.0
+offset_left = 1443.0
+offset_top = 1021.0
+offset_right = 1809.0
+offset_bottom = 1077.0
+scale = Vector2(1.24, 1.24)
+
+[node name="mark" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
+position = Vector2(98.2635, 84)
+scale = Vector2(0.560811, 0.560811)
+texture = ExtResource("12_n407c")
+
+[connection signal="pressed" from="Inventory/TextureButton" to="." method="_on_texture_button_pressed"]

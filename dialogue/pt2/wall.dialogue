@@ -1,0 +1,32 @@
+~ start
+A gentle breeze graces past you, accompanied by the hint of fruity sweetness. Following the smell through the murky darkness, you weave through a maze of corridors. After what felt like an eternity, a trickle of light slowly melts the void away as you arrive at a small gap in the brickwork.
+do s1()
+By the almost intoxicating smell of grapes, you clearly have arrived at your destination. You pry at the loose bricks and burst into an old wine cellar. Your eyes take a moment to adjust as you hear a dull rhythmic tapping reverberate through the small room. At the far end of the room is an old, broken barrel lying on the ground. Spilling from the barrel is a huge pile of treasure!
+You approach the barrel as a rat scurries out of it into a hole in the wall. The gold coins knocked up by the rat clink and click onto the stone before settling to the floor.
+- Take just a handfull
+	Despite the prospect of riches, you cautiously take only a handful of coins.
+	As you collect treasure, the dull tapping you heard earlier persists and begins to gnaw away at your soul. You blink rapidly and shake the noise from your head.
+	You quickly grab your coins and break for the exit as the tapping fades into the distance. Your vision is blurry and your mind is numb but you escape the cellar a few coins richer.
+- Fill your bag with riches
+	As you collect treasure, the dull tapping you heard earlier persists and begins to gnaw away at your soul. You blink rapidly and shake the noise from your head.
+	You tell yourself it’s just water as your vision becomes hazy. Voices start echoing in your ears as you look up at the wall to see that it is lined with pristine, round holes. You close your bag and try to make for the exit before thudding to the ground. Full of gold and gems, your bag is far too heavy to carry.
+	???: “Hey! Need help?”
+	do s2()
+	Over you is a little girl is extending her hand to you. You stand up and look around at a gorgeous flower-filled meadow in front of an unfathomably massive cave that extends into the clouds. The girl pulls at your hand.
+	Girl: “Mother wishes to see you.”
+	do s3()
+	She says as you have a brief flash of reality. Standing in the wine cellar you are staring at a hole in the wall as an incomprehensible beast contorts itself outward.
+	do h3()
+	The girl squeezes your hand and smiles as she guides you toward the cave. The source of the tapping lunges at you...
+	Several clawed hand attempt to grab you and drag you into it's hole, but you manage to barely struggle out of it's grip.
+	do Globals.change_health(-2)
+	You lose 2 health.
+	if Globals.health <= 0:
+		=> death
+	You waste no time running away and thankfully it seems you were able to get far enough away for the creature to lose interest.
+do fade_out()
+=> END
+
+~ death
+The damage done by the creature made you too slow to outrun it and you feel sever hands grab you and drag you away as your vision begins to go dark.
+do death()

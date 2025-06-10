@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://cuox3pmegmeik"
+path="res://.godot/imported/matriarch.dialogue-f42cfd52e3c91894560fab254ddb3d1c.tres"
+
+[deps]
+
+source_file="res://dialogue/pt2/matriarch.dialogue"
+dest_files=["res://.godot/imported/matriarch.dialogue-f42cfd52e3c91894560fab254ddb3d1c.tres"]
+
+[params]
+
+defaults=true

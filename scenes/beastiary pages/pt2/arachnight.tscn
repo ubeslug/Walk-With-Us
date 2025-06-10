@@ -30,6 +30,23 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Label2" type="Label" parent="Contents"]
+layout_mode = 0
+offset_left = 114.0
+offset_top = 196.0
+offset_right = 587.0
+offset_bottom = 221.0
+rotation = 0.00562232
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_xwn4c")
+text = "P.S keep these and all other arachnids away from [REDACTED]"
+
+[node name="PageTear" type="Sprite2D" parent="Contents"]
+clip_children = 2
+position = Vector2(545, 206)
+scale = Vector2(0.0381366, 0.0390625)
+texture = ExtResource("6_gtbul")
+
 [node name="sketch" type="Sprite2D" parent="Contents"]
 position = Vector2(-390.345, 46.43)
 scale = Vector2(0.585301, 0.585301)
@@ -61,17 +78,6 @@ Arachknights are a species of large spiders that have a unique way of making hom
 "
 autowrap_mode = 3
 
-[node name="Label" type="Label" parent="Contents/entry passage"]
-layout_mode = 0
-offset_left = 2.0
-offset_top = 522.0
-offset_right = 259.0
-offset_bottom = 547.0
-rotation = 0.00562232
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_xwn4c")
-text = "P.S keep these and all other arachnids away from [REDACTED]"
-
 [node name="Label" type="Label" parent="Contents"]
 layout_mode = 0
 offset_left = 637.0
@@ -81,13 +87,7 @@ offset_bottom = -357.0
 theme = ExtResource("3_icyc0")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
-text = "31"
-
-[node name="PageTear" type="Sprite2D" parent="."]
-clip_children = 2
-position = Vector2(1505, 746)
-scale = Vector2(0.0381366, 0.0390625)
-texture = ExtResource("6_gtbul")
+text = "33"
 
 [node name="book_worms" type="Control" parent="."]
 visible = false

@@ -1,0 +1,83 @@
+~ start
+You've come across a garden of sorts. The flowers and plants that once upon time bloomed now wither in this forgotten city. But as you meander through the garden you hear a slight twinkling noise. Looking towards the location of the sound you notice an oddly clean table. No, not a table exactly but something that takes the form of a table.
+“Hey you” something says in a hushed tone.
+do s1()
+You notice a small human-like creature with a set of wings and a small dusty cloak made of dried leaves.
+Fairy: “Yes you. I need your assistance, you see the table over there.”
+the creature points over to the aforementioned table.
+Fairy: ”That’s where I live making tea and enjoying small snacks. I’d usually invite you for a sampling but some days ago a strange cup showed up. It really is messing with my way of life. Can you help me, kind traveller?”
+do s2()
+While you try to ignore the obvious sweet words the creature spits out you decide to have a look at the strange cup it mentioned. Walking over to the table one cup noticeable stands out. The cup takes more of a mug shape and seems to have a mask on one side of it with horns and very large teeth. You notice that it seems to be staring at you.
+Cup: “The FUCK do you want?”
+Huh?
+Cup: “Stop standing around like a SHITSTAIN and answer the question already! Have you never seen a talking mug before?”
+The mug continues to cuss you out as you stand around. You get why the creature from before asked you for help. What will you do?
+- Pocket the mug to sell
+	do Globals.ending += 1
+	You decide to try and pocket the mug to sell thinking it could fetch a hefty price to select buyers due to its sheer abnormality. You reach for the mug.
+	Cup: “Hey what the FUCK are you doing? Oh you better stop!”
+	Your hand grasps the mugs handle. The little fairy creature before hops up on the table.
+	Fairy: “Are you planning on taking this thing? I guess that works for me. You do you I guess, but I wouldn't want this thing anywhere near me.”
+	Just as you lift the mug to pocket it away it screams.
+	Cup: “AH HELL NO! I’m not gonna be taken away by this PRICK, I'd rather die a free cup!”
+	do s3()
+	Which puzzles you as what can i really do to stop you? and just as the thought leaves your mind the cup lurches from your and falls to the stone ground underfoot. Upon impact it shatters into a million pieces.
+	Fairy: “Uhhhhh how about we just never talk about this?”
+	The fairy says this as both of you share a look of both disbelief and horror.
+	You gather yourself up and head to leave the garden. Before you leave the fairy shouts out.
+	Fairy: “Come back sometime and i’ll get you a good cup of tea as thanks i guess.”
+	You force a smile and nod back to the creature and continue on. You don’t think you’ll be back.
+- Destroy the mug
+	do Globals.ending += 1
+	You decide to destroy the mug. Nothing good could come from its existence as it would just end up tormenting whoever it next encounters.
+	Cup: “Whatcha thinking about BITCH  hopefully you're thinking of leaving me alone cuz I hate looking at your ugly mug.”
+	Yup destroying it is the best way to go. You pick up the mug.
+	Cup: “Oi what are ya doing? Put me down!”
+	You take a readied stance. Holding the mug back you aim far off. if it falls from high enough it should shatter.
+	do s5()
+	Cup:  “Hey, hey , hey we can talk about this!”
+	Too late. You chuck the mug as far as you can.
+	“FFFFUUUUUCCCCKKKK YYYYOOOOUUU!” it screams into the distance. But just as it reaches the apex of its height some sort of flying creature rapidly ascends and catches the mug. Dang. it grasps the sentient item in its talons and begins to fly away.
+	do s4()
+	Cup: “HEH YOU LOSER! GUESS YOUR IDIOT BRAIN COULDN”T OF THOUGHT OF THIS SITUATION COULD IT!”
+	The mug continues heckling you as it is carried off into the distance.
+	Fairy: “Well this situation works for me.”
+	The small creature from before hops up onto the table.
+	Fairy: “That nasty creature is gone and my living space is secure. Thank you, kind traveler.”
+	You give the creature a slight nod as you head to exit the garden. Before you leave it calls out once more.
+	Fairy: “Come back again some time and I'll have a good brew of tea waiting for you!”
+	You look back and smile and the thought of fresh tea. Maybe someday you'll be back. You continue on.
+- Talk Back
+	do Globals.ending += 1
+	If this mug can dish out mean spirited comments then maybe you should fire back with your own.
+	Cup: “So are you just gonna stand around like a FUCKING doofus all day or are ya gonna do something? Cause if not why don’t you get your FUGLY face outta here!”
+	The harsh words steel your resolve. The only problem? You haven’t got the foggiest clue of what to say.
+	Cussing someone out is bad for business no one wants a courier who cusses. You rack your head for anything you could say. Then it hits you why say something when you can do something even more dastardly.
+	Facing the mug with its smug face you lift up your right hand. Then with a closed fist facing the sky you give the mug the middle finger.
+	do s5()
+	The effect is surprisingly instantaneous. The mug bursts into brutal tears.
+	Cup: “WHY DID YOU DO SOMETHING LIKE THAT! MY JABS WERE JUST HARMLESS FUN BUT THAT”S JUST STRAIGHT MEAN!”
+	In shock you retract your hand. This thing is surprisingly frail.
+	do s6()
+	The mug sobs for minutes on end before quieting down and going comatose. You try to interact with it but it seems to no longer respond to anything.
+	Fairy: “That was brutal.”
+	The fairy-like creature hops onto the table.
+	Fairy: “I’d never expect you to go for the forbidden technique like that. Though I guess I shouldn't complain, you did help me in the end.”
+	The fairy gives the cup a quizzical look before inspecting it.
+	Fairy: “Oh how nice, the mug seems to have some ingredients already in it. I can whip up some tea real quick for you in just a moment.”
+	do s7()
+	Before you can decline the creature is already offering you a cup of prepared tea.
+	Fairy: “Before you question how fast I made that tea, here's a tip. Don’t. I’m a master of my craft”
+	You decide not to waste this gift and consume it as a beverage. It gives off a nice scent and the slightly sweet flavor evaporates any tiredness your body may have been holding. They truly are a master of their craft. You thank the creature for the beverage and continue on your way. Hopefully you can see it again in the future.
+- Refuse to help
+	You decide that this situation is something that doesn’t really affect you. You walk back to the entrance to take your leave.
+	Cup: “Huh leaving already, good riddance.”
+	But before you can leave, a small fairy-like creature from before stops you.
+	Fairy: “Hey what are you doing! I asked for help, you're not going to leave me high and dry are you?”
+	You in fact are.
+	Fairy: “Well what am I supposed to do now that my living space has been invaded?”
+	You suggest looking for a different place to live but that this situation doesn’t really affect your current life.
+	Fairy: “Hmpf fine leave then. But don’t bother looking for a cup of tea from me in the future.”
+	With this the fairy flies off allowing you to continue your journey.
+do fade_out()
+=> END

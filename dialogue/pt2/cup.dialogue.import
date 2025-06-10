@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://bbrkfsgqy1t2h"
+path="res://.godot/imported/cup.dialogue-d7ec374800cc75b07798a1460f1d4825.tres"
+
+[deps]
+
+source_file="res://dialogue/pt2/cup.dialogue"
+dest_files=["res://.godot/imported/cup.dialogue-d7ec374800cc75b07798a1460f1d4825.tres"]
+
+[params]
+
+defaults=true

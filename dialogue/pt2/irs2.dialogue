@@ -1,0 +1,27 @@
+~ start
+You exit the cellar, relieved to smell fresh air again. Even as dust stings your nose, anything is better than the musk of the cellar.
+Before you can get too comfortable, an all-too familiar voice fills the silence.
+do s1()
+Agent: “How did you get down there?”
+You wince as the Agent suddenly slides in front of you, blocking your path. He wears the same toothy grin, clean suit, and chipper voice as usual but you notice a slight panic in his eyes. You tell him that you fell.
+Agent: “Really? I’ve had that place sealed for ages now it seems. Guess I should have figured it would be unstable by now. I’m awfully sorry you found yourself down there. Dangerous things down below. However, you’re lucky to have fallen down there. Helps to remind me to close it all off again.”
+The Agent laughs heartily. Slowly his laugh dies as his tone shifts.
+Agent: “Say, down there, you didn’t happen to find anything, right? Other than those beasts?”
+- Say no
+	The Agent’s eye twitches but you see his body loosen up.
+	do s2()
+	Agent: “Ah, well, that’s good I suppose. Lots of trash and unsavory things down there. Would hate to have a guest in our wonderful town hurt themselves like that.”
+	Agent: “You should run along now, gotta figure out how I’m gonna keep others out of there. Ta!”
+	The Agent moves to the cellar you climbed out of, standing and waving at its entrance. Clearly he wants you to move along. You don’t seem to have much of a choice, so you continue down the path again.
+	do fade_out()
+- Say yes
+	The Agent’s smile falters for a moment before he corrects himself.
+	do s3()
+	Agent: “Well then, I guess that place is good for something.”
+	He pauses for a moment before kneeling down to your level to speak.
+	Agent: “Look, whatever it is that you found down there, I’d appreciate it if you kept it to yourself. I’m trying to do my job and there are things down there that just make it harder for me. I suggest you do what’s best for this town and keep your head down…friend.”
+	The Agent slowly rises, straightening his tie before sauntering over to the cellar entrance. He turns back to look at you.
+	Agent: “Anywho, I’m gonna stay here and figure out how I’m gonna close this all off again. Wouldn’t want another unfortunate soul to fall in.”
+	He laughs but it feels forced. You can tell from his eyes that he’s still upset. You decide it’s best to move along and continue towards the exit to the town.
+	do fade_out()
+=> END

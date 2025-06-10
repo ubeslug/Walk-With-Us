@@ -1,0 +1,87 @@
+[gd_scene load_steps=5 format=3 uid="uid://cbqke4harpwft"]
+
+[ext_resource type="Script" path="res://scripts/page_base.gd" id="1_4oe1b"]
+[ext_resource type="PackedScene" uid="uid://beneqpcnms27p" path="res://scenes/beastiary pages/_page_base.tscn" id="2_7k4ac"]
+[ext_resource type="Texture2D" uid="uid://cl6w00n88tckc" path="res://assets/sketches/Mimetic.png" id="3_6omx3"]
+[ext_resource type="Theme" uid="uid://bw2dm0g8j123d" path="res://themes/beastiary_writing.tres" id="4_yhteq"]
+
+[node name="MimeticPage" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4oe1b")
+
+[node name="page_base" parent="." instance=ExtResource("2_7k4ac")]
+layout_mode = 1
+
+[node name="Contents" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="sketch" type="Sprite2D" parent="Contents"]
+position = Vector2(-355.1, 49.605)
+scale = Vector2(0.617, 0.617)
+texture = ExtResource("3_6omx3")
+
+[node name="entry name" type="Label" parent="Contents"]
+layout_mode = 0
+offset_left = -598.0
+offset_top = -333.0
+offset_right = -428.0
+offset_bottom = -280.0
+theme = ExtResource("4_yhteq")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "Mimetic
+"
+
+[node name="entry passage" type="Label" parent="Contents"]
+layout_mode = 0
+offset_left = 104.0
+offset_top = -322.0
+offset_right = 640.0
+offset_bottom = 255.0
+theme = ExtResource("4_yhteq")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "Mimetics are shape-shifting creatures that inhabit wooded areas, although they may venture out. They start as a glob of a tar-like material, formless with the only identifiable features being strangely human eyes and teeth. In order to hunt and survive, Mimetics will take on the form of woodland creatures and animals. This can range from birds, wildcats, foxes, dogs, and even bigger animals such as a bear. While their forms are great at deception, their greatest flaw are those eyes and teeth. 
+
+From my own experience, I had stumbled across a lost dog along the road. It seemed normal, but it refused to look at me. After getting down to its level, I soon saw piercing human eyes and a row of grinning human teeth staring back at me. It is believed that looking directly at a Mimetic’s eyes creates an issue in their form, so it is best to avoid interacting with a Mimetic should you come across one. They don’t hurt too bad but their ability to let your guard down is truly dangerous."
+autowrap_mode = 3
+
+[node name="Label" type="Label" parent="Contents"]
+layout_mode = 0
+offset_left = 637.0
+offset_top = -384.0
+offset_right = 662.0
+offset_bottom = -357.0
+theme = ExtResource("4_yhteq")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "22"
+
+[node name="book_worms" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="level_1" type="Sprite2D" parent="book_worms"]
+visible = false
+
+[node name="level_2" type="Sprite2D" parent="book_worms"]
+visible = false
+
+[node name="level_3" type="Sprite2D" parent="book_worms"]
+visible = false

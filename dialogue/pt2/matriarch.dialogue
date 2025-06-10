@@ -1,0 +1,123 @@
+~ start
+You cross through the iron gate, immediately noting the change in greenery. The ground looks brighter, healthier, yet still very overgrown. Large trees soon canopy over you as you continue, feeling a sense of claustrophobia seep into you.
+Pushing it away, you head onward but begin to notice something strange. Dotted along the road are statues. Some are of animals but most are humanoid. You can see them reaching out their arms, pleading faces frozen in a scream. Their appearances become more frequent as you continue, culminating at a large dilapidated building.
+do s1()
+Overgrown and neglected, the building towers even above the trees. It seems to have had large doors but those are nowhere to be seen, allowing you to see into a pitch black room. You see a large collection of these statues gathered around the entrance. You weave between them but soon hear a deep growling from within the building’s entrance.
+do s2()
+Out of the darkness, a towering figure slinks out. Its body is dark and covered in spines. You note how the creature doesn’t seem to have any eyes as it sniffs the air.
+if bell == true:
+	=> bell
+else:
+	=> no_bell
+
+~ no_bell
+do s4()
+Despite its lack of eyes, its head shoots in your direction. You start to see it open its mouth and feel your blood run cold.
+- Run
+	do s5()
+	The moment your feet shift to run, you feel the ground quake as the thing lunges towards you. You can hear it gaining on you as the sound of crumbling rock from the stone figures fills your ears.
+	Despite your best efforts, the beast is faster. Its paw slams into your back, knocking the wind out of you and pushing you forward. You go airborne for a moment before crashing onto the ground. Gasping for air, you try your best to steady yourself.
+	do Globals.change_health(-2)
+	You lose 2 health.
+	if Globals.health <= 0:
+		=> death
+	do s8()
+	The beast luckily boosted you a good distance. Eventually, as you pass by thinning plants and slowly drying grass, you reach the other end, throwing open the gate with only the sound of beastly wailing from behind you.
+- Wait
+	do s6()
+	You wait to see what the beast will do. It stands stationary, growling aggressively before rushing you. In the last moment you jump out of its way, watching it run straight into a cliff wall. 
+	do s7()
+	It staggers for a moment then sniffs the air. It seems to have lost your scent.
+	- Hide
+		You begin to look around, quietly heading over to a patch of overgrown grass when spotted. You watch the beast through the grass stalks. It sniffs the air, its body shifting as it begins to analyze all the smells in the air.
+		do s5()
+		Despite your best efforts, the beast is faster. Its paw slams into your back, knocking the wind out of you and pushing you forward. You go airborne for a moment before crashing onto the ground. Gasping for air, you try your best to steady yourself.
+		do Globals.change_health(-2)
+		You lose 2 health.
+		if Globals.health <= 0:
+			=> death
+		do s8()
+		The beast luckily boosted you a good distance. Eventually, as you pass by thinning plants and slowly drying grass, you reach the other end, throwing open the gate with only the sound of beastly wailing from behind you.
+	- Distract
+		Picking up a loose piece of stone, you chuck it as far as you can from you. It soars through the air, clattering against some wood far away. You watch as the beast perks up, frantically running in that direction, leaving the clearing bare.
+		do s8()
+		You don’t waste any time running to safety. The beast seems to be far enough away to not hear your running. The greenery around you slowly dissipates as you get closer to the end of this area. Reaching the exit gate, you throw it open and return to the familiarity of the abandoned town..
+	- Run
+		do s5()
+		Your feet skid along the ground, just loud enough for the beast to hear. Its paws thunder behind you as it gives chase.
+		Despite your best efforts, the beast is faster. Its paw slams into your back, knocking the wind out of you and pushing you forward. You go airborne for a moment before crashing onto the ground. Gasping for air, you try your best to steady yourself.
+		do Globals.change_health(-2)
+		You lose 2 health.
+		if Globals.health <= 0:
+			=> death
+		do s8()
+		The beast luckily boosted you a good distance. Eventually, as you pass by thinning plants and slowly drying grass, you reach the other end, throwing open the gate with only the sound of beastly wailing from behind you.
+do fade_out()
+=> END
+
+~ bell
+do s4()
+Despite its lack of eyes, its head shoots in your direction. It begins to snarl but you see its body loose tension. The creature approaches slowly, navigating over the statues like a cat on a shelf. Frozen in fear, you can only watch as the creature sniffs your bag.
+do s3()
+It rummages with its large nose before the bell you received slips out. You catch it before it can hit the ground and hold it in your hands. The beast stands still, patient, and eager as you observe the bell again.
+- Offer bell
+	You hold the bell out to the creature and watch its ears tilt up. Suddenly, in the corners of your mind, a voice calls to you. Feminine and scratchy.
+	Voice: “The bell…you have it.”
+	The creature sits in front of you now, purring.
+	Phocenta: “My name is Phocenta. Apologies for my aggression earlier, I haven’t been able to speak to someone in so long. I’ve missed this connection. I used to speak to anyone who came through here before…he showed up."
+	Phocenta: "That bell, it used to belong to a very dear friend of mine. It’s all I have left of her. But she died from a lack of proper care. Didn’t have enough money to care for herself after the Agent turned everything around."
+	Phocenta: "I wanted to stop him but he always held that bell against me. He said if I tried anything, he would destroy it. I should have known he was lying."
+	Phocenta: “You don’t know what this means to me. I can’t just let you leave without some kind of compensation. Name anything, and it will be done.”
+	- Kill the Agent
+		do Globals.matriarch = true
+		You explain what you found in the journal entry to Phocenta. If she can kill him or stop him, then she would have repaid that debt to you.
+		Phocenta: "Well, I don’t need much convincing for that. And if he’s truly as weak as you say he is, it shouldn’t be too hard."
+		Phocenta: “You go on ahead and I’ll follow shortly after. If you can get that Agent’s attention on you long enough, I should be able to take him out for you."
+		Phocenta: "To make sure you know my word is true, take the bell with you for now. I will collect it once this is all over. I wish you luck, my friend."
+		do s8()
+		Your mind grows quiet as Phocenta picks herself up and gestures towards the pathway out. You say your goodbyes as you follow her instruction, running through the greenery that slowly dissipates as you reach the end of this area and back into town.
+	- No compensation
+		do Globals.ending += 1
+		Phocenta tilts her head.
+		Phocenta: “Are you sure? You don’t need anything?”
+		do InventoryHandler.remove_from_inventory(10)
+		You confirm with a nod, placing the bell at your feet.
+		Phocenta: “Well, I can’t thank you enough for your kindness. The way out of here is just beside me. Please, remain safe.”
+		do s8()
+		Your mind grows quiet as Phocenta picks herself up and gestures towards the pathway out. You say your goodbyes as you follow her instruction, running through the greenery that slowly dissipates as you reach the end of this area and back into town.
+- Leave
+	do s6()
+	You quickly pick up the bell and stuff it into your bag. There was no way you were letting this thing have it. You sense an immediate shift in the creature, as its purrs shift into low growls. It lunges at you, roaring with anger.
+	In the last moment you jump out of its way, watching it run straight into a cliff wall. 
+	do s7()
+	It staggers for a moment then sniffs the air. It seems to have lost your scent.
+	- Hide
+		You begin to look around, quietly heading over to a patch of overgrown grass when spotted. You watch the beast through the grass stalks. It sniffs the air, its body shifting as it begins to analyze all the smells in the air.
+		do s5()
+		Despite your best efforts, the beast is faster. Its paw slams into your back, knocking the wind out of you and pushing you forward. You go airborne for a moment before crashing onto the ground. Gasping for air, you try your best to steady yourself.
+		do Globals.change_health(-2)
+		You lose 2 health.
+		if Globals.health <= 0:
+			=> death
+		do s8()
+		The beast luckily boosted you a good distance. Eventually, as you pass by thinning plants and slowly drying grass, you reach the other end, throwing open the gate with only the sound of beastly wailing from behind you.
+	- Distract
+		Picking up a loose piece of stone, you chuck it as far as you can from you. It soars through the air, clattering against some wood far away. You watch as the beast perks up, frantically running in that direction, leaving the clearing bare.
+		do s8()
+		You don’t waste any time running to safety. The beast seems to be far enough away to not hear your running. The greenery around you slowly dissipates as you get closer to the end of this area. Reaching the exit gate, you throw it open and return to the familiarity of the abandoned town..
+	- Run
+		do s5()
+		Your feet skid along the ground, just loud enough for the beast to hear. Its paws thunder behind you as it gives chase.
+		Despite your best efforts, the beast is faster. Its paw slams into your back, knocking the wind out of you and pushing you forward. You go airborne for a moment before crashing onto the ground. Gasping for air, you try your best to steady yourself.
+		do Globals.change_health(-2)
+		You lose 2 health.
+		if Globals.health <= 0:
+			=> death
+		do s8()
+		The beast luckily boosted you a good distance. Eventually, as you pass by thinning plants and slowly drying grass, you reach the other end, throwing open the gate with only the sound of beastly wailing from behind you.
+do fade_out()
+=> END
+
+~ death
+You try your best to steady yourself but that strike and then the fall really did a number on you. You're vision begins to go dark.
+do death()

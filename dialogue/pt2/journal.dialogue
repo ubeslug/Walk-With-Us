@@ -1,0 +1,13 @@
+~ start
+After walking up the steps you find yourself in a dingy mineshaft. The smell of coal stings your nose and dust cakes the floor sticking onto your shoes. You spot two tunnels ahead, however one has been caved in.
+do s1()
+While this saves you the choice, you notice in the rubble a humanoid skeleton. It’s been here for years it seems as it’s been picked clean and caked in cobwebs and dust. You approach and notice a leather journal in its hand.
+- Reach for the journal
+	Cautiously, you bend down and grip the journal. Slowly it slips away from the skeleton’s fingers, who lies lifeless beneath the rocks.
+- Check the skeleton
+	You look around and find an old wooden plank. Holding it out as far as you can, you poke the skeleton’s skull with the plank. It doesn’t react, lying as lifeless as before. With that, you lean down and easily grab the journal.
+do Globals.agent = true
+The journal is weathered but only on the outside as the contents within still seem intact. You flip through, noting how most of it looks like insane ramblings but the end of the book intrigues you. It seems to be about the Agent. You rip out the relevant pages and stick them into your bestiary before you continue, your mind reviewing what you’d just read.
+You've gained a character page. Character pages are added to the end of the bestiary. To quickly access them click the new blue bookmark in the bestiary.
+do fade_out()
+=> END

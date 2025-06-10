@@ -42,7 +42,7 @@ offset_bottom = -288.0
 theme = ExtResource("3_8hxac")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
-text = "Monster Cups"
+text = "Ceramaniacs"
 
 [node name="entry passage" type="Label" parent="Contents"]
 layout_mode = 0
@@ -53,7 +53,9 @@ offset_bottom = 251.0
 theme = ExtResource("3_8hxac")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 24
-text = "W.I.P"
+text = "You might come across various sentient beings in your adventures. One of these sentient beings could be sentient pottery. Most of the time nobody chooses to make a sentient item but materials sometimes hold trace amounts of magical energy thus the produced item becomes sentient. 
+
+For ceramic items these sentient items become quite rude and will throw various rude comments to any passerby. Though these items lack ways to physically harm someone the mental toll they can have is immeasurable. It has also been noted they these items themselves are mentally frail."
 autowrap_mode = 3
 
 [node name="Label" type="Label" parent="Contents"]
@@ -65,7 +67,7 @@ offset_bottom = -357.0
 theme = ExtResource("3_8hxac")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
-text = "20"
+text = "21"
 
 [node name="book_worms" type="Control" parent="."]
 visible = false

@@ -4,13 +4,22 @@ extends Node
 var text_sounds: bool = false
 
 
+var bestiary_updated: bool = false
 var bestiary_active: bool = false
+var bestiary1_active: bool = false
+var bookworms: bool = false
+var agent: bool = false
+var agent_added: bool = false
+
 var max_health: int = 5
 var health: int = 5
 
 #other
 var found_my_page: bool = false
 var sludge_dead: bool = false
+var ending: int = 0
+var matriarch: bool = false
+var mark: bool = false
 
 
 func _process(delta: float) -> void:

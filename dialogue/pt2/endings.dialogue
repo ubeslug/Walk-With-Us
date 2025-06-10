@@ -1,0 +1,100 @@
+~ start
+if Globals.ending < 4:
+	=> bad
+else:
+	do b2()
+	=> good
+
+~ good
+do b2()
+The path grows narrower as you can see the end of the canyon in the distance. Passing through what you believe to be a residential area, with the streets full of people and monsters alike, you quicken your pace. As you pass, you note how much chipper everyone seems. The gloom of the town doesn’t seem to bother them.
+do s1()
+You now approach a much larger building. Unlike everything you have seen before, it looks intact. The large mansion dwarfs the smaller and broken homes before it, making you uneasy.
+The uneasiness increases as you see someone standing outside. Someone familiar.
+do s3()
+The Agent stands near the mansion’s front gate, pacing back and forth. He looks panicked. His eyes are bugged out and you can see the slightest bit of sweat on his brow. You attempt to walk past undetected, but he spots you and approaches rapidly.
+Any face he kept up for you before is gone. His chipper smile is missing, replaced with a snarl, as he stomps towards you. His voice is a shrill whisper.
+Agent: "What are you doing? What have you done? One second this place is a hive for misery and gloom, and now what am I hearing?"
+Agent: "People want to help others?"
+Agent: "Save the wildlife?"
+Agent: "Think for themselves??"
+Agent: "And all because of them hearing about what YOU’RE doing!"
+Agent: "You don’t understand what you’re messing with! What you’re doing to me! I need these [shake rate=20 level=10]things[/shake] to stay away, mind their business, while I ‘help’ them. I can feel myself starving…"
+Agent: "But you don’t know when to quit, do you? I’m not gonna die here because of your charity."
+Agent: “I oughta…”
+if Globals.matriarch == true:
+	=> bell
+do s4()
+The Agent suddenly lunges for you, gripping your shoulders tightly as he speaks through clenched teeth.
+Agent: “I oughta make an example out of you. So these simpletons can mind their damn business before they get caught in something nasty.”
+- Struggle
+	do s8()
+	With one pull of your shoulder, you easily slip from his grip. The Agent looks almost shocked, before a seething rage spreads across his face.
+	Agent: “You read that damn journal, didn’t you?”
+	While your eyes are trained on the Agent, you hear conversation behind you. Your spat has seemed to draw in a crowd.
+	Agent: “I won’t let you destroy everything I’ve built!”
+	He yells as he throws a punch at you, but when it connects, you feel almost nothing. Just a shove at most.
+	The Agent, however, cries out in pain, gripping his fist as he clenches his teeth.
+	do s10()
+	By now, a larger crowd had gathered, watching his pathetic display. Initially filled with gasps, the group soon began to laugh. The Agent’s eyes go wild with fear. Even so, he dons his fake smile and begins to plead.
+	Agent: “N-now, there’s no need to do any of that. Rest assured, this intruder here is being taken care-”
+	He’s cut off as a towns person runs up and punches him in the gut. The Agent goes down immediately. Cheers resound from the crowd as more people begin to gather. You decide you do not want to watch.
+	As you run off out of the canyon, the pleading from the Agent soon turns into begs, and then into cries as the townsfolk finally revolt. They aren’t afraid of him anymore.
+- Punch
+	You throw your shoulder back and punch the Agent right in his face. Despite your size and strength, the Agent flies backwards.
+	do s9()
+	Sitting up, you see dark, almost black blood trickle from his nose.
+	Agent: “That damn journal…”
+	From behind, you hear a crowd begin to gather. Gasps and chuckles fill the silence.
+	do s10()
+	Murmuring from the crowd grows louder as people begin to surround him. You step back as you watch more townsfolk begin to laugh at, berate, and kick the Agent.
+	Agent: “No, please! Let me explain!”
+	His pleas are drowned out by the townsfolk’s yelling. Crying out for justice for their homes, their families, and his betrayal.
+	As you run off out of the canyon, the pleading from the Agent soon turns into begs, and then into cries as the townsfolk finally revolt. They aren’t afraid of him anymore.
+- Do nothing
+	The Agent’s sneer bores into your soul, but soon you see his face drop as he looks behind you. You follow his gaze to see a small crowd gathering around the two of you. Gasps of shock and demands for your release are called out.
+	do s10()
+	The Agent relinquishes hold of you, standing up straight to give his excuses.
+	Agent: “Now now, I-I’m sorry you all had to see that. I just can’t handle toxic influences in our little community. You can all understand, surely?”
+	This doesn’t seem to win the crowd over as demands for explanations, justice, and insults fill the air. You make sure your things are gathered as you continue down the road.
+	Behind you, the arguing becomes more intense. The Agent’s voice becomes drowned out by a symphony of angry voices. His pleas soon join the chorus as you make your way out of the canyon and the town entirely.
+do fade_out()
+=> END
+
+~ bell
+do s5()
+The Agent’s voice is suddenly cut off by large thundering footfalls. A mix of shock and confusion morphs into fear as the Agent stares behind you. Following his gaze, you see Phocenta approach. She carefully navigates around shocked and terrified townsfolk before towering over the Agent.
+do s6()
+He stands his ground but you can hear a shake in his voice.
+Agent: “Y-you’re out? Didn’t you listen to a word I say? You want to lose that last piece of her? Do you even understand what you're doing?”
+Despite his pleas, she continues to approach.
+Agent: “Look, I’m sorry for what I did, honestly! Just let me explain myself! Do you know how hard it can be to run this shithole? I’m just trying to make this work! Please, you can’t do this to me!”
+Before he can get another word in, Phocenta opens her mouth revealing a giant humming eye. You avert your eyes but it doesn’t lock the noise of the Agent’s cries for mercy. His screams are drowned out by the sound of cracking stone before fading entirely.
+do s7()
+When you look again, the Agent is frozen, his face permanently stuck in a scream of horror. Residents of the town approach in awe. You hear murmurs of shock, tears of joy, and celebrations.
+Before you forget, you reach into your bag, pulling out the bell and ringing it to get Phocenta’s attention. She turns toward the sound, leaning down to pick it up from your hands once she finds you.
+Her voice rings in your mind again.
+Phocenta: “Thank you. Now that the Agent is gone, this town has nothing to fear. You did a great deed for not just them but for me as well. I’ll never forget what you’ve done for us and I’m sure they won’t forget either. Feel free to stop by here any time. Now, you best get going before it gets dark.”
+Heeding her advice, you begin to head down the road again, but not before taking one last glance back at the celebration now present throughout the town.
+do fade_out()
+=> END
+
+~ bad
+The path grows narrower as you can see the end of the canyon in the distance. Passing through what you believe to be a residential area, with the streets full of people and monsters alike, you quicken your pace. The gloom of the town hangs in the air as you walk by the residents who absentmindedly watch as you pass.
+do s1()
+You now approach a much larger building. Unlike everything you have seen before, it looks intact. The large mansion dwarfs the smaller and broken homes before it, making you uneasy.
+The uneasiness increases as you see someone standing outside. Someone familiar.
+do s2()
+Standing right in front of the building’s front gate is the Agent. His shiny teeth greet you before he has a chance to speak.
+Agent: “Well, the end of town is just ahead. Just wanted to make sure I saw you out. I really do hope you enjoyed your time here.”
+His smile grows wider as he speaks. A childish glee twinkles in his eye as he continues.
+Agent: “Thank you for allowing me to do my work here. Too many people just can’t see the value in what I do for this town. I oughta…”
+if Globals.matriarch == true:
+	=> bell
+His voice trails off as you watch his fists clench.
+Agent: “Ah, nevermind that.”
+In one swift stride, the Agent walks through the front gate to the mansion, closing it behind him.
+Agent: “I really should get back to work. Have a safe trip, friend!”
+You watch as the Agent walks down the mansion’s front path and into the warmth and safety of his home. Glancing back at the townsfolk from before, you can’t help but wonder what will happen to them now.
+do fade_out()
+=> END

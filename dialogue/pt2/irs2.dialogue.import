@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://cixplko71u1bi"
+path="res://.godot/imported/irs2.dialogue-2a067424daed6e9cd6ab61b2a8772c5f.tres"
+
+[deps]
+
+source_file="res://dialogue/pt2/irs2.dialogue"
+dest_files=["res://.godot/imported/irs2.dialogue-2a067424daed6e9cd6ab61b2a8772c5f.tres"]
+
+[params]
+
+defaults=true

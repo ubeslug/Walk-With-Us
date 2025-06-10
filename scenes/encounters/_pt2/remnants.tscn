@@ -2,12 +2,12 @@
 
 [ext_resource type="Resource" uid="uid://dt1c34wea4lgf" path="res://dialogue/pt2/remnants.dialogue" id="1_nhsq1"]
 [ext_resource type="PackedScene" uid="uid://1yu00uqnngve" path="res://scenes/ui/test_ui.tscn" id="2_5ylh8"]
-[ext_resource type="Texture2D" uid="uid://b6h2jxnxosove" path="res://assets/encounters/_pt2/remnant/Remnant_Playtest_2.png" id="2_hl4te"]
 [ext_resource type="Texture2D" uid="uid://clqt6mfg4stx8" path="res://assets/backgrounds/pt2/road.webp" id="2_qxcx6"]
-[ext_resource type="Texture2D" uid="uid://dmk5rtc5e4umj" path="res://assets/encounters/_pt2/remnant/Remnant_Playtest_4.png" id="3_efnb7"]
-[ext_resource type="Texture2D" uid="uid://newb17kctwsx" path="res://assets/encounters/_pt2/remnant/Remnant_Playtest_3.png" id="4_5vxe7"]
+[ext_resource type="Texture2D" uid="uid://c1avgfq5bdyjy" path="res://assets/encounters/_pt2/remnant/rem1.webp" id="3_cinnr"]
 [ext_resource type="Texture2D" uid="uid://bck8h60r30rej" path="res://assets/encounters/_pt2/remnant/Remnant_Playtest_5.png" id="4_avodr"]
+[ext_resource type="Texture2D" uid="uid://2w7qht4yx2lb" path="res://assets/encounters/_pt2/remnant/rem3.png" id="4_kfvsf"]
 [ext_resource type="Texture2D" uid="uid://cadrh6vd2upw4" path="res://assets/encounters/_pt2/remnant/Remnant_Playtest_6.png" id="5_u1xr7"]
+[ext_resource type="Texture2D" uid="uid://cfqqrqs5um2l3" path="res://assets/encounters/_pt2/remnant/rem2.webp" id="5_yq04t"]
 
 [sub_resource type="GDScript" id="GDScript_iwjp3"]
 script/source = "extends Node2D
@@ -51,8 +51,10 @@ func show_room2() -> void:
 func fade_out() -> void:
 	animation_player.play(\"fade-out\")
 	await animation_player.animation_finished
-	
-	get_tree().change_scene_to_file(\"res://scenes/encounters/_pt2/centibat.tscn\")
+	var scene: int = randi_range(1,50)
+	if scene == 1:
+		Globals.mark = true
+	get_tree().change_scene_to_file(\"res://scenes/encounters/_pt2/cup.tscn\")
 "
 
 [sub_resource type="Animation" id="Animation_uxrke"]
@@ -179,27 +181,27 @@ tracks/9/keys = {
 }
 tracks/10/type = "value"
 tracks/10/imported = false
-tracks/10/enabled = false
-tracks/10/path = NodePath("images/RemnantPlaytest6:visible")
+tracks/10/enabled = true
+tracks/10/path = NodePath("images/RemnantPlaytest6:modulate")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("images/RemnantPlaytest6:modulate")
+tracks/11/path = NodePath("images/RemnantPlaytest6:visible")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 1)]
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_nqh2r"]
@@ -343,26 +345,26 @@ resource_name = "show_room2"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("images/RemnantPlaytest6:visible")
+tracks/0/path = NodePath("images/RemnantPlaytest6:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("images/RemnantPlaytest6:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("images/RemnantPlaytest6:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_e28yj"]
@@ -422,21 +424,21 @@ centered = false
 
 [node name="RemnantPlaytest2" type="Sprite2D" parent="images"]
 visible = false
-position = Vector2(663, 387)
-scale = Vector2(0.52, 0.517)
-texture = ExtResource("2_hl4te")
+position = Vector2(675, 323)
+scale = Vector2(1.265, 1.265)
+texture = ExtResource("3_cinnr")
 
 [node name="RemnantPlaytest3" type="Sprite2D" parent="images"]
 visible = false
-position = Vector2(662.746, 351.318)
-scale = Vector2(0.329256, 0.327356)
-texture = ExtResource("4_5vxe7")
+position = Vector2(675, 323)
+scale = Vector2(1.265, 1.257)
+texture = ExtResource("4_kfvsf")
 
 [node name="RemnantPlaytest4" type="Sprite2D" parent="images"]
 visible = false
-position = Vector2(663.884, 294.911)
-scale = Vector2(0.523049, 0.520031)
-texture = ExtResource("3_efnb7")
+position = Vector2(677, 345)
+scale = Vector2(1.265, 1.265)
+texture = ExtResource("5_yq04t")
 
 [node name="RemnantPlaytest5" type="Sprite2D" parent="images"]
 visible = false

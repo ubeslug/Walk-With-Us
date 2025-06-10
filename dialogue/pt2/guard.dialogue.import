@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://deyndndihdbgo"
+path="res://.godot/imported/guard.dialogue-10a096e6ad0ba7254bc5a16125fc24e2.tres"
+
+[deps]
+
+source_file="res://dialogue/pt2/guard.dialogue"
+dest_files=["res://.godot/imported/guard.dialogue-10a096e6ad0ba7254bc5a16125fc24e2.tres"]
+
+[params]
+
+defaults=true

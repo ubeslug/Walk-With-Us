@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://c7786cbda1k3c"
+path="res://.godot/imported/gemtoad.dialogue-0012274fd0670a557076a53a9cb80947.tres"
+
+[deps]
+
+source_file="res://dialogue/pt2/gemtoad.dialogue"
+dest_files=["res://.godot/imported/gemtoad.dialogue-0012274fd0670a557076a53a9cb80947.tres"]
+
+[params]
+
+defaults=true

@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://yvqc5mhreu7y"]
+
+[ext_resource type="Script" path="res://scenes/items/egg.gd" id="1_75cpp"]
+[ext_resource type="PackedScene" uid="uid://cwpo133i6q0yf" path="res://scenes/items/_inventory_item.tscn" id="1_ow5rn"]
+[ext_resource type="Texture2D" uid="uid://bubuec32iihnh" path="res://assets/item sprites/pt2/egg.png" id="2_8duif"]
+
+[node name="egg" type="Panel"]
+offset_right = 128.0
+offset_bottom = 128.0
+script = ExtResource("1_75cpp")
+
+[node name="InventoryItem" parent="." instance=ExtResource("1_ow5rn")]
+texture_filter = 1
+layout_mode = 1
+offset_right = 122.0
+offset_bottom = 130.0
+icon = ExtResource("2_8duif")
+expand_icon = true
+item_count = 1
+popup/item_0/text = "???"
+popup/item_0/disabled = true

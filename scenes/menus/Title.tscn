@@ -236,10 +236,10 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Start"
 
-[node name="old" type="Button" parent="CanvasLayer/Control/Buttons"]
+[node name="chapters" type="Button" parent="CanvasLayer/Control/Buttons"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
-text = "Part 1"
+text = "Chapter Select"
 
 [node name="Credits" type="Button" parent="CanvasLayer/Control/Buttons"]
 layout_mode = 2
@@ -315,10 +315,11 @@ text = "Team Members
 Hannah Cathcart  -  Producer / Artist / Writer
 Gabriel Jauregui  -  Writer
 Aisha Gilbert  -  Artist
-Chloe Lorian  -  Artist
+Chloe Lorian  -  Artist / Programer
 Jianne Soto  -  Artist
 Jocelyn Chiang  -  External Collaborator / Artist
-Bryant Aberin  -  Programer / Sound Designer"
+Bryant Aberin  -  Programer / Sound Designer
+Jason Hutchins - Writer"
 horizontal_alignment = 1
 
 [node name="Sounds" type="VBoxContainer" parent="CanvasLayer/Credits/Panel"]
@@ -528,8 +529,91 @@ offset_bottom = 8.0
 theme_override_font_sizes/font_size = 40
 text = "Close"
 
+[node name="chapters" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/chapters"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -678.0
+offset_top = -444.0
+offset_right = 679.0
+offset_bottom = 444.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.239216, 0.239216, 0.239216, 1)
+
+[node name="Panel" type="Panel" parent="CanvasLayer/chapters"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -680.5
+offset_top = -445.5
+offset_right = 680.5
+offset_bottom = 445.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/chapters/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -262.5
+offset_top = -343.265
+offset_right = 262.5
+offset_bottom = -161.265
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/chapters/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 75
+text = "Chapter Select"
+horizontal_alignment = 1
+
+[node name="spacer" type="Label" parent="CanvasLayer/chapters/Panel/VBoxContainer"]
+layout_mode = 2
+text = "
+
+
+"
+horizontal_alignment = 1
+
+[node name="ch1" type="Button" parent="CanvasLayer/chapters/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 38
+text = "Chapter 1 - The Forest"
+
+[node name="ch2" type="Button" parent="CanvasLayer/chapters/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 38
+text = "Chapter 2 - Desolate Town"
+
+[node name="Close2" type="Button" parent="CanvasLayer/chapters"]
+layout_mode = 1
+offset_right = 8.0
+offset_bottom = 8.0
+theme_override_font_sizes/font_size = 40
+text = "Close"
+
 [connection signal="pressed" from="CanvasLayer/Control/Buttons/new_game" to="." method="_on_new_game_pressed"]
-[connection signal="pressed" from="CanvasLayer/Control/Buttons/old" to="." method="_on_pt_1_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Buttons/chapters" to="." method="_on_chapters_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/Buttons/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/Buttons/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/Buttons/Quit" to="." method="_on_quit_pressed"]
@@ -541,3 +625,6 @@ text = "Close"
 [connection signal="toggled" from="CanvasLayer/Settings/Panel/VBoxContainer/Text sound" to="." method="_on_text_sound_toggled"]
 [connection signal="toggled" from="CanvasLayer/Settings/Panel/VBoxContainer/Full Screen" to="." method="_on_full_screen_toggled"]
 [connection signal="pressed" from="CanvasLayer/Settings/Close" to="." method="_on_close_pressed"]
+[connection signal="pressed" from="CanvasLayer/chapters/Panel/VBoxContainer/ch1" to="." method="_on_ch_1_pressed"]
+[connection signal="pressed" from="CanvasLayer/chapters/Panel/VBoxContainer/ch2" to="." method="ch2_pressed"]
+[connection signal="pressed" from="CanvasLayer/chapters/Close2" to="." method="_on_close2_pressed"]

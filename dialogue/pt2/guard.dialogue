@@ -1,0 +1,72 @@
+~ start
+The path in front of you suddenly starts to change. Just ahead you can see an old iron gate, holding back a sudden bloom of green trees and flora behind it. After seeing the dry and tan areas of the town, it felt like a relief to see new colors again.
+The path seems like a good one to travel down but there is one problem. There are two arachnid-like creatures blocking the path. It seems like you have some eventful decisions in your future. The two creatures appear to be guards of the gate but from what exactly you don’t know. Another thing that you note is that the two guards are arguing with one another… loudly.You try to avoid eavesdropping on their conversation but you still catch their argument to their sheer volume.
+do s1()
+Black Guard: "What are you saying blue is clearly a better color”
+Blue Guard: "Well you must be blind because black is just way better looking” said the guard in blue armor."
+You try and make yourself inconspicuous hoping that the two’s argument dies down soon. But in fact it only gets louder and louder. The two guards seem to be getting more and more aggressive and the situation is getting a bit more heated than you would expect.
+- Stay and listen in
+	You can’t just leave yet so you stay and listen in.
+- Sneak by
+	The Two guards are so enthralled in their arguing that they don’t notice you begin to slip right by them. The shouting continues long after you pass and head through the gate.
+	do fade_out()
+	=> END
+Black Guard: “Bro your armor is soo much better than mine you should feel lucky getting something in that nice of shade! The blue makes you stand out in such a significant way!”
+Blue Guard: “Who would want to stand out in our situation! Your black armor makes you seem more threatening and helps you not be freaking glowstick in the middle of the day!”
+- Stay and listen in
+	The argument seems quite ridiculous the more you hear about it but the two seem so passionate about what they're arguing about it enthralls you to listen more.
+- Sneak by
+	The Two guards are so enthralled in their arguing that they don’t notice you begin to slip right by them. The shouting continues long after you pass and head through the gate.
+	do fade_out()
+	=> END
+Black Guard: “Hey you there!”
+Uh oh seems like they finally noticed your presence. You face the two guards anticipating even more arguing.
+Black Guard: “We need a third opinion on this situation because this one over here is to dumb to my point of view!”
+Blue Guard: “I would if you had a good point of view!”
+You get the basic situation but the hard part is how to respond. Taking sides could lead to more trouble so maybe something in between would be best you decide too..
+- Convince them that both armors are equally as good
+	do Globals.ending += 1
+	You try and take an appeasing approach pointing out to them that in your opinion both armors are equally as good. They seemed quite confused by this notion so you decide to describe your preference in more detail.
+	Both armors show off very distinctive colors that aren’t seen much on normal pieces of armor since it’s more expensive to get them customized. They also seem to be in a good condition with very little rust developing on the armor which could mean that they're made from good materials that most wouldn’t have access to. You assure both guards that they should be proud of the armor they wear.
+	do s2()
+	Blue Guard: “Wow, that was very sincere”
+	Black Guard: “It almost makes me embarrassed by the argument we just had”
+	Both guards apologize to each other and thank you for your earnest input. It seems that they have overcome their different opinions. Now they aren’t arguing anymore. You are allowed to traverse the bridge to get to the other side.
+	do s5()
+	The two guards wave their goodbyes and give thanks once again before you begin to take leave. As you pass through the gate you get a view of the sudden patches of green and begin to wonder about your favorite color? It seems those two rubbed off on you somehow. But does having a favorite color really matter? You don't really have an answer as you continue on.
+- Question why they don't just switch armors?
+	do Globals.ending += 1
+	While trying to come up with an answer for the two guards something quickly flashes in your mind. A question. One that you pose to the two guards. If they like each other's armor so much, why don’t they just switch armor so that they each have their preferred color?
+	do s2()
+	The two guards stand there staring at you then. They stare at each other, then stare off into the distance. They stare back at you. One stares at the other while the other stares off into the distance. Then vice versa.
+	Blue Guard: “That is a good question.”
+	Black Guard: “It couldn't be that simple can it?”
+	But it was that simple.
+	Black Guard: “Ok, ok give us a moment.”
+	The black guard grabs his compatriot as they turn around and discuss amongst themselves for a quick moment. And as quickly as they turned their backs towards you they already turned to face you once more.
+	Blue Guard: “Hey, can you turn around and give us a quick moment.”
+	You turn around. And as you do the sound of metal clanking around fills the air presumably because the two creatures are switching armors.
+	Blue Guard: “Ok you can turn back around.”
+	do s3()
+	As soon as you do both guards scream out in unison.
+	Guards: “TADA!”
+	You look upon the two of them. As they are the same species with no other identifying factors they look exactly the same as before. Even then you give a round of applause.
+	The guards give their thanks to you and apologize for having to deal with such a situation with such a simple answer, or question. They make way so that you can cross through the gate. The two guards wave their goodbyes and give thanks once again before you begin to take leave.
+	do s5()
+	As you walk through the gate you get a view of the sudden patches of green and begin to wonder how many arguments in the world have such a simple answer to them? You don't really have an answer as you continue on.
+- Tell them both armors look equally bad.
+	You decide to state the obvious. Both suits of armor suck. This mean notion shocks both guards into a stunned silence. You decide to continue on.
+	do s2()
+	Both suits of armor are lavishly colored so obviously someone was trying to compensate for something. Both suits of armor are already showing signs of rust and wear. And also who cares what color the armor is because if the rust doesn't get to the color first then dirt, grime or just overall the natural fading of the color will get to it first.
+	do s4()
+	Both guards stare at you in stunned silence for a while. That is until the blue guard starts sobbing quietly to himself. The black guard immediately moves to comfort his compatriot while staring daggers into you.
+	Black Guard: “Are you satisfied now, look what you did? You made him cry. All we wanted was a simple opinion. You didn't need to attack us like that.”
+	The black guard continues to comfort the sobbing blue guard. They move out your way and begin talking amongst themselves off to the side with the blue guard naturally calming down.
+	As you move to walk past them you overhear some of their conversation
+	Blue Guard: "(hic) will my armor really lose all its color and get all disgusting?"
+	Black Guard: “No, no, no it will be fine. We can help each other take care of the armor so it will always look beautiful.”
+	Blue Guard: "(hic) Thank you. (hic)"
+	do s5()
+	You take your leave as the black guard continues to comfort the other. As you find yourself crossing through the gate you begin to ponder. Why ask you your opinion in the first place if they couldn't handle the truth? You realize that there's no one there to answer your question. You shrug it off before continuing on your way.
+do fade_out()
+=> END

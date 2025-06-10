@@ -1,0 +1,57 @@
+~ start
+The air grows colder as the light in the trees begins to dim. Night is slowly approaching. Just as you begin to panic about how you will find shelter, you see the end of the forest just ahead.
+do b2()
+You crest over the hill. The trees grow sparse allowing you to take in the view in front of you. The sun is setting over a large canyon. It spans unfathomably high and stretches out even further, you can’t even see where the canyon ends. Within it, you can see lights and evidence of activity. It seems to be a town. Determining that there is no way around the canyon, you walk down the road, noticing how the soft dirt becomes replaced by cool stones, as you get closer to your new destination.
+By the time you reach the canyon’s entrance, night has fully descended and you hear strange sounds in the night. Luckily, the first building you happen upon seems to be an inn. You can feel the warmth from even out here and a flurry of conversations within. You step inside.
+do s1()
+The inn is very quaint, a decent size but not many things hang from the walls or decorate the space. A seating area is full of various people and creatures. They surprisingly seem calm around each other. You nervously slide past them and to a vacant front desk.
+do s2()
+A small bell sits at the front. You press it but no one comes.
+- Press it until someone arrives
+	You press it again
+	And again
+	And again
+	And again
+	do s3()
+	Suddenly, from behind the desk, something pops up. A skeletal hand holding a skull greets you.
+	Skull: "WHAT IS YOUR PROBLEM??"
+	The voice comes from below the desk while the hand moves the skull’s jaw.
+	Skull: “The bell ISN’T a toy! I’ll come when I come dammit! How would you like me screaming in your ears over and over when you’re busy?”
+	There’s a pause before the skull sighs.
+	Skull: “Sorry, I get too in my head sometimes.”
+- Wait patiently
+	You tap the desk with your fingers, absentmindedly looking around as you try to distract yourself.
+	do s3()
+	After a couple of minutes, something slowly rises from behind the desk. It’s a skull being held by a skeletal arm. A voice below speaks along with the skull’s jaw moving, puppeteered by the arm.
+	Skull: "Ah, thank you for waiting. Sorry for that, I promise you I'm not normally this much of a lazybones"
+Skull: “Welcome to the town inn. We don’t have a name yet so don’t ask. Would you just like a room for the night?”
+do s4()
+You nod and watch as the skull slowly dips below the counter and reappears with a key in its mouth. It drops it on the desk as it continues.
+Skull: “Just head up the stairs whenever you are ready to sleep, and be out by morning. Can’t afford to keep you here long. Money is getting too tight. That damn Agent better be worth what he says.”
+The skull pauses.
+Skull: “Say that book you have. Let me see.”
+You do as it says and lay the book in front of it. You turn the pages as it watches with interest.
+Skull: “Whoever made this is thorough, but some is definitely missing, at least for these parts. If you’re planning on getting through our town, do you mind me making some adjustments to this book of yours?”
+do s5()
+The skull dips below the desk again. You hear some rummaging before it emerges again, now holding a stack of papers.
+Skull: “These should be good. Taken from accounts of people in the area here. And my own personal observations. Do be careful though. Had some sort of infestation recently, mostly affecting books it seems. Should be safe but difficult to manage if it riles up. Now, could I help you with anything else?”
+do Globals.bestiary_updated = true
+Your bestiary has been updated. New entries are marked with a * on th table of contents.
+~ Questions
+- Ask about the town
+	Skull: “This place was abandoned for quite a while. Not sure how long, but us monsters don’t have many places to go. We started living here just a few weeks ago. It’s definitely a work in progress but some guy came in not too long after we settled here. He’s going to try and help us.”
+	=> Questions
+- Ask about agent
+	Skull: “Odd but well meaning guy. You’ll probably see him around the town if you enter. He says that he’s here to help us run this town better than the previous people. I sure hope he’s right. I could really use the money.”
+	=> Questions
+- Ask about inn
+	Skull: “My pride and joy…hard to run because money is tight, but once that Agent guy gets this place booming again, I’m sure it’ll get better. Maybe I can even afford bed frames! I mean…I hope it’ll get better. So far not much has changed. B-but he says it’s just part of growing an enterprise. Right?”
+	=> Questions
+- No questions
+	Skull: “Well, I’ll let you head up to bed then. Be out first thing in the morning!”
+	do s6()
+	With that, the head descends behind the counter one last time. Beaten from the day, you head up the stairs and into your room using your key. You flop down onto the bed and almost immediately let sleep take you.
+	do s7()
+	Waking up the next morning, you waste no time gathering your things and beginning your trek. The morning is thick with fog, cooling the air as you pass over stone tiles and creaking buildings.
+	do fade_out()
+	=> END

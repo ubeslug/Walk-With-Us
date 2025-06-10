@@ -26,8 +26,10 @@ func _ready():
 func fade_out() -> void:
 	animation_player.play(\"fade-out\")
 	await animation_player.animation_finished
-	
-	get_tree().change_scene_to_file(\"res://scenes/encounters/_pt2/remnants.tscn\")
+	var scene: int = randi_range(1,50)
+	if scene == 1:
+		Globals.mark = true
+	get_tree().change_scene_to_file(\"res://scenes/encounters/_pt2/intro2.tscn\")
 
 func death():
 	animation_player.play(\"fade-out\")

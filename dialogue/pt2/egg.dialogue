@@ -1,0 +1,27 @@
+~ start
+Debris of fallen buildings lay scattered on the road you walk down. As you continue walking you notice a strange figure in the distance. Not exactly humanoid but not too far off. Before you can deliberate any longer the figure notices you and makes its way to you. At a very fast speed you note.Before you can decide what to do the strange figure is already upon you.
+do s1()
+Traveler: “We travellers fewwww hhmmmm? Traveler friendddd hhhhmmm?”
+The traveler? Speaks very strangely but doesn’t seem to be hostile but you still have no idea how to interact with it.
+Traveler: “Hmmmmm traveler help? I helpppp hmmmm?”
+The figure brings out a large covered basket. From where you don’t exactly know. It takes an arm and sticks it under the baskets covering. The whole arm seems to disappear, hinting that the basket is deeper than it appears to be.
+Traveler: “Friend close eyes hmmmmm.”
+What? You think to yourself. Unconsciously you blink. Then as you open your eyes the figure is holding out a pristine white egg. It somehow did all this motion in the split second you took to blink.
+Traveler: “Take giffftttt hmmmm?”
+- Take the egg
+	do Globals.ending += 1
+	You decide to hesitantly take the egg. Unsure of the others' intentions, angering them might not be the best option at the moment. Better to accept the gift and hopefully be able to move on afterward.
+	Reaching out for the egg the figure stands perfectly still their eyes unblinking. As you grasp the egg they slowly let go of it allowing you to fully accept the gift.
+	Traveler: “Gift, enjoy hmmmmm?”
+	do InventoryHandler.add_to_inventory(13)
+	The figure says with a genuine smile. You nod in agreement. Taking the egg you stow it away with other things making sure it’s in an area where it won't easily break, having yolk on your items is something you'd rather not have.
+	Traveler: “Meeting, enjoy, goodbye, mes amis, hmmmm.”
+	The figure says this while walking away at a strange pace somehow fast but seemingly quite slow. They're gone before you know it. A rather uncomfortable encounter but you seem fine nonetheless. You decide to continue on going a different way than where the figure went.
+- Decline the egg
+	do s2()
+	You're unsure of the figures intentions but better safe than sorry. You shake you head and hand to signify that you decline the gift. The figure's face immediately falls flat. Then they speak in a monotone voice and without the earlier speaking style.
+	Traveler: “I see you're denying a completely innocent gift. Very well then i can’t force you to accept it. But I believe it’s rude of you to decline so.”
+	With that the figure takes its leave before you can do anything. It walks away at a fast yet somehow slow pace before you even realize it.
+	You believe you made the right choice for your own safety but are still unsure if you just missed out on something great. You push the thought to the back of your mind and continue on your way. There’s still many things you have to do.
+do fade_out()
+=> END

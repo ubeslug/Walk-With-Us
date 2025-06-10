@@ -1,0 +1,87 @@
+[gd_scene load_steps=5 format=3 uid="uid://swhw2q4umrd8"]
+
+[ext_resource type="Script" path="res://scripts/page_base.gd" id="1_15b6k"]
+[ext_resource type="PackedScene" uid="uid://beneqpcnms27p" path="res://scenes/beastiary pages/_page_base.tscn" id="2_r2ak1"]
+[ext_resource type="Texture2D" uid="uid://boxxqygj1k5ef" path="res://assets/sketches/Jackalope.png" id="3_yx81f"]
+[ext_resource type="Theme" uid="uid://bw2dm0g8j123d" path="res://themes/beastiary_writing.tres" id="4_h4lo0"]
+
+[node name="jackalope_page" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_15b6k")
+metadata/_edit_use_anchors_ = true
+
+[node name="page_base" parent="." instance=ExtResource("2_r2ak1")]
+layout_mode = 1
+
+[node name="Contents" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="sketch" type="Sprite2D" parent="Contents"]
+position = Vector2(-354, 40)
+scale = Vector2(0.585301, 0.585301)
+texture = ExtResource("3_yx81f")
+
+[node name="entry name" type="Label" parent="Contents"]
+layout_mode = 0
+offset_left = -634.0
+offset_top = -341.0
+offset_right = -427.0
+offset_bottom = -288.0
+theme = ExtResource("4_h4lo0")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "Jackalope"
+
+[node name="entry passage" type="Label" parent="Contents"]
+layout_mode = 0
+offset_left = 112.0
+offset_top = -326.0
+offset_right = 648.0
+offset_bottom = 251.0
+theme = ExtResource("4_h4lo0")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "A genus offshoot from the common rabbit the Jackalope is a docile creature that roams the flats of desserts and open fields. These creatures mostly are of no harm to other creatures and are in fact prey creatures. 
+
+But even they have their own biological defense. The head of a Jackalope is crowned with the horns like that of deers which they will not hesitate to use when they are attacked or feel threatened. Travellers are advised to show no hostility to these creatures."
+autowrap_mode = 3
+
+[node name="Label" type="Label" parent="Contents"]
+layout_mode = 0
+offset_left = 637.0
+offset_top = -384.0
+offset_right = 662.0
+offset_bottom = -357.0
+theme = ExtResource("4_h4lo0")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "16"
+
+[node name="book_worms" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="level_1" type="Sprite2D" parent="book_worms"]
+visible = false
+
+[node name="level_2" type="Sprite2D" parent="book_worms"]
+visible = false
+
+[node name="level_3" type="Sprite2D" parent="book_worms"]
+visible = false
