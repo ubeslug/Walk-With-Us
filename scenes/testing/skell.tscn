@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://bcko3y7ieayqa"]
+
+[ext_resource type="Script" path="res://scenes/testing/skell.gd" id="1_ucvht"]
+[ext_resource type="Texture2D" uid="uid://dwr6ew26nir0f" path="res://assets/encounters/_pt2/Intro/skull.webp" id="2_drrg4"]
+[ext_resource type="Texture2D" uid="uid://dtueoa10fwv2l" path="res://assets/ui/bookworms1.png" id="3_rbiyh"]
+
+[node name="PointClickHub" type="Node2D"]
+script = ExtResource("1_ucvht")
+
+[node name="Bookworms1" type="Sprite2D" parent="."]
+position = Vector2(947, 756)
+texture = ExtResource("2_drrg4")
+
+[node name="hub" type="TextureButton" parent="."]
+offset_left = 30.0
+offset_top = 462.0
+offset_right = 384.0
+offset_bottom = 758.0
+texture_normal = ExtResource("3_rbiyh")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="."]
+offset_left = 396.0
+offset_top = 13.0
+offset_right = 1544.0
+offset_bottom = 300.0
+theme_override_font_sizes/font_size = 50
+text = "SKELEZONE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="hub" to="." method="_on_hub_pressed"]

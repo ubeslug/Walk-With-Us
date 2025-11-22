@@ -1,6 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://1yu00uqnngve"]
+[gd_scene load_steps=18 format=3 uid="uid://1yu00uqnngve"]
 
 [ext_resource type="Script" path="res://scripts/inventory_loader.gd" id="1_0th41"]
+[ext_resource type="Texture2D" uid="uid://tfmfaia0ym0s" path="res://assets/ui/textbox.png" id="1_wyd4y"]
 [ext_resource type="PackedScene" uid="uid://cxoatkheomly" path="res://scenes/items/package_item.tscn" id="2_hyasa"]
 [ext_resource type="PackedScene" uid="uid://csfiit70pipqw" path="res://scenes/items/bestiary_item.tscn" id="3_d5d06"]
 [ext_resource type="Texture2D" uid="uid://b85ya550nhwih" path="res://assets/ui/Bestiary_Icon.png" id="4_6xnu6"]
@@ -12,6 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://cbm1o7s7klgjl" path="res://assets/ui/bookworms2.png" id="7_uh3nd"]
 [ext_resource type="PackedScene" uid="uid://b3a64s6c2iyxt" path="res://scenes/ui/monster_database_pt1.tscn" id="8_0cx0t"]
 [ext_resource type="Texture2D" uid="uid://u5h4b0j2ptvk" path="res://assets/ui/mark.png" id="12_n407c"]
+[ext_resource type="Texture2D" uid="uid://cmdrdbewtqoyr" path="res://assets/ui/Test_Frame.png" id="14_jlb7h"]
+[ext_resource type="Texture2D" uid="uid://cvjibmu7ygpd" path="res://assets/ui/Test_Inventory.png" id="14_y05kh"]
 
 [sub_resource type="GDScript" id="GDScript_dgu8f"]
 script/source = "extends Control
@@ -82,13 +85,14 @@ grow_horizontal = 2
 grow_vertical = 2
 script = SubResource("GDScript_dgu8f")
 
-[node name="Text" type="ColorRect" parent="."]
+[node name="Text" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = -1.0
 offset_top = 679.0
 offset_right = 1330.0
 offset_bottom = 1081.0
-color = Color(0, 0, 0, 1)
+texture = ExtResource("1_wyd4y")
+expand_mode = 1
 
 [node name="TextBox" type="Label" parent="Text"]
 visible = false
@@ -127,12 +131,19 @@ offset_bottom = 40.0
 theme_override_font_sizes/font_size = 30
 text = "Inventory"
 
+[node name="TestInventory" type="Sprite2D" parent="Inventory"]
+position = Vector2(294, 348.5)
+scale = Vector2(0.932203, 0.905512)
+texture = ExtResource("14_y05kh")
+
 [node name="BoxContainer" type="GridContainer" parent="Inventory"]
 layout_direction = 2
 layout_mode = 0
-offset_top = 70.0
-offset_right = 384.0
-offset_bottom = 198.0
+offset_left = 61.71
+offset_top = 103.6
+offset_right = 449.33
+offset_bottom = 231.6
+scale = Vector2(0.88, 0.88)
 theme_override_constants/h_separation = 128
 theme_override_constants/v_separation = 128
 columns = 4
@@ -227,5 +238,19 @@ modulate = Color(1, 1, 1, 0)
 position = Vector2(98.2635, 84)
 scale = Vector2(0.560811, 0.560811)
 texture = ExtResource("12_n407c")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = 1330.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("14_jlb7h")
+region_rect = Rect2(7, 7, 175, 176)
+patch_margin_left = 41
+patch_margin_top = 42
+patch_margin_right = 38
+patch_margin_bottom = 39
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
 
 [connection signal="pressed" from="Inventory/TextureButton" to="." method="_on_texture_button_pressed"]

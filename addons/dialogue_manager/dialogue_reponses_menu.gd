@@ -89,7 +89,7 @@ func set_responses(next_responses: Array) -> void:
 func _configure_focus() -> void:
 	var items = get_menu_items()
 	for i in items.size():
-		var item: Control = items[i]
+		var item: Control = items[i]-
 
 		item.focus_mode = Control.FOCUS_ALL
 
