@@ -1,0 +1,199 @@
+[gd_scene load_steps=12 format=3 uid="uid://ddbily5mr5p7"]
+
+[ext_resource type="Resource" uid="uid://dc4eq500d61kh" path="res://dialogue/pt3/test.dialogue" id="1_0mp3o"]
+[ext_resource type="Texture2D" uid="uid://bogcv6f20x6gn" path="res://assets/backgrounds/pt3/testing/start.png" id="2_fshlb"]
+[ext_resource type="PackedScene" uid="uid://1yu00uqnngve" path="res://scenes/ui/test_ui.tscn" id="3_y2jip"]
+[ext_resource type="Texture2D" uid="uid://dvf6arwmmakr1" path="res://assets/backgrounds/pt3/testing/fishmap.png" id="4_6178m"]
+[ext_resource type="Texture2D" uid="uid://djjk14lts5irn" path="res://assets/backgrounds/pt3/testing/dock.png" id="5_2q74s"]
+[ext_resource type="Texture2D" uid="uid://bxjnmp7gx6s1s" path="res://assets/backgrounds/pt3/testing/house.png" id="6_rr3vt"]
+
+[sub_resource type="GDScript" id="GDScript_iwjp3"]
+script/source = "extends Node2D
+const Balloon = preload(\"res://scenes/dialogue balloons/balloon.tscn\")
+
+@export var dialogue_resource: DialogueResource
+@export var dialogue_start: String = \"start\"
+
+@onready var animation_player = $AnimationPlayer
+
+@onready var dlogue = 0
+
+func _ready():
+	var balloon: Node = Balloon.instantiate()
+	get_tree().current_scene.add_child(balloon)
+	pass # Replace with function body.
+
+
+
+func to_docks() -> void:
+	animation_player.play(\"fade-out\")
+	await animation_player.animation_finished
+	
+	get_tree().change_scene_to_file(\"res://scenes/testing/docks.tscn\")
+
+func death():
+	animation_player.play(\"fade-out\")
+	await animation_player.animation_finished
+	
+	get_tree().change_scene_to_file(\"res://scenes/menus/gameover.tscn\")
+
+func _on_texture_button_pressed() -> void:
+	DialogueManager.show_dialogue_balloon(dialogue_resource, \"fish\")
+	pass # Replace with function body.
+
+func _on_dock_pressed() -> void:
+	DialogueManager.show_dialogue_balloon(dialogue_resource, \"docks\")
+	pass # Replace with function body.
+
+func _on_house_pressed() -> void:
+	DialogueManager.show_dialogue_balloon(dialogue_resource, \"house\")
+	pass # Replace with function body.
+"
+
+[sub_resource type="Animation" id="Animation_uxrke"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_nqh2r"]
+resource_name = "fade-out"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_e28yj"]
+resource_name = "startup"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath("CanvasLayer/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rwbvg"]
+_data = {
+"RESET": SubResource("Animation_uxrke"),
+"fade-out": SubResource("Animation_nqh2r"),
+"startup": SubResource("Animation_e28yj")
+}
+
+[node name="Template" type="Node2D"]
+script = SubResource("GDScript_iwjp3")
+dialogue_resource = ExtResource("1_0mp3o")
+
+[node name="images" type="Node2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="images"]
+visible = false
+offset_right = 1641.0
+offset_bottom = 897.0
+
+[node name="Start" type="Sprite2D" parent="images"]
+position = Vector2(667, 342)
+texture = ExtResource("2_fshlb")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_rwbvg")
+}
+autoplay = "startup"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+z_index = 1
+offset_right = 1978.0
+offset_bottom = 1126.0
+color = Color(0, 0, 0, 1)
+
+[node name="ui" parent="CanvasLayer" instance=ExtResource("3_y2jip")]
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer"]
+offset_left = 184.0
+offset_top = 131.0
+offset_right = 524.0
+offset_bottom = 595.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("4_6178m")
+
+[node name="Dock" type="TextureButton" parent="CanvasLayer"]
+offset_left = 620.0
+offset_top = 246.0
+offset_right = 1118.0
+offset_bottom = 464.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("5_2q74s")
+
+[node name="House" type="TextureButton" parent="CanvasLayer"]
+offset_left = 58.0
+offset_top = 172.0
+offset_right = 211.0
+offset_bottom = 365.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("6_rr3vt")
+
+[connection signal="pressed" from="CanvasLayer/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Dock" to="." method="_on_dock_pressed"]
+[connection signal="pressed" from="CanvasLayer/House" to="." method="_on_house_pressed"]

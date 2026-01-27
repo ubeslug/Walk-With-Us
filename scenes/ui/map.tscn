@@ -1,0 +1,188 @@
+[gd_scene load_steps=12 format=3 uid="uid://bket1lys8an2n"]
+
+[ext_resource type="Shader" path="res://shaders/blur.gdshader" id="1_3gck3"]
+[ext_resource type="Script" path="res://scenes/ui/map.gd" id="1_bvilp"]
+[ext_resource type="Texture2D" uid="uid://cy6kgp0qd4ald" path="res://assets/backgrounds/pt3/testing/map.png" id="3_m4hlc"]
+[ext_resource type="Texture2D" uid="uid://cxmuuj1w6v5q8" path="res://assets/ui/pencil_x_default.png" id="4_wap51"]
+[ext_resource type="Texture2D" uid="uid://bj4vk8bahmgnn" path="res://assets/ui/pencil_x_down.png" id="5_lctyb"]
+[ext_resource type="Texture2D" uid="uid://bov38b7j5a08t" path="res://assets/ui/pencil_x_highlight.png" id="6_0kuvm"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8o1yq"]
+shader = ExtResource("1_3gck3")
+shader_parameter/lod = 3.83
+
+[sub_resource type="Animation" id="Animation_aahow"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect2:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_7qd7h"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_giv03"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect2:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5e6s1"]
+_data = {
+"RESET": SubResource("Animation_aahow"),
+"fade_in": SubResource("Animation_7qd7h"),
+"fade_out": SubResource("Animation_giv03")
+}
+
+[node name="Map" type="CanvasLayer"]
+layer = 101
+script = ExtResource("1_bvilp")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_8o1yq")
+offset_right = 1950.0
+offset_bottom = 1112.0
+
+[node name="Map" type="Sprite2D" parent="ColorRect"]
+position = Vector2(960, 543)
+texture = ExtResource("3_m4hlc")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="ColorRect/Map"]
+layer = 102
+
+[node name="docks" type="Button" parent="ColorRect/Map/CanvasLayer"]
+modulate = Color(1, 1, 1, 0)
+z_index = 3
+offset_left = 448.0
+offset_top = 502.0
+offset_right = 662.0
+offset_bottom = 670.0
+mouse_default_cursor_shape = 2
+
+[node name="houses" type="Button" parent="ColorRect/Map/CanvasLayer"]
+modulate = Color(1, 1, 1, 0)
+z_index = 3
+offset_left = 952.0
+offset_top = 242.0
+offset_right = 1064.0
+offset_bottom = 384.0
+mouse_default_cursor_shape = 2
+
+[node name="x" type="TextureButton" parent="ColorRect/Map/CanvasLayer"]
+show_behind_parent = true
+offset_left = 1701.0
+offset_top = 59.0
+offset_right = 1784.0
+offset_bottom = 142.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("4_wap51")
+texture_pressed = ExtResource("5_lctyb")
+texture_hover = ExtResource("6_0kuvm")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
+offset_right = 1978.0
+offset_bottom = 1126.0
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_5e6s1")
+}
+autoplay = "fade_in"
+
+[connection signal="pressed" from="ColorRect/Map/CanvasLayer/docks" to="." method="_on_docks_pressed"]
+[connection signal="pressed" from="ColorRect/Map/CanvasLayer/houses" to="." method="_on_houses_pressed"]
+[connection signal="pressed" from="ColorRect/Map/CanvasLayer/x" to="." method="_on_x_pressed"]

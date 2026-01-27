@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dkecnkfhppnf2"
+path="res://.godot/imported/Black Bear (No Food).wav-91575bb9bd6513c581f1941661d0892c.sample"
+
+[deps]
+
+source_file="res://sfx/Black Bear Sounds/Black Bear (No Food).wav"
+dest_files=["res://.godot/imported/Black Bear (No Food).wav-91575bb9bd6513c581f1941661d0892c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

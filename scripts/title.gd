@@ -109,3 +109,13 @@ func _on_ch_1_pressed() -> void:
 	fade_handler.play("fade-out")
 	await fade_handler.animation_finished
 	get_tree().change_scene_to_file("res://scenes/encounters/Gojarus_intro.tscn")
+
+
+func _on_ch_3_pressed() -> void:
+	$CanvasLayer/chapters.visible = false
+	InventoryHandler.reset_inventory()
+	Globals.reset_health()
+	fade_handler.play("fade-out")
+	await fade_handler.animation_finished
+	get_tree().change_scene_to_file("res://scenes/testing/start.tscn")
+	pass # Replace with function body.

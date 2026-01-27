@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bbuvgb155tt8k"
+path="res://.godot/imported/Regular Fox Happy (Help the Fox).wav-b5b6c565c09d84b63330b4bd5439b7c1.sample"
+
+[deps]
+
+source_file="res://sfx/Regular Fox Sounds/Regular Fox Happy (Help the Fox).wav"
+dest_files=["res://.godot/imported/Regular Fox Happy (Help the Fox).wav-b5b6c565c09d84b63330b4bd5439b7c1.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

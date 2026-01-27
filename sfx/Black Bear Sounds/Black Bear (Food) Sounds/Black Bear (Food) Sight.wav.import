@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dnm7unyli07gh"
+path="res://.godot/imported/Black Bear (Food) Sight.wav-d717b608006bc671c75e51edc2aa0454.sample"
+
+[deps]
+
+source_file="res://sfx/Black Bear Sounds/Black Bear (Food) Sounds/Black Bear (Food) Sight.wav"
+dest_files=["res://.godot/imported/Black Bear (Food) Sight.wav-d717b608006bc671c75e51edc2aa0454.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

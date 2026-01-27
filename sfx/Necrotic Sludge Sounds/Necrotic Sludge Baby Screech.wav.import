@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bkrolbvp4odq6"
+path="res://.godot/imported/Necrotic Sludge Baby Screech.wav-6d463c2a42fbc8bc0bd8bdfac38bcee5.sample"
+
+[deps]
+
+source_file="res://sfx/Necrotic Sludge Sounds/Necrotic Sludge Baby Screech.wav"
+dest_files=["res://.godot/imported/Necrotic Sludge Baby Screech.wav-6d463c2a42fbc8bc0bd8bdfac38bcee5.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -605,6 +605,11 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 38
 text = "Chapter 2 - Desolate Town"
 
+[node name="ch3" type="Button" parent="CanvasLayer/chapters/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 38
+text = "Point and Click demo"
+
 [node name="Close2" type="Button" parent="CanvasLayer/chapters"]
 layout_mode = 1
 offset_right = 8.0
@@ -627,4 +632,5 @@ text = "Close"
 [connection signal="pressed" from="CanvasLayer/Settings/Close" to="." method="_on_close_pressed"]
 [connection signal="pressed" from="CanvasLayer/chapters/Panel/VBoxContainer/ch1" to="." method="_on_ch_1_pressed"]
 [connection signal="pressed" from="CanvasLayer/chapters/Panel/VBoxContainer/ch2" to="." method="ch2_pressed"]
+[connection signal="pressed" from="CanvasLayer/chapters/Panel/VBoxContainer/ch3" to="." method="_on_ch_3_pressed"]
 [connection signal="pressed" from="CanvasLayer/chapters/Close2" to="." method="_on_close2_pressed"]

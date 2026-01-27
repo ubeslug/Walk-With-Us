@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://1yu00uqnngve"]
+[gd_scene load_steps=20 format=3 uid="uid://1yu00uqnngve"]
 
 [ext_resource type="Script" path="res://scripts/inventory_loader.gd" id="1_0th41"]
 [ext_resource type="Texture2D" uid="uid://tfmfaia0ym0s" path="res://assets/ui/textbox.png" id="1_wyd4y"]
@@ -12,8 +12,10 @@
 [ext_resource type="Texture2D" uid="uid://dtueoa10fwv2l" path="res://assets/ui/bookworms1.png" id="6_x70xc"]
 [ext_resource type="Texture2D" uid="uid://cbm1o7s7klgjl" path="res://assets/ui/bookworms2.png" id="7_uh3nd"]
 [ext_resource type="PackedScene" uid="uid://b3a64s6c2iyxt" path="res://scenes/ui/monster_database_pt1.tscn" id="8_0cx0t"]
+[ext_resource type="Texture2D" uid="uid://cs72st7ooue3g" path="res://assets/backgrounds/pt3/testing/mapcon.png" id="11_x2ets"]
 [ext_resource type="Texture2D" uid="uid://u5h4b0j2ptvk" path="res://assets/ui/mark.png" id="12_n407c"]
 [ext_resource type="Texture2D" uid="uid://cmdrdbewtqoyr" path="res://assets/ui/Test_Frame.png" id="14_jlb7h"]
+[ext_resource type="PackedScene" uid="uid://bket1lys8an2n" path="res://scenes/ui/map.tscn" id="14_o7u5m"]
 [ext_resource type="Texture2D" uid="uid://cvjibmu7ygpd" path="res://assets/ui/Test_Inventory.png" id="14_y05kh"]
 
 [sub_resource type="GDScript" id="GDScript_dgu8f"]
@@ -46,6 +48,10 @@ func _process(delta):
 		$mark.visible = false
 	if besti == true:
 		$Inventory/TextureButton.visible = true
+	if Globals.map_active == true:
+		$Map.visible == true
+	else:
+		$Map.visible == false
 	update_heart_display()
 
 
@@ -59,6 +65,12 @@ func _on_texture_button_pressed() -> void:
 		Globals.bestiary1_active = true
 	else:
 		Globals.bestiary_active = true
+
+
+func _on_texture_button_2_pressed() -> void:
+	Globals.map_active = true
+	$Map.visible = true
+	pass # Replace with function body.
 "
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tjb4j"]
@@ -160,10 +172,11 @@ layout_mode = 2
 [node name="TextureButton" type="TextureButton" parent="Inventory"]
 visible = false
 layout_mode = 0
-offset_left = 43.0
-offset_top = 666.0
-offset_right = 554.0
-offset_bottom = 952.0
+offset_left = 158.81
+offset_top = 639.555
+offset_right = 669.81
+offset_bottom = 925.555
+scale = Vector2(0.57, 0.57)
 texture_normal = ExtResource("4_6xnu6")
 texture_hover = ExtResource("5_eiavj")
 ignore_texture_size = true
@@ -197,6 +210,17 @@ theme_override_constants/shadow_outline_size = 3
 theme_override_font_sizes/font_size = 110
 text = "Bestiary"
 
+[node name="TextureButton2" type="TextureButton" parent="Inventory"]
+layout_mode = 0
+offset_left = 196.845
+offset_top = 815.0
+offset_right = 406.845
+offset_bottom = 957.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("11_x2ets")
+ignore_texture_size = true
+stretch_mode = 0
+
 [node name="Health" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 3
@@ -221,6 +245,9 @@ position = Vector2(1, 0)
 visible = false
 
 [node name="MonsterDatabasePt1" parent="." instance=ExtResource("8_0cx0t")]
+visible = false
+
+[node name="Map" parent="." instance=ExtResource("14_o7u5m")]
 visible = false
 
 [node name="Healthbar" parent="." instance=ExtResource("5_iqxdx")]
@@ -254,3 +281,4 @@ axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 
 [connection signal="pressed" from="Inventory/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="Inventory/TextureButton2" to="." method="_on_texture_button_2_pressed"]

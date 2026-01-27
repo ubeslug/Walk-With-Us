@@ -6,6 +6,7 @@ var text_sounds: bool = false
 
 var bestiary_updated: bool = false
 var bestiary_active: bool = false
+var map_active: bool = false
 var bestiary1_active: bool = false
 var bookworms: bool = false
 var agent: bool = false
@@ -21,6 +22,8 @@ var ending: int = 0
 var matriarch: bool = false
 var mark: bool = false
 
+#part 3
+var bott: bool = true
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("toggle_fullscreen"):

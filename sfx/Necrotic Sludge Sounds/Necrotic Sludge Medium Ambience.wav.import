@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cnrfokdth36ov"
+path="res://.godot/imported/Necrotic Sludge Medium Ambience.wav-b28307a7eb7603b9fd07314a79ffb07e.sample"
+
+[deps]
+
+source_file="res://sfx/Necrotic Sludge Sounds/Necrotic Sludge Medium Ambience.wav"
+dest_files=["res://.godot/imported/Necrotic Sludge Medium Ambience.wav-b28307a7eb7603b9fd07314a79ffb07e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

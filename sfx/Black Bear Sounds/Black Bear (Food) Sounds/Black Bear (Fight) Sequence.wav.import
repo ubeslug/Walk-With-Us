@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dxog2on2rqhg6"
+path="res://.godot/imported/Black Bear (Fight) Sequence.wav-389d7db8b8c6532b413d3c67e803b4c1.sample"
+
+[deps]
+
+source_file="res://sfx/Black Bear Sounds/Black Bear (Food) Sounds/Black Bear (Fight) Sequence.wav"
+dest_files=["res://.godot/imported/Black Bear (Fight) Sequence.wav-389d7db8b8c6532b413d3c67e803b4c1.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,12 +1,15 @@
 ~ baby
 As you walk down the path, your face scrunches up as a foul smell permeates in the surrounding area. You look around for its source. You craft a makeshift mask to block out the smell. 
 do show_sludge()
+do AudioHandler.sludge(1)
 You finally notice a small puddle of some kinda ooze mixed with bones off to the side of the road. While at first you think it must be some poor prey animal’s corpse, you notice the ooze is moving at a pretty slow pace. It doesn’t seem harmful, it looks kinda sad, actually. You have some time to kill, what will you do?
 - Mess with it
+	do AudioHandler.sludge(3)
 	You decide to prey on this small thing and mess with it. You grab a nearby stick and start poking at the creature. The creature is lightly nudged as you continue poking it then you decide to swirl the sludge around. Mixing the sludge and bones around with the dirt, you hear a slight screech come from the creature. It pitifully jumps only to the edge of the stick. A stick that dissolves to your surprise.
 	- Kill it in retaliation
 		do Globals.sludge_dead = true
 		do sludge_pile()
+		do AudioHandler.sludge(2)
 		That was your stick, how dare it do that to your stick. You reach for your flask of water planning on drowning the small thing. You pour water on the monster as it squeals in pain to your delightful surprise. The monster is weakened. You notice a sizable rock nearby, small enough for you to carry, big enough to outsize the pitiful thing below. You pick up the rock and wish this beast's last moments are painful ones. You let go of the rock as the ooze splatters in a satisfying way. You revel in triumph as you continue on.
 	- Mourn your stick and move on
 		That was you stick. It just melted your stick. You had no idea it could do that. While the weight of what the entity just did still weighs on your mind you notice that at some point it has scurried away.
@@ -21,10 +24,14 @@ do fade_out()
 ~ medium
 The path is filled with a rotting stench. You don your makeshift mask once again. The smell is somewhat masked but not fully. There was a strange sound coming from beyond the tall grass. The grass is slowly dissolved into a thick, viscous substance as more and more of it emerges. 
 do show_sludge()
+do AudioHandler.sludge(4)
 The creature seems to be made up of a substance with many bones intertwined into it, and it’s about the size of a dog. A large skull sits neatly on top of it, and a bundle of bones acts as an arm-like appendage. The creature blocks the path and is immediately aware of your presence. It’s horrifying to look at, and it seems to be hostile. You should take care with your next choice.
 - Attack the creature
-	The path before you is one you must take, and confronting the creature has to be the only way to move forward. You arm yourself with a sizable branch nearby. You slowly inch towards the creature. Once close enough, you attempt to strike it with your branch. The monster defends with its appendage as the branch melts into the substance. The monster's appendage then lashes out, and you dodge the attack. As you back awa,y you find a large rock; it might just be the thing you need. You struggle to pick up the rock due to its large size. The monster moves towards you, but it’s too late and too close. 
+	do AudioHandler.sludge(6)
+	The path before you is one you must take, and confronting the creature has to be the only way to move forward. You arm yourself with a sizable branch nearby. You slowly inch towards the creature. Once close enough, you attempt to strike it with your branch.
+	The monster defends with its appendage as the branch melts into the substance. The monster's appendage then lashes out, and you dodge the attack. As you back awa,y you find a large rock; it might just be the thing you need. You struggle to pick up the rock due to its large size. The monster moves towards you, but it’s too late and too close. 
 	do sludge_pile()
+	do AudioHandler.sludge(5)
 	You already have lifted up the rock as you slam the rock down, completely smashing its arm and skull. But in the process, some of the substance splatters onto you. It burns. The substance burns your clothes and skin. The pain is tremendous. 
 	do Globals.change_health(-1)
 	if Globals.health <= 0:

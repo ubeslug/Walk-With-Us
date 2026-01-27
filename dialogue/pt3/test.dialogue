@@ -1,0 +1,32 @@
+~ dock_start
+You arrive at the docks.
+=> END
+
+~ fish
+I am a fish
+if InventoryHandler.check_inventory(2):
+	That's my bottle yay
+else:
+	Can you find my bottle I left it at the residential district.
+=> END
+
+~ house
+There is a house in the distance.
+=> END
+
+~ docks
+You head to the docks
+do to_docks()
+=> END
+
+~ shark
+I am a shark
+=> END
+
+~ to_hub
+You decide to go back
+do to_hub()
+
+~ bottle
+You find a botttle
+do InventoryHandler.add_to_inventory(2)
