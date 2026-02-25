@@ -115,6 +115,9 @@ func _on_ch_3_pressed() -> void:
 	$CanvasLayer/chapters.visible = false
 	InventoryHandler.reset_inventory()
 	Globals.reset_health()
+	Globals.map = true
+	Globals.bestiary_updated = true
+	InventoryHandler.add_to_inventory(1)
 	fade_handler.play("fade-out")
 	await fade_handler.animation_finished
 	get_tree().change_scene_to_file("res://scenes/testing/start.tscn")

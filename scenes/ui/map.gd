@@ -12,6 +12,10 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if get_tree().current_scene.name == "The_Houses":
+		$Player.position = Vector2(1001,259)
+	if get_tree().current_scene.name == "The_Docks":
+		$Player.position = Vector2(514,434)
 	if Globals.map_active == true:
 		$ColorRect.visible = true
 		$ColorRect/Map/CanvasLayer.visible = true

@@ -135,7 +135,7 @@ _data = {
 "startup": SubResource("Animation_e28yj")
 }
 
-[node name="Template" type="Node2D"]
+[node name="The_Houses" type="Node2D"]
 script = SubResource("GDScript_iwjp3")
 dialogue_resource = ExtResource("1_1iwaj")
 

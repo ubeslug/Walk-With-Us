@@ -48,6 +48,8 @@ func _process(delta):
 		$mark.visible = false
 	if besti == true:
 		$Inventory/TextureButton.visible = true
+	if Globals.map == true:
+		$Inventory/TextureButton2.visible = true
 	if Globals.map_active == true:
 		$Map.visible == true
 	else:
@@ -211,6 +213,7 @@ theme_override_font_sizes/font_size = 110
 text = "Bestiary"
 
 [node name="TextureButton2" type="TextureButton" parent="Inventory"]
+visible = false
 layout_mode = 0
 offset_left = 196.845
 offset_top = 815.0

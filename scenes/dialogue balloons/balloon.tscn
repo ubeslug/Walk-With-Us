@@ -138,7 +138,9 @@ grow_vertical = 0
 [node name="ResponsesMenu" type="VBoxContainer" parent="Balloon/Responses" node_paths=PackedStringArray("response_template")]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 4
 size_flags_vertical = 8
+size_flags_stretch_ratio = 0.0
 theme_override_constants/separation = 2
 script = ExtResource("3_72ixx")
 response_template = NodePath("ResponseExample")
@@ -146,8 +148,9 @@ next_action = null
 
 [node name="ResponseExample" type="Button" parent="Balloon/Responses/ResponsesMenu"]
 texture_filter = 3
-clip_contents = true
 layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
 theme = ExtResource("4_a5cpv")
 theme_type_variation = &"FlatButton"
 theme_override_colors/font_hover_pressed_color = Color(0.233925, 0.233925, 0.233925, 1)
@@ -165,8 +168,22 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_ku3hw")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_2yiv3")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_46dpf")
 text = "Option"
-icon = ExtResource("4_b00mj")
 icon_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Balloon/Responses/ResponsesMenu/ResponseExample"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_top = -1.0
+offset_right = 7.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_b00mj")
+expand_mode = 1
 
 [node name="Dialogue" type="MarginContainer" parent="Balloon"]
 layout_mode = 0

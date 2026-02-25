@@ -23,6 +23,7 @@ var matriarch: bool = false
 var mark: bool = false
 
 #part 3
+var map: bool = false
 var bott: bool = true
 
 func _process(delta: float) -> void:
