@@ -30,3 +30,9 @@ do to_hub()
 ~ bottle
 You find a botttle
 do InventoryHandler.add_to_inventory(2)
+
+~ qte_fail
+You failed the qte
+
+~ qte_win
+You won the qte

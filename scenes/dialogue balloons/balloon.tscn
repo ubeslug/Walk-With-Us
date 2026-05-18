@@ -209,6 +209,37 @@ text = "Character"
 fit_content = true
 scroll_active = false
 
+[node name="TextureRect3" type="TextureRect" parent="Balloon/Dialogue/VBoxContainer/CharacterLabel"]
+modulate = Color(0, 0, 0, 0.537255)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.178
+anchor_bottom = 1.0
+offset_left = -24.0
+offset_top = -4.0
+offset_right = 10.138
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_b00mj")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="Balloon/Dialogue/VBoxContainer/CharacterLabel"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.178
+anchor_bottom = 1.0
+offset_left = -22.0
+offset_top = -2.0
+offset_right = 8.138
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_b00mj")
+expand_mode = 1
+
 [node name="DialogueLabel" parent="Balloon/Dialogue/VBoxContainer" instance=ExtResource("2_a8ve6")]
 unique_name_in_owner = true
 texture_filter = 3
