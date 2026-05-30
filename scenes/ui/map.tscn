@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bket1lys8an2n"]
+[gd_scene load_steps=14 format=3 uid="uid://bket1lys8an2n"]
 
 [ext_resource type="Shader" path="res://shaders/blur.gdshader" id="1_3gck3"]
 [ext_resource type="Script" path="res://scenes/ui/map.gd" id="1_bvilp"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cxmuuj1w6v5q8" path="res://assets/ui/pencil_x_default.png" id="4_wap51"]
 [ext_resource type="Texture2D" uid="uid://bj4vk8bahmgnn" path="res://assets/ui/pencil_x_down.png" id="5_lctyb"]
 [ext_resource type="Texture2D" uid="uid://bov38b7j5a08t" path="res://assets/ui/pencil_x_highlight.png" id="6_0kuvm"]
+[ext_resource type="Texture2D" uid="uid://drmj8s0iod2oc" path="res://assets/backgrounds/pt3/testing/coast.png" id="7_d30qh"]
 [ext_resource type="Texture2D" uid="uid://celnnt25y8e7h" path="res://assets/backgrounds/pt3/testing/player.png" id="7_kb0pf"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8o1yq"]
@@ -149,6 +150,15 @@ offset_right = 662.0
 offset_bottom = 670.0
 mouse_default_cursor_shape = 2
 
+[node name="coast" type="Button" parent="ColorRect/Map/CanvasLayer"]
+modulate = Color(1, 1, 1, 0)
+z_index = 3
+offset_left = 1041.0
+offset_top = 737.0
+offset_right = 1227.0
+offset_bottom = 813.0
+mouse_default_cursor_shape = 2
+
 [node name="houses" type="Button" parent="ColorRect/Map/CanvasLayer"]
 modulate = Color(1, 1, 1, 0)
 z_index = 3
@@ -170,6 +180,11 @@ texture_pressed = ExtResource("5_lctyb")
 texture_hover = ExtResource("6_0kuvm")
 ignore_texture_size = true
 stretch_mode = 0
+
+[node name="Coast" type="Sprite2D" parent="ColorRect"]
+position = Vector2(1132, 774)
+scale = Vector2(0.445783, 0.445783)
+texture = ExtResource("7_d30qh")
 
 [node name="Player" type="TextureRect" parent="."]
 offset_left = 551.0
@@ -193,5 +208,6 @@ libraries = {
 autoplay = "fade_in"
 
 [connection signal="pressed" from="ColorRect/Map/CanvasLayer/docks" to="." method="_on_docks_pressed"]
+[connection signal="pressed" from="ColorRect/Map/CanvasLayer/coast" to="." method="_on_coast_pressed"]
 [connection signal="pressed" from="ColorRect/Map/CanvasLayer/houses" to="." method="_on_houses_pressed"]
 [connection signal="pressed" from="ColorRect/Map/CanvasLayer/x" to="." method="_on_x_pressed"]

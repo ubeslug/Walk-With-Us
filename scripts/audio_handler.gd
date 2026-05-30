@@ -63,6 +63,72 @@ func sludge(sfx: int) -> void:
 	elif sfx == 7:
 		$SFX/NecroticSludgeMediumRoar2.play()
 
+#Knight Skeleton
+func knigh_skel(sfx: int) -> void:
+	if sfx == 1:
+		$"SFX/KnightSkeletonApproaches".play()
+	elif sfx == 2:
+		$"SFX/KnightSkeletonAttacks(getCloserToEntity2)".play()
+	elif sfx == 3:
+		$"SFX/KnightSkeletonChasesBunny(hideBehindTree)".play()
+	elif sfx == 4:
+		$"SFX/KnightSkeletonHits(getCloserToEntity3)".play()
+	elif sfx == 5:
+		$"SFX/KnightSkeletonSight(getCloserToEntity1)".play()
+	elif sfx == 6:
+		$"SFX/PlayerHitsKnightSkeleton(getCloserToEntity4)".play()
+
+#Mean_skelebro
+func mean_skel(sfx: int) -> void:
+	if sfx == 1:
+		$"SFX/MeanSkeletonGunFire".play()
+	elif sfx == 2:
+		$"SFX/MeanSkeletonLaughing".play()
+	elif sfx == 3:
+		$"SFX/MeanSkeletonSight".play()
+
+#Nice_skelebro
+func nice_skel(sfx: int) -> void:
+	if sfx == 1:
+		$"SFX/NiceSkeletonDisappearsAndLaughs".play()
+	elif sfx == 2:
+		$"SFX/NiceSkeletonGesturesWait".play()
+	elif sfx == 3:
+		$"SFX/NiceSkeletonGrabsGem".play()
+	elif sfx == 4:
+		$"SFX/NiceSkeletonGreetings".play()
+
+#Jester
+func jester(sfx: int) -> void:
+	if sfx == 1:
+		$"SFX/JesterLaugh1".play()
+	elif sfx == 2:
+		$"SFX/JesterLaugh2".play()
+	elif sfx == 3:
+		$"SFX/JesterLaugh3".play()
+	elif sfx == 4:
+		$"SFX/JesterLaugh4".play()
+	elif sfx == 5:
+		$"SFX/JesterLaugh5".play()
+	elif sfx == 6:
+		$"SFX/JesterLaugh6".play()
+	elif sfx == 7:
+		$"SFX/JesterLaugh7".play()
+	elif sfx == 8:
+		$"SFX/JesterLaugh8".play()
+	elif sfx == 9:
+		$"SFX/JesterLaugh9".play()
+	elif sfx == 10:
+		$"SFX/JesterMindReadingAmbience1StPhaseLoop".play()
+	elif sfx == 11:
+		$"SFX/JesterMindReadingAmbience1StPhaseLoop".stop()
+		$"SFX/JesterMindReadingAmbience2NdPhaseLoop".play()
+	elif sfx == 12:
+		$"SFX/JesterMindReadingScrapingLayerLoop".play()
+	elif sfx == 13:
+		$"SFX/JesterMindReadingScrapingLayerLoop".stop()
+		$"SFX/JesterMindReadingAmbience2NdPhaseLoop".stop()
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	update_wind_level(1)

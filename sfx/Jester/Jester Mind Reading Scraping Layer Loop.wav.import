@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://df6hl7rmj5uym"
+path="res://.godot/imported/Jester Mind Reading Scraping Layer Loop.wav-53e974f9229ecffbf0be570be0779256.sample"
+
+[deps]
+
+source_file="res://sfx/Jester/Jester Mind Reading Scraping Layer Loop.wav"
+dest_files=["res://.godot/imported/Jester Mind Reading Scraping Layer Loop.wav-53e974f9229ecffbf0be570be0779256.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,28 +1,53 @@
-[gd_scene load_steps=24 format=3 uid="uid://dk64xbycll8yv"]
+[gd_scene load_steps=49 format=3 uid="uid://dk64xbycll8yv"]
 
 [ext_resource type="AudioStream" uid="uid://ceufpre8sdef3" path="res://Fmod Project/CMPM 150 Final/Assets/Ambience/wind_level2.wav" id="1_arxi8"]
 [ext_resource type="Script" path="res://scripts/audio_handler.gd" id="1_xckh4"]
 [ext_resource type="AudioStream" uid="uid://duox4iwmwp4j0" path="res://Fmod Project/CMPM 150 Final/Assets/Ambience/wind_level1.wav" id="2_vdrqd"]
 [ext_resource type="AudioStream" uid="uid://bhglexuvk1wc6" path="res://Fmod Project/CMPM 150 Final/Assets/Ambience/looperman-l-2512714-0347860-science-fiction-horror-ambient-fx.wav" id="3_upw2m"]
 [ext_resource type="AudioStream" uid="uid://usxyyqgipmuc" path="res://Fmod Project/CMPM 150 Final/Assets/Ambience/wind_level3.wav" id="4_k466o"]
+[ext_resource type="AudioStream" uid="uid://dm8dhj4qvyvey" path="res://sfx/Mean Skeleton/Mean Skeleton Gun Fire.wav" id="6_3pxdr"]
 [ext_resource type="AudioStream" uid="uid://bbuvgb155tt8k" path="res://sfx/Regular Fox Sounds/Regular Fox Happy (Help the Fox).wav" id="6_45bqc"]
 [ext_resource type="AudioStream" uid="uid://fh3g3ghv3pw1" path="res://sfx/Deer Mimetic/Deer Mimetic Walks Away (Keep Walking).wav" id="6_a0qti"]
 [ext_resource type="AudioStream" uid="uid://dxog2on2rqhg6" path="res://sfx/Black Bear Sounds/Black Bear (Food) Sounds/Black Bear (Fight) Sequence.wav" id="6_a1ack"]
+[ext_resource type="AudioStream" uid="uid://binfvaq1b2en4" path="res://sfx/Knight Skeleton/Knight Skeleton Approaches.wav" id="6_blbtm"]
 [ext_resource type="AudioStream" uid="uid://ccc8xsvc3gltd" path="res://sfx/Necrotic Sludge Sounds/Necrotic Sludge Baby Ambience.wav" id="6_dk00j"]
+[ext_resource type="AudioStream" uid="uid://me862utkrf4v" path="res://sfx/Nice Skeleton/Nice Skeleton Disappears and Laughs.wav" id="6_h863s"]
+[ext_resource type="AudioStream" uid="uid://c6rhcog5xgire" path="res://sfx/Jester/Jester Laugh 1.wav" id="6_pm08v"]
 [ext_resource type="AudioStream" uid="uid://cyin44sehpui3" path="res://sfx/Deer Mimetic/Deer Mimetic Sight (Check the Deer).wav" id="7_507sm"]
+[ext_resource type="AudioStream" uid="uid://cas1h5k1f4lio" path="res://sfx/Knight Skeleton/Knight Skeleton Attacks (Get Closer to Entity 2).wav" id="7_bf68w"]
 [ext_resource type="AudioStream" uid="uid://dnm7unyli07gh" path="res://sfx/Black Bear Sounds/Black Bear (Food) Sounds/Black Bear (Food) Sight.wav" id="7_gv261"]
+[ext_resource type="AudioStream" uid="uid://cpujgdbcuk7ts" path="res://sfx/Nice Skeleton/Nice Skeleton Gestures Wait.wav" id="7_k22y2"]
 [ext_resource type="AudioStream" uid="uid://cauqkb2wjvbtb" path="res://sfx/Regular Fox Sounds/Regular Fox Shivering Ambience.wav" id="7_lkfkh"]
 [ext_resource type="AudioStream" uid="uid://c433kkc4wy3n6" path="res://sfx/Necrotic Sludge Sounds/Necrotic Sludge Baby Death.wav" id="7_n0sc5"]
+[ext_resource type="AudioStream" uid="uid://dwsyyyuh1ybc1" path="res://sfx/Mean Skeleton/Mean Skeleton Laughing.wav" id="7_r1hww"]
+[ext_resource type="AudioStream" uid="uid://dujckfr2o01d1" path="res://sfx/Jester/Jester Laugh 2.wav" id="7_rbv8l"]
+[ext_resource type="AudioStream" uid="uid://dhg2r5oel2he7" path="res://sfx/Knight Skeleton/Knight Skeleton Chases Bunny (Hide Behind Tree).wav" id="8_5hqs1"]
 [ext_resource type="AudioStream" uid="uid://dn6s11v2bxkub" path="res://sfx/Black Bear Sounds/Black Bear (Food) Sounds/Black Bear (Play Dead) Startled.wav" id="8_df6a4"]
 [ext_resource type="AudioStream" uid="uid://bkrolbvp4odq6" path="res://sfx/Necrotic Sludge Sounds/Necrotic Sludge Baby Screech.wav" id="8_e7en7"]
+[ext_resource type="AudioStream" uid="uid://dlnecy2wryqud" path="res://sfx/Mean Skeleton/Mean Skeleton Sight.wav" id="8_eo6gv"]
+[ext_resource type="AudioStream" uid="uid://bwq4qxg4hjduj" path="res://sfx/Nice Skeleton/Nice Skeleton Grabs Gem.wav" id="8_erdf0"]
 [ext_resource type="AudioStream" uid="uid://c0ryocbai31dy" path="res://sfx/Deer Mimetic/Deer Mimetic Kick (Check the Deer).wav" id="8_jkp5l"]
+[ext_resource type="AudioStream" uid="uid://hak1722ivxcs" path="res://sfx/Jester/Jester Laugh 3.wav" id="8_lhx1q"]
 [ext_resource type="AudioStream" uid="uid://sqagt67amerg" path="res://sfx/Black Bear Sounds/Black Bear (Food) Sounds/Black Bear (Scare It) Startled.wav" id="9_cm3n7"]
 [ext_resource type="AudioStream" uid="uid://cnrfokdth36ov" path="res://sfx/Necrotic Sludge Sounds/Necrotic Sludge Medium Ambience.wav" id="9_ht27t"]
+[ext_resource type="AudioStream" uid="uid://7gpr3mn432y8" path="res://sfx/Knight Skeleton/Knight Skeleton Hits (Get Closer to Entity 3).wav" id="9_o4lx0"]
+[ext_resource type="AudioStream" uid="uid://eq4lxe1twabs" path="res://sfx/Nice Skeleton/Nice Skeleton Greetings.wav" id="9_syyje"]
+[ext_resource type="AudioStream" uid="uid://ciac1jmw1hsmu" path="res://sfx/Jester/Jester Laugh 4.wav" id="9_vigtg"]
 [ext_resource type="AudioStream" uid="uid://dsmvt02g2lvun" path="res://sfx/Deer Mimetic/Deer Mimetic Eating (introduction).wav" id="9_xn5hy"]
+[ext_resource type="AudioStream" uid="uid://psh6cpovfwet" path="res://sfx/Jester/Jester Laugh 5.wav" id="10_2ys0w"]
 [ext_resource type="AudioStream" uid="uid://c40t2qla7rd6m" path="res://sfx/Necrotic Sludge Sounds/Necrotic Sludge Medium Attack Sequence.wav" id="10_cqgdi"]
+[ext_resource type="AudioStream" uid="uid://ck8i4dcrguaq5" path="res://sfx/Knight Skeleton/Knight Skeleton Sight (Get Closer to Entity 1).wav" id="10_h3nrl"]
 [ext_resource type="AudioStream" uid="uid://dkecnkfhppnf2" path="res://sfx/Black Bear Sounds/Black Bear (No Food).wav" id="10_vedjb"]
+[ext_resource type="AudioStream" uid="uid://c8qbifplqwnm3" path="res://sfx/Knight Skeleton/Player Hits Knight Skeleton (Get Closer to Entity 4).wav" id="11_30lna"]
 [ext_resource type="AudioStream" uid="uid://c41ixf7iqgtf1" path="res://sfx/Necrotic Sludge Sounds/Necrotic Sludge Medium Roar.wav" id="11_gpv7v"]
+[ext_resource type="AudioStream" uid="uid://du53usnoen717" path="res://sfx/Jester/Jester Laugh 6.wav" id="11_nhe57"]
+[ext_resource type="AudioStream" uid="uid://bucn6uykqi6hc" path="res://sfx/Jester/Jester Laugh 7.wav" id="12_4o7yc"]
 [ext_resource type="AudioStream" uid="uid://qxqtw6ng74b8" path="res://sfx/Necrotic Sludge Sounds/Necrotic Sludge Medium Roar_2.wav" id="12_gxtrq"]
+[ext_resource type="AudioStream" uid="uid://o4v1m1u8be17" path="res://sfx/Jester/Jester Laugh 8.wav" id="13_qnnwt"]
+[ext_resource type="AudioStream" uid="uid://bojivs72kir6w" path="res://sfx/Jester/Jester Laugh 9.wav" id="14_jesgm"]
+[ext_resource type="AudioStream" uid="uid://dm5sysjnjxayh" path="res://sfx/Jester/Jester Mind Reading Ambience 1st Phase Loop.wav" id="15_mk7uk"]
+[ext_resource type="AudioStream" uid="uid://ct5cq1v7aeayu" path="res://sfx/Jester/Jester Mind Reading Ambience 2nd Phase Loop.wav" id="16_a2qmk"]
+[ext_resource type="AudioStream" uid="uid://df6hl7rmj5uym" path="res://sfx/Jester/Jester Mind Reading Scraping Layer Loop.wav" id="17_ibgav"]
 
 [node name="AudioHandler" type="Node2D"]
 script = ExtResource("1_xckh4")
@@ -42,6 +67,85 @@ stream = ExtResource("4_k466o")
 stream = ExtResource("3_upw2m")
 
 [node name="SFX" type="Node" parent="."]
+
+[node name="JesterLaugh1" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("6_pm08v")
+
+[node name="JesterLaugh2" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("7_rbv8l")
+
+[node name="JesterLaugh3" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("8_lhx1q")
+
+[node name="JesterLaugh4" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("9_vigtg")
+
+[node name="JesterLaugh5" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("10_2ys0w")
+
+[node name="JesterLaugh6" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("11_nhe57")
+
+[node name="JesterLaugh7" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("12_4o7yc")
+
+[node name="JesterLaugh8" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("13_qnnwt")
+
+[node name="JesterLaugh9" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("14_jesgm")
+
+[node name="JesterMindReadingAmbience1StPhaseLoop" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("15_mk7uk")
+volume_db = 2.0
+
+[node name="JesterMindReadingAmbience2NdPhaseLoop" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("16_a2qmk")
+
+[node name="JesterMindReadingScrapingLayerLoop" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("17_ibgav")
+
+[node name="NiceSkeletonDisappearsAndLaughs" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("6_h863s")
+volume_db = 2.0
+
+[node name="NiceSkeletonGesturesWait" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("7_k22y2")
+volume_db = 2.0
+
+[node name="NiceSkeletonGrabsGem" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("8_erdf0")
+
+[node name="NiceSkeletonGreetings" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("9_syyje")
+volume_db = 2.0
+
+[node name="MeanSkeletonGunFire" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("6_3pxdr")
+
+[node name="MeanSkeletonLaughing" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("7_r1hww")
+
+[node name="MeanSkeletonSight" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("8_eo6gv")
+
+[node name="KnightSkeletonApproaches" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("6_blbtm")
+
+[node name="KnightSkeletonAttacks(getCloserToEntity2)" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("7_bf68w")
+
+[node name="KnightSkeletonChasesBunny(hideBehindTree)" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("8_5hqs1")
+
+[node name="KnightSkeletonHits(getCloserToEntity3)" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("9_o4lx0")
+
+[node name="KnightSkeletonSight(getCloserToEntity1)" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("10_h3nrl")
+
+[node name="PlayerHitsKnightSkeleton(getCloserToEntity4)" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("11_30lna")
 
 [node name="NecroticSludgeBabyAmbience" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("6_dk00j")

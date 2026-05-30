@@ -71,7 +71,15 @@ folder_colors={
 "res://scenes/beastiary pages/pt1/": "blue",
 "res://scenes/beastiary pages/pt2/": "red",
 "res://scenes/encounters/_pt2/": "red",
-"res://scenes/encounters/_pt3/": "blue"
+"res://scenes/encounters/_pt3/": "blue",
+"res://sfx/Black Bear Sounds/": "gray",
+"res://sfx/Deer Mimetic/": "gray",
+"res://sfx/Jester/": "gray",
+"res://sfx/Knight Skeleton/": "gray",
+"res://sfx/Mean Skeleton/": "gray",
+"res://sfx/Necrotic Sludge Sounds/": "gray",
+"res://sfx/Nice Skeleton/": "gray",
+"res://sfx/Regular Fox Sounds/": "gray"
 }
 
 [input]

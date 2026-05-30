@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dlnecy2wryqud"
+path="res://.godot/imported/Mean Skeleton Sight.wav-13ced087b0474a6f7041fcf4d994757c.sample"
+
+[deps]
+
+source_file="res://sfx/Mean Skeleton/Mean Skeleton Sight.wav"
+dest_files=["res://.godot/imported/Mean Skeleton Sight.wav-13ced087b0474a6f7041fcf4d994757c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

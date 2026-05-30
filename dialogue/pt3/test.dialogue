@@ -33,6 +33,7 @@ do InventoryHandler.add_to_inventory(2)
 
 ~ qte_fail
 You failed the qte
+=> END
 
 ~ qte_win
 You won the qte

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bojivs72kir6w"
+path="res://.godot/imported/Jester Laugh 9.wav-3af5e3f945e6d0b517f0133a0f6b5c30.sample"
+
+[deps]
+
+source_file="res://sfx/Jester/Jester Laugh 9.wav"
+dest_files=["res://.godot/imported/Jester Laugh 9.wav-3af5e3f945e6d0b517f0133a0f6b5c30.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
