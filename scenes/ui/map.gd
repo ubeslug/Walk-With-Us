@@ -31,6 +31,14 @@ func _on_docks_pressed() -> void:
 	animation_player.play("fade_out")
 	await animation_player.animation_finished
 	Globals.map_active = false
+	if Globals.day == true:
+		Globals.time += 1
+		if Globals.time == 6:
+			Globals.day = false
+	elif Globals.day == false:
+		Globals.time -= 1
+		if Globals.time == 0:
+			Globals.day = true
 	get_tree().change_scene_to_file("res://scenes/testing/start.tscn")
 	pass # Replace with function body.
 
@@ -39,18 +47,32 @@ func _on_houses_pressed() -> void:
 	animation_player.play("fade_out")
 	await animation_player.animation_finished
 	Globals.map_active = false
+	if Globals.day == true:
+		Globals.time += 1
+		if Globals.time == 6:
+			Globals.day = false
+	elif Globals.day == false:
+		Globals.time -= 1
+		if Globals.time == 0:
+			Globals.day = true
 	get_tree().change_scene_to_file("res://scenes/testing/houses.tscn")
 	pass # Replace with function body.
-
-
-func _on_x_pressed() -> void:
-	Globals.map_active = false
-	pass # Replace with function body.
-
 
 func _on_coast_pressed() -> void:
 	animation_player.play("fade_out")
 	await animation_player.animation_finished
 	Globals.map_active = false
+	if Globals.day == true:
+		Globals.time += 1
+		if Globals.time == 6:
+			Globals.day = false
+	elif Globals.day == false:
+		Globals.time -= 1
+		if Globals.time == 0:
+			Globals.day = true
 	get_tree().change_scene_to_file("res://scenes/testing/fishing.tscn")
+	pass # Replace with function body.
+
+func _on_x_pressed() -> void:
+	Globals.map_active = false
 	pass # Replace with function body.

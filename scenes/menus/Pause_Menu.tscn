@@ -1,0 +1,82 @@
+[gd_scene load_steps=2 format=3 uid="uid://cydle4g8e1lfs"]
+
+[ext_resource type="Script" path="res://scenes/menus/pause_menu.gd" id="1_tpon1"]
+
+[node name="PauseMenu" type="CanvasLayer"]
+layer = 128
+script = ExtResource("1_tpon1")
+
+[node name="chapters" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="chapters"]
+modulate = Color(1, 1, 1, 0.952941)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -960.0
+offset_top = -541.5
+offset_right = 960.0
+offset_bottom = 541.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.239216, 0.239216, 0.239216, 1)
+
+[node name="Panel" type="Panel" parent="chapters/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -186.5
+offset_top = -93.0
+offset_right = 192.5
+offset_bottom = 93.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="menu" type="Button" parent="chapters/ColorRect/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.5
+offset_top = -58.0
+offset_right = 160.5
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Return to Title Screen"
+
+[node name="quit" type="Button" parent="chapters/ColorRect/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -82.0
+offset_top = 7.5
+offset_right = 82.0
+offset_bottom = 57.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Quit Game"
+
+[connection signal="pressed" from="chapters/ColorRect/Panel/menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="chapters/ColorRect/Panel/quit" to="." method="_on_quit_pressed"]

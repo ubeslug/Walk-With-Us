@@ -116,6 +116,7 @@ func _on_ch_3_pressed() -> void:
 	InventoryHandler.reset_inventory()
 	Globals.reset_health()
 	Globals.map = true
+	Globals.time_enable = true
 	Globals.bestiary_updated = true
 	InventoryHandler.add_to_inventory(1)
 	fade_handler.play("fade-out")

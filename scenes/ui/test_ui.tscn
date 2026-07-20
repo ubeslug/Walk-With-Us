@@ -1,8 +1,10 @@
-[gd_scene load_steps=20 format=3 uid="uid://1yu00uqnngve"]
+[gd_scene load_steps=23 format=3 uid="uid://1yu00uqnngve"]
 
 [ext_resource type="Script" path="res://scripts/inventory_loader.gd" id="1_0th41"]
 [ext_resource type="Texture2D" uid="uid://tfmfaia0ym0s" path="res://assets/ui/textbox.png" id="1_wyd4y"]
 [ext_resource type="PackedScene" uid="uid://cxoatkheomly" path="res://scenes/items/package_item.tscn" id="2_hyasa"]
+[ext_resource type="Texture2D" uid="uid://c7el2rb1tdb6h" path="res://assets/ui/Time.png" id="2_jsv3d"]
+[ext_resource type="Texture2D" uid="uid://5ibohss47p0d" path="res://assets/ui/time_frame.png" id="3_0rtkg"]
 [ext_resource type="PackedScene" uid="uid://csfiit70pipqw" path="res://scenes/items/bestiary_item.tscn" id="3_d5d06"]
 [ext_resource type="Texture2D" uid="uid://b85ya550nhwih" path="res://assets/ui/Bestiary_Icon.png" id="4_6xnu6"]
 [ext_resource type="PackedScene" uid="uid://bly2o8v0fqmvi" path="res://scenes/ui/monster_database.tscn" id="4_speqq"]
@@ -17,13 +19,13 @@
 [ext_resource type="PackedScene" uid="uid://bket1lys8an2n" path="res://scenes/ui/map.tscn" id="14_o7u5m"]
 [ext_resource type="Texture2D" uid="uid://cvjibmu7ygpd" path="res://assets/ui/Test_Inventory.png" id="14_y05kh"]
 [ext_resource type="Texture2D" uid="uid://2poj6bkpnp8m" path="res://assets/ui/frame.png" id="17_dcwp2"]
+[ext_resource type="PackedScene" uid="uid://cydle4g8e1lfs" path="res://scenes/menus/Pause_Menu.tscn" id="20_0l4bq"]
 
 [sub_resource type="GDScript" id="GDScript_dgu8f"]
 script/source = "extends Control
 
 
 var hearts_list : Array[TextureRect]
-
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -54,8 +56,43 @@ func _process(delta):
 		$Map.visible == true
 	else:
 		$Map.visible == false
+	if Globals.time_enable == true:
+		$Time.visible = true
+		$Time2.visible = true
+	else:
+		$Time.visible = false
+		$Time2.visible = false
+	#menus
+	if Input.is_action_just_pressed(\"pause\") && Globals.bestiary_active == false && Globals.bestiary1_active == false:
+		$PauseMenu.visible = not $PauseMenu.visible
+		
+	#Time display day
+	if Globals.time == 0:
+		$Time.global_rotation_degrees = 0
+	if Globals.time == 1 && Globals.day == true:
+		$Time.global_rotation_degrees = 30
+	if Globals.time == 2 && Globals.day == true:
+		$Time.global_rotation_degrees = 60
+	if Globals.time == 3 && Globals.day == true:
+		$Time.global_rotation_degrees = 90
+	if Globals.time == 4 && Globals.day == true:
+		$Time.global_rotation_degrees = 120
+	if Globals.time == 5 && Globals.day == true:
+		$Time.global_rotation_degrees = 150
+	if Globals.time == 6:
+		$Time.global_rotation_degrees = 180
+	#night
+	if Globals.time == 5 && Globals.day == false:
+		$Time.global_rotation_degrees = 210
+	if Globals.time == 4 && Globals.day == false:
+		$Time.global_rotation_degrees = 240
+	if Globals.time == 3 && Globals.day == false:
+		$Time.global_rotation_degrees = 270
+	if Globals.time == 2 && Globals.day == false:
+		$Time.global_rotation_degrees = 300
+	if Globals.time == 1 && Globals.day == false:
+		$Time.global_rotation_degrees = 330
 	update_heart_display()
-
 
 func update_heart_display() -> void:
 	for i in range(hearts_list.size()):
@@ -72,6 +109,11 @@ func _on_texture_button_pressed() -> void:
 func _on_texture_button_2_pressed() -> void:
 	Globals.map_active = true
 	$Map.visible = true
+	pass # Replace with function body.
+
+
+func _on_button_pressed() -> void:
+	#$PauseMenu.visible = not $PauseMenu.visible
 	pass # Replace with function body.
 "
 
@@ -100,6 +142,7 @@ grow_vertical = 2
 script = SubResource("GDScript_dgu8f")
 
 [node name="Text" type="TextureRect" parent="."]
+top_level = true
 layout_mode = 0
 offset_left = -1.0
 offset_top = 679.0
@@ -128,6 +171,17 @@ offset_right = 349.0
 offset_bottom = 71.0
 theme_override_font_sizes/font_size = 35
 text = "(Monster Name)"
+
+[node name="Time" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(75.9375, 679)
+scale = Vector2(0.244074, 0.244074)
+texture = ExtResource("2_jsv3d")
+
+[node name="Time2" type="Sprite2D" parent="."]
+position = Vector2(75.9375, 679)
+scale = Vector2(0.244074, 0.244074)
+texture = ExtResource("3_0rtkg")
 
 [node name="Inventory" type="ColorRect" parent="."]
 layout_mode = 0
@@ -224,6 +278,16 @@ texture_normal = ExtResource("11_x2ets")
 ignore_texture_size = true
 stretch_mode = 0
 
+[node name="Button" type="Button" parent="Inventory"]
+visible = false
+layout_mode = 0
+offset_left = 522.0
+offset_top = 23.0
+offset_right = 560.0
+offset_bottom = 54.0
+mouse_default_cursor_shape = 2
+text = "test"
+
 [node name="Health" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 3
@@ -285,5 +349,10 @@ patch_margin_bottom = 55
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 
+[node name="PauseMenu" parent="." instance=ExtResource("20_0l4bq")]
+visible = false
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
 [connection signal="pressed" from="Inventory/TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="Inventory/TextureButton2" to="." method="_on_texture_button_2_pressed"]
+[connection signal="pressed" from="Inventory/Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,143 @@
+[gd_scene load_steps=6 format=3 uid="uid://cbj0bn7aw28ro"]
+
+[ext_resource type="Script" path="res://scripts/page_base.gd" id="1_w66r7"]
+[ext_resource type="PackedScene" uid="uid://beneqpcnms27p" path="res://scenes/beastiary pages/_page_base.tscn" id="2_82561"]
+[ext_resource type="Theme" uid="uid://bw2dm0g8j123d" path="res://themes/beastiary_writing.tres" id="3_v14cr"]
+[ext_resource type="FontFile" uid="uid://4mauql4oflhj" path="res://assets/fonts/Kurland-Regular.ttf" id="4_in4gc"]
+
+[sub_resource type="FontVariation" id="FontVariation_ivg2w"]
+base_font = ExtResource("4_in4gc")
+variation_embolden = 0.5
+
+[node name="table_of_contents" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_w66r7")
+metadata/_edit_use_anchors_ = true
+
+[node name="page_base" parent="." instance=ExtResource("2_82561")]
+layout_mode = 1
+
+[node name="Contents" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="entry name" type="Label" parent="Contents"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -518.0
+offset_top = -388.0
+offset_right = -142.0
+offset_bottom = -335.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_v14cr")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "Table of Contents"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Contents"]
+layout_mode = 0
+offset_left = 88.0
+offset_top = -360.0
+offset_right = 595.0
+offset_bottom = 368.0
+theme = ExtResource("3_v14cr")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = 5
+theme_override_fonts/bold_font = SubResource("FontVariation_ivg2w")
+theme_override_font_sizes/normal_font_size = 25
+theme_override_font_sizes/bold_font_size = 30
+bbcode_enabled = true
+text = "
+	Red Fox . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 21
+[b]* [u]Humanoid[/u][/b]
+	Arachknight . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 22
+	Blossom Bones . . . . . . . . . . . . . . . . . . . . . . . . . . . .  23
+	Cloaked Jester . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 24
+	Decrepit Trader . . . . . . . . . . . . . . . . . . . . . . . . . . . . 25
+	Eggheads . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 26
+	Tea Fairy . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 27
+	Remnants . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 28
+	Skeleton . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 29
+	Skelebros . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 30
+	The Everburning . . . . . . . . . . . . . . . . . . . . . . . . . . . 31
+	Treant . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   32
+[b]* [u]Monstrosity[/u][/b]
+	Monument Matriarch . . . . . . . . . . . . . . . . . . . . .  33
+	Necrotic Sludge . . . . . . . . . . . . . . . . . . . . . . . . . . .  34
+	Wall Whisper . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 35
+[b]* [u]Construct/Object[/u][/b]
+	Ceramaniacs . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 36
+	Golem . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   37
+	Tabletop . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 38"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Contents"]
+layout_mode = 0
+offset_left = -610.0
+offset_top = -339.0
+offset_right = -103.0
+offset_bottom = 389.0
+theme = ExtResource("3_v14cr")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = 5
+theme_override_fonts/bold_font = SubResource("FontVariation_ivg2w")
+theme_override_font_sizes/normal_font_size = 25
+theme_override_font_sizes/bold_font_size = 30
+bbcode_enabled = true
+text = "[b]* [u]Flora[/u][/b]
+	Buckleberries  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1
+	Cottonberries . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2
+	Lavender . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+	Lovely Bushes . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4
+	Nightshade  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5
+	Oak . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6
+	Omega Oak . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7
+	Snowberries  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 8
+	Whistling Tree . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .9
+[b]* [u]Fauna[/u][/b]
+	Black Bear . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 10
+	Blooming Fox  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 11
+	Bookworms  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 12
+	Centibat . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   13
+	Deer   . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 14
+	Gem Toads . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  15
+	Grizzly Bear  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 16
+	Jackalope    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 17
+	Mimetic . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 18
+	Oracles  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  19
+	Rats . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  20"
+
+[node name="book_worms" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="level_1" type="Sprite2D" parent="book_worms"]
+visible = false
+
+[node name="level_2" type="Sprite2D" parent="book_worms"]
+visible = false
+
+[node name="level_3" type="Sprite2D" parent="book_worms"]
+visible = false

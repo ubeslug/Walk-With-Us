@@ -180,15 +180,22 @@ mouse_default_cursor_shape = 2
 texture_normal = ExtResource("3_t8psa")
 
 [node name="TextureButton" type="TextureButton" parent="CanvasLayer"]
-offset_left = 124.0
-offset_top = 627.0
-offset_right = 221.0
-offset_bottom = 702.0
+offset_left = 103.0
+offset_top = 520.0
+offset_right = 200.0
+offset_bottom = 595.0
 rotation = 2.47488
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("5_huau7")
 ignore_texture_size = true
 stretch_mode = 0
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer"]
+visible = false
+modulate = Color(0, 0, 0, 0.784314)
+offset_right = 1330.0
+offset_bottom = 678.0
+mouse_filter = 2
 
 [connection signal="pressed" from="CanvasLayer/Shark" to="." method="_on_shark_pressed"]
 [connection signal="pressed" from="CanvasLayer/TextureButton" to="." method="_on_texture_button_pressed"]

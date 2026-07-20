@@ -25,6 +25,9 @@ var mark: bool = false
 #part 3
 var map: bool = false
 var bott: bool = true
+var time_enable: bool = false
+var time: int = 0
+var day: bool = true #true = day / false = night
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("toggle_fullscreen"):
@@ -45,3 +48,29 @@ func toggle_fullscreen() -> void:
 		DisplayServer.window_set_size(Vector2(1920, 1080))
 	else:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN)
+
+func reset_globals() -> void:
+	var bestiary_updated: bool = false
+	var bestiary_active: bool = false
+	var map_active: bool = false
+	var bestiary1_active: bool = false
+	var bookworms: bool = false
+	var agent: bool = false
+	var agent_added: bool = false
+
+	var max_health: int = 5
+	var health: int = 5
+
+	#other
+	var found_my_page: bool = false
+	var sludge_dead: bool = false
+	var ending: int = 0
+	var matriarch: bool = false
+	var mark: bool = false
+
+	#part 3
+	var map: bool = false
+	var bott: bool = true
+	var time_enable: bool = false
+	var time: int = 0
+	var day: bool = true #true = day / false = night
