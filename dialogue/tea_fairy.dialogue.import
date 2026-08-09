@@ -1,6 +1,7 @@
 [remap]
 
-importer="dialogue_manager_compiler_13"
+importer="dialogue_manager"
+importer_version=18
 type="Resource"
 uid="uid://cjfg6dkgvyqd7"
 path="res://.godot/imported/tea_fairy.dialogue-e1727a2e6f13744f90228c378fdefcac.tres"

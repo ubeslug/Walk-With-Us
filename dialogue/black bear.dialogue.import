@@ -1,6 +1,7 @@
 [remap]
 
-importer="dialogue_manager_compiler_13"
+importer="dialogue_manager"
+importer_version=18
 type="Resource"
 uid="uid://cm4ui8rb1jden"
 path="res://.godot/imported/black bear.dialogue-0df8e372c16bbe4e750842422eb7feb0.tres"

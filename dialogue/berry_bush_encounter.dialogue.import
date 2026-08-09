@@ -1,6 +1,7 @@
 [remap]
 
-importer="dialogue_manager_compiler_13"
+importer="dialogue_manager"
+importer_version=18
 type="Resource"
 uid="uid://bifuftvqwdan0"
 path="res://.godot/imported/berry_bush_encounter.dialogue-a6b7d4f67534155d5d6bbfa58291ec4a.tres"

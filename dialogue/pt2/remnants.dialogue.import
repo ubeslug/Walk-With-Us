@@ -1,6 +1,7 @@
 [remap]
 
-importer="dialogue_manager_compiler_13"
+importer="dialogue_manager"
+importer_version=18
 type="Resource"
 uid="uid://dt1c34wea4lgf"
 path="res://.godot/imported/remnants.dialogue-5118e7e35820c4364e34cb28d257a895.tres"

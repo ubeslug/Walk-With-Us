@@ -1,6 +1,7 @@
 [remap]
 
-importer="dialogue_manager_compiler_13"
+importer="dialogue_manager"
+importer_version=18
 type="Resource"
 uid="uid://3y8pe3oc7lil"
 path="res://.godot/imported/jackalope_encounter.dialogue-7c07871642449409ef8af7cda35cbf9b.tres"

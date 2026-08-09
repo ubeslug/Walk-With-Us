@@ -1,6 +1,6 @@
-[gd_scene load_steps=23 format=3 uid="uid://1yu00uqnngve"]
+[gd_scene format=3 uid="uid://1yu00uqnngve"]
 
-[ext_resource type="Script" path="res://scripts/inventory_loader.gd" id="1_0th41"]
+[ext_resource type="Script" uid="uid://dx8l6gireglpt" path="res://scripts/inventory_loader.gd" id="1_0th41"]
 [ext_resource type="Texture2D" uid="uid://tfmfaia0ym0s" path="res://assets/ui/textbox.png" id="1_wyd4y"]
 [ext_resource type="PackedScene" uid="uid://cxoatkheomly" path="res://scenes/items/package_item.tscn" id="2_hyasa"]
 [ext_resource type="Texture2D" uid="uid://c7el2rb1tdb6h" path="res://assets/ui/Time.png" id="2_jsv3d"]
@@ -127,12 +127,12 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("7_uh3nd")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 3.0
 }]
 
-[node name="ui" type="Control"]
+[node name="ui" type="Control" unique_id=229211492]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -141,7 +141,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = SubResource("GDScript_dgu8f")
 
-[node name="Text" type="TextureRect" parent="."]
+[node name="Text" type="TextureRect" parent="." unique_id=1969594112]
 top_level = true
 layout_mode = 0
 offset_left = -1.0
@@ -151,7 +151,7 @@ offset_bottom = 1081.0
 texture = ExtResource("1_wyd4y")
 expand_mode = 1
 
-[node name="TextBox" type="Label" parent="Text"]
+[node name="TextBox" type="Label" parent="Text" unique_id=1922941292]
 visible = false
 layout_mode = 0
 offset_left = 73.0
@@ -162,7 +162,7 @@ theme_override_font_sizes/font_size = 30
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 autowrap_mode = 1
 
-[node name="Name" type="Label" parent="Text"]
+[node name="Name" type="Label" parent="Text" unique_id=1310077846]
 visible = false
 layout_mode = 0
 offset_left = 74.0
@@ -172,25 +172,25 @@ offset_bottom = 71.0
 theme_override_font_sizes/font_size = 35
 text = "(Monster Name)"
 
-[node name="Time" type="Sprite2D" parent="."]
+[node name="Time" type="Sprite2D" parent="." unique_id=1020632010]
 show_behind_parent = true
 position = Vector2(75.9375, 679)
 scale = Vector2(0.244074, 0.244074)
 texture = ExtResource("2_jsv3d")
 
-[node name="Time2" type="Sprite2D" parent="."]
+[node name="Time2" type="Sprite2D" parent="." unique_id=216179656]
 position = Vector2(75.9375, 679)
 scale = Vector2(0.244074, 0.244074)
 texture = ExtResource("3_0rtkg")
 
-[node name="Inventory" type="ColorRect" parent="."]
+[node name="Inventory" type="ColorRect" parent="." unique_id=1957462874]
 layout_mode = 0
 offset_left = 1330.0
 offset_right = 1920.0
 offset_bottom = 1083.0
 color = Color(0.215686, 0.101961, 0.101961, 1)
 
-[node name="Label" type="Label" parent="Inventory"]
+[node name="Label" type="Label" parent="Inventory" unique_id=1004144341]
 layout_mode = 0
 offset_left = 25.0
 offset_top = 17.0
@@ -199,33 +199,33 @@ offset_bottom = 40.0
 theme_override_font_sizes/font_size = 30
 text = "Inventory"
 
-[node name="TestInventory" type="Sprite2D" parent="Inventory"]
+[node name="TestInventory" type="Sprite2D" parent="Inventory" unique_id=974207693]
 position = Vector2(294, 348.5)
 scale = Vector2(0.932203, 0.905512)
 texture = ExtResource("14_y05kh")
 
-[node name="BoxContainer" type="GridContainer" parent="Inventory"]
-layout_direction = 2
+[node name="BoxContainer" type="GridContainer" parent="Inventory" unique_id=123437831]
 layout_mode = 0
 offset_left = 61.71
 offset_top = 103.6
 offset_right = 449.33
 offset_bottom = 231.6
 scale = Vector2(0.88, 0.88)
+layout_direction = 2
 theme_override_constants/h_separation = 128
 theme_override_constants/v_separation = 128
 columns = 4
 script = ExtResource("1_0th41")
 
-[node name="PackageItem" parent="Inventory/BoxContainer" instance=ExtResource("2_hyasa")]
+[node name="PackageItem" parent="Inventory/BoxContainer" unique_id=1603656325 instance=ExtResource("2_hyasa")]
 visible = false
 layout_mode = 2
 
-[node name="BestiaryItem" parent="Inventory/BoxContainer" instance=ExtResource("3_d5d06")]
+[node name="BestiaryItem" parent="Inventory/BoxContainer" unique_id=1553371001 instance=ExtResource("3_d5d06")]
 visible = false
 layout_mode = 2
 
-[node name="TextureButton" type="TextureButton" parent="Inventory"]
+[node name="TextureButton" type="TextureButton" parent="Inventory" unique_id=1955198180]
 visible = false
 layout_mode = 0
 offset_left = 158.81
@@ -238,7 +238,7 @@ texture_hover = ExtResource("5_eiavj")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Inventory/TextureButton"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Inventory/TextureButton" unique_id=2102467082]
 visible = false
 position = Vector2(255.992, 151)
 scale = Vector2(0.244403, 0.244403)
@@ -246,7 +246,7 @@ sprite_frames = SubResource("SpriteFrames_tjb4j")
 autoplay = "default"
 frame_progress = 0.821777
 
-[node name="Label" type="Label" parent="Inventory/TextureButton"]
+[node name="Label" type="Label" parent="Inventory/TextureButton" unique_id=1744788258]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -266,7 +266,7 @@ theme_override_constants/shadow_outline_size = 3
 theme_override_font_sizes/font_size = 110
 text = "Bestiary"
 
-[node name="TextureButton2" type="TextureButton" parent="Inventory"]
+[node name="TextureButton2" type="TextureButton" parent="Inventory" unique_id=1258289652]
 visible = false
 layout_mode = 0
 offset_left = 196.845
@@ -278,7 +278,7 @@ texture_normal = ExtResource("11_x2ets")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="Button" type="Button" parent="Inventory"]
+[node name="Button" type="Button" parent="Inventory" unique_id=66548322]
 visible = false
 layout_mode = 0
 offset_left = 522.0
@@ -288,7 +288,7 @@ offset_bottom = 54.0
 mouse_default_cursor_shape = 2
 text = "test"
 
-[node name="Health" type="Control" parent="."]
+[node name="Health" type="Control" parent="." unique_id=1310625231]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -300,40 +300,40 @@ offset_top = -40.0
 grow_horizontal = 0
 grow_vertical = 0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Health"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Health" unique_id=1957677810]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Sprite2D" type="Sprite2D" parent="Health/HBoxContainer"]
+[node name="Sprite2D" type="Sprite2D" parent="Health/HBoxContainer" unique_id=1804497843]
 position = Vector2(1, 0)
 
-[node name="MonsterDatabase" parent="." instance=ExtResource("4_speqq")]
+[node name="MonsterDatabase" parent="." unique_id=1219253099 instance=ExtResource("4_speqq")]
 visible = false
 
-[node name="MonsterDatabasePt1" parent="." instance=ExtResource("8_0cx0t")]
+[node name="MonsterDatabasePt1" parent="." unique_id=2053841354 instance=ExtResource("8_0cx0t")]
 visible = false
 
-[node name="Map" parent="." instance=ExtResource("14_o7u5m")]
+[node name="Map" parent="." unique_id=681897598 instance=ExtResource("14_o7u5m")]
 visible = false
 
-[node name="Healthbar" parent="." instance=ExtResource("5_iqxdx")]
-layout_direction = 1
+[node name="Healthbar" parent="." unique_id=277423921 instance=ExtResource("5_iqxdx")]
 layout_mode = 0
 offset_left = 1443.0
 offset_top = 1021.0
 offset_right = 1809.0
 offset_bottom = 1077.0
 scale = Vector2(1.24, 1.24)
+layout_direction = 1
 
-[node name="mark" type="Sprite2D" parent="."]
+[node name="mark" type="Sprite2D" parent="." unique_id=237144279]
 visible = false
 modulate = Color(1, 1, 1, 0)
 position = Vector2(98.2635, 84)
 scale = Vector2(0.560811, 0.560811)
 texture = ExtResource("12_n407c")
 
-[node name="NinePatchRect" type="NinePatchRect" parent="."]
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1369240912]
 layout_mode = 0
 offset_left = 1330.0
 offset_top = 1.0
@@ -349,7 +349,7 @@ patch_margin_bottom = 55
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 
-[node name="PauseMenu" parent="." instance=ExtResource("20_0l4bq")]
+[node name="PauseMenu" parent="." unique_id=1796209327 instance=ExtResource("20_0l4bq")]
 visible = false
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]

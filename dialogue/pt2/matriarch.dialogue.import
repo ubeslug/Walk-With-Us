@@ -1,6 +1,7 @@
 [remap]
 
-importer="dialogue_manager_compiler_13"
+importer="dialogue_manager"
+importer_version=18
 type="Resource"
 uid="uid://cuox3pmegmeik"
 path="res://.godot/imported/matriarch.dialogue-f42cfd52e3c91894560fab254ddb3d1c.tres"

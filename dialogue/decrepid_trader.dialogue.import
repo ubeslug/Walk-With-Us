@@ -1,6 +1,7 @@
 [remap]
 
-importer="dialogue_manager_compiler_13"
+importer="dialogue_manager"
+importer_version=18
 type="Resource"
 uid="uid://c5j1hs0oymd8t"
 path="res://.godot/imported/decrepid_trader.dialogue-f46f60fd956bfd4bc0c9f1c09fd5a958.tres"

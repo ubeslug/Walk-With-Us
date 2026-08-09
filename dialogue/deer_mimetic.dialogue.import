@@ -1,6 +1,7 @@
 [remap]
 
-importer="dialogue_manager_compiler_13"
+importer="dialogue_manager"
+importer_version=18
 type="Resource"
 uid="uid://cc3557sj5wg7c"
 path="res://.godot/imported/deer_mimetic.dialogue-f7eafb452026055176e0cc54362ffbf6.tres"

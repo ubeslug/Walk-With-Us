@@ -1,6 +1,7 @@
 [remap]
 
-importer="dialogue_manager_compiler_13"
+importer="dialogue_manager"
+importer_version=18
 type="Resource"
 uid="uid://coqxwlr6whx1p"
 path="res://.godot/imported/regular_fox.dialogue-812e6039c47acc09dfe95584d39e169b.tres"

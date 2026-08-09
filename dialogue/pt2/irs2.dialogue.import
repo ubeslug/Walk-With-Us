@@ -1,6 +1,7 @@
 [remap]
 
-importer="dialogue_manager_compiler_13"
+importer="dialogue_manager"
+importer_version=18
 type="Resource"
 uid="uid://cixplko71u1bi"
 path="res://.godot/imported/irs2.dialogue-2a067424daed6e9cd6ab61b2a8772c5f.tres"

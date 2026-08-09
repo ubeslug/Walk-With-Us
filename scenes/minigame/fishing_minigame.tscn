@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://bhoiju372dmup"]
+
+[node name="FishingMinigame" type="CanvasLayer" unique_id=944345659]
+
+[node name="Fishing_Game" type="Control" parent="." unique_id=939149181]
+layout_mode = 3
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 58.0
+offset_top = -428.5
+offset_right = 258.0
+offset_bottom = 428.5
+grow_vertical = 2
+
+[node name="Panel" type="PanelContainer" parent="Fishing_Game" unique_id=2111558955]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Fishing_Game/Panel" unique_id=1080633682]
+propagate_maximum_size = false
+layout_mode = 2
+
+[node name="VBoxContainer" type="HBoxContainer" parent="Fishing_Game/Panel/MarginContainer" unique_id=1361046210]
+layout_mode = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="Fishing_Game/Panel/MarginContainer/VBoxContainer" unique_id=514829751]
+custom_minimum_size = Vector2(15, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 1
+rounded = true
+fill_mode = 3
+show_percentage = false
+
+[node name="MarginContainer" type="MarginContainer" parent="Fishing_Game/Panel/MarginContainer/VBoxContainer" unique_id=2067617646]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Fishing_Game/Panel/MarginContainer/VBoxContainer" unique_id=735029114]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="Fishing_Game/Panel/MarginContainer/VBoxContainer" unique_id=928165424]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2

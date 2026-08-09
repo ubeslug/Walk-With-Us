@@ -1,6 +1,7 @@
 [remap]
 
-importer="dialogue_manager_compiler_13"
+importer="dialogue_manager"
+importer_version=18
 type="Resource"
 uid="uid://bo1o87nykt8oc"
 path="res://.godot/imported/golem.dialogue-b1e94a51d4f7d84cf2c3d9f174017b75.tres"

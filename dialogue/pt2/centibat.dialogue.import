@@ -1,6 +1,7 @@
 [remap]
 
-importer="dialogue_manager_compiler_13"
+importer="dialogue_manager"
+importer_version=18
 type="Resource"
 uid="uid://db0k67g5haspg"
 path="res://.godot/imported/centibat.dialogue-e97fbc4842b3b87e5333722f87eed3b9.tres"

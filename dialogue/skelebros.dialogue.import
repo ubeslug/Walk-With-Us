@@ -1,6 +1,7 @@
 [remap]
 
-importer="dialogue_manager_compiler_13"
+importer="dialogue_manager"
+importer_version=18
 type="Resource"
 uid="uid://dlnke0o5fi8dv"
 path="res://.godot/imported/skelebros.dialogue-d568c6a871c99bb94a377ca81d171944.tres"

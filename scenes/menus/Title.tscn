@@ -1,8 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://b2fv1rdqbkxdl"]
+[gd_scene format=3 uid="uid://b2fv1rdqbkxdl"]
 
-[ext_resource type="Script" path="res://scripts/title.gd" id="1_4orjr"]
+[ext_resource type="Script" uid="uid://ctdnkwqqdtvup" path="res://scripts/title.gd" id="1_4orjr"]
 [ext_resource type="Texture2D" uid="uid://irjtut17apbp" path="res://assets/backgrounds/temp_background.png" id="1_111pu"]
-[ext_resource type="Shader" path="res://shaders/vignette.gdshader" id="2_l631a"]
+[ext_resource type="Shader" uid="uid://fjyqejcwqh2y" path="res://shaders/vignette.gdshader" id="2_l631a"]
 [ext_resource type="PackedScene" uid="uid://cunqrw485lwt5" path="res://scenes/layer_effects/fog_layer.tscn" id="3_5dqjp"]
 [ext_resource type="FontFile" uid="uid://4mauql4oflhj" path="res://assets/fonts/Kurland-Regular.ttf" id="5_mygyu"]
 
@@ -52,8 +52,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_j6ola"]
 _data = {
-"RESET": SubResource("Animation_jc2mf"),
-"background_shake": SubResource("Animation_xj53u")
+&"RESET": SubResource("Animation_jc2mf"),
+&"background_shake": SubResource("Animation_xj53u")
 }
 
 [sub_resource type="Animation" id="Animation_hakxu"]
@@ -141,9 +141,9 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xfctd"]
 _data = {
-"RESET": SubResource("Animation_hakxu"),
-"fade-out": SubResource("Animation_gqei3"),
-"fade_in": SubResource("Animation_t6ds7")
+&"RESET": SubResource("Animation_hakxu"),
+&"fade-out": SubResource("Animation_gqei3"),
+&"fade_in": SubResource("Animation_t6ds7")
 }
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xfbv0"]
@@ -152,46 +152,42 @@ shader_parameter/alpha = 1.0
 shader_parameter/inner_radius = 0.0
 shader_parameter/outer_radius = 1.0
 
-[node name="Title" type="Node2D"]
+[node name="Title" type="Node2D" unique_id=521608123]
 script = ExtResource("1_4orjr")
 
-[node name="AnimationPlayers" type="Node2D" parent="."]
+[node name="AnimationPlayers" type="Node2D" parent="." unique_id=932584704]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimationPlayers"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimationPlayers" unique_id=2104155739]
 root_node = NodePath("../..")
-libraries = {
-"": SubResource("AnimationLibrary_j6ola")
-}
-autoplay = "background_shake"
+libraries/ = SubResource("AnimationLibrary_j6ola")
+autoplay = &"background_shake"
 
-[node name="Fade handler" type="AnimationPlayer" parent="AnimationPlayers"]
+[node name="Fade handler" type="AnimationPlayer" parent="AnimationPlayers" unique_id=1861765857]
 root_node = NodePath("../..")
-libraries = {
-"": SubResource("AnimationLibrary_xfctd")
-}
-autoplay = "fade_in"
+libraries/ = SubResource("AnimationLibrary_xfctd")
+autoplay = &"fade_in"
 
-[node name="Background" type="Node2D" parent="."]
+[node name="Background" type="Node2D" parent="." unique_id=1059824252]
 
-[node name="Sprite2D" type="Sprite2D" parent="Background"]
+[node name="Sprite2D" type="Sprite2D" parent="Background" unique_id=1937119926]
 position = Vector2(-343, -380)
 texture = ExtResource("1_111pu")
 centered = false
 
-[node name="FogLayer" parent="Background" instance=ExtResource("3_5dqjp")]
+[node name="FogLayer" parent="Background" unique_id=1085287643 instance=ExtResource("3_5dqjp")]
 offset_left = -2.0
 offset_top = -2.0
 offset_right = 1926.0
 offset_bottom = 1088.0
 
-[node name="ColorRect" type="ColorRect" parent="Background"]
+[node name="ColorRect" type="ColorRect" parent="Background" unique_id=914377008]
 material = SubResource("ShaderMaterial_xfbv0")
 offset_right = 1922.0
 offset_bottom = 1084.0
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=552019555]
 
-[node name="Control" type="Control" parent="CanvasLayer"]
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=860001843]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -199,7 +195,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Title" type="Label" parent="CanvasLayer/Control"]
+[node name="Title" type="Label" parent="CanvasLayer/Control" unique_id=1161929535]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -217,7 +213,7 @@ theme_override_font_sizes/font_size = 170
 text = "Walk With Us"
 horizontal_alignment = 1
 
-[node name="Buttons" type="VBoxContainer" parent="CanvasLayer/Control"]
+[node name="Buttons" type="VBoxContainer" parent="CanvasLayer/Control" unique_id=852122556]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -231,32 +227,32 @@ offset_bottom = 68.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="new_game" type="Button" parent="CanvasLayer/Control/Buttons"]
+[node name="new_game" type="Button" parent="CanvasLayer/Control/Buttons" unique_id=314986070]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Start"
 
-[node name="chapters" type="Button" parent="CanvasLayer/Control/Buttons"]
+[node name="chapters" type="Button" parent="CanvasLayer/Control/Buttons" unique_id=389733541]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Chapter Select"
 
-[node name="Credits" type="Button" parent="CanvasLayer/Control/Buttons"]
+[node name="Credits" type="Button" parent="CanvasLayer/Control/Buttons" unique_id=1178434657]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Credits"
 
-[node name="Settings" type="Button" parent="CanvasLayer/Control/Buttons"]
+[node name="Settings" type="Button" parent="CanvasLayer/Control/Buttons" unique_id=1933676071]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Settings"
 
-[node name="Quit" type="Button" parent="CanvasLayer/Control/Buttons"]
+[node name="Quit" type="Button" parent="CanvasLayer/Control/Buttons" unique_id=752275680]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Quit"
 
-[node name="Credits" type="Control" parent="CanvasLayer"]
+[node name="Credits" type="Control" parent="CanvasLayer" unique_id=557527470]
 visible = false
 layout_mode = 3
 anchors_preset = 15
@@ -265,7 +261,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Credits"]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Credits" unique_id=990840985]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -280,7 +276,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.129412, 0.129412, 0.129412, 1)
 
-[node name="Panel" type="Panel" parent="CanvasLayer/Credits"]
+[node name="Panel" type="Panel" parent="CanvasLayer/Credits" unique_id=889796638]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -294,7 +290,7 @@ offset_bottom = 484.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Team members" type="VBoxContainer" parent="CanvasLayer/Credits/Panel"]
+[node name="Team members" type="VBoxContainer" parent="CanvasLayer/Credits/Panel" unique_id=1079686567]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -308,7 +304,7 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="team Members" type="Label" parent="CanvasLayer/Credits/Panel/Team members"]
+[node name="team Members" type="Label" parent="CanvasLayer/Credits/Panel/Team members" unique_id=1031580013]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "Team Members
@@ -322,7 +318,7 @@ Bryant Aberin  -  Programer / Sound Designer
 Jason Hutchins - Writer"
 horizontal_alignment = 1
 
-[node name="Sounds" type="VBoxContainer" parent="CanvasLayer/Credits/Panel"]
+[node name="Sounds" type="VBoxContainer" parent="CanvasLayer/Credits/Panel" unique_id=2127181244]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -337,7 +333,7 @@ offset_bottom = 201.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Sound Credits2" type="Label" parent="CanvasLayer/Credits/Panel/Sounds"]
+[node name="Sound Credits2" type="Label" parent="CanvasLayer/Credits/Panel/Sounds" unique_id=1852103806]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Sound Credits
@@ -349,7 +345,7 @@ Science Fiction Horror Ambient FX by TouringAmmosKane
 https://www.looperman.com/loops/detail/347860/science-fiction-horror-ambient-fx-free-120bpm-ambient-fx-loop "
 horizontal_alignment = 1
 
-[node name="Sound Credits" type="Button" parent="CanvasLayer/Credits/Panel"]
+[node name="Sound Credits" type="Button" parent="CanvasLayer/Credits/Panel" unique_id=7444541]
 layout_mode = 0
 offset_left = 1473.5
 offset_top = 911.5
@@ -358,7 +354,7 @@ offset_bottom = 961.5
 theme_override_font_sizes/font_size = 30
 text = "Sound Credits"
 
-[node name="Team credits" type="Button" parent="CanvasLayer/Credits/Panel"]
+[node name="Team credits" type="Button" parent="CanvasLayer/Credits/Panel" unique_id=1120919979]
 layout_mode = 0
 offset_left = 20.5
 offset_top = 911.5
@@ -367,14 +363,14 @@ offset_bottom = 961.5
 theme_override_font_sizes/font_size = 30
 text = "Team Credits"
 
-[node name="Exit" type="Button" parent="CanvasLayer/Credits"]
+[node name="Exit" type="Button" parent="CanvasLayer/Credits" unique_id=1770455415]
 layout_mode = 1
 offset_right = 50.0
 offset_bottom = 31.0
 theme_override_font_sizes/font_size = 40
 text = "Close"
 
-[node name="quit_node" type="Control" parent="CanvasLayer"]
+[node name="quit_node" type="Control" parent="CanvasLayer" unique_id=2135046830]
 visible = false
 layout_mode = 3
 anchors_preset = 15
@@ -383,7 +379,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/quit_node"]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/quit_node" unique_id=2044673046]
 layout_mode = 0
 offset_left = 657.0
 offset_top = 435.0
@@ -391,7 +387,7 @@ offset_right = 1264.0
 offset_bottom = 646.0
 color = Color(0.241156, 0.241156, 0.241156, 1)
 
-[node name="Panel" type="Panel" parent="CanvasLayer/quit_node"]
+[node name="Panel" type="Panel" parent="CanvasLayer/quit_node" unique_id=1509492953]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -405,7 +401,7 @@ offset_bottom = 107.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/quit_node/Panel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/quit_node/Panel" unique_id=406996494]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -419,34 +415,34 @@ offset_bottom = 29.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="label" type="Label" parent="CanvasLayer/quit_node/Panel/VBoxContainer"]
+[node name="label" type="Label" parent="CanvasLayer/quit_node/Panel/VBoxContainer" unique_id=336570916]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Are you sure you want to 	quit?"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/quit_node/Panel/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/quit_node/Panel/VBoxContainer" unique_id=1467342400]
 layout_mode = 2
 alignment = 1
 
-[node name="yes_quit" type="Button" parent="CanvasLayer/quit_node/Panel/VBoxContainer/HBoxContainer"]
+[node name="yes_quit" type="Button" parent="CanvasLayer/quit_node/Panel/VBoxContainer/HBoxContainer" unique_id=466378692]
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_font_sizes/font_size = 30
 text = "Yes"
 
-[node name="no_quit" type="Button" parent="CanvasLayer/quit_node/Panel/VBoxContainer/HBoxContainer"]
+[node name="no_quit" type="Button" parent="CanvasLayer/quit_node/Panel/VBoxContainer/HBoxContainer" unique_id=1381536047]
 layout_mode = 2
 size_flags_horizontal = 8
 theme_override_font_sizes/font_size = 30
 text = "No"
 
-[node name="fade" type="ColorRect" parent="CanvasLayer"]
+[node name="fade" type="ColorRect" parent="CanvasLayer" unique_id=13369005]
 visible = false
 offset_right = 1928.0
 offset_bottom = 1091.0
 color = Color(0, 0, 0, 1)
 
-[node name="Settings" type="Control" parent="CanvasLayer"]
+[node name="Settings" type="Control" parent="CanvasLayer" unique_id=1501300001]
 visible = false
 layout_mode = 3
 anchors_preset = 15
@@ -455,7 +451,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Settings"]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Settings" unique_id=1712689961]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -470,7 +466,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.239216, 0.239216, 0.239216, 1)
 
-[node name="Panel" type="Panel" parent="CanvasLayer/Settings"]
+[node name="Panel" type="Panel" parent="CanvasLayer/Settings" unique_id=637908904]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -484,7 +480,7 @@ offset_bottom = 445.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Settings/Panel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Settings/Panel" unique_id=412404896]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -498,13 +494,13 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="CanvasLayer/Settings/Panel/VBoxContainer"]
+[node name="Label" type="Label" parent="CanvasLayer/Settings/Panel/VBoxContainer" unique_id=805970861]
 layout_mode = 2
 theme_override_font_sizes/font_size = 75
 text = "Settings"
 horizontal_alignment = 1
 
-[node name="spacer" type="Label" parent="CanvasLayer/Settings/Panel/VBoxContainer"]
+[node name="spacer" type="Label" parent="CanvasLayer/Settings/Panel/VBoxContainer" unique_id=818282268]
 layout_mode = 2
 text = "
 
@@ -512,24 +508,24 @@ text = "
 "
 horizontal_alignment = 1
 
-[node name="Text sound" type="CheckButton" parent="CanvasLayer/Settings/Panel/VBoxContainer"]
+[node name="Text sound" type="CheckButton" parent="CanvasLayer/Settings/Panel/VBoxContainer" unique_id=1890013591]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Text Sound"
 
-[node name="Full Screen" type="CheckButton" parent="CanvasLayer/Settings/Panel/VBoxContainer"]
+[node name="Full Screen" type="CheckButton" parent="CanvasLayer/Settings/Panel/VBoxContainer" unique_id=499146945]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Full Screen"
 
-[node name="Close" type="Button" parent="CanvasLayer/Settings"]
+[node name="Close" type="Button" parent="CanvasLayer/Settings" unique_id=1355880460]
 layout_mode = 1
 offset_right = 8.0
 offset_bottom = 8.0
 theme_override_font_sizes/font_size = 40
 text = "Close"
 
-[node name="chapters" type="Control" parent="CanvasLayer"]
+[node name="chapters" type="Control" parent="CanvasLayer" unique_id=952363632]
 visible = false
 layout_mode = 3
 anchors_preset = 15
@@ -538,7 +534,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/chapters"]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/chapters" unique_id=874210324]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -553,7 +549,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.239216, 0.239216, 0.239216, 1)
 
-[node name="Panel" type="Panel" parent="CanvasLayer/chapters"]
+[node name="Panel" type="Panel" parent="CanvasLayer/chapters" unique_id=1559132891]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -567,7 +563,7 @@ offset_bottom = 445.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/chapters/Panel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/chapters/Panel" unique_id=330585951]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -581,13 +577,13 @@ offset_bottom = -161.265
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="CanvasLayer/chapters/Panel/VBoxContainer"]
+[node name="Label" type="Label" parent="CanvasLayer/chapters/Panel/VBoxContainer" unique_id=1877302516]
 layout_mode = 2
 theme_override_font_sizes/font_size = 75
 text = "Chapter Select"
 horizontal_alignment = 1
 
-[node name="spacer" type="Label" parent="CanvasLayer/chapters/Panel/VBoxContainer"]
+[node name="spacer" type="Label" parent="CanvasLayer/chapters/Panel/VBoxContainer" unique_id=869300276]
 layout_mode = 2
 text = "
 
@@ -595,22 +591,22 @@ text = "
 "
 horizontal_alignment = 1
 
-[node name="ch1" type="Button" parent="CanvasLayer/chapters/Panel/VBoxContainer"]
+[node name="ch1" type="Button" parent="CanvasLayer/chapters/Panel/VBoxContainer" unique_id=1108983863]
 layout_mode = 2
 theme_override_font_sizes/font_size = 38
 text = "Chapter 1 - The Forest"
 
-[node name="ch2" type="Button" parent="CanvasLayer/chapters/Panel/VBoxContainer"]
+[node name="ch2" type="Button" parent="CanvasLayer/chapters/Panel/VBoxContainer" unique_id=191137363]
 layout_mode = 2
 theme_override_font_sizes/font_size = 38
 text = "Chapter 2 - Desolate Town"
 
-[node name="ch3" type="Button" parent="CanvasLayer/chapters/Panel/VBoxContainer"]
+[node name="ch3" type="Button" parent="CanvasLayer/chapters/Panel/VBoxContainer" unique_id=1895843654]
 layout_mode = 2
 theme_override_font_sizes/font_size = 38
 text = "Point and Click demo"
 
-[node name="Close2" type="Button" parent="CanvasLayer/chapters"]
+[node name="Close2" type="Button" parent="CanvasLayer/chapters" unique_id=1508131112]
 layout_mode = 1
 offset_right = 8.0
 offset_bottom = 8.0

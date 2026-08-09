@@ -1,0 +1,260 @@
+[gd_scene format=3 uid="uid://bfc852ak50mfo"]
+
+[ext_resource type="Script" uid="uid://d1wt4ma6055l8" path="res://scenes/dialogue balloons/balloon.gd" id="1_36de5"]
+[ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/nodes/dialogue_label/dialogue_label.tscn" id="2_a8ve6"]
+[ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/nodes/responses_menu/dialogue_responses_menu.gd" id="2_b6ak4"]
+[ext_resource type="Theme" uid="uid://bw2dm0g8j123d" path="res://themes/beastiary_writing.tres" id="4_a5cpv"]
+[ext_resource type="Texture2D" uid="uid://y5me5ccmxed3" path="res://assets/ui/smallbox.png" id="4_b00mj"]
+[ext_resource type="AudioStream" uid="uid://bpqj8ty16q2kl" path="res://Fmod Project/CMPM 150 Final/Assets/SFX/talksound2.wav" id="4_mrq2w"]
+[ext_resource type="FontFile" uid="uid://4mauql4oflhj" path="res://assets/fonts/Kurland-Regular.ttf" id="4_ygxfk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.329412, 0.329412, 0.329412, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ri4m3"]
+bg_color = Color(0.121569, 0.121569, 0.121569, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e0njw"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.6, 0.6, 0.6, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uy0d5"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="Theme" id="Theme_qq3yp"]
+default_font_size = 20
+Button/styles/disabled = SubResource("StyleBoxFlat_spyqn")
+Button/styles/focus = SubResource("StyleBoxFlat_ri4m3")
+Button/styles/hover = SubResource("StyleBoxFlat_e0njw")
+Button/styles/normal = SubResource("StyleBoxFlat_e0njw")
+MarginContainer/constants/margin_bottom = 15
+MarginContainer/constants/margin_left = 30
+MarginContainer/constants/margin_right = 30
+MarginContainer/constants/margin_top = 15
+Panel/styles/panel = SubResource("StyleBoxFlat_uy0d5")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_46dpf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2yiv3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ku3hw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oq4xo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y78hs"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4oe22"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0majl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oityh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qwwl0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bhguo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hrime"]
+
+[node name="ExampleBalloon" type="CanvasLayer" unique_id=1004373923]
+layer = 100
+script = ExtResource("1_36de5")
+
+[node name="Balloon" type="Control" parent="." unique_id=1043804732]
+unique_name_in_owner = true
+layout_mode = 3
+anchor_right = 0.716
+anchor_bottom = 1.0
+offset_top = 3.0
+offset_right = -44.7201
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 8
+theme = SubResource("Theme_qq3yp")
+
+[node name="Panel" type="Panel" parent="Balloon" unique_id=500790782]
+visible = false
+clip_children = 2
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 21.0
+offset_top = -376.0
+offset_right = -19.0
+offset_bottom = -19.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 1
+
+[node name="Responses" type="MarginContainer" parent="Balloon" unique_id=1505381884]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 156.0
+offset_top = -769.0
+offset_right = 665.0
+offset_bottom = -365.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="ResponsesMenu" type="Container" parent="Balloon/Responses" unique_id=1629996375]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+size_flags_stretch_ratio = 0.0
+script = ExtResource("2_b6ak4")
+metadata/_custom_type_script = "uid://bb52rsfwhkxbn"
+
+[node name="ResponseExample" type="Button" parent="Balloon/Responses/ResponsesMenu" unique_id=1804542406]
+texture_filter = 3
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+theme = ExtResource("4_a5cpv")
+theme_type_variation = &"FlatButton"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.233925, 0.233925, 0.233925, 1)
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxEmpty_46dpf")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_2yiv3")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ku3hw")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_oq4xo")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_y78hs")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_4oe22")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_0majl")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_oityh")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_qwwl0")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_bhguo")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hrime")
+text = "Option"
+icon_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Balloon/Responses/ResponsesMenu/ResponseExample" unique_id=1774610493]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_top = -1.0
+offset_right = 7.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_b00mj")
+expand_mode = 1
+
+[node name="Dialogue" type="MarginContainer" parent="Balloon" unique_id=1958849882]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 694.44
+offset_right = 1315.0
+offset_bottom = 1052.44
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Balloon/Dialogue" unique_id=177067237]
+layout_mode = 2
+
+[node name="CharacterLabel" type="RichTextLabel" parent="Balloon/Dialogue/VBoxContainer" unique_id=78135744]
+unique_name_in_owner = true
+texture_filter = 3
+clip_contents = false
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("4_a5cpv")
+theme_override_colors/default_color = Color(0.103544, 5.79073e-08, 1.35368e-08, 1)
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "Character"
+fit_content = true
+scroll_active = false
+
+[node name="TextureRect3" type="TextureRect" parent="Balloon/Dialogue/VBoxContainer/CharacterLabel" unique_id=1862280841]
+modulate = Color(0, 0, 0, 0.537255)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.178
+anchor_bottom = 1.0
+offset_left = -24.0
+offset_top = -4.0
+offset_right = 10.138
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_b00mj")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="Balloon/Dialogue/VBoxContainer/CharacterLabel" unique_id=616428111]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.178
+anchor_bottom = 1.0
+offset_left = -22.0
+offset_top = -2.0
+offset_right = 8.138
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_b00mj")
+expand_mode = 1
+
+[node name="DialogueLabel" parent="Balloon/Dialogue/VBoxContainer" unique_id=2033604753 instance=ExtResource("2_a8ve6")]
+unique_name_in_owner = true
+texture_filter = 3
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("4_ygxfk")
+theme_override_font_sizes/normal_font_size = 40
+text = "Dialogue..."
+pause_at_characters = ""
+
+[node name="TextureRect" type="TextureRect" parent="Balloon/Dialogue/VBoxContainer" unique_id=1013623419]
+layout_mode = 2
+
+[node name="TextSound" type="AudioStreamPlayer" parent="." unique_id=2018347106]
+stream = ExtResource("4_mrq2w")
+volume_db = -9.59
+
+[connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]
+[connection signal="spoke" from="Balloon/Dialogue/VBoxContainer/DialogueLabel" to="." method="_on_dialogue_label_spoke"]
