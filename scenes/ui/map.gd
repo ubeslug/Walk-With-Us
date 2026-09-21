@@ -21,9 +21,11 @@ func _process(delta: float) -> void:
 	if Globals.map_active == true:
 		$ColorRect.visible = true
 		$ColorRect/Map/CanvasLayer.visible = true
+		$Player.visible = true
 	else:
 		$ColorRect.visible = false
 		$ColorRect/Map/CanvasLayer.visible = false
+		$Player.visible = false
 	pass
 
 

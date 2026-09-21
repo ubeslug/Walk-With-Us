@@ -1,10 +1,14 @@
-[gd_scene load_steps=11 format=3 uid="uid://c2127e3hwxx0u"]
+[gd_scene format=3 uid="uid://c2127e3hwxx0u"]
 
-[ext_resource type="Texture2D" uid="uid://bo5n4h0t10am3" path="res://assets/backgrounds/pt3/testing/docks.png" id="1_7uuf6"]
 [ext_resource type="Resource" uid="uid://dc4eq500d61kh" path="res://dialogue/pt3/test.dialogue" id="1_kffpr"]
 [ext_resource type="PackedScene" uid="uid://1yu00uqnngve" path="res://scenes/ui/test_ui.tscn" id="2_hcae0"]
-[ext_resource type="Texture2D" uid="uid://bbtjvyowd44cq" path="res://assets/backgrounds/pt3/testing/shark.png" id="3_t8psa"]
-[ext_resource type="Texture2D" uid="uid://b32go5nqmaw41" path="res://assets/backgrounds/pt3/testing/arrow.png" id="5_huau7"]
+[ext_resource type="Texture2D" uid="uid://cjx32rg52tk5l" path="res://assets/backgrounds/pt3/testing/Dock_fish.png" id="2_ym0aa"]
+[ext_resource type="Texture2D" uid="uid://cfgf1mgq6hks0" path="res://assets/backgrounds/pt3/testing/rod.png" id="3_66qtv"]
+[ext_resource type="Texture2D" uid="uid://ba2ct3aj7v4ki" path="res://assets/backgrounds/pt3/testing/fishing1.png" id="4_gul07"]
+[ext_resource type="Texture2D" uid="uid://c1ivjdlfxrb70" path="res://assets/backgrounds/pt3/testing/fishing2.png" id="5_pjp3l"]
+[ext_resource type="Texture2D" uid="uid://dn3wn7wlgkrsf" path="res://assets/backgrounds/pt3/testing/fishing3.png" id="6_kveja"]
+[ext_resource type="Theme" uid="uid://bw2dm0g8j123d" path="res://themes/beastiary_writing.tres" id="7_66qtv"]
+[ext_resource type="Texture2D" uid="uid://b32go5nqmaw41" path="res://assets/backgrounds/pt3/testing/arrow.png" id="9_gul07"]
 
 [sub_resource type="GDScript" id="GDScript_iwjp3"]
 script/source = "extends Node2D
@@ -14,8 +18,8 @@ const Balloon = preload(\"res://scenes/dialogue balloons/balloon.tscn\")
 @export var dialogue_start: String = \"start\"
 
 @onready var animation_player = $AnimationPlayer
-
-
+var bobs = 0
+var fish = [\"trout\", \"bass\", \"trash\"]
 
 func _ready():
 	var balloon: Node = Balloon.instantiate()
@@ -37,14 +41,40 @@ func death():
 	
 	get_tree().change_scene_to_file(\"res://scenes/menus/gameover.tscn\")
 
+func fishing() -> void:
+	bobs = randi_range(1,3)
+	for n in bobs:
+		$Control/Bob.wait_time = randi_range(1,5)
+		$Control/Bob.start()
+		await $Control/Bob.timeout
+		animation_player.play(\"bob\")
+		await animation_player.animation_finished
+	animation_player.play(\"catch\")
+	$Control/Reel.start(2.5)
+	$CanvasLayer/Catch.visible = true
 
-func _on_shark_pressed() -> void:
-	DialogueManager.show_dialogue_balloon(dialogue_resource, \"shark\")
+func _on_rod_pressed() -> void:
+	$CanvasLayer/Return.visible = false
+	animation_player.play(\"fishing\")
+	await animation_player.animation_finished
+	fishing()
 	pass # Replace with function body.
 
 
-func _on_texture_button_pressed() -> void:
-	DialogueManager.show_dialogue_balloon(dialogue_resource, \"to_hub\")
+func _on_reel_timeout() -> void:
+	$CanvasLayer/Catch.visible = false
+	DialogueManager.show_dialogue_balloon(dialogue_resource, \"fish_fail\")
+	$CanvasLayer/Return.visible = true
+	pass # Replace with function body.
+
+
+func _on_catch_pressed() -> void:
+	$CanvasLayer/Catch.visible = false
+	$Control/Reel.stop()
+	animation_player.stop()
+	animation_player.play(\"RESET\")
+	DialogueManager.show_dialogue_balloon(dialogue_resource, \"fish_win\")
+	$CanvasLayer/Return.visible = true
 	pass # Replace with function body.
 "
 
@@ -73,6 +103,290 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("images/Background:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/Rod:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("images/Fishing1:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("images/Fishing2:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("images/Fishing3:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("CanvasLayer/Rod:self_modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("images/Fishing1:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("images/Fishing2:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("images/Fishing2:rotation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("images/Fishing3:modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("images/Fishing3:rotation")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.17453292]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("CanvasLayer/Rod:modulate")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ym0aa"]
+resource_name = "bob"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("images/Fishing1:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.10000001, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.98039216), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("images/Fishing2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("images/Fishing2:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.10000001, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("images/Fishing2:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.10000001, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.08726646, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_66qtv"]
+resource_name = "catch"
+length = 2.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("images/Fishing3:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("images/Fishing3:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 2.3999999, 2.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("images/Fishing1:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.98039216), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("images/Fishing3:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.1, 0.4, 0.7, 1, 1.3, 1.6, 1.9, 2.2, 2.3999999),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.17453292, 0.0, 0.17453292, 0.0, 0.17453292, 0.0, 0.17453292, 0.17453292]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("images/Fishing3:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(694, 496.435)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CanvasLayer/Rod:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(2.3999999),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("CanvasLayer/Rod:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(2.3999999, 2.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_nqh2r"]
@@ -103,6 +417,45 @@ tracks/1/keys = {
 "values": [true]
 }
 
+[sub_resource type="Animation" id="Animation_gul07"]
+resource_name = "fishing"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Rod:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("images/Fishing1:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("images/Fishing1:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_e28yj"]
 resource_name = "startup"
 length = 2.0
@@ -130,72 +483,187 @@ tracks/1/keys = {
 "update": 1,
 "values": [true, false]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("images/Background:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/Rod:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("images/Fishing1:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("images/Fishing2:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("images/Fishing3:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rwbvg"]
 _data = {
-"RESET": SubResource("Animation_uxrke"),
-"fade-out": SubResource("Animation_nqh2r"),
-"startup": SubResource("Animation_e28yj")
+&"RESET": SubResource("Animation_uxrke"),
+&"bob": SubResource("Animation_ym0aa"),
+&"catch": SubResource("Animation_66qtv"),
+&"fade-out": SubResource("Animation_nqh2r"),
+&"fishing": SubResource("Animation_gul07"),
+&"startup": SubResource("Animation_e28yj")
 }
 
-[node name="Template" type="Node2D"]
+[node name="Fishing" type="Node2D" unique_id=1989346357]
 script = SubResource("GDScript_iwjp3")
 dialogue_resource = ExtResource("1_kffpr")
 
-[node name="images" type="Node2D" parent="."]
+[node name="images" type="Node2D" parent="." unique_id=901350620]
 
-[node name="ColorRect" type="ColorRect" parent="images"]
+[node name="ColorRect" type="ColorRect" parent="images" unique_id=292845638]
 offset_right = 1641.0
 offset_bottom = 897.0
+metadata/_edit_use_anchors_ = true
 
-[node name="Background" type="Sprite2D" parent="images"]
+[node name="Background" type="Sprite2D" parent="images" unique_id=93119868]
 position = Vector2(1, -7.62939e-06)
-scale = Vector2(1, 1.01032)
-texture = ExtResource("1_7uuf6")
+scale = Vector2(1.3658787, 1.2367942)
+texture = ExtResource("2_ym0aa")
 centered = false
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_rwbvg")
-}
-autoplay = "startup"
+[node name="Fishing1" type="Sprite2D" parent="images" unique_id=1812770834]
+visible = false
+modulate = Color(1, 1, 1, 0)
+position = Vector2(694, 454.99997)
+scale = Vector2(1.0979899, 1.221698)
+texture = ExtResource("4_gul07")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="Fishing2" type="Sprite2D" parent="images" unique_id=2120478519]
+visible = false
+position = Vector2(694, 454.99997)
+scale = Vector2(1.0979899, 1.221698)
+texture = ExtResource("5_pjp3l")
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+[node name="Fishing3" type="Sprite2D" parent="images" unique_id=405161249]
+visible = false
+position = Vector2(694, 496.435)
+rotation = 0.17453292
+scale = Vector2(1.0979899, 1.221698)
+texture = ExtResource("6_kveja")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=792439822]
+libraries/ = SubResource("AnimationLibrary_rwbvg")
+autoplay = &"startup"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1626683085]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1081170825]
 visible = false
 z_index = 1
 offset_right = 1978.0
 offset_bottom = 1126.0
 color = Color(0, 0, 0, 1)
 
-[node name="ui" parent="CanvasLayer" instance=ExtResource("2_hcae0")]
+[node name="ui" parent="CanvasLayer" unique_id=837257257 instance=ExtResource("2_hcae0")]
+theme = ExtResource("7_66qtv")
+metadata/_edit_use_anchors_ = true
 
-[node name="Shark" type="TextureButton" parent="CanvasLayer"]
-offset_left = 192.0
-offset_top = 80.0
-offset_right = 1127.0
-offset_bottom = 678.0
-mouse_default_cursor_shape = 2
-texture_normal = ExtResource("3_t8psa")
-
-[node name="TextureButton" type="TextureButton" parent="CanvasLayer"]
-offset_left = 103.0
-offset_top = 520.0
-offset_right = 200.0
-offset_bottom = 595.0
-rotation = 2.47488
-mouse_default_cursor_shape = 2
-texture_normal = ExtResource("5_huau7")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="ColorRect2" type="ColorRect" parent="CanvasLayer"]
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer" unique_id=1798601938]
 visible = false
 modulate = Color(0, 0, 0, 0.784314)
 offset_right = 1330.0
 offset_bottom = 678.0
 mouse_filter = 2
 
-[connection signal="pressed" from="CanvasLayer/Shark" to="." method="_on_shark_pressed"]
-[connection signal="pressed" from="CanvasLayer/TextureButton" to="." method="_on_texture_button_pressed"]
+[node name="Rod" type="TextureButton" parent="CanvasLayer" unique_id=1864631235]
+offset_left = 36.0
+offset_top = 158.0
+offset_right = 236.0
+offset_bottom = 602.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("3_66qtv")
+
+[node name="Catch" type="Button" parent="CanvasLayer" unique_id=822627413]
+visible = false
+anchors_preset = -1
+anchor_left = 0.30026042
+anchor_top = 0.25648147
+anchor_right = 0.4299479
+anchor_bottom = 0.39537036
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("7_66qtv")
+theme_override_font_sizes/font_size = 75
+text = "CATCH"
+icon_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Return" type="TextureButton" parent="CanvasLayer" unique_id=2099002388]
+offset_left = 497.0
+offset_top = 626.0
+offset_right = 613.0
+offset_bottom = 702.0
+rotation = 2.4609141
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("9_gul07")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Control" type="Control" parent="." unique_id=2040910765]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Bob" type="Timer" parent="Control" unique_id=877260389]
+
+[node name="Reel" type="Timer" parent="Control" unique_id=1674205389]
+wait_time = 2.5
+one_shot = true
+
+[connection signal="pressed" from="CanvasLayer/Rod" to="." method="_on_rod_pressed"]
+[connection signal="pressed" from="CanvasLayer/Catch" to="." method="_on_catch_pressed"]
+[connection signal="pressed" from="CanvasLayer/Return" to="." method="to_hub"]
+[connection signal="timeout" from="Control/Bob" to="." method="_on_bob_timeout"]
+[connection signal="timeout" from="Control/Reel" to="." method="_on_reel_timeout"]

@@ -19,10 +19,6 @@ You head to the docks
 do to_docks()
 => END
 
-~ shark
-I am a shark
-=> END
-
 ~ to_hub
 You decide to go back
 do to_hub()
@@ -37,3 +33,11 @@ You failed the qte
 
 ~ qte_win
 You won the qte
+
+~ fish_fail
+It got away.
+=> END
+
+~ fish_win
+You got a fish!
+=> END
