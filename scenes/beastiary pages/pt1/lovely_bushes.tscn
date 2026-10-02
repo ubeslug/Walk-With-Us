@@ -1,11 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://dl84s4l7730nh"]
+[gd_scene format=3 uid="uid://dl84s4l7730nh"]
 
-[ext_resource type="Script" path="res://scripts/page_base.gd" id="1_5uk20"]
+[ext_resource type="Script" uid="uid://dlekensw7awcy" path="res://scripts/page_base.gd" id="1_5uk20"]
 [ext_resource type="PackedScene" uid="uid://beneqpcnms27p" path="res://scenes/beastiary pages/_page_base.tscn" id="2_2iuk1"]
 [ext_resource type="Texture2D" uid="uid://bqo1u213g5kci" path="res://assets/sketches/LovelyBush.png" id="3_k486v"]
 [ext_resource type="Theme" uid="uid://bw2dm0g8j123d" path="res://themes/beastiary_writing.tres" id="4_ofgjm"]
 
-[node name="lovely Bushes" type="Control"]
+[node name="lovely Bushes" type="Control" unique_id=1853879770]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -15,10 +15,10 @@ grow_vertical = 2
 script = ExtResource("1_5uk20")
 metadata/_edit_use_anchors_ = true
 
-[node name="page_base" parent="." instance=ExtResource("2_2iuk1")]
+[node name="page_base" parent="." unique_id=279118906 instance=ExtResource("2_2iuk1")]
 layout_mode = 1
 
-[node name="Contents" type="Control" parent="."]
+[node name="Contents" type="Control" parent="." unique_id=1520591987]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -28,12 +28,12 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="sketch" type="Sprite2D" parent="Contents"]
+[node name="sketch" type="Sprite2D" parent="Contents" unique_id=1799106848]
 position = Vector2(-354, 40)
 scale = Vector2(0.585301, 0.585301)
 texture = ExtResource("3_k486v")
 
-[node name="entry name" type="Label" parent="Contents"]
+[node name="entry name" type="Label" parent="Contents" unique_id=883863422]
 layout_mode = 0
 offset_left = -634.0
 offset_top = -341.0
@@ -44,7 +44,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "Lovey Bushes"
 
-[node name="entry passage" type="Label" parent="Contents"]
+[node name="entry passage" type="Label" parent="Contents" unique_id=1785233872]
 layout_mode = 0
 offset_left = 112.0
 offset_top = -326.0
@@ -60,7 +60,8 @@ When its target gets close enough this creature will lash out with its roots to 
 While the Lovely Bushes tend to prey on smaller creatures they can leave significant harm to larger creatures that come too close."
 autowrap_mode = 3
 
-[node name="Label" type="Label" parent="Contents"]
+[node name="Label" type="Label" parent="Contents" unique_id=1389519561]
+layout_mode = 0
 offset_left = 637.0
 offset_top = -384.0
 offset_right = 662.0
@@ -70,7 +71,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
 text = "6"
 
-[node name="book_worms" type="Control" parent="."]
+[node name="book_worms" type="Control" parent="." unique_id=1388794595]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -78,11 +79,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="level_1" type="Sprite2D" parent="book_worms"]
+[node name="level_1" type="Sprite2D" parent="book_worms" unique_id=809466738]
 visible = false
 
-[node name="level_2" type="Sprite2D" parent="book_worms"]
+[node name="level_2" type="Sprite2D" parent="book_worms" unique_id=344492881]
 visible = false
 
-[node name="level_3" type="Sprite2D" parent="book_worms"]
+[node name="level_3" type="Sprite2D" parent="book_worms" unique_id=324723637]
 visible = false

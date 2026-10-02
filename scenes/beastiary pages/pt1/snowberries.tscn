@@ -1,11 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://b13pxo1flxfdm"]
+[gd_scene format=3 uid="uid://b13pxo1flxfdm"]
 
-[ext_resource type="Script" path="res://scripts/page_base.gd" id="1_mhm22"]
+[ext_resource type="Script" uid="uid://dlekensw7awcy" path="res://scripts/page_base.gd" id="1_mhm22"]
 [ext_resource type="PackedScene" uid="uid://beneqpcnms27p" path="res://scenes/beastiary pages/_page_base.tscn" id="2_sga3p"]
 [ext_resource type="Texture2D" uid="uid://ds0gfbpikxiwr" path="res://assets/sketches/snowberries.png" id="3_8q80g"]
 [ext_resource type="Theme" uid="uid://bw2dm0g8j123d" path="res://themes/beastiary_writing.tres" id="4_v1crj"]
 
-[node name="snowberries" type="Control"]
+[node name="snowberries" type="Control" unique_id=1626803437]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -15,10 +15,10 @@ grow_vertical = 2
 script = ExtResource("1_mhm22")
 metadata/_edit_use_anchors_ = true
 
-[node name="page_base" parent="." instance=ExtResource("2_sga3p")]
+[node name="page_base" parent="." unique_id=1854479929 instance=ExtResource("2_sga3p")]
 layout_mode = 1
 
-[node name="Contents" type="Control" parent="."]
+[node name="Contents" type="Control" parent="." unique_id=1721248028]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -28,12 +28,12 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="sketch" type="Sprite2D" parent="Contents"]
+[node name="sketch" type="Sprite2D" parent="Contents" unique_id=1746950913]
 position = Vector2(-354, 40)
 scale = Vector2(0.585301, 0.585301)
 texture = ExtResource("3_8q80g")
 
-[node name="entry name" type="Label" parent="Contents"]
+[node name="entry name" type="Label" parent="Contents" unique_id=474210131]
 layout_mode = 0
 offset_left = -634.0
 offset_top = -341.0
@@ -44,7 +44,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "Snowberries"
 
-[node name="entry passage" type="Label" parent="Contents"]
+[node name="entry passage" type="Label" parent="Contents" unique_id=1314549777]
 layout_mode = 0
 offset_left = 112.0
 offset_top = -326.0
@@ -58,7 +58,8 @@ text = "Snow Berries can be identified by their bright red appearance and dark c
 Should you find SnowBerries on your journey, it may not hurt to take a few with you. Just be careful to not eat a few on your way."
 autowrap_mode = 3
 
-[node name="Label" type="Label" parent="Contents"]
+[node name="Label" type="Label" parent="Contents" unique_id=164600135]
+layout_mode = 0
 offset_left = 637.0
 offset_top = -384.0
 offset_right = 662.0
@@ -66,9 +67,9 @@ offset_bottom = -357.0
 theme = ExtResource("4_v1crj")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
-text = "5"
+text = "9"
 
-[node name="book_worms" type="Control" parent="."]
+[node name="book_worms" type="Control" parent="." unique_id=546454434]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -76,11 +77,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="level_1" type="Sprite2D" parent="book_worms"]
+[node name="level_1" type="Sprite2D" parent="book_worms" unique_id=523140317]
 visible = false
 
-[node name="level_2" type="Sprite2D" parent="book_worms"]
+[node name="level_2" type="Sprite2D" parent="book_worms" unique_id=1349478564]
 visible = false
 
-[node name="level_3" type="Sprite2D" parent="book_worms"]
+[node name="level_3" type="Sprite2D" parent="book_worms" unique_id=1897299290]
 visible = false

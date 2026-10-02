@@ -1,11 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://brgi2c24ldmbj"]
+[gd_scene format=3 uid="uid://brgi2c24ldmbj"]
 
-[ext_resource type="Script" path="res://scripts/page_base.gd" id="1_sbmkf"]
+[ext_resource type="Script" uid="uid://dlekensw7awcy" path="res://scripts/page_base.gd" id="1_sbmkf"]
 [ext_resource type="PackedScene" uid="uid://beneqpcnms27p" path="res://scenes/beastiary pages/_page_base.tscn" id="2_6oj5o"]
 [ext_resource type="Texture2D" uid="uid://hfbu3tkxxs8d" path="res://assets/sketches/Fox.png" id="3_qh8t8"]
 [ext_resource type="Theme" uid="uid://bw2dm0g8j123d" path="res://themes/beastiary_writing.tres" id="4_6sv0m"]
 
-[node name="red_fox_page" type="Control"]
+[node name="red_fox_page" type="Control" unique_id=1697467379]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -14,10 +14,10 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_sbmkf")
 
-[node name="page_base" parent="." instance=ExtResource("2_6oj5o")]
+[node name="page_base" parent="." unique_id=543460017 instance=ExtResource("2_6oj5o")]
 layout_mode = 1
 
-[node name="Contents" type="Control" parent="."]
+[node name="Contents" type="Control" parent="." unique_id=1491060780]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -27,12 +27,12 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="sketch" type="Sprite2D" parent="Contents"]
+[node name="sketch" type="Sprite2D" parent="Contents" unique_id=276355211]
 position = Vector2(-375.98, 57)
 scale = Vector2(0.585301, 0.585301)
 texture = ExtResource("3_qh8t8")
 
-[node name="entry name" type="Label" parent="Contents"]
+[node name="entry name" type="Label" parent="Contents" unique_id=1922645177]
 layout_mode = 0
 offset_left = -636.0
 offset_top = -348.0
@@ -43,7 +43,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "Red Fox"
 
-[node name="entry passage" type="Label" parent="Contents"]
+[node name="entry passage" type="Label" parent="Contents" unique_id=1186913449]
 layout_mode = 0
 offset_left = 100.0
 offset_top = -331.0
@@ -59,7 +59,7 @@ When encountering a Red Fox one should not fret as these creatures are docile to
 Side Note: Red Foxes are quite friendly and their fur is immaculate to sift through with your hands."
 autowrap_mode = 3
 
-[node name="Label" type="Label" parent="Contents"]
+[node name="Label" type="Label" parent="Contents" unique_id=467186159]
 layout_mode = 0
 offset_left = 637.0
 offset_top = -384.0
@@ -68,9 +68,9 @@ offset_bottom = -357.0
 theme = ExtResource("4_6sv0m")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
-text = "12"
+text = "18"
 
-[node name="book_worms" type="Control" parent="."]
+[node name="book_worms" type="Control" parent="." unique_id=1634287123]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -78,11 +78,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="level_1" type="Sprite2D" parent="book_worms"]
+[node name="level_1" type="Sprite2D" parent="book_worms" unique_id=2056063813]
 visible = false
 
-[node name="level_2" type="Sprite2D" parent="book_worms"]
+[node name="level_2" type="Sprite2D" parent="book_worms" unique_id=1116959635]
 visible = false
 
-[node name="level_3" type="Sprite2D" parent="book_worms"]
+[node name="level_3" type="Sprite2D" parent="book_worms" unique_id=854093159]
 visible = false

@@ -1,41 +1,59 @@
-[gd_scene load_steps=63 format=3 uid="uid://bly2o8v0fqmvi"]
+[gd_scene format=3 uid="uid://bly2o8v0fqmvi"]
 
-[ext_resource type="Script" path="res://scripts/monster_database.gd" id="1_fmdyi"]
+[ext_resource type="Script" uid="uid://cqa7wm5syv7w7" path="res://scripts/monster_database.gd" id="1_fmdyi"]
 [ext_resource type="PackedScene" uid="uid://beneqpcnms27p" path="res://scenes/beastiary pages/_page_base.tscn" id="2_4jixn"]
 [ext_resource type="Texture2D" uid="uid://c88mc3kfag4a7" path="res://icon.svg" id="2_y2xxm"]
-[ext_resource type="Shader" path="res://shaders/blur.gdshader" id="2_yh8ol"]
+[ext_resource type="Shader" uid="uid://dprv1iq6niy5o" path="res://shaders/blur.gdshader" id="2_yh8ol"]
 [ext_resource type="PackedScene" uid="uid://b8dpovoyhhwhp" path="res://scenes/beastiary pages/lavender.tscn" id="3_7y3vh"]
 [ext_resource type="PackedScene" uid="uid://ckqd8ajnom4wd" path="res://scenes/beastiary pages/nightshade_page.tscn" id="4_14wdw"]
-[ext_resource type="PackedScene" uid="uid://b74yen3xdm85o" path="res://scenes/beastiary pages/_table_of_contents.tscn" id="5_01lke"]
+[ext_resource type="Texture2D" uid="uid://cfvqok4m8p1iy" path="res://assets/ui/book_temp.png" id="4_nv4aw"]
+[ext_resource type="Texture2D" uid="uid://dtrfq82y1jfeh" path="res://assets/ui/bookmark_tob.png" id="5_87oat"]
+[ext_resource type="PackedScene" uid="uid://dr4o5saleenml" path="res://scenes/beastiary pages/pt2/pt2.1_table_of_contents.tscn" id="5_e0ncg"]
 [ext_resource type="PackedScene" uid="uid://d0llc3vdmdet" path="res://scenes/beastiary pages/buckleberries.tscn" id="5_n8885"]
 [ext_resource type="PackedScene" uid="uid://d3h5xettr3lgy" path="res://scenes/beastiary pages/lovely_bushes.tscn" id="6_118e1"]
+[ext_resource type="Texture2D" uid="uid://bifgbl325gc1g" path="res://assets/ui/bookmark_tob_glow.png" id="6_nv4aw"]
+[ext_resource type="PackedScene" uid="uid://b82buedyuo7sv" path="res://scenes/beastiary pages/pt2/pt2.2_table_of_contents.tscn" id="6_uimlr"]
 [ext_resource type="PackedScene" uid="uid://bjup2dqx33ruo" path="res://scenes/beastiary pages/whistling_tree_page.tscn" id="7_pequu"]
+[ext_resource type="Texture2D" uid="uid://d3v4h5ycy50cc" path="res://assets/ui/bookmark_flora.png" id="7_vmc3v"]
 [ext_resource type="PackedScene" uid="uid://58f2fodlqs8q" path="res://scenes/beastiary pages/deer_page.tscn" id="8_d0015"]
 [ext_resource type="PackedScene" uid="uid://seymdxg6el1x" path="res://scenes/beastiary pages/bookworms.tscn" id="8_msjyi"]
+[ext_resource type="Texture2D" uid="uid://1guaugxowmx7" path="res://assets/ui/bookmark_flora_glow.png" id="8_qpjdr"]
 [ext_resource type="PackedScene" uid="uid://cidy8oe8rbw1u" path="res://scenes/beastiary pages/snowberries.tscn" id="8_vfi3i"]
 [ext_resource type="PackedScene" uid="uid://d6fn1y52n4qt" path="res://scenes/beastiary pages/cottonberries_page.tscn" id="8_x42n1"]
+[ext_resource type="Texture2D" uid="uid://dokb4c36jj17g" path="res://assets/ui/bookmark_fauna.png" id="9_fwg2m"]
 [ext_resource type="PackedScene" uid="uid://cfm03oskwcxbv" path="res://scenes/beastiary pages/red_fox_page.tscn" id="9_xb5at"]
 [ext_resource type="PackedScene" uid="uid://dpe1mtjvhebob" path="res://scenes/beastiary pages/Black Bear.tscn" id="10_6rpct"]
+[ext_resource type="Texture2D" uid="uid://dp4h0mp5uwky5" path="res://assets/ui/bookmark_fauna_glow.png" id="10_p763b"]
+[ext_resource type="Texture2D" uid="uid://dac4qqvhvlm7n" path="res://assets/ui/bookmark_humanoid.png" id="11_hmtey"]
 [ext_resource type="PackedScene" uid="uid://bf2okttow431s" path="res://scenes/beastiary pages/jackalope_page.tscn" id="11_vy0dc"]
 [ext_resource type="PackedScene" uid="uid://d1kev2ehmymyx" path="res://scenes/beastiary pages/tea fairy.tscn" id="12_8fhjj"]
+[ext_resource type="Texture2D" uid="uid://c0h7wwrn8sdxk" path="res://assets/ui/bookmark_humanoid_glow.png" id="12_mgp4o"]
 [ext_resource type="PackedScene" uid="uid://cyq20djsa0jul" path="res://scenes/beastiary pages/oak_page.tscn" id="12_p66ep"]
+[ext_resource type="Texture2D" uid="uid://dicqd4otp8q4m" path="res://assets/ui/bookmark_undead.png" id="13_5emxt"]
 [ext_resource type="PackedScene" uid="uid://baykr64ps5nxn" path="res://scenes/beastiary pages/omega_oak_page.tscn" id="13_ib5d8"]
 [ext_resource type="PackedScene" uid="uid://fnt4xt1sbhxt" path="res://scenes/beastiary pages/tabletop.tscn" id="13_rgid8"]
 [ext_resource type="PackedScene" uid="uid://blj8kxw0wcscu" path="res://scenes/beastiary pages/grizzly_bear.tscn" id="14_bwoa8"]
 [ext_resource type="PackedScene" uid="uid://dkc24geafgq41" path="res://scenes/beastiary pages/mimetic_page.tscn" id="14_lkvh2"]
+[ext_resource type="Texture2D" uid="uid://dt5plaia1e85p" path="res://assets/ui/bookmark_undead_glow.png" id="14_s32m1"]
 [ext_resource type="PackedScene" uid="uid://b30a4e8tqp2w2" path="res://scenes/beastiary pages/skeleton_page.tscn" id="15_jfgg8"]
+[ext_resource type="Texture2D" uid="uid://dwj8ua0enuhma" path="res://assets/ui/bookmark_monstrosity.png" id="15_m6pxl"]
 [ext_resource type="PackedScene" uid="uid://doogy3tt2bwq" path="res://scenes/beastiary pages/pt2/rats.tscn" id="16_6s4dg"]
+[ext_resource type="Texture2D" uid="uid://bnr5774w4ga4q" path="res://assets/ui/bookmark_monstrosity_glow.png" id="16_fyjkv"]
 [ext_resource type="PackedScene" uid="uid://br731a0smpgml" path="res://scenes/beastiary pages/cloaked_jester_page.tscn" id="16_lcf2d"]
 [ext_resource type="PackedScene" uid="uid://d0qqfmoq10frq" path="res://scenes/beastiary pages/decrepit_trader_page.tscn" id="17_47d4w"]
 [ext_resource type="PackedScene" uid="uid://csb3jtpgw2xnj" path="res://scenes/beastiary pages/gojarus.tscn" id="17_jc1g5"]
+[ext_resource type="Texture2D" uid="uid://c3ijl6bvdl0x8" path="res://assets/ui/construct_bookmark.png" id="17_rjmdf"]
 [ext_resource type="PackedScene" uid="uid://bgjb16gjyeqva" path="res://scenes/beastiary pages/pt2/gemtoads.tscn" id="17_vyipj"]
+[ext_resource type="Texture2D" uid="uid://deibimd8iyfo7" path="res://assets/ui/construct_bookmark_glow.png" id="18_2f6gp"]
 [ext_resource type="Texture2D" uid="uid://dajrtc6pexgv5" path="res://assets/ui/pencil_arrow_default.png" id="18_dsdv8"]
 [ext_resource type="PackedScene" uid="uid://drn4bmq4wy2e4" path="res://scenes/beastiary pages/pt2/egghead.tscn" id="18_tk7t7"]
+[ext_resource type="Texture2D" uid="uid://bggo7mxcyvl7i" path="res://assets/ui/bookmark_special.png" id="19_c17x5"]
 [ext_resource type="PackedScene" uid="uid://cwsoynweuh0fp" path="res://scenes/beastiary pages/necrotic_sludge.tscn" id="19_i503u"]
 [ext_resource type="Texture2D" uid="uid://ha2gfqasdlrv" path="res://assets/ui/pencil_arrow_down.png" id="19_ldpkt"]
 [ext_resource type="Texture2D" uid="uid://dknxkoxf7ybja" path="res://assets/ui/pencil_arrow_highlight.png" id="20_63fb4"]
 [ext_resource type="PackedScene" uid="uid://dvgvv24wku8yw" path="res://scenes/beastiary pages/blossom_bones.tscn" id="20_ka6gy"]
 [ext_resource type="PackedScene" uid="uid://hhnhtum1pkt7" path="res://scenes/beastiary pages/blooming_fox.tscn" id="20_km3ik"]
+[ext_resource type="Texture2D" uid="uid://cirmm1ljwqvws" path="res://assets/ui/bookmark_special_glow.png" id="20_x5gmg"]
 [ext_resource type="Texture2D" uid="uid://bdmwcw428uwvd" path="res://assets/ui/pencil_arrow_disabled.png" id="21_u1sbc"]
 [ext_resource type="Texture2D" uid="uid://cxmuuj1w6v5q8" path="res://assets/ui/pencil_x_default.png" id="22_dupp8"]
 [ext_resource type="PackedScene" uid="uid://chkhb62suvi4k" path="res://scenes/beastiary pages/pt2/remnants.tscn" id="23_4j4c4"]
@@ -54,12 +72,8 @@
 [ext_resource type="PackedScene" uid="uid://ciw0e2fmgvh73" path="res://scenes/beastiary pages/pt2/everburning.tscn" id="37_vmg4b"]
 [ext_resource type="PackedScene" uid="uid://30jlqe7gc3qi" path="res://scenes/beastiary pages/pt2/monument.tscn" id="43_ys0r4"]
 [ext_resource type="PackedScene" uid="uid://ceb4w1rsqn4av" path="res://scenes/beastiary pages/pt2/agent.tscn" id="45_wipmf"]
-[ext_resource type="Texture2D" uid="uid://c5swihq128pk3" path="res://assets/ui/bookmark.png" id="48_0fcpx"]
 [ext_resource type="Texture2D" uid="uid://dtueoa10fwv2l" path="res://assets/ui/bookworms1.png" id="52_vgd04"]
 [ext_resource type="Texture2D" uid="uid://cbm1o7s7klgjl" path="res://assets/ui/bookworms2.png" id="53_rxlni"]
-[ext_resource type="Texture2D" uid="uid://dih47vi3c3asj" path="res://assets/ui/bookmark_glow.png" id="54_th35u"]
-[ext_resource type="Texture2D" uid="uid://drw60bjgcn4sf" path="res://assets/ui/bookmark2.png" id="56_o0f4u"]
-[ext_resource type="Texture2D" uid="uid://drd0tgonrxd2p" path="res://assets/ui/bookmark2_glow.png" id="57_k8b3l"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_y7s42"]
 shader = ExtResource("2_yh8ol")
@@ -74,34 +88,128 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("53_rxlni")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 3.0
 }]
 
-[node name="MonsterDatabase" type="CanvasLayer"]
+[node name="MonsterDatabase" type="CanvasLayer" unique_id=504892465]
 layer = 101
 script = ExtResource("1_fmdyi")
 
-[node name="ColorRect2" type="Sprite2D" parent="."]
+[node name="ColorRect2" type="Sprite2D" parent="." unique_id=705670666]
 visible = false
 position = Vector2(1038, 539)
 scale = Vector2(17.2188, 9.42188)
 texture = ExtResource("2_y2xxm")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1073260076]
 material = SubResource("ShaderMaterial_y7s42")
 offset_right = 1950.0
 offset_bottom = 1112.0
 
-[node name="page_base" parent="." instance=ExtResource("2_4jixn")]
+[node name="BookTemp" type="Sprite2D" parent="ColorRect" unique_id=398668415]
+position = Vector2(958.3582, 539)
+scale = Vector2(0.75276333, 0.75186557)
+texture = ExtResource("4_nv4aw")
+
+[node name="page_base" parent="." unique_id=471947327 instance=ExtResource("2_4jixn")]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 
-[node name="pages" type="Control" parent="."]
+[node name="toc3" type="TextureButton" parent="." unique_id=1786341156]
+offset_left = 283.0
+offset_top = 103.0
+offset_right = 358.133
+offset_bottom = 152.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("5_87oat")
+texture_hover = ExtResource("6_nv4aw")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="flora" type="TextureButton" parent="." unique_id=1188628341]
+offset_left = 358.0
+offset_top = 103.0
+offset_right = 433.133
+offset_bottom = 152.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("7_vmc3v")
+texture_hover = ExtResource("8_qpjdr")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="fauna" type="TextureButton" parent="." unique_id=768784402]
+offset_left = 433.0
+offset_top = 103.0
+offset_right = 508.133
+offset_bottom = 152.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("9_fwg2m")
+texture_hover = ExtResource("10_p763b")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="humanoid" type="TextureButton" parent="." unique_id=1605425093]
+offset_left = 508.0
+offset_top = 103.0
+offset_right = 583.133
+offset_bottom = 152.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("11_hmtey")
+texture_hover = ExtResource("12_mgp4o")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="undead" type="TextureButton" parent="." unique_id=1993304559]
+offset_left = 583.0
+offset_top = 103.0
+offset_right = 658.133
+offset_bottom = 152.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("13_5emxt")
+texture_hover = ExtResource("14_s32m1")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="monstrosity" type="TextureButton" parent="." unique_id=1393459788]
+offset_left = 658.0
+offset_top = 103.0
+offset_right = 733.133
+offset_bottom = 152.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("15_m6pxl")
+texture_hover = ExtResource("16_fyjkv")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="construct" type="TextureButton" parent="." unique_id=882028263]
+offset_left = 733.0
+offset_top = 103.0
+offset_right = 808.133
+offset_bottom = 152.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("17_rjmdf")
+texture_hover = ExtResource("18_2f6gp")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="toc2" type="TextureButton" parent="." unique_id=1224759828]
+visible = false
+offset_left = 808.0
+offset_top = 103.0
+offset_right = 883.133
+offset_bottom = 152.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("19_c17x5")
+texture_hover = ExtResource("20_x5gmg")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="pages" type="Control" parent="." unique_id=1236973970]
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -111,66 +219,66 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="table_of_contents2" parent="pages" instance=ExtResource("5_01lke")]
+[node name="table_of_contents" parent="pages" unique_id=2122314415 instance=ExtResource("5_e0ncg")]
 layout_mode = 1
 
-[node name="lavender" parent="pages" instance=ExtResource("3_7y3vh")]
+[node name="table_of_contents2" parent="pages" unique_id=1955468177 instance=ExtResource("6_uimlr")]
 visible = false
 layout_mode = 1
 
-[node name="nightshade" parent="pages" instance=ExtResource("4_14wdw")]
+[node name="buckleberry_page" parent="pages" unique_id=953763303 instance=ExtResource("5_n8885")]
 visible = false
 layout_mode = 1
 
-[node name="buckleberry_page" parent="pages" instance=ExtResource("5_n8885")]
+[node name="cottonberries" parent="pages" unique_id=210878735 instance=ExtResource("8_x42n1")]
 visible = false
 layout_mode = 1
 
-[node name="cottonberries" parent="pages" instance=ExtResource("8_x42n1")]
+[node name="lavender" parent="pages" unique_id=1158444353 instance=ExtResource("3_7y3vh")]
 visible = false
 layout_mode = 1
 
-[node name="snowberries" parent="pages" instance=ExtResource("8_vfi3i")]
+[node name="lovely Bushes" parent="pages" unique_id=1194213400 instance=ExtResource("6_118e1")]
 visible = false
 layout_mode = 1
 
-[node name="lovely Bushes" parent="pages" instance=ExtResource("6_118e1")]
+[node name="nightshade" parent="pages" unique_id=257492131 instance=ExtResource("4_14wdw")]
 visible = false
 layout_mode = 1
 
-[node name="whistling tree" parent="pages" instance=ExtResource("7_pequu")]
+[node name="oak_page" parent="pages" unique_id=1524564217 instance=ExtResource("12_p66ep")]
 visible = false
 layout_mode = 1
 
-[node name="gojarus" parent="pages" instance=ExtResource("17_jc1g5")]
+[node name="snowberries" parent="pages" unique_id=488733516 instance=ExtResource("8_vfi3i")]
 visible = false
 layout_mode = 1
 
-[node name="oak_page" parent="pages" instance=ExtResource("12_p66ep")]
+[node name="whistling tree" parent="pages" unique_id=1865301188 instance=ExtResource("7_pequu")]
 visible = false
 layout_mode = 1
 
-[node name="omega_oak_page" parent="pages" instance=ExtResource("13_ib5d8")]
+[node name="Black Bear" parent="pages" unique_id=786577607 instance=ExtResource("10_6rpct")]
 visible = false
 layout_mode = 1
 
-[node name="bookworms" parent="pages" instance=ExtResource("8_msjyi")]
+[node name="blooming_fox" parent="pages" unique_id=578212474 instance=ExtResource("20_km3ik")]
 visible = false
 layout_mode = 1
 
-[node name="gemtoads" parent="pages" instance=ExtResource("17_vyipj")]
+[node name="gojarus" parent="pages" unique_id=1024103852 instance=ExtResource("17_jc1g5")]
 visible = false
 layout_mode = 1
 
-[node name="egghead" parent="pages" instance=ExtResource("18_tk7t7")]
+[node name="bookworms" parent="pages" unique_id=1470271710 instance=ExtResource("8_msjyi")]
 visible = false
 layout_mode = 1
 
-[node name="rats" parent="pages" instance=ExtResource("16_6s4dg")]
+[node name="centibat" parent="pages" unique_id=955056127 instance=ExtResource("26_jgama")]
 visible = false
 layout_mode = 1
 
-[node name="deer_page" parent="pages" instance=ExtResource("8_d0015")]
+[node name="deer_page" parent="pages" unique_id=172672016 instance=ExtResource("8_d0015")]
 visible = false
 layout_mode = 1
 anchors_preset = 0
@@ -178,109 +286,115 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 grow_horizontal = 1
 grow_vertical = 1
+active = true
+bookworm_level = 0
 
-[node name="red_fox_page" parent="pages" instance=ExtResource("9_xb5at")]
+[node name="gemtoads" parent="pages" unique_id=1158487364 instance=ExtResource("17_vyipj")]
 visible = false
 layout_mode = 1
 
-[node name="blooming_fox" parent="pages" instance=ExtResource("20_km3ik")]
+[node name="Grizzly_bear" parent="pages" unique_id=1020989440 instance=ExtResource("14_bwoa8")]
 visible = false
 layout_mode = 1
 
-[node name="teafairy" parent="pages" instance=ExtResource("12_8fhjj")]
+[node name="jackalope_page" parent="pages" unique_id=1137251674 instance=ExtResource("11_vy0dc")]
 visible = false
 layout_mode = 1
 
-[node name="tabletop" parent="pages" instance=ExtResource("13_rgid8")]
+[node name="MimeticPage" parent="pages" unique_id=968621737 instance=ExtResource("14_lkvh2")]
 visible = false
 layout_mode = 1
 
-[node name="jackalope_page" parent="pages" instance=ExtResource("11_vy0dc")]
+[node name="omens" parent="pages" unique_id=1319703245 instance=ExtResource("28_qv826")]
 visible = false
 layout_mode = 1
 
-[node name="remnants" parent="pages" instance=ExtResource("23_4j4c4")]
+[node name="rats" parent="pages" unique_id=1137485016 instance=ExtResource("16_6s4dg")]
 visible = false
 layout_mode = 1
 
-[node name="cups" parent="pages" instance=ExtResource("26_c2ilt")]
+[node name="red_fox_page" parent="pages" unique_id=1453582562 instance=ExtResource("9_xb5at")]
 visible = false
 layout_mode = 1
 
-[node name="blossombones" parent="pages" instance=ExtResource("20_ka6gy")]
+[node name="Arachnight" parent="pages" unique_id=1142116086 instance=ExtResource("30_2whdu")]
 visible = false
 layout_mode = 1
 
-[node name="golem" parent="pages" instance=ExtResource("27_nnxnd")]
+[node name="jester_page" parent="pages" unique_id=1961126314 instance=ExtResource("16_lcf2d")]
 visible = false
 layout_mode = 1
 
-[node name="decrepit_trader" parent="pages" instance=ExtResource("17_47d4w")]
+[node name="decrepit_trader" parent="pages" unique_id=1772169460 instance=ExtResource("17_47d4w")]
 visible = false
 layout_mode = 1
 
-[node name="omens" parent="pages" instance=ExtResource("28_qv826")]
+[node name="egghead" parent="pages" unique_id=790702756 instance=ExtResource("18_tk7t7")]
 visible = false
 layout_mode = 1
 
-[node name="centibat" parent="pages" instance=ExtResource("26_jgama")]
+[node name="teafairy" parent="pages" unique_id=651129070 instance=ExtResource("12_8fhjj")]
 visible = false
 layout_mode = 1
 
-[node name="Black Bear" parent="pages" instance=ExtResource("10_6rpct")]
+[node name="treant" parent="pages" unique_id=338743771 instance=ExtResource("23_neyoy")]
 visible = false
 layout_mode = 1
 
-[node name="Grizzly_bear" parent="pages" instance=ExtResource("14_bwoa8")]
+[node name="blossombones" parent="pages" unique_id=1870131318 instance=ExtResource("20_ka6gy")]
 visible = false
 layout_mode = 1
 
-[node name="skeleton_page" parent="pages" instance=ExtResource("15_jfgg8")]
+[node name="necrotic_sludge" parent="pages" unique_id=69861830 instance=ExtResource("19_i503u")]
 visible = false
 layout_mode = 1
 
-[node name="MimeticPage" parent="pages" instance=ExtResource("14_lkvh2")]
+[node name="remnants" parent="pages" unique_id=82879125 instance=ExtResource("23_4j4c4")]
 visible = false
 layout_mode = 1
 
-[node name="everburning" parent="pages" instance=ExtResource("37_vmg4b")]
+[node name="skelebros" parent="pages" unique_id=1832643212 instance=ExtResource("24_350uf")]
 visible = false
 layout_mode = 1
 
-[node name="whisper" parent="pages" instance=ExtResource("36_mh5fm")]
+[node name="skeleton_page" parent="pages" unique_id=2002149998 instance=ExtResource("15_jfgg8")]
 visible = false
 layout_mode = 1
 
-[node name="Arachnight" parent="pages" instance=ExtResource("30_2whdu")]
+[node name="everburning" parent="pages" unique_id=427337233 instance=ExtResource("37_vmg4b")]
 visible = false
 layout_mode = 1
 
-[node name="treant" parent="pages" instance=ExtResource("23_neyoy")]
+[node name="monument" parent="pages" unique_id=1986556257 instance=ExtResource("43_ys0r4")]
 visible = false
 layout_mode = 1
 
-[node name="skelebros" parent="pages" instance=ExtResource("24_350uf")]
+[node name="omega_oak_page" parent="pages" unique_id=381216975 instance=ExtResource("13_ib5d8")]
 visible = false
 layout_mode = 1
 
-[node name="necrotic_sludge" parent="pages" instance=ExtResource("19_i503u")]
+[node name="whisper" parent="pages" unique_id=958947068 instance=ExtResource("36_mh5fm")]
 visible = false
 layout_mode = 1
 
-[node name="jester_page" parent="pages" instance=ExtResource("16_lcf2d")]
+[node name="cups" parent="pages" unique_id=908410529 instance=ExtResource("26_c2ilt")]
 visible = false
 layout_mode = 1
 
-[node name="monument" parent="pages" instance=ExtResource("43_ys0r4")]
+[node name="golem" parent="pages" unique_id=969848141 instance=ExtResource("27_nnxnd")]
 visible = false
 layout_mode = 1
 
-[node name="agent" parent="pages" instance=ExtResource("45_wipmf")]
+[node name="tabletop" parent="pages" unique_id=1229329756 instance=ExtResource("13_rgid8")]
+visible = false
+layout_mode = 1
+
+[node name="agent" parent="pages" unique_id=290308529 instance=ExtResource("45_wipmf")]
 visible = false
 layout_mode = 1
 active = false
 
-[node name="Arrows" type="Control" parent="."]
+[node name="Arrows" type="Control" parent="." unique_id=1604988676]
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -290,7 +404,7 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="next_page" type="TextureButton" parent="Arrows"]
+[node name="next_page" type="TextureButton" parent="Arrows" unique_id=417158837]
 layout_mode = 0
 offset_left = 580.0
 offset_top = 305.0
@@ -302,7 +416,7 @@ texture_pressed = ExtResource("19_ldpkt")
 texture_hover = ExtResource("20_63fb4")
 texture_disabled = ExtResource("21_u1sbc")
 
-[node name="prev_page" type="TextureButton" parent="Arrows"]
+[node name="prev_page" type="TextureButton" parent="Arrows" unique_id=854734563]
 layout_mode = 0
 offset_left = -574.0
 offset_top = 403.0
@@ -315,7 +429,7 @@ texture_pressed = ExtResource("19_ldpkt")
 texture_hover = ExtResource("20_63fb4")
 texture_disabled = ExtResource("21_u1sbc")
 
-[node name="TextureButton" type="TextureButton" parent="."]
+[node name="TextureButton" type="TextureButton" parent="." unique_id=1005430514]
 offset_left = 283.0
 offset_top = 144.0
 offset_right = 539.0
@@ -325,463 +439,15 @@ texture_normal = ExtResource("22_dupp8")
 texture_pressed = ExtResource("23_vv4ov")
 texture_hover = ExtResource("24_ma1vn")
 
-[node name="Names" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 960.0
-offset_top = 540.0
-offset_right = 1000.0
-offset_bottom = 580.0
+[node name="Node" type="Node" parent="." unique_id=1888455732]
 
-[node name="Lavender" type="Button" parent="Names"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_left = -584.0
-offset_top = -298.0
-offset_right = -485.0
-offset_bottom = -278.0
-mouse_default_cursor_shape = 2
-theme_override_font_sizes/font_size = 1
-
-[node name="nshade" type="Button" parent="Names"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_left = -584.0
-offset_top = -266.0
-offset_right = -462.0
-offset_bottom = -246.0
-mouse_default_cursor_shape = 2
-theme_override_font_sizes/font_size = 1
-text = "2"
-
-[node name="buckle" type="Button" parent="Names"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_left = -584.0
-offset_top = -235.0
-offset_right = -443.0
-offset_bottom = -215.0
-mouse_default_cursor_shape = 2
-theme_override_font_sizes/font_size = 1
-text = "2"
-
-[node name="cotton" type="Button" parent="Names"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_left = -584.0
-offset_top = -203.0
-offset_right = -437.0
-offset_bottom = -183.0
-mouse_default_cursor_shape = 2
-theme_override_font_sizes/font_size = 1
-text = "2"
-
-[node name="snow" type="Button" parent="Names"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_left = -584.0
-offset_top = -171.0
-offset_right = -453.0
-offset_bottom = -151.0
-mouse_default_cursor_shape = 2
-theme_override_font_sizes/font_size = 1
-text = "2"
-
-[node name="love" type="Button" parent="Names"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_left = -584.0
-offset_top = -139.0
-offset_right = -434.0
-offset_bottom = -119.0
-mouse_default_cursor_shape = 2
-theme_override_font_sizes/font_size = 1
-text = "2"
-
-[node name="whistle" type="Button" parent="Names"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_left = -584.0
-offset_top = -106.0
-offset_right = -428.0
-offset_bottom = -86.0
-mouse_default_cursor_shape = 2
-theme_override_font_sizes/font_size = 1
-text = "2"
-
-[node name="oak" type="Button" parent="Names"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_left = -584.0
-offset_top = -75.0
-offset_right = -536.0
-offset_bottom = -55.0
-mouse_default_cursor_shape = 2
-theme_override_font_sizes/font_size = 1
-text = "2"
-
-[node name="omega" type="Button" parent="Names"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_left = -584.0
-offset_top = -42.0
-offset_right = -459.0
-offset_bottom = -22.0
-mouse_default_cursor_shape = 2
-theme_override_font_sizes/font_size = 1
-text = "2"
-
-[node name="bookworms" type="Button" parent="Names"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_left = -584.0
-offset_top = 58.0
-offset_right = -455.0
-offset_bottom = 78.0
-mouse_default_cursor_shape = 2
-theme_override_font_sizes/font_size = 1
-text = "2"
-
-[node name="toads" type="Button" parent="Names"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_left = -581.0
-offset_top = 90.0
-offset_right = -467.0
-offset_bottom = 110.0
-mouse_default_cursor_shape = 2
-theme_override_font_sizes/font_size = 1
-text = "2"
-
-[node name="egg" type="Button" parent="Names"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_left = -581.0
-offset_top = 123.0
-offset_right = -483.0
-offset_bottom = 143.0
-mouse_default_cursor_shape = 2
-theme_override_font_sizes/font_size = 1
-text = "2"
-
-[node name="rats" type="Button" parent="Names"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_left = -584.0
-offset_top = 154.0
-offset_right = -535.0
-offset_bottom = 174.0
-mouse_default_cursor_shape = 2
-theme_override_font_sizes/font_size = 1
-text = "2"
-
-[node name="deer" type="Button" parent="Names"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_left = -583.0
-offset_top = 186.0
-offset_right = -531.0
-offset_bottom = 206.0
-mouse_default_cursor_shape = 2
-theme_override_font_sizes/font_size = 1
-text = "2"
-
-[node name="fox" type="Button" parent="Names"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_left = -583.0
-offset_top = 219.0
-offset_right = -495.0
-offset_bottom = 239.0
-mouse_default_cursor_shape = 2
-theme_override_font_sizes/font_size = 1
-text = "2"
-
-[node name="bloom" type="Button" parent="Names"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_left = -583.0
-offset_top = 251.0
-offset_right = -437.0
-offset_bottom = 271.0
-mouse_default_cursor_shape = 2
-theme_override_font_sizes/font_size = 1
-text = "2"
-
-[node name="tea" type="Button" parent="Names"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_left = -579.0
-offset_top = 283.0
-offset_right = -491.0
-offset_bottom = 303.0
-mouse_default_cursor_shape = 2
-theme_override_font_sizes/font_size = 1
-text = "2"
-
-[node name="table" type="Button" parent="Names"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_left = -581.0
-offset_top = 316.0
-offset_right = -493.0
-offset_bottom = 336.0
-mouse_default_cursor_shape = 2
-theme_override_font_sizes/font_size = 1
-text = "2"
-
-[node name="jack" type="Button" parent="Names"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_left = 115.0
-offset_top = -357.0
-offset_right = 220.0
-offset_bottom = -337.0
-mouse_default_cursor_shape = 2
-theme_override_font_sizes/font_size = 1
-text = "2"
-
-[node name="rem" type="Button" parent="Names"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_left = 118.0
-offset_top = -325.0
-offset_right = 223.0
-offset_bottom = -305.0
-mouse_default_cursor_shape = 2
-theme_override_font_sizes/font_size = 1
-text = "2"
-
-[node name="cups" type="Button" parent="Names"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_left = 117.0
-offset_top = -292.0
-offset_right = 264.0
-offset_bottom = -272.0
-mouse_default_cursor_shape = 2
-theme_override_font_sizes/font_size = 1
-text = "2"
-
-[node name="blossom" type="Button" parent="Names"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_left = 116.0
-offset_top = -262.0
-offset_right = 276.0
-offset_bottom = -242.0
-mouse_default_cursor_shape = 2
-theme_override_font_sizes/font_size = 1
-text = "2"
-
-[node name="gol" type="Button" parent="Names"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_left = 116.0
-offset_top = -229.0
-offset_right = 196.0
-offset_bottom = -209.0
-mouse_default_cursor_shape = 2
-theme_override_font_sizes/font_size = 1
-text = "2"
-
-[node name="decrepit" type="Button" parent="Names"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_left = 115.0
-offset_top = -196.0
-offset_right = 279.0
-offset_bottom = -176.0
-mouse_default_cursor_shape = 2
-theme_override_font_sizes/font_size = 1
-text = "2"
-
-[node name="omen" type="Button" parent="Names"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_left = 114.0
-offset_top = -164.0
-offset_right = 191.0
-offset_bottom = -144.0
-mouse_default_cursor_shape = 2
-theme_override_font_sizes/font_size = 1
-text = "2"
-
-[node name="cent" type="Button" parent="Names"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_left = 116.0
-offset_top = -63.0
-offset_right = 206.0
-offset_bottom = -43.0
-mouse_default_cursor_shape = 2
-theme_override_font_sizes/font_size = 1
-text = "2"
-
-[node name="black" type="Button" parent="Names"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_left = 114.0
-offset_top = -31.0
-offset_right = 228.0
-offset_bottom = -11.0
-mouse_default_cursor_shape = 2
-theme_override_font_sizes/font_size = 1
-text = "2"
-
-[node name="grizz" type="Button" parent="Names"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_left = 115.0
-offset_top = 2.0
-offset_right = 242.0
-offset_bottom = 22.0
-mouse_default_cursor_shape = 2
-theme_override_font_sizes/font_size = 1
-text = "2"
-
-[node name="skeleton" type="Button" parent="Names"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_left = 115.0
-offset_top = 33.0
-offset_right = 208.0
-offset_bottom = 53.0
-mouse_default_cursor_shape = 2
-theme_override_font_sizes/font_size = 1
-text = "2"
-
-[node name="mimic" type="Button" parent="Names"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_left = 115.0
-offset_top = 66.0
-offset_right = 203.0
-offset_bottom = 86.0
-mouse_default_cursor_shape = 2
-theme_override_font_sizes/font_size = 1
-text = "2"
-
-[node name="burn" type="Button" parent="Names"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_left = 114.0
-offset_top = 96.0
-offset_right = 288.0
-offset_bottom = 116.0
-mouse_default_cursor_shape = 2
-theme_override_font_sizes/font_size = 1
-text = "2"
-
-[node name="whisper" type="Button" parent="Names"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_left = 115.0
-offset_top = 129.0
-offset_right = 261.0
-offset_bottom = 149.0
-mouse_default_cursor_shape = 2
-theme_override_font_sizes/font_size = 1
-text = "2"
-
-[node name="arach" type="Button" parent="Names"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_left = 117.0
-offset_top = 162.0
-offset_right = 236.0
-offset_bottom = 182.0
-mouse_default_cursor_shape = 2
-theme_override_font_sizes/font_size = 1
-text = "2"
-
-[node name="treant" type="Button" parent="Names"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_left = 116.0
-offset_top = 193.0
-offset_right = 187.0
-offset_bottom = 213.0
-mouse_default_cursor_shape = 2
-theme_override_font_sizes/font_size = 1
-text = "2"
-
-[node name="bros" type="Button" parent="Names"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_left = 118.0
-offset_top = 225.0
-offset_right = 221.0
-offset_bottom = 245.0
-mouse_default_cursor_shape = 2
-theme_override_font_sizes/font_size = 1
-text = "2"
-
-[node name="sludge" type="Button" parent="Names"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_left = 118.0
-offset_top = 258.0
-offset_right = 285.0
-offset_bottom = 278.0
-mouse_default_cursor_shape = 2
-theme_override_font_sizes/font_size = 1
-text = "2"
-
-[node name="jester" type="Button" parent="Names"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_left = 117.0
-offset_top = 288.0
-offset_right = 274.0
-offset_bottom = 308.0
-mouse_default_cursor_shape = 2
-theme_override_font_sizes/font_size = 1
-text = "2"
-
-[node name="monument" type="Button" parent="Names"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_left = 116.0
-offset_top = 322.0
-offset_right = 345.0
-offset_bottom = 342.0
-mouse_default_cursor_shape = 2
-theme_override_font_sizes/font_size = 1
-text = "2"
-
-[node name="Node" type="Node" parent="."]
-
-[node name="PageFlip" type="AudioStreamPlayer" parent="Node"]
+[node name="PageFlip" type="AudioStreamPlayer" parent="Node" unique_id=334493892]
 stream = ExtResource("34_odq11")
 
-[node name="book close" type="AudioStreamPlayer" parent="Node"]
+[node name="book close" type="AudioStreamPlayer" parent="Node" unique_id=157868254]
 stream = ExtResource("35_e8qfc")
 
-[node name="toc" type="TextureButton" parent="."]
-offset_left = 346.0
-offset_top = 96.0
-offset_right = 429.0
-offset_bottom = 144.0
-mouse_default_cursor_shape = 2
-texture_normal = ExtResource("48_0fcpx")
-texture_hover = ExtResource("54_th35u")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="toc2" type="TextureButton" parent="."]
-visible = false
-offset_left = 429.72
-offset_top = 96.0
-offset_right = 512.72
-offset_bottom = 144.0
-mouse_default_cursor_shape = 2
-texture_normal = ExtResource("56_o0f4u")
-texture_hover = ExtResource("57_k8b3l")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="worms" type="AnimatedSprite2D" parent="."]
+[node name="worms" type="AnimatedSprite2D" parent="." unique_id=1711167707]
 visible = false
 position = Vector2(962, 543)
 scale = Vector2(0.746035, 0.746035)
@@ -789,7 +455,7 @@ sprite_frames = SubResource("SpriteFrames_uxfto")
 autoplay = "default"
 frame_progress = 0.924548
 
-[node name="worms2" type="AnimatedSprite2D" parent="worms"]
+[node name="worms2" type="AnimatedSprite2D" parent="worms" unique_id=1250424014]
 position = Vector2(-32.1701, -6.70209)
 rotation = -3.15032
 scale = Vector2(0.999953, 0.999953)
@@ -798,46 +464,14 @@ sprite_frames = SubResource("SpriteFrames_uxfto")
 autoplay = "default"
 frame_progress = 0.924548
 
+[connection signal="pressed" from="toc3" to="." method="_on_toc_pressed"]
+[connection signal="pressed" from="flora" to="." method="_on_flora_pressed"]
+[connection signal="pressed" from="fauna" to="." method="_on_fauna_pressed"]
+[connection signal="pressed" from="humanoid" to="." method="_on_humanoid_pressed"]
+[connection signal="pressed" from="undead" to="." method="_on_undead_pressed"]
+[connection signal="pressed" from="monstrosity" to="." method="_on_monstrosity_pressed"]
+[connection signal="pressed" from="construct" to="." method="_on_construct_pressed"]
+[connection signal="pressed" from="toc2" to="." method="_on_toc_2_pressed"]
 [connection signal="pressed" from="Arrows/next_page" to="." method="_on_next_page_pressed"]
 [connection signal="pressed" from="Arrows/prev_page" to="." method="_on_prev_page_pressed"]
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
-[connection signal="pressed" from="Names/Lavender" to="." method="_on_lavender_pressed"]
-[connection signal="pressed" from="Names/nshade" to="." method="_on_nshade_pressed"]
-[connection signal="pressed" from="Names/buckle" to="." method="_on_buckle_pressed"]
-[connection signal="pressed" from="Names/cotton" to="." method="_on_cotton_pressed"]
-[connection signal="pressed" from="Names/snow" to="." method="_on_snow_pressed"]
-[connection signal="pressed" from="Names/love" to="." method="_on_love_pressed"]
-[connection signal="pressed" from="Names/whistle" to="." method="_on_whistle_pressed"]
-[connection signal="pressed" from="Names/oak" to="." method="_on_oak_pressed"]
-[connection signal="pressed" from="Names/omega" to="." method="_on_omega_pressed"]
-[connection signal="pressed" from="Names/bookworms" to="." method="_on_bookworms_pressed"]
-[connection signal="pressed" from="Names/toads" to="." method="_on_toads_pressed"]
-[connection signal="pressed" from="Names/egg" to="." method="_on_egg_pressed"]
-[connection signal="pressed" from="Names/rats" to="." method="_on_rats_pressed"]
-[connection signal="pressed" from="Names/deer" to="." method="_on_deer_pressed"]
-[connection signal="pressed" from="Names/fox" to="." method="_on_fox_pressed"]
-[connection signal="pressed" from="Names/bloom" to="." method="_on_bloom_pressed"]
-[connection signal="pressed" from="Names/tea" to="." method="_on_tea_pressed"]
-[connection signal="pressed" from="Names/table" to="." method="_on_table_pressed"]
-[connection signal="pressed" from="Names/jack" to="." method="_on_jack_pressed"]
-[connection signal="pressed" from="Names/rem" to="." method="_on_rem_pressed"]
-[connection signal="pressed" from="Names/cups" to="." method="_on_cups_pressed"]
-[connection signal="pressed" from="Names/blossom" to="." method="_on_blossom_pressed"]
-[connection signal="pressed" from="Names/gol" to="." method="_on_gol_pressed"]
-[connection signal="pressed" from="Names/decrepit" to="." method="_on_decrepit_pressed"]
-[connection signal="pressed" from="Names/omen" to="." method="_on_omen_pressed"]
-[connection signal="pressed" from="Names/cent" to="." method="_on_cent_pressed"]
-[connection signal="pressed" from="Names/black" to="." method="_on_black_pressed"]
-[connection signal="pressed" from="Names/grizz" to="." method="_on_grizz_pressed"]
-[connection signal="pressed" from="Names/skeleton" to="." method="_on_skeleton_pressed"]
-[connection signal="pressed" from="Names/mimic" to="." method="_on_mimic_pressed"]
-[connection signal="pressed" from="Names/burn" to="." method="_on_burn_pressed"]
-[connection signal="pressed" from="Names/whisper" to="." method="_on_whisper_pressed"]
-[connection signal="pressed" from="Names/arach" to="." method="_on_arach_pressed"]
-[connection signal="pressed" from="Names/treant" to="." method="_on_treant_pressed"]
-[connection signal="pressed" from="Names/bros" to="." method="_on_bros_pressed"]
-[connection signal="pressed" from="Names/sludge" to="." method="_on_sludge_pressed"]
-[connection signal="pressed" from="Names/jester" to="." method="_on_jester_pressed"]
-[connection signal="pressed" from="Names/monument" to="." method="_on_monument_pressed"]
-[connection signal="pressed" from="toc" to="." method="_on_toc_pressed"]
-[connection signal="pressed" from="toc2" to="." method="_on_toc_2_pressed"]

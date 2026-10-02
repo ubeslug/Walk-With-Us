@@ -1,11 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://doogy3tt2bwq"]
+[gd_scene format=3 uid="uid://doogy3tt2bwq"]
 
-[ext_resource type="Script" path="res://scripts/page_base.gd" id="1_ew5dw"]
+[ext_resource type="Script" uid="uid://dlekensw7awcy" path="res://scripts/page_base.gd" id="1_ew5dw"]
 [ext_resource type="PackedScene" uid="uid://beneqpcnms27p" path="res://scenes/beastiary pages/_page_base.tscn" id="2_pcwi1"]
 [ext_resource type="Theme" uid="uid://bw2dm0g8j123d" path="res://themes/beastiary_writing.tres" id="3_ebgf1"]
 [ext_resource type="Texture2D" uid="uid://c73ykatv12msn" path="res://assets/sketches/pt2/Rats.png" id="3_o3e6a"]
 
-[node name="template" type="Control"]
+[node name="template" type="Control" unique_id=1638764263]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -15,10 +15,10 @@ grow_vertical = 2
 script = ExtResource("1_ew5dw")
 metadata/_edit_use_anchors_ = true
 
-[node name="page_base" parent="." instance=ExtResource("2_pcwi1")]
+[node name="page_base" parent="." unique_id=839900588 instance=ExtResource("2_pcwi1")]
 layout_mode = 1
 
-[node name="Contents" type="Control" parent="."]
+[node name="Contents" type="Control" parent="." unique_id=2054497778]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -28,12 +28,12 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="sketch" type="Sprite2D" parent="Contents"]
+[node name="sketch" type="Sprite2D" parent="Contents" unique_id=527369999]
 position = Vector2(-373.95, 44.565)
 scale = Vector2(0.615, 0.615)
 texture = ExtResource("3_o3e6a")
 
-[node name="entry name" type="Label" parent="Contents"]
+[node name="entry name" type="Label" parent="Contents" unique_id=339064417]
 layout_mode = 0
 offset_left = -634.0
 offset_top = -341.0
@@ -44,7 +44,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "Rats"
 
-[node name="entry passage" type="Label" parent="Contents"]
+[node name="entry passage" type="Label" parent="Contents" unique_id=1440930138]
 layout_mode = 0
 offset_left = 112.0
 offset_top = -326.0
@@ -58,7 +58,7 @@ text = "Vile little creatures they are. Rats are a common type of pest creature 
 Being omnivore’s rats will eat anything that can get their hands on. This also leads to the species being carriers of various diseases. Though weak individually through their fast reproduction rate, rats can grow in numbers faster than people realize becoming an even greater nuisance."
 autowrap_mode = 3
 
-[node name="Label" type="Label" parent="Contents"]
+[node name="Label" type="Label" parent="Contents" unique_id=51021779]
 layout_mode = 0
 offset_left = 637.0
 offset_top = -384.0
@@ -67,9 +67,9 @@ offset_bottom = -357.0
 theme = ExtResource("3_ebgf1")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
-text = "13"
+text = "21"
 
-[node name="book_worms" type="Control" parent="."]
+[node name="book_worms" type="Control" parent="." unique_id=519699169]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -78,11 +78,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="level_1" type="Sprite2D" parent="book_worms"]
+[node name="level_1" type="Sprite2D" parent="book_worms" unique_id=1511363170]
 visible = false
 
-[node name="level_2" type="Sprite2D" parent="book_worms"]
+[node name="level_2" type="Sprite2D" parent="book_worms" unique_id=1941251486]
 visible = false
 
-[node name="level_3" type="Sprite2D" parent="book_worms"]
+[node name="level_3" type="Sprite2D" parent="book_worms" unique_id=2086374814]
 visible = false

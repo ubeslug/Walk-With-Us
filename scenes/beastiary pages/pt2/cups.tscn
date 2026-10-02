@@ -1,11 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://68yhmsc7mp2c"]
+[gd_scene format=3 uid="uid://68yhmsc7mp2c"]
 
-[ext_resource type="Script" path="res://scripts/page_base.gd" id="1_src13"]
+[ext_resource type="Script" uid="uid://dlekensw7awcy" path="res://scripts/page_base.gd" id="1_src13"]
 [ext_resource type="PackedScene" uid="uid://beneqpcnms27p" path="res://scenes/beastiary pages/_page_base.tscn" id="2_pkc6f"]
 [ext_resource type="Texture2D" uid="uid://bc6tbaftw0p8o" path="res://assets/sketches/pt2/cups.png" id="3_5hmsx"]
 [ext_resource type="Theme" uid="uid://bw2dm0g8j123d" path="res://themes/beastiary_writing.tres" id="3_8hxac"]
 
-[node name="cups" type="Control"]
+[node name="cups" type="Control" unique_id=283964248]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -15,10 +15,10 @@ grow_vertical = 2
 script = ExtResource("1_src13")
 metadata/_edit_use_anchors_ = true
 
-[node name="page_base" parent="." instance=ExtResource("2_pkc6f")]
+[node name="page_base" parent="." unique_id=390665727 instance=ExtResource("2_pkc6f")]
 layout_mode = 1
 
-[node name="Contents" type="Control" parent="."]
+[node name="Contents" type="Control" parent="." unique_id=1497578645]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -28,12 +28,12 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="sketch" type="Sprite2D" parent="Contents"]
+[node name="sketch" type="Sprite2D" parent="Contents" unique_id=513397082]
 position = Vector2(-354, 40)
 scale = Vector2(0.585301, 0.585301)
 texture = ExtResource("3_5hmsx")
 
-[node name="entry name" type="Label" parent="Contents"]
+[node name="entry name" type="Label" parent="Contents" unique_id=1202486886]
 layout_mode = 0
 offset_left = -634.0
 offset_top = -341.0
@@ -44,7 +44,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "Ceramaniacs"
 
-[node name="entry passage" type="Label" parent="Contents"]
+[node name="entry passage" type="Label" parent="Contents" unique_id=449871179]
 layout_mode = 0
 offset_left = 112.0
 offset_top = -326.0
@@ -58,7 +58,7 @@ text = "You might come across various sentient beings in your adventures. One of
 For ceramic items these sentient items become quite rude and will throw various rude comments to any passerby. Though these items lack ways to physically harm someone the mental toll they can have is immeasurable. It has also been noted they these items themselves are mentally frail."
 autowrap_mode = 3
 
-[node name="Label" type="Label" parent="Contents"]
+[node name="Label" type="Label" parent="Contents" unique_id=1820471703]
 layout_mode = 0
 offset_left = 637.0
 offset_top = -384.0
@@ -67,9 +67,9 @@ offset_bottom = -357.0
 theme = ExtResource("3_8hxac")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
-text = "21"
+text = "38"
 
-[node name="book_worms" type="Control" parent="."]
+[node name="book_worms" type="Control" parent="." unique_id=1475493136]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -78,11 +78,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="level_1" type="Sprite2D" parent="book_worms"]
+[node name="level_1" type="Sprite2D" parent="book_worms" unique_id=2060523372]
 visible = false
 
-[node name="level_2" type="Sprite2D" parent="book_worms"]
+[node name="level_2" type="Sprite2D" parent="book_worms" unique_id=1635606841]
 visible = false
 
-[node name="level_3" type="Sprite2D" parent="book_worms"]
+[node name="level_3" type="Sprite2D" parent="book_worms" unique_id=262425951]
 visible = false

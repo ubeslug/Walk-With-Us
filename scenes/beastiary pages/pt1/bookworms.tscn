@@ -1,12 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://ckrlyk4kq75ig"]
+[gd_scene format=3 uid="uid://ckrlyk4kq75ig"]
 
-[ext_resource type="Script" path="res://scripts/page_base.gd" id="1_l8jpt"]
+[ext_resource type="Script" uid="uid://dlekensw7awcy" path="res://scripts/page_base.gd" id="1_l8jpt"]
 [ext_resource type="PackedScene" uid="uid://beneqpcnms27p" path="res://scenes/beastiary pages/_page_base.tscn" id="2_pljsb"]
 [ext_resource type="Texture2D" uid="uid://bq0ukkrttowti" path="res://assets/ui/paper_tear_solid_light.png" id="3_01ts2"]
 [ext_resource type="Texture2D" uid="uid://0aq46quec06l" path="res://assets/sketches/Bookworms.png" id="4_ymhey"]
 [ext_resource type="Theme" uid="uid://bw2dm0g8j123d" path="res://themes/beastiary_writing.tres" id="5_p6li2"]
 
-[node name="bookworms" type="Control"]
+[node name="bookworms" type="Control" unique_id=1214702096]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -16,10 +16,10 @@ grow_vertical = 2
 script = ExtResource("1_l8jpt")
 metadata/_edit_use_anchors_ = true
 
-[node name="page_base" parent="." instance=ExtResource("2_pljsb")]
+[node name="page_base" parent="." unique_id=1601378581 instance=ExtResource("2_pljsb")]
 layout_mode = 1
 
-[node name="Contents" type="Control" parent="."]
+[node name="Contents" type="Control" parent="." unique_id=1040726540]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -29,18 +29,18 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PageTear" type="Sprite2D" parent="Contents"]
+[node name="PageTear" type="Sprite2D" parent="Contents" unique_id=756609387]
 clip_children = 2
 position = Vector2(394, -257)
 scale = Vector2(0.0381366, 0.0390625)
 texture = ExtResource("3_01ts2")
 
-[node name="sketch" type="Sprite2D" parent="Contents"]
+[node name="sketch" type="Sprite2D" parent="Contents" unique_id=388972384]
 position = Vector2(-354, 40)
 scale = Vector2(0.585301, 0.585301)
 texture = ExtResource("4_ymhey")
 
-[node name="entry name" type="Label" parent="Contents"]
+[node name="entry name" type="Label" parent="Contents" unique_id=998624447]
 layout_mode = 0
 offset_left = -634.0
 offset_top = -341.0
@@ -51,7 +51,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "Bookworms"
 
-[node name="entry passage" type="Label" parent="Contents"]
+[node name="entry passage" type="Label" parent="Contents" unique_id=1286417932]
 layout_mode = 0
 offset_left = 112.0
 offset_top = -326.0
@@ -65,7 +65,8 @@ text = "Book Worms are a parasitic species that can be commonly found in the cre
 Book Worms feast on the pages inside books ruining many prized books of the people, including some of our own. The only known way to deal with these pests is to deal with any affected books before they spread to any others nearby. If only there was a more concrete way to deal with these vile things"
 autowrap_mode = 3
 
-[node name="Label" type="Label" parent="Contents"]
+[node name="Label" type="Label" parent="Contents" unique_id=1529128535]
+layout_mode = 0
 offset_left = 637.0
 offset_top = -384.0
 offset_right = 662.0
@@ -73,9 +74,9 @@ offset_bottom = -357.0
 theme = ExtResource("5_p6li2")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
-text = "10"
+text = "13"
 
-[node name="book_worms" type="Control" parent="."]
+[node name="book_worms" type="Control" parent="." unique_id=824282278]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -83,14 +84,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Level_0" type="Node2D" parent="book_worms"]
+[node name="Level_0" type="Node2D" parent="book_worms" unique_id=587850931]
 visible = false
 
-[node name="level_1" type="Sprite2D" parent="book_worms"]
+[node name="level_1" type="Sprite2D" parent="book_worms" unique_id=1246466379]
 visible = false
 
-[node name="level_2" type="Sprite2D" parent="book_worms"]
+[node name="level_2" type="Sprite2D" parent="book_worms" unique_id=2107140638]
 visible = false
 
-[node name="level_3" type="Sprite2D" parent="book_worms"]
+[node name="level_3" type="Sprite2D" parent="book_worms" unique_id=518540884]
 visible = false

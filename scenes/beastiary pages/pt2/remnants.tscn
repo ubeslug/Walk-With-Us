@@ -1,11 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://chkhb62suvi4k"]
+[gd_scene format=3 uid="uid://chkhb62suvi4k"]
 
-[ext_resource type="Script" path="res://scripts/page_base.gd" id="1_awkh6"]
+[ext_resource type="Script" uid="uid://dlekensw7awcy" path="res://scripts/page_base.gd" id="1_awkh6"]
 [ext_resource type="PackedScene" uid="uid://beneqpcnms27p" path="res://scenes/beastiary pages/_page_base.tscn" id="2_dmg1y"]
-[ext_resource type="Texture2D" uid="uid://defh8xmaqstra" path="res://assets/sketches/pt2/Remnants.png" id="3_57x8c"]
+[ext_resource type="Texture2D" uid="uid://csds4u3qdo1er" path="res://assets/sketches/pt2/Remnants.png" id="3_57x8c"]
 [ext_resource type="Theme" uid="uid://bw2dm0g8j123d" path="res://themes/beastiary_writing.tres" id="3_78acn"]
 
-[node name="template" type="Control"]
+[node name="template" type="Control" unique_id=242761321]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -15,10 +15,10 @@ grow_vertical = 2
 script = ExtResource("1_awkh6")
 metadata/_edit_use_anchors_ = true
 
-[node name="page_base" parent="." instance=ExtResource("2_dmg1y")]
+[node name="page_base" parent="." unique_id=1611325222 instance=ExtResource("2_dmg1y")]
 layout_mode = 1
 
-[node name="Contents" type="Control" parent="."]
+[node name="Contents" type="Control" parent="." unique_id=951858699]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -28,12 +28,12 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="sketch" type="Sprite2D" parent="Contents"]
+[node name="sketch" type="Sprite2D" parent="Contents" unique_id=648595205]
 position = Vector2(-354, 40)
 scale = Vector2(0.585301, 0.585301)
 texture = ExtResource("3_57x8c")
 
-[node name="entry name" type="Label" parent="Contents"]
+[node name="entry name" type="Label" parent="Contents" unique_id=547881843]
 layout_mode = 0
 offset_left = -634.0
 offset_top = -341.0
@@ -44,7 +44,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "Remnants"
 
-[node name="entry passage" type="Label" parent="Contents"]
+[node name="entry passage" type="Label" parent="Contents" unique_id=1804291452]
 layout_mode = 0
 offset_left = 112.0
 offset_top = -326.0
@@ -60,7 +60,7 @@ You can identify a Remnant by their bluish hue and skeletal faces, wearing the c
 Reports from travellers have shown that helping these spirits has been rewarding and beneficial for the areas they reside in. However, while they may not be hostile, some Remnants may have tasks that are considerably more dangerous if you are to take them on, so be prepared for anything."
 autowrap_mode = 3
 
-[node name="Label" type="Label" parent="Contents"]
+[node name="Label" type="Label" parent="Contents" unique_id=6485082]
 layout_mode = 0
 offset_left = 637.0
 offset_top = -384.0
@@ -69,9 +69,9 @@ offset_bottom = -357.0
 theme = ExtResource("3_78acn")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
-text = "20"
+text = "31"
 
-[node name="book_worms" type="Control" parent="."]
+[node name="book_worms" type="Control" parent="." unique_id=799446503]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -80,11 +80,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="level_1" type="Sprite2D" parent="book_worms"]
+[node name="level_1" type="Sprite2D" parent="book_worms" unique_id=280610563]
 visible = false
 
-[node name="level_2" type="Sprite2D" parent="book_worms"]
+[node name="level_2" type="Sprite2D" parent="book_worms" unique_id=1690752486]
 visible = false
 
-[node name="level_3" type="Sprite2D" parent="book_worms"]
+[node name="level_3" type="Sprite2D" parent="book_worms" unique_id=1276583006]
 visible = false

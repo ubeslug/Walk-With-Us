@@ -1,11 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://dsw22h54mn7g0"]
+[gd_scene format=3 uid="uid://dsw22h54mn7g0"]
 
-[ext_resource type="Script" path="res://scripts/page_base.gd" id="1_tkwpd"]
+[ext_resource type="Script" uid="uid://dlekensw7awcy" path="res://scripts/page_base.gd" id="1_tkwpd"]
 [ext_resource type="PackedScene" uid="uid://beneqpcnms27p" path="res://scenes/beastiary pages/_page_base.tscn" id="2_lfgk6"]
 [ext_resource type="Texture2D" uid="uid://cnyf2syvhnbio" path="res://assets/sketches/CottonBerries.png" id="3_n064a"]
 [ext_resource type="Theme" uid="uid://bw2dm0g8j123d" path="res://themes/beastiary_writing.tres" id="4_jciky"]
 
-[node name="cottonberries" type="Control"]
+[node name="cottonberries" type="Control" unique_id=2031108245]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -15,10 +15,10 @@ grow_vertical = 2
 script = ExtResource("1_tkwpd")
 metadata/_edit_use_anchors_ = true
 
-[node name="page_base" parent="." instance=ExtResource("2_lfgk6")]
+[node name="page_base" parent="." unique_id=242932208 instance=ExtResource("2_lfgk6")]
 layout_mode = 1
 
-[node name="Contents" type="Control" parent="."]
+[node name="Contents" type="Control" parent="." unique_id=743845730]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -28,12 +28,12 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="sketch" type="Sprite2D" parent="Contents"]
+[node name="sketch" type="Sprite2D" parent="Contents" unique_id=954640875]
 position = Vector2(-354, 40)
 scale = Vector2(0.585301, 0.585301)
 texture = ExtResource("3_n064a")
 
-[node name="entry name" type="Label" parent="Contents"]
+[node name="entry name" type="Label" parent="Contents" unique_id=1714376372]
 layout_mode = 0
 offset_left = -634.0
 offset_top = -341.0
@@ -44,7 +44,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "Cottonberries"
 
-[node name="entry passage" type="Label" parent="Contents"]
+[node name="entry passage" type="Label" parent="Contents" unique_id=1156257366]
 layout_mode = 0
 offset_left = 112.0
 offset_top = -326.0
@@ -58,7 +58,8 @@ text = "One of the rarest and best finds in the forests, Cotton Berries are iden
 These berries, while not high in nutrition, are a great treat if they happen to be found. Cotton Berries are a rarity in the forest so its best to take them if it is safe to do so."
 autowrap_mode = 3
 
-[node name="Label" type="Label" parent="Contents"]
+[node name="Label" type="Label" parent="Contents" unique_id=787169314]
+layout_mode = 0
 offset_left = 637.0
 offset_top = -384.0
 offset_right = 662.0
@@ -68,7 +69,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
 text = "4"
 
-[node name="book_worms" type="Control" parent="."]
+[node name="book_worms" type="Control" parent="." unique_id=1466473092]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -76,11 +77,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="level_1" type="Sprite2D" parent="book_worms"]
+[node name="level_1" type="Sprite2D" parent="book_worms" unique_id=1765851321]
 visible = false
 
-[node name="level_2" type="Sprite2D" parent="book_worms"]
+[node name="level_2" type="Sprite2D" parent="book_worms" unique_id=737010101]
 visible = false
 
-[node name="level_3" type="Sprite2D" parent="book_worms"]
+[node name="level_3" type="Sprite2D" parent="book_worms" unique_id=1169329318]
 visible = false

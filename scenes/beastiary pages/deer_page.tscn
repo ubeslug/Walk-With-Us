@@ -1,11 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://58f2fodlqs8q"]
+[gd_scene format=3 uid="uid://58f2fodlqs8q"]
 
-[ext_resource type="Script" path="res://scripts/page_base.gd" id="1_b3ndn"]
+[ext_resource type="Script" uid="uid://dlekensw7awcy" path="res://scripts/page_base.gd" id="1_b3ndn"]
 [ext_resource type="PackedScene" uid="uid://beneqpcnms27p" path="res://scenes/beastiary pages/_page_base.tscn" id="2_llbps"]
 [ext_resource type="Texture2D" uid="uid://d02umkx5ah2oo" path="res://assets/sketches/Deer.png" id="3_flfab"]
 [ext_resource type="Theme" uid="uid://bw2dm0g8j123d" path="res://themes/beastiary_writing.tres" id="4_h0h3j"]
 
-[node name="deer" type="Control"]
+[node name="deer" type="Control" unique_id=304309506]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -13,12 +13,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_b3ndn")
+active = null
+bookworm_level = null
 metadata/_edit_use_anchors_ = true
 
-[node name="page_base" parent="." instance=ExtResource("2_llbps")]
+[node name="page_base" parent="." unique_id=1105684630 instance=ExtResource("2_llbps")]
 layout_mode = 1
 
-[node name="Contents" type="Control" parent="."]
+[node name="Contents" type="Control" parent="." unique_id=683204836]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -28,12 +30,12 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="sketch" type="Sprite2D" parent="Contents"]
+[node name="sketch" type="Sprite2D" parent="Contents" unique_id=1925026015]
 position = Vector2(-354, 40)
 scale = Vector2(0.585301, 0.585301)
 texture = ExtResource("3_flfab")
 
-[node name="entry name" type="Label" parent="Contents"]
+[node name="entry name" type="Label" parent="Contents" unique_id=1761021361]
 layout_mode = 0
 offset_left = -634.0
 offset_top = -341.0
@@ -44,7 +46,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "Deer"
 
-[node name="entry passage" type="Label" parent="Contents"]
+[node name="entry passage" type="Label" parent="Contents" unique_id=925809040]
 layout_mode = 0
 offset_left = 112.0
 offset_top = -326.0
@@ -58,7 +60,7 @@ text = "A common animal roaming the forests, deer are seen normally eating the f
 Skittish in nature, Deer are rarely ever confrontational, usually choosing to run away from a perceived threat. Male deer tend to be the only ones who will actively choose fight over flight so it's best to stay far away from a male deer, ones with horns, especially if they are with female deer"
 autowrap_mode = 3
 
-[node name="Label" type="Label" parent="Contents"]
+[node name="Label" type="Label" parent="Contents" unique_id=1855652691]
 layout_mode = 0
 offset_left = 637.0
 offset_top = -384.0
@@ -67,9 +69,9 @@ offset_bottom = -357.0
 theme = ExtResource("4_h0h3j")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
-text = "14"
+text = "15"
 
-[node name="book_worms" type="Control" parent="."]
+[node name="book_worms" type="Control" parent="." unique_id=908436518]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -77,11 +79,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="level_1" type="Sprite2D" parent="book_worms"]
+[node name="level_1" type="Sprite2D" parent="book_worms" unique_id=604372037]
 visible = false
 
-[node name="level_2" type="Sprite2D" parent="book_worms"]
+[node name="level_2" type="Sprite2D" parent="book_worms" unique_id=1392813276]
 visible = false
 
-[node name="level_3" type="Sprite2D" parent="book_worms"]
+[node name="level_3" type="Sprite2D" parent="book_worms" unique_id=2058219778]
 visible = false

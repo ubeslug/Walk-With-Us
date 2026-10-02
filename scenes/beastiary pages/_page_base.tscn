@@ -1,8 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://beneqpcnms27p"]
+[gd_scene format=3 uid="uid://beneqpcnms27p"]
 
+[ext_resource type="Texture2D" uid="uid://c38imy5diljsf" path="res://assets/ui/pages.png" id="2_kc3ur"]
 [ext_resource type="Texture2D" uid="uid://cfvqok4m8p1iy" path="res://assets/ui/book_temp.png" id="2_nonn7"]
 
-[node name="page_base" type="Control"]
+[node name="page_base" type="Control" unique_id=822411595]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -10,7 +11,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Page" type="Control" parent="."]
+[node name="Page" type="Control" parent="." unique_id=601699849]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -20,6 +21,12 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="BookTemp" type="Sprite2D" parent="Page"]
+[node name="BookTemp" type="Sprite2D" parent="Page" unique_id=625815370]
+visible = false
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("2_nonn7")
+
+[node name="Pages" type="Sprite2D" parent="Page" unique_id=791076582]
+position = Vector2(-0.8654175, -0.8749962)
+scale = Vector2(0.5007711, 0.5007711)
+texture = ExtResource("2_kc3ur")

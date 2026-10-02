@@ -1,0 +1,133 @@
+[gd_scene format=3 uid="uid://b82buedyuo7sv"]
+
+[ext_resource type="Script" uid="uid://dlekensw7awcy" path="res://scripts/page_base.gd" id="1_4qo3j"]
+[ext_resource type="PackedScene" uid="uid://beneqpcnms27p" path="res://scenes/beastiary pages/_page_base.tscn" id="2_e1h60"]
+[ext_resource type="Theme" uid="uid://bw2dm0g8j123d" path="res://themes/beastiary_writing.tres" id="3_swhfe"]
+[ext_resource type="FontFile" uid="uid://4mauql4oflhj" path="res://assets/fonts/Kurland-Regular.ttf" id="4_q7jpv"]
+
+[sub_resource type="FontVariation" id="FontVariation_ivg2w"]
+base_font = ExtResource("4_q7jpv")
+variation_embolden = 0.5
+
+[node name="table_of_contents2" type="Control" unique_id=1955468177]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4qo3j")
+metadata/_edit_use_anchors_ = true
+
+[node name="page_base" parent="." unique_id=304865066 instance=ExtResource("2_e1h60")]
+layout_mode = 1
+
+[node name="Contents" type="Control" parent="." unique_id=1269983330]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Contents" unique_id=235283598]
+layout_mode = 0
+offset_left = 633.0
+offset_top = -381.0
+offset_right = 658.0
+offset_bottom = -354.0
+theme = ExtResource("3_swhfe")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "2"
+
+[node name="entry name" type="Label" parent="Contents" unique_id=555586807]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -518.0
+offset_top = -388.0
+offset_right = -142.0
+offset_bottom = -335.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_swhfe")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Contents" unique_id=1713848004]
+layout_mode = 0
+offset_left = 88.0
+offset_top = -341.0
+offset_right = 595.0
+offset_bottom = 349.0
+theme = ExtResource("3_swhfe")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = 5
+theme_override_fonts/bold_font = SubResource("FontVariation_ivg2w")
+theme_override_font_sizes/normal_font_size = 25
+theme_override_font_sizes/bold_font_size = 30
+bbcode_enabled = true
+text = "	
+	Tabletop   . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 28"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Contents" unique_id=744977428]
+layout_mode = 0
+offset_left = -610.0
+offset_top = -339.0
+offset_right = -103.0
+offset_bottom = 389.0
+theme = ExtResource("3_swhfe")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = 5
+theme_override_fonts/bold_font = SubResource("FontVariation_ivg2w")
+theme_override_font_sizes/normal_font_size = 25
+theme_override_font_sizes/bold_font_size = 30
+bbcode_enabled = true
+text = "	
+[b]* [u]Humanoid[/u][/b]
+	*Arachknight . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 23
+	Cloaked Jester . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 24
+	Decrepit Trader . . . . . . . . . . . . . . . . . . . . . . . . . . . . 25
+	*Eggheads . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 26
+	Tea Fairy . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 27
+	Treant   . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 28
+[b]* [u]Undead[/u][/b]
+	Blossom Bones  . . . . . . . . . . . . . . . . . . . . . . . . . . . . 29
+	Necrotic Sludge  . . . . . . . . . . . . . . . . . . . . . . . . . . . 30
+	*Remnants  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 31
+	Skelebros   . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 32
+	Skeleton . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 33
+	*The Everburning  . . . . . . . . . . . . . . . . . . . . . . . . . . 34
+[b]* [u]Monstrosity[/u][/b]
+	*Monument Matriarch   . . . . . . . . . . . . . . . . . . . . 35
+	Omega Oak . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 36
+	*Wall Whisper  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 37
+[b]* [u]Construct/Object[/u][/b]
+	*Ceramaniacs  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 38
+	*Golem . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 39"
+
+[node name="book_worms" type="Control" parent="." unique_id=1437753131]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="level_1" type="Sprite2D" parent="book_worms" unique_id=1183909498]
+visible = false
+
+[node name="level_2" type="Sprite2D" parent="book_worms" unique_id=245043750]
+visible = false
+
+[node name="level_3" type="Sprite2D" parent="book_worms" unique_id=614499167]
+visible = false

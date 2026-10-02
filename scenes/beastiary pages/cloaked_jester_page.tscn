@@ -1,11 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://br731a0smpgml"]
+[gd_scene format=3 uid="uid://br731a0smpgml"]
 
-[ext_resource type="Script" path="res://scripts/page_base.gd" id="1_r6iia"]
+[ext_resource type="Script" uid="uid://dlekensw7awcy" path="res://scripts/page_base.gd" id="1_r6iia"]
 [ext_resource type="PackedScene" uid="uid://beneqpcnms27p" path="res://scenes/beastiary pages/_page_base.tscn" id="2_8xjam"]
 [ext_resource type="Texture2D" uid="uid://bd63kg53cc3dk" path="res://assets/sketches/Jester.png" id="3_qgava"]
 [ext_resource type="Theme" uid="uid://bw2dm0g8j123d" path="res://themes/beastiary_writing.tres" id="4_cu1cp"]
 
-[node name="jester_page" type="Control"]
+[node name="jester_page" type="Control" unique_id=1815879610]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -14,10 +14,10 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_r6iia")
 
-[node name="page_base" parent="." instance=ExtResource("2_8xjam")]
+[node name="page_base" parent="." unique_id=701150180 instance=ExtResource("2_8xjam")]
 layout_mode = 1
 
-[node name="Contents" type="Control" parent="."]
+[node name="Contents" type="Control" parent="." unique_id=1617121920]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -27,12 +27,12 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="sketch" type="Sprite2D" parent="Contents"]
+[node name="sketch" type="Sprite2D" parent="Contents" unique_id=1845492336]
 position = Vector2(-349, 60.9999)
 scale = Vector2(0.562295, 0.562295)
 texture = ExtResource("3_qgava")
 
-[node name="entry name" type="Label" parent="Contents"]
+[node name="entry name" type="Label" parent="Contents" unique_id=481778111]
 layout_mode = 0
 offset_left = -622.0
 offset_top = -345.0
@@ -43,7 +43,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "Cloaked Jester"
 
-[node name="entry passage" type="Label" parent="Contents"]
+[node name="entry passage" type="Label" parent="Contents" unique_id=488657557]
 layout_mode = 0
 offset_left = 97.0
 offset_top = -342.0
@@ -61,7 +61,7 @@ If it can be avoided, do not begin a conversation with a Cloaked Jester for they
 "
 autowrap_mode = 3
 
-[node name="Label" type="Label" parent="Contents"]
+[node name="Label" type="Label" parent="Contents" unique_id=1725294766]
 layout_mode = 0
 offset_left = 637.0
 offset_top = -384.0
@@ -70,9 +70,9 @@ offset_bottom = -357.0
 theme = ExtResource("4_cu1cp")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
-text = "37"
+text = "24"
 
-[node name="book_worms" type="Control" parent="."]
+[node name="book_worms" type="Control" parent="." unique_id=2053075584]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -80,11 +80,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="level_1" type="Sprite2D" parent="book_worms"]
+[node name="level_1" type="Sprite2D" parent="book_worms" unique_id=327777609]
 visible = false
 
-[node name="level_2" type="Sprite2D" parent="book_worms"]
+[node name="level_2" type="Sprite2D" parent="book_worms" unique_id=2016357755]
 visible = false
 
-[node name="level_3" type="Sprite2D" parent="book_worms"]
+[node name="level_3" type="Sprite2D" parent="book_worms" unique_id=1109468815]
 visible = false

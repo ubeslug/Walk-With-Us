@@ -1,11 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://d0qqfmoq10frq"]
+[gd_scene format=3 uid="uid://d0qqfmoq10frq"]
 
-[ext_resource type="Script" path="res://scripts/page_base.gd" id="1_0i1r3"]
+[ext_resource type="Script" uid="uid://dlekensw7awcy" path="res://scripts/page_base.gd" id="1_0i1r3"]
 [ext_resource type="PackedScene" uid="uid://beneqpcnms27p" path="res://scenes/beastiary pages/_page_base.tscn" id="2_2wboa"]
 [ext_resource type="Texture2D" uid="uid://drxgd8hih1rsn" path="res://assets/sketches/DecrepitTrader.png" id="3_lqx6r"]
 [ext_resource type="Theme" uid="uid://bw2dm0g8j123d" path="res://themes/beastiary_writing.tres" id="4_3c21b"]
 
-[node name="decrepit_trader" type="Control"]
+[node name="decrepit_trader" type="Control" unique_id=955909858]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -14,10 +14,10 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0i1r3")
 
-[node name="page_base" parent="." instance=ExtResource("2_2wboa")]
+[node name="page_base" parent="." unique_id=1486900719 instance=ExtResource("2_2wboa")]
 layout_mode = 1
 
-[node name="Contents" type="Control" parent="."]
+[node name="Contents" type="Control" parent="." unique_id=1178521942]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -27,12 +27,12 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="sketch" type="Sprite2D" parent="Contents"]
+[node name="sketch" type="Sprite2D" parent="Contents" unique_id=1306122552]
 position = Vector2(-367.01, 36.555)
 scale = Vector2(0.562295, 0.562295)
 texture = ExtResource("3_lqx6r")
 
-[node name="entry name" type="Label" parent="Contents"]
+[node name="entry name" type="Label" parent="Contents" unique_id=628895157]
 layout_mode = 0
 offset_left = -598.0
 offset_top = -333.0
@@ -43,7 +43,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "Decrepit Trader"
 
-[node name="entry passage" type="Label" parent="Contents"]
+[node name="entry passage" type="Label" parent="Contents" unique_id=1964865554]
 layout_mode = 0
 offset_left = 104.0
 offset_top = -322.0
@@ -59,7 +59,7 @@ This trader seems to show up at any place they wish, as they have been seen in v
 While their trades always seemed simple and innocent, we know better now. And from our lack of precautions we have lost one of our own. We urge you to scrutinize every exchange from traders because they are all shrewd in their own way."
 autowrap_mode = 3
 
-[node name="Label" type="Label" parent="Contents"]
+[node name="Label" type="Label" parent="Contents" unique_id=1963938279]
 layout_mode = 0
 offset_left = 637.0
 offset_top = -384.0
@@ -68,9 +68,9 @@ offset_bottom = -357.0
 theme = ExtResource("4_3c21b")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
-text = "24"
+text = "25"
 
-[node name="book_worms" type="Control" parent="."]
+[node name="book_worms" type="Control" parent="." unique_id=1089890094]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -78,11 +78,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="level_1" type="Sprite2D" parent="book_worms"]
+[node name="level_1" type="Sprite2D" parent="book_worms" unique_id=837236397]
 visible = false
 
-[node name="level_2" type="Sprite2D" parent="book_worms"]
+[node name="level_2" type="Sprite2D" parent="book_worms" unique_id=1222100901]
 visible = false
 
-[node name="level_3" type="Sprite2D" parent="book_worms"]
+[node name="level_3" type="Sprite2D" parent="book_worms" unique_id=478366514]
 visible = false

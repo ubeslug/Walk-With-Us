@@ -1,11 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://da1lelv06tjnj"]
+[gd_scene format=3 uid="uid://da1lelv06tjnj"]
 
-[ext_resource type="Script" path="res://scripts/page_base.gd" id="1_25472"]
+[ext_resource type="Script" uid="uid://dlekensw7awcy" path="res://scripts/page_base.gd" id="1_25472"]
 [ext_resource type="PackedScene" uid="uid://beneqpcnms27p" path="res://scenes/beastiary pages/_page_base.tscn" id="2_se7kk"]
 [ext_resource type="Texture2D" uid="uid://cod146dfi5xm6" path="res://assets/sketches/Whistling_Tree.png" id="3_qmsxi"]
 [ext_resource type="Theme" uid="uid://bw2dm0g8j123d" path="res://themes/beastiary_writing.tres" id="4_aux7a"]
 
-[node name="whistling tree" type="Control"]
+[node name="whistling tree" type="Control" unique_id=882722094]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -15,10 +15,10 @@ grow_vertical = 2
 script = ExtResource("1_25472")
 metadata/_edit_use_anchors_ = true
 
-[node name="page_base" parent="." instance=ExtResource("2_se7kk")]
+[node name="page_base" parent="." unique_id=1836812552 instance=ExtResource("2_se7kk")]
 layout_mode = 1
 
-[node name="Contents" type="Control" parent="."]
+[node name="Contents" type="Control" parent="." unique_id=2040925093]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -28,12 +28,12 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="sketch" type="Sprite2D" parent="Contents"]
+[node name="sketch" type="Sprite2D" parent="Contents" unique_id=447544005]
 position = Vector2(-354, 40)
 scale = Vector2(0.585301, 0.585301)
 texture = ExtResource("3_qmsxi")
 
-[node name="entry name" type="Label" parent="Contents"]
+[node name="entry name" type="Label" parent="Contents" unique_id=1857094362]
 layout_mode = 0
 offset_left = -634.0
 offset_top = -341.0
@@ -44,7 +44,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "Whistling Tree"
 
-[node name="entry passage" type="Label" parent="Contents"]
+[node name="entry passage" type="Label" parent="Contents" unique_id=1612304095]
 layout_mode = 0
 offset_left = 112.0
 offset_top = -326.0
@@ -56,7 +56,8 @@ theme_override_font_sizes/font_size = 24
 text = "Whistling Trees grow in areas that commonly experience heavy gusts of wind. Due to living in these harsh conditions these trees have grown in ways that various openings have been observed in their trunk, branches, and leaves that seem to let the strong gusts to easily pass through the tree. This unique evolution also seems to produce a high pitched whistling noise that grows louder as you get closer to the tree. A fellow colleague of mine wanted to get a closer inspection of the tree's trunk and attempted to get closer to the tree ignoring my protest about this unknown specimen. They trudged forward to the tree until they could hear my pleas no more. After reaching some distance from the tree they slowly turned to me and all I could make out was a plea for help before they keeled over, blood spewing from their ears. It is advised to avoid getting too close to such trees and avoid areas where they grow."
 autowrap_mode = 3
 
-[node name="Label" type="Label" parent="Contents"]
+[node name="Label" type="Label" parent="Contents" unique_id=1879660248]
+layout_mode = 0
 offset_left = 637.0
 offset_top = -384.0
 offset_right = 662.0
@@ -64,9 +65,9 @@ offset_bottom = -357.0
 theme = ExtResource("4_aux7a")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
-text = "7"
+text = "10"
 
-[node name="book_worms" type="Control" parent="."]
+[node name="book_worms" type="Control" parent="." unique_id=2032316570]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -74,11 +75,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="level_1" type="Sprite2D" parent="book_worms"]
+[node name="level_1" type="Sprite2D" parent="book_worms" unique_id=63194105]
 visible = false
 
-[node name="level_2" type="Sprite2D" parent="book_worms"]
+[node name="level_2" type="Sprite2D" parent="book_worms" unique_id=574609402]
 visible = false
 
-[node name="level_3" type="Sprite2D" parent="book_worms"]
+[node name="level_3" type="Sprite2D" parent="book_worms" unique_id=1368586727]
 visible = false

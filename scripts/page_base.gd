@@ -1,6 +1,5 @@
 extends Control
 
-
 @export_category("Settings")
 @export var active: bool = true
 @export_range(0, 3) var bookworm_level: int = 0
@@ -18,7 +17,6 @@ func _ready():
 		visible = true
 	else:
 		visible = false
-	
 	update_worm_level(bookworm_level)
 	
 

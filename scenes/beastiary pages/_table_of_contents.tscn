@@ -1,6 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://b74yen3xdm85o"]
+[gd_scene format=3 uid="uid://b74yen3xdm85o"]
 
-[ext_resource type="Script" path="res://scripts/page_base.gd" id="1_lfl2k"]
+[ext_resource type="Script" uid="uid://dlekensw7awcy" path="res://scripts/page_base.gd" id="1_lfl2k"]
 [ext_resource type="PackedScene" uid="uid://beneqpcnms27p" path="res://scenes/beastiary pages/_page_base.tscn" id="2_wfhrj"]
 [ext_resource type="Theme" uid="uid://bw2dm0g8j123d" path="res://themes/beastiary_writing.tres" id="3_8rvan"]
 [ext_resource type="FontFile" uid="uid://4mauql4oflhj" path="res://assets/fonts/Kurland-Regular.ttf" id="4_dnxun"]
@@ -9,7 +9,7 @@
 base_font = ExtResource("4_dnxun")
 variation_embolden = 0.5
 
-[node name="table_of_contents" type="Control"]
+[node name="table_of_contents" type="Control" unique_id=2122314415]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -19,10 +19,10 @@ grow_vertical = 2
 script = ExtResource("1_lfl2k")
 metadata/_edit_use_anchors_ = true
 
-[node name="page_base" parent="." instance=ExtResource("2_wfhrj")]
+[node name="page_base" parent="." unique_id=187051007 instance=ExtResource("2_wfhrj")]
 layout_mode = 1
 
-[node name="Contents" type="Control" parent="."]
+[node name="Contents" type="Control" parent="." unique_id=109553204]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -32,16 +32,47 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="entry name" type="Label" parent="Contents"]
+[node name="Label" type="Label" parent="Contents" unique_id=1482054235]
+layout_mode = 0
+offset_left = 633.0
+offset_top = -381.0
+offset_right = 658.0
+offset_bottom = -354.0
+theme = ExtResource("3_8rvan")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "1"
+
+[node name="entry name" type="Label" parent="Contents" unique_id=122666242]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -518.0
+offset_left = -534.0
 offset_top = -388.0
-offset_right = -142.0
+offset_right = -158.0
+offset_bottom = -335.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_8rvan")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "Chapters"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="entry name2" type="Label" parent="Contents" unique_id=211787725]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 157.0
+offset_top = -388.0
+offset_right = 533.0
 offset_bottom = -335.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -52,12 +83,12 @@ text = "Table of Contents"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="Contents"]
+[node name="RichTextLabel2" type="RichTextLabel" parent="Contents" unique_id=1461852355]
 layout_mode = 0
 offset_left = 88.0
 offset_top = -360.0
 offset_right = 595.0
-offset_bottom = 368.0
+offset_bottom = 396.0
 theme = ExtResource("3_8rvan")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_constants/line_separation = 5
@@ -65,30 +96,31 @@ theme_override_fonts/bold_font = SubResource("FontVariation_ivg2w")
 theme_override_font_sizes/normal_font_size = 25
 theme_override_font_sizes/bold_font_size = 30
 bbcode_enabled = true
-text = "	Jackalope    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 19
-	*Remnants. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 20
-	*Ceramaniacs. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 21
-	Blossom Bones  . . . . . . . . . . . . . . . . . . . . . . . . . . . . 22
-	*Golems . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  23
-	Decrepit Trader    . . . . . . . . . . . . . . . . . . . . . . . . . . 24
-	*Oracles  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 25
+text = "	
+[b]* [u]Flora[/u][/b]
+	Buckleberries . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+	Cottonberries   . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4
+	Lavender   . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5
+	Lovely Bushes . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6
+	Nightshade  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7
+	Oak   . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 8
+	Snowberries  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 9
+	Whistling Tree . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 10
+[b]* [u]Fauna[/u][/b]
+	Black Bear   . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 11
+	Blooming Fox . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 12
+	Bookworms    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 13
+	Deer  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 14
+	Grizzly Bear . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 15
+	Jackalope   . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 16
+	Mimetic . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 17
+	Red Fox . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 18
+[b]* [u]Humanoid[/u][/b]
+	Cloaked Jester . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 19
+	Decrepit Trader . . . . . . . . . . . . . . . . . . . . . . . . . . . . 20
+	Tea Fairy . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 21"
 
-[b]* [u]Hostile Fauna[/u][/b]
-	*Centibat . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  26
-	Black Bear . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 27
-	Grizzly Bear  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 28
-	Skeleton . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 29
-	Mimetic . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 30
-	*The Everburning. . . . . . . . . . . . . . . . . . . . . . . . . . . 31
-	*Wall Whisper. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 32
-	*Arachnight  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 33
-	Treant   . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 34
-	Skelebros   . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 35
-	Necrotic Sludge  . . . . . . . . . . . . . . . . . . . . . . . . . . . 36
-	Cloaked Jester . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 37
-	*Monument Matriarch . . . . . . . . . . . . . . . . . . . . . 38"
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Contents"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Contents" unique_id=871740567]
 layout_mode = 0
 offset_left = -610.0
 offset_top = -339.0
@@ -98,32 +130,26 @@ theme = ExtResource("3_8rvan")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_constants/line_separation = 5
 theme_override_fonts/bold_font = SubResource("FontVariation_ivg2w")
-theme_override_font_sizes/normal_font_size = 25
+theme_override_font_sizes/normal_font_size = 35
 theme_override_font_sizes/bold_font_size = 30
 bbcode_enabled = true
-text = "[b]* [u]Flora[/u][/b]
-	Lavender . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1
-	Nightshade  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2
-	Buckleberries  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
-	Cottonberries . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4
-	Snowberries  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5
-	Lovely Bushes . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6
-	Whistling Tree . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7
-	Oak . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 8
-	Omega Oak . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 9
+text = "
+1. [b]Table of Contents[/b]  . . . . . . . . . . . 1 - 2
 
-[b]* [u]Neutral Fauna[/u][/b]
-	Bookworms  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 10
-	*Gem Toads . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 11
-	*Eggheads  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 12
-	*Rats . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 13
-	Deer   . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 14
-	Red Fox . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 15
-	Blooming Fox  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 16
-	Tea Fairy . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 17
-	Tabletop   . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 18"
+2. [b]Flora[/b]  . . . . . . . . . . . . . . . . . . . . . . 3 - 10
 
-[node name="book_worms" type="Control" parent="."]
+3. [b]Fauna[/b]  . . . . . . . . . . . . . . . . . . . . 11 - 18
+
+4. [b]Humanoid[/b]  . . . . . . . . . . . . . . . . 19 - 22
+
+5. [b]Undead[/b] . . . . . . . . . . . . . . . . . . . 23 - 26
+
+6. [b]Monstrosity[/b] . . . . . . . . . . . . . . . . . . .  27
+
+7. [b]Construct/Object[/b] . . . . . . . . . . . . . . . 28"
+horizontal_alignment = 1
+
+[node name="book_worms" type="Control" parent="." unique_id=1900230839]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -132,11 +158,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="level_1" type="Sprite2D" parent="book_worms"]
+[node name="level_1" type="Sprite2D" parent="book_worms" unique_id=1366194153]
 visible = false
 
-[node name="level_2" type="Sprite2D" parent="book_worms"]
+[node name="level_2" type="Sprite2D" parent="book_worms" unique_id=789930102]
 visible = false
 
-[node name="level_3" type="Sprite2D" parent="book_worms"]
+[node name="level_3" type="Sprite2D" parent="book_worms" unique_id=1106719443]
 visible = false

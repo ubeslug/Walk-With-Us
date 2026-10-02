@@ -1,11 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://bbk3jlcj47rbb"]
+[gd_scene format=3 uid="uid://bbk3jlcj47rbb"]
 
-[ext_resource type="Script" path="res://scripts/page_base.gd" id="1_clulp"]
+[ext_resource type="Script" uid="uid://dlekensw7awcy" path="res://scripts/page_base.gd" id="1_clulp"]
 [ext_resource type="PackedScene" uid="uid://beneqpcnms27p" path="res://scenes/beastiary pages/_page_base.tscn" id="2_767e4"]
 [ext_resource type="Texture2D" uid="uid://bb2ow0qeo1m8i" path="res://assets/sketches/Tabletop.png" id="3_rn5ch"]
 [ext_resource type="Theme" uid="uid://bw2dm0g8j123d" path="res://themes/beastiary_writing.tres" id="4_mfin6"]
 
-[node name="tabletop" type="Control"]
+[node name="tabletop" type="Control" unique_id=1563298529]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -15,10 +15,10 @@ grow_vertical = 2
 script = ExtResource("1_clulp")
 metadata/_edit_use_anchors_ = true
 
-[node name="page_base" parent="." instance=ExtResource("2_767e4")]
+[node name="page_base" parent="." unique_id=1062104647 instance=ExtResource("2_767e4")]
 layout_mode = 1
 
-[node name="Contents" type="Control" parent="."]
+[node name="Contents" type="Control" parent="." unique_id=389442156]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -28,12 +28,12 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="sketch" type="Sprite2D" parent="Contents"]
+[node name="sketch" type="Sprite2D" parent="Contents" unique_id=637770804]
 position = Vector2(-354, 40)
 scale = Vector2(0.585301, 0.585301)
 texture = ExtResource("3_rn5ch")
 
-[node name="entry name" type="Label" parent="Contents"]
+[node name="entry name" type="Label" parent="Contents" unique_id=2113687425]
 layout_mode = 0
 offset_left = -634.0
 offset_top = -341.0
@@ -44,7 +44,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "TableTop"
 
-[node name="entry passage" type="Label" parent="Contents"]
+[node name="entry passage" type="Label" parent="Contents" unique_id=1582174800]
 layout_mode = 0
 offset_left = 112.0
 offset_top = -326.0
@@ -58,7 +58,7 @@ text = "If you ever encounter a stray table in the middle of nowhere then it cou
 While these fae are docile and will not actually interact with most entities and creatures the colony does coexist in a symbiotic relationship with a different species of fae that enjoy the mimicked table that this entity provides."
 autowrap_mode = 3
 
-[node name="Label" type="Label" parent="Contents"]
+[node name="Label" type="Label" parent="Contents" unique_id=40137160]
 layout_mode = 0
 offset_left = 637.0
 offset_top = -384.0
@@ -67,9 +67,9 @@ offset_bottom = -357.0
 theme = ExtResource("4_mfin6")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
-text = "15"
+text = "28"
 
-[node name="book_worms" type="Control" parent="."]
+[node name="book_worms" type="Control" parent="." unique_id=1850406040]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -77,11 +77,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="level_1" type="Sprite2D" parent="book_worms"]
+[node name="level_1" type="Sprite2D" parent="book_worms" unique_id=1953506500]
 visible = false
 
-[node name="level_2" type="Sprite2D" parent="book_worms"]
+[node name="level_2" type="Sprite2D" parent="book_worms" unique_id=296058365]
 visible = false
 
-[node name="level_3" type="Sprite2D" parent="book_worms"]
+[node name="level_3" type="Sprite2D" parent="book_worms" unique_id=823331320]
 visible = false

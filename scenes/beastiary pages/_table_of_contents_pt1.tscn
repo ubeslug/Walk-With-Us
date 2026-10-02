@@ -1,6 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://daubhy80r0ifg"]
+[gd_scene format=3 uid="uid://daubhy80r0ifg"]
 
-[ext_resource type="Script" path="res://scripts/page_base.gd" id="1_rfom6"]
+[ext_resource type="Script" uid="uid://dlekensw7awcy" path="res://scripts/page_base.gd" id="1_rfom6"]
 [ext_resource type="PackedScene" uid="uid://beneqpcnms27p" path="res://scenes/beastiary pages/_page_base.tscn" id="2_mj3yh"]
 [ext_resource type="Theme" uid="uid://bw2dm0g8j123d" path="res://themes/beastiary_writing.tres" id="3_fts51"]
 [ext_resource type="FontFile" uid="uid://4mauql4oflhj" path="res://assets/fonts/Kurland-Regular.ttf" id="4_jkxje"]
@@ -9,7 +9,7 @@
 base_font = ExtResource("4_jkxje")
 variation_embolden = 0.5
 
-[node name="table_of_contents" type="Control"]
+[node name="table_of_contents2" type="Control" unique_id=1955468177]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -19,10 +19,10 @@ grow_vertical = 2
 script = ExtResource("1_rfom6")
 metadata/_edit_use_anchors_ = true
 
-[node name="page_base" parent="." instance=ExtResource("2_mj3yh")]
+[node name="page_base" parent="." unique_id=304865066 instance=ExtResource("2_mj3yh")]
 layout_mode = 1
 
-[node name="Contents" type="Control" parent="."]
+[node name="Contents" type="Control" parent="." unique_id=1269983330]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -32,7 +32,18 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="entry name" type="Label" parent="Contents"]
+[node name="Label" type="Label" parent="Contents" unique_id=235283598]
+layout_mode = 0
+offset_left = 633.0
+offset_top = -381.0
+offset_right = 658.0
+offset_bottom = -354.0
+theme = ExtResource("3_fts51")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "2"
+
+[node name="entry name" type="Label" parent="Contents" unique_id=555586807]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -48,14 +59,13 @@ grow_vertical = 2
 theme = ExtResource("3_fts51")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
-text = "Table of Contents"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="Contents"]
+[node name="RichTextLabel2" type="RichTextLabel" parent="Contents" unique_id=1713848004]
 layout_mode = 0
 offset_left = 88.0
-offset_top = -379.0
+offset_top = -341.0
 offset_right = 595.0
 offset_bottom = 349.0
 theme = ExtResource("3_fts51")
@@ -65,18 +75,8 @@ theme_override_fonts/bold_font = SubResource("FontVariation_ivg2w")
 theme_override_font_sizes/normal_font_size = 25
 theme_override_font_sizes/bold_font_size = 30
 bbcode_enabled = true
-text = "
-[b]* [u]Hostile Fauna[/u][/b]
-	Black Bear . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 19
-	Grizzly Bear  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 20
-	Skeleton . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 21
-	Mimetic . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 22
-	Treant   . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 23
-	Skelebros   . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 24
-	Necrotic Sludge  . . . . . . . . . . . . . . . . . . . . . . . . . . . 25
-	Cloaked Jester . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 26"
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Contents"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Contents" unique_id=744977428]
 layout_mode = 0
 offset_left = -610.0
 offset_top = -339.0
@@ -89,29 +89,19 @@ theme_override_fonts/bold_font = SubResource("FontVariation_ivg2w")
 theme_override_font_sizes/normal_font_size = 25
 theme_override_font_sizes/bold_font_size = 30
 bbcode_enabled = true
-text = "[b]* [u]Flora[/u][/b]
-	Lavender . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1
-	Nightshade  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2
-	Buckleberries  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
-	Cottonberries . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4
-	Snowberries  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5
-	Lovely Bushes . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6
-	Whistling Tree . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7
-	Oak . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 8
-	Omega Oak . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 9
+text = "	
+	Treant   . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 22
+[b]* [u]Undead[/u][/b]
+	Blossom Bones  . . . . . . . . . . . . . . . . . . . . . . . . . . . . 23
+	Necrotic Sludge  . . . . . . . . . . . . . . . . . . . . . . . . . . . 24
+	Skelebros   . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 25
+	Skeleton . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 26
+[b]* [u]Monstrosity[/u][/b]
+	Omega Oak . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 27
+[b]* [u]Construct/Object[/u][/b]
+	Tabletop   . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 28"
 
-[b]* [u]Neutral Fauna[/u][/b]
-	Bookworms  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 10
-	Deer   . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 11
-	Red Fox . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 12
-	Blooming Fox  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 13
-	Tea Fairy . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 14
-	Tabletop   . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 15
-	Jackalope    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 16
-	Blossom Bones  . . . . . . . . . . . . . . . . . . . . . . . . . . . . 17
-	Decrepit Trader    . . . . . . . . . . . . . . . . . . . . . . . . . . 18"
-
-[node name="book_worms" type="Control" parent="."]
+[node name="book_worms" type="Control" parent="." unique_id=1437753131]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -120,11 +110,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="level_1" type="Sprite2D" parent="book_worms"]
+[node name="level_1" type="Sprite2D" parent="book_worms" unique_id=1183909498]
 visible = false
 
-[node name="level_2" type="Sprite2D" parent="book_worms"]
+[node name="level_2" type="Sprite2D" parent="book_worms" unique_id=245043750]
 visible = false
 
-[node name="level_3" type="Sprite2D" parent="book_worms"]
+[node name="level_3" type="Sprite2D" parent="book_worms" unique_id=614499167]
 visible = false

@@ -1,11 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://baykr64ps5nxn"]
+[gd_scene format=3 uid="uid://baykr64ps5nxn"]
 
-[ext_resource type="Script" path="res://scripts/page_base.gd" id="1_d01q4"]
+[ext_resource type="Script" uid="uid://dlekensw7awcy" path="res://scripts/page_base.gd" id="1_d01q4"]
 [ext_resource type="PackedScene" uid="uid://beneqpcnms27p" path="res://scenes/beastiary pages/_page_base.tscn" id="2_q5c6q"]
 [ext_resource type="Texture2D" uid="uid://d0av6ovmiaj4c" path="res://assets/sketches/Omega_oak.png" id="3_gkven"]
 [ext_resource type="Theme" uid="uid://bw2dm0g8j123d" path="res://themes/beastiary_writing.tres" id="4_ev8rg"]
 
-[node name="omega_oak_page" type="Control"]
+[node name="omega_oak_page" type="Control" unique_id=257320241]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -14,10 +14,10 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_d01q4")
 
-[node name="page_base" parent="." instance=ExtResource("2_q5c6q")]
+[node name="page_base" parent="." unique_id=525105658 instance=ExtResource("2_q5c6q")]
 layout_mode = 1
 
-[node name="Contents" type="Control" parent="."]
+[node name="Contents" type="Control" parent="." unique_id=1546003744]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -27,12 +27,12 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="sketch" type="Sprite2D" parent="Contents"]
+[node name="sketch" type="Sprite2D" parent="Contents" unique_id=1840722955]
 position = Vector2(-363.9, 54)
 scale = Vector2(0.585301, 0.585301)
 texture = ExtResource("3_gkven")
 
-[node name="entry name" type="Label" parent="Contents"]
+[node name="entry name" type="Label" parent="Contents" unique_id=1990217600]
 layout_mode = 0
 offset_left = -642.0
 offset_top = -353.0
@@ -43,7 +43,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "Omega Oak"
 
-[node name="entry passage" type="Label" parent="Contents"]
+[node name="entry passage" type="Label" parent="Contents" unique_id=950853495]
 layout_mode = 0
 offset_left = 106.0
 offset_top = -314.0
@@ -59,7 +59,8 @@ However, rather than infecting a new host, it will reveal its true form, with wo
 It is advised to avoid large trees covered in sap or smells that do not fit the location you are currently in such as something sickly sweet or savory."
 autowrap_mode = 3
 
-[node name="Label" type="Label" parent="Contents"]
+[node name="Label" type="Label" parent="Contents" unique_id=804552713]
+layout_mode = 0
 offset_left = 637.0
 offset_top = -384.0
 offset_right = 662.0
@@ -67,9 +68,9 @@ offset_bottom = -357.0
 theme = ExtResource("4_ev8rg")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
-text = "9"
+text = "36"
 
-[node name="book_worms" type="Control" parent="."]
+[node name="book_worms" type="Control" parent="." unique_id=1967452877]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -77,11 +78,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="level_1" type="Sprite2D" parent="book_worms"]
+[node name="level_1" type="Sprite2D" parent="book_worms" unique_id=1201661485]
 visible = false
 
-[node name="level_2" type="Sprite2D" parent="book_worms"]
+[node name="level_2" type="Sprite2D" parent="book_worms" unique_id=700629076]
 visible = false
 
-[node name="level_3" type="Sprite2D" parent="book_worms"]
+[node name="level_3" type="Sprite2D" parent="book_worms" unique_id=1366620461]
 visible = false
